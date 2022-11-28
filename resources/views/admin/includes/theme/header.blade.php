@@ -1,0 +1,48 @@
+<head>
+    <meta charset="utf-8" />
+    <title>@yield('title',__('words.company_name'))</title>
+    <meta name="description" content="Header dark theme example" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="canonical" href="https://keenthemes.com/metronic" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+
+    @if(app()->getLocale() == 'ar')
+        <!--begin::Page Vendors Styles(used by this page)-->
+            <link href="{{asset('dashboard/plugins/custom/fullcalendar/fullcalendar.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
+            <!--end::Page Vendors Styles-->
+            <!--begin::Global Theme Styles(used by all pages)-->
+            <link href="{{asset('dashboard/plugins/global/plugins.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{asset('dashboard/plugins/custom/prismjs/prismjs.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{asset('dashboard/css/style.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
+            <!--end::Global Theme Styles-->
+            <!--begin::Layout Themes(used by all pages)-->
+            <link href="{{asset('dashboard/css/themes/layout/header/base/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{asset('dashboard/css/themes/layout/header/menu/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{asset('dashboard/css/themes/layout/brand/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{asset('dashboard/css/themes/layout/aside/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{asset('dashboard/css/custom.ar.css')}}" rel="stylesheet" type="text/css" />
+            <!--end::Layout Themes-->
+        @else
+        <!--begin::Page Vendors Styles(used by this page)-->
+            <link href="{{asset('dashboard/plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet" type="text/css" />
+            <!--end::Page Vendors Styles-->
+            <!--begin::Global Theme Styles(used by all pages)-->
+            <link href="{{asset('dashboard/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{asset('dashboard/plugins/custom/prismjs/prismjs.bundle.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{asset('dashboard/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+            <!--end::Global Theme Styles-->
+            <!--begin::Layout Themes(used by all pages)-->
+            <link href="{{asset('dashboard/css/themes/layout/header/base/dark.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{asset('dashboard/css/themes/layout/header/menu/dark.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{asset('dashboard/css/themes/layout/brand/dark.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{asset('dashboard/css/themes/layout/aside/dark.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{asset('dashboard/css/custom.css')}}" rel="stylesheet" type="text/css" />
+            <!--end::Layout Themes-->
+        @endif
+
+    <link rel="shortcut icon" href="{{asset('dashboard/media/logos/favicon.ico')}}" />
+
+    @yield('styles')
+</head>

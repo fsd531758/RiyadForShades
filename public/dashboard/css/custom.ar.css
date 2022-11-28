@@ -1,0 +1,9 @@
+body {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+@media (min-width: 992px) {
+    .header-fixed.subheader-fixed .subheader {
+        top: 0px;
+    }
+}
