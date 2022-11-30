@@ -12,6 +12,32 @@ return [
     'remember_me' => 'Remember me',
     'hi' => 'Hi,',
     'profile' => 'My profile',
+    'read' => 'Read',
+    'save' => 'Save',
+    'edit' => 'Edit',
+    'update' => 'Update',
+    'show' => 'Show',
+    'create' => 'Create',
+    'delete' => 'delete',
+    'cancel' => 'Cancel',
+    'delete_confirm' => 'Delete Confirmation',
+    'show_all' => 'Show All',
+    'all' => 'Select All',
+    'add_new_record' => 'Add new',
+
+    'name' => 'Name',
+    'description' => 'description',
+    'created_by' => 'Created by',
+    'created_at' => 'Created at',
+    'updated_at' => 'Updated_at',
+    'actions' => 'Actions',
+
+    'roles' => 'Roles',
+    'show_roles' => 'Show Roles',
+    'show_role' => 'Show Role',
+    'edit_role' => 'Edit Role',
+    'create_role' => 'Create Role',
+    'admins' => 'Admin Users',
 ];
 
 

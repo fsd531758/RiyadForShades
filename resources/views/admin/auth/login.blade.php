@@ -55,12 +55,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
 </head>
 <!--end::Head-->
 <!--begin::Body-->
 <body dir="{{(App::isLocale('ar') ? 'rtl' : 'ltr')}}" id="kt_body"
       class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+@include('admin.includes.alerts.success')
+@include('admin.includes.alerts.errors')
 <!--begin::Main-->
 <div class="d-flex flex-column flex-root">
     <!--begin::Login-->
@@ -76,8 +77,7 @@
                 </div>
                 <!--end::Login Header-->
 
-            @include('admin.includes.alerts.success')
-            @include('admin.includes.alerts.errors')
+
 
             <!--begin::Login Sign in form-->
                 <div class="n">

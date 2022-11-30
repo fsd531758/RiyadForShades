@@ -20,6 +20,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
             Route::get('/', 'Auth\AuthController@home')->name('admin.home');
             Route::get('logout', 'Auth\AuthController@logout')->name('admin.logout');
 
+            //role routes
+            Route::resource('roles','RoleController');
         });
     });
 });

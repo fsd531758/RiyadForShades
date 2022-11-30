@@ -16,4 +16,35 @@
 <script src="{{asset('dashboard/js/pages/widgets.js')}}"></script>
 <!--end::Page Scripts-->
 
+<script src="{{asset('dashboard/js/pages/features/miscellaneous/toastr.js')}}"></script>
+
+<!--end::Page Vendors-->
+<!--begin::Page Scripts(used by this page)-->
+<script src="{{asset('dashboard/js/pages/crud/datatables/basic/paginations.js')}}"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="{{asset('dashboard/plugins/custom/datatables/datatables.bundle.js')}}"></script>
+<script>
+    $.fn.dataTable.ext.errMode = 'none';
+    $('#kt_datatable').dataTable( {
+        pagingType: 'full_numbers',
+    } );
+</script>
+
+<script>
+    $('#check_all').click(function(event) {
+        if(this.checked) {
+            // Iterate each checkbox
+            $(':checkbox').each(function() {
+                this.checked = true;
+            });
+        } else {
+            $(':checkbox').each(function() {
+                this.checked = false;
+            });
+        }
+    });
+</script>
+<!--end::Page Scripts-->
+
+
 @yield('scripts')

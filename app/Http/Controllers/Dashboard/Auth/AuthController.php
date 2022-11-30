@@ -22,13 +22,13 @@ class AuthController extends Controller
     public function authenticate(AdminLoginRequest $request)
     {
         $remember_me = $request->has('remember_me') ? true : false;
-        $user = Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password,'active' => 1], $remember_me);
+        $user = Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password, 'active' => 1], $remember_me);
         if ($user) {
             $request->session()->regenerate();
 
             return redirect()->route('admin.home');
         }
-        return redirect()->back()->with(['error'=>__('message.invalid_login')]);
+        return redirect()->back()->with('error', __('message.something_wrong'));
     }
 
     public function logout(Request $request)
@@ -41,8 +41,8 @@ class AuthController extends Controller
             $request->session()->regenerateToken();
 
             return redirect()->route('organization.login');
-        }catch (\Exception $e){
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', __('message.something_wrong'));
         }
     }
 }

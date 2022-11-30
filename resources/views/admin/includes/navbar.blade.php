@@ -3,7 +3,7 @@
         <!--begin::Info-->
         <div class="d-flex align-items-center flex-wrap mr-1">
             <!--begin::Page Heading-->
-        @include('admin.includes.breadcrumb')
+        @yield('breadcrumb')
         <!--end::Page Heading-->
         </div>
         <!--end::Info-->
