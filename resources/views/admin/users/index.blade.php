@@ -1,15 +1,15 @@
 @extends('admin.layouts.master')
-@section('title',__('words.roles'))
+@section('title',__('words.admins'))
 @section('breadcrumb')
     <div class="d-flex align-items-baseline flex-wrap mr-5">
         <!--begin::Breadcrumb-->
-        <h5 class="text-dark font-weight-bold my-1 mr-5">{{__('words.roles')}}</h5>
+        <h5 class="text-dark font-weight-bold my-1 mr-5">{{__('words.admins')}}</h5>
         <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
             <li class="breadcrumb-item">
                 <a href="{{route('admin.home')}}" class="text-muted">{{__('words.home')}}</a>
             </li>
             <li class="breadcrumb-item">
-                <apan class="text-muted">{{__('words.show_roles')}}</apan>
+                <apan class="text-muted">{{__('words.show_admins')}}</apan>
             </li>
         </ul>
         <!--end::Breadcrumb-->
@@ -20,14 +20,14 @@
     <div class="card card-custom">
         <div class="card-header flex-wrap py-5">
             <div class="card-title">
-                <h3 class="card-title">{{__('words.show_roles')}}</h3>
+                <h3 class="card-title">{{__('words.show_admins')}}</h3>
             </div>
 
             <div class="card-toolbar">
                 <!--begin::Dropdown-->
                 <div class="dropdown dropdown-inline mr-2">
                     <!--begin::Button-->
-                    <a href="{{route('roles.create')}}" class="btn btn-primary font-weight-bolder">
+                    <a href="{{route('admin-users.create')}}" class="btn btn-primary font-weight-bolder">
 											<span class="svg-icon svg-icon-md">
 												<!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
 												<svg xmlns="http://www.w3.org/2000/svg"
@@ -53,8 +53,11 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>{{__('words.name')}}</th>
-                    <th>{{__('words.description')}}</th>
+                    <th>{{__('words.first_name')}}</th>
+                    <th>{{__('words.last_name')}}</th>
+                    <th>{{__('words.email')}}</th>
+                    <th>{{__('words.roles')}}</th>
+                    <th>{{__('words.activity')}}</th>
                     <th>{{__('words.created_by')}}</th>
                     <th>{{__('words.created_at')}}</th>
                     <th>{{__('words.updated_at')}}</th>
@@ -62,16 +65,19 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($roles as $key => $role)
+                @foreach($users as $key => $user)
                     <tr>
                         <td>{{$key+1}}</td>
-                        <td>{{$role->name}}</td>
-                        <td>{{$role->description}}</td>
-                        <td>{{$role->created_by}}</td>
-                        <td>{{createdAtFormat($role->created_at)}}</td>
-                        <td>{{createdAtFormat($role->created_at) == updatedAtFormat($role->updated_at) ? '--' : updatedAtFormat($role->updated_at)}}</td>
+                        <td>{{$user->first_name}}</td>
+                        <td>{{$user->last_name}}</td>
+                        <td>{{$user->email}}</td>
+                        <td>{{$user->roles()->first() ? $user->roles()->first()->name : ''}}</td>
+                        <td>{{$user->getActive()}}</td>
+                        <td>{{$user->created_by}}</td>
+                        <td>{{createdAtFormat($user->created_at)}}</td>
+                        <td>{{createdAtFormat($user->created_at) == updatedAtFormat($user->updated_at) ? '--' : updatedAtFormat($user->updated_at)}}</td>
                         <td nowrap="nowrap">
-                            @include('admin.components.form-controls', ['name'=>'roles', 'value'=>$role,'role'=>'roles'])
+                            @include('admin.components.form-controls', ['name'=>'admin-users', 'value'=>$user,'role'=>'admins'])
                         </td>
                     </tr>
                 @endforeach

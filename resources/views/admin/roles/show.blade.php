@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title',__('words.roles'))
+@section('title',__('words.show_role'))
 @section('breadcrumb')
     <div class="d-flex align-items-baseline flex-wrap mr-5">
         <!--begin::Breadcrumb-->
@@ -25,11 +25,11 @@
             <h3 class="card-title">{{__('words.show_role')}}</h3>
         </div>
         <div class="card-body p-10">
-            <div class="row">
+            <div class="row mb-3">
                 <div class="col-md-6">
                     <div class="mb-7 bg-light p-5 rounded h-100">
                         <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">@lang('words.name'):</h5>
+                            <h5 class="font-weight-bolder text-dark">{{__('words.name')}}:</h5>
                         </div>
                         <p class="m-0">{{ $role->name }}</p>
                     </div>
@@ -37,9 +37,20 @@
                 <div class="col-md-6">
                     <div class="mb-7 bg-light p-5 rounded h-100">
                         <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">@lang('words.description'):</h5>
+                            <h5 class="font-weight-bolder text-dark">{{__('words.description')}}:</h5>
                         </div>
                         <p class="m-0">{{ $role->description }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="mb-7 bg-light p-5 rounded h-100">
+                        <div class="card-title">
+                            <h5 class="font-weight-bolder text-dark">{{__('words.updated_by')}}:</h5>
+                        </div>
+                        <p class="m-0">{{ $role->updated_by }}</p>
                     </div>
                 </div>
             </div>
@@ -77,5 +88,18 @@
 
             </div>
         </div>
+
+        @if(auth('admin')->user()->hasPermission('update-roles'))
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-4">
+                        <a href="{{route('roles.edit',$role->id)}}"
+                           class="btn btn-block btn-outline-info">
+                            {{__('words.edit')}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        @endif
     </div>
 @endsection

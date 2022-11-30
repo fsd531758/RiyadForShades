@@ -78,7 +78,7 @@ class RoleController extends Controller
             if ($role->is_super == 1)
                 return redirect()->back()->with(['error' => __('message.error_admin_role_update')]);
             $request_data = $request->except(['_token', 'permissions']);
-            $request_data['created_by'] = auth('admin')->user()->email;
+            $request_data['updated_by'] = auth('admin')->user()->email;
             //update role
             $role->update($request_data);
             $role->syncPermissions($request->permissions); //update role permassion

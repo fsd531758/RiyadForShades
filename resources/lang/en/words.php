@@ -27,10 +27,16 @@ return [
 
     'name' => 'Name',
     'description' => 'description',
+    'first_name' => 'First name',
+    'last_name' => 'Last name',
     'created_by' => 'Created by',
+    'updated_by' => 'Updated by',
     'created_at' => 'Created at',
     'updated_at' => 'Updated_at',
     'actions' => 'Actions',
+    'activity' => 'Activity',
+    'active' => 'Active',
+    'inactive' => 'Inactive',
 
     'roles' => 'Roles',
     'show_roles' => 'Show Roles',
@@ -38,6 +44,11 @@ return [
     'edit_role' => 'Edit Role',
     'create_role' => 'Create Role',
     'admins' => 'Admin Users',
+    'show_admins' => 'Show Admin Users',
+    'show_admin' => 'Show Admin User',
+    'edit_admin' => 'Edit Admin User',
+    'create_admin' => 'Create Admin User',
+    'user_profile' => 'User Profile',
 ];
 
 

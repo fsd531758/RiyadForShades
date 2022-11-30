@@ -1,8 +1,8 @@
 <div id="kt_quick_user" class="offcanvas offcanvas-right p-10">
     <!--begin::Header-->
     <div class="offcanvas-header d-flex align-items-center justify-content-between pb-5">
-        <h3 class="font-weight-bold m-0">User Profile
-{{--            <small class="text-muted font-size-sm ml-2">12 messages</small></h3>--}}
+        <h3 class="font-weight-bold m-0">{{__('words.user_profile')}}</h3>
+{{--            <small class="text-muted font-size-sm ml-2">12 messages</small>--}}
         <a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_quick_user_close">
             <i class="ki ki-close icon-xs text-muted"></i>
         </a>
@@ -13,12 +13,11 @@
         <!--begin::Header-->
         <div class="d-flex align-items-center mt-5">
             <div class="symbol symbol-100 mr-5">
-                <div class="symbol-label" style="background-image:url({{asset('dashboard/media/users/300_21.jpg')}})"></div>
+                <div class="symbol-label" style="background-image:url({{asset('uploads/no-user.jpg')}})"></div>
                 <i class="symbol-badge bg-success"></i>
             </div>
             <div class="d-flex flex-column">
                 <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{auth('admin')->user()->first_name .' '. auth('admin')->user()->last_name}}</a>
-                <div class="text-muted mt-1">Application Developer</div>
                 <div class="navi mt-2">
                     <a href="#" class="navi-item">
 								<span class="navi-link p-0 pb-2">
@@ -39,10 +38,10 @@
                                             <!--end::Svg Icon-->
 										</span>
 									</span>
-									<span class="navi-text text-muted text-hover-primary">jm@softplus.com</span>
+									<span class="navi-text text-muted text-hover-primary">{{auth('admin')->user()->email}}</span>
 								</span>
                     </a>
-                    <a href="#" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">{{__('words.sign_out')}}</a>
+                    <a href="{{route('admin.logout')}}" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">{{__('words.sign_out')}}</a>
                 </div>
             </div>
         </div>

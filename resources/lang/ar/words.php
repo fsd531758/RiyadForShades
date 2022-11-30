@@ -27,7 +27,10 @@ return [
 
     'name' => 'الإسم',
     'description' => 'الوصف',
+    'first_name' => 'اإسم الأول',
+    'last_name' => 'الإسم الأخير',
     'created_by' => 'الإنشاء بواسطة',
+    'updated_by' => 'التعديل بواسطة',
     'created_at' => 'تاريخ الإنشاء',
     'updated_at' => 'تاريخ التعديل',
     'actions' => 'الإجراءات',
@@ -37,5 +40,10 @@ return [
     'show_role' => 'عرض الدور',
     'edit_role' => 'تعديل الدور',
     'create_role' => 'إنشاء دور',
-    'admins' => 'مستخدمي الأدمن'
+    'admins' => 'مستخدمي الأدمن',
+    'show_admins' => 'عرض مستخدمين الأدمن',
+    'show_admin' => 'عرض المستخدم',
+    'edit_admin' => 'تعديل المستخدم',
+    'create_admin' => 'إنشاء مستخدم',
+    'user_profile' => 'الملف الشخصي للمستخدم',
 ];
