@@ -9,6 +9,7 @@ return [
     'sign_in_desc' => 'Enter your details to login to your account:',
     'email' => 'Email',
     'password' => 'Password',
+    'confirm_password' => 'Confirm Password',
     'remember_me' => 'Remember me',
     'hi' => 'Hi,',
     'profile' => 'My profile',
@@ -37,6 +38,7 @@ return [
     'activity' => 'Activity',
     'active' => 'Active',
     'inactive' => 'Inactive',
+    'choose' => 'Choose...',
 
     'roles' => 'Roles',
     'show_roles' => 'Show Roles',

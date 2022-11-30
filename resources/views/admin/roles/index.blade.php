@@ -55,7 +55,6 @@
                     <th>#</th>
                     <th>{{__('words.name')}}</th>
                     <th>{{__('words.description')}}</th>
-                    <th>{{__('words.created_by')}}</th>
                     <th>{{__('words.created_at')}}</th>
                     <th>{{__('words.updated_at')}}</th>
                     <th>{{__('words.actions')}}</th>
@@ -67,7 +66,6 @@
                         <td>{{$key+1}}</td>
                         <td>{{$role->name}}</td>
                         <td>{{$role->description}}</td>
-                        <td>{{$role->created_by}}</td>
                         <td>{{createdAtFormat($role->created_at)}}</td>
                         <td>{{createdAtFormat($role->created_at) == updatedAtFormat($role->updated_at) ? '--' : updatedAtFormat($role->updated_at)}}</td>
                         <td nowrap="nowrap">

@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title',__('words.create_role'))
+@section('title',__('words.create_admin'))
 @section('breadcrumb')
     <div class="d-flex align-items-baseline flex-wrap mr-5">
         <!--begin::Breadcrumb-->
@@ -9,10 +9,10 @@
                 <a href="{{route('admin.home')}}" class="text-muted">{{__('words.home')}}</a>
             </li>
             <li class="breadcrumb-item">
-                <a href="{{route('roles.index')}}" class="text-muted">{{__('words.show_roles')}}</a>
+                <a href="{{route('admin-users.index')}}" class="text-muted">{{__('words.show_admin')}}</a>
             </li>
             <li class="breadcrumb-item">
-                <apan class="text-muted">{{__('words.create_role')}}</apan>
+                <apan class="text-muted">{{__('words.create_admin')}}</apan>
             </li>
         </ul>
         <!--end::Breadcrumb-->
@@ -20,96 +20,117 @@
 @endsection
 
 @section('content')
-    @if ($errors->has('permissions'))
-        <div class="row mr-2 ml-2">
-            <div class="alert alert-danger alert-dismissible fade show btn-block text-center mb-2" role="alert">
-                <div class="error">{{ $errors->first('permissions') }}</div>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div>
-
-    @endif
-
     <div class="card card-custom">
         <div class="card-header">
-            <h3 class="card-title">{{__('words.create_role')}}</h3>
+            <h3 class="card-title">{{__('words.create_admin')}}</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <form action="{{route('roles.store')}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="row">
-                    <div class="form-group col-6 mb-3">
-                        <label for="name">{{__('words.name')}}</label>
-                        <input type="text" name="name"
-                               class="form-control @error('name') is-invalid @enderror"
-                               value="{{ old('name') }}" placeholder="{{__('words.name')}}">
-                        @error('name')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group col-6 mb-3">
-                        <label for="description">{{__('words.description')}}</label>
-                        <input type="text" name="description"
-                               class="form-control @error('description') is-invalid @enderror"
-                               value="{{ old('description') }}" placeholder="{{__('words.description')}}">
-                        @error('description')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-                </div>
-
-                <hr>
-
-                <div class="form-group row">
-                    <label class="col-6 col-form-label">{{__('words.all')}}</label>
-                    <div class="col-6">
-                                            <span class="switch switch-brand">
-                                                <label>
-                                                    <input type="checkbox" id="check_all" name="permissions">
-                                                    <span></span>
-                                                </label>
+            <form action="{{route('admin-users.store')}}" method="POST" autocomplete="off"
+                  enctype="multipart/form-data">
+                <div class="card-body">
+                    @csrf
+                    <div class="row">
+                        <div class="input-group col-6 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" name="first_name" class="form-control @error('first_name') is-invalid @enderror"
+                                   value="{{ old('first_name') }}" placeholder="{{__('words.first_name')}}">
+                            @error('first_name')
+                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
                                             </span>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    @foreach (config('laratrust_seeder.roles') as $key => $values)
-                        <div class="col-md-3">
-                            <div class="card card-custom gutter-b example example-compact">
-                                <div class="card-header">
-                                    <h3 class="card-title">{{__('words.'.$key)}}</h3>
-                                </div>
-                                <div class="card-body">
-                                    @foreach ($values as $value)
-                                        <div class="form-group row">
-                                            <label class="col-6 col-form-label"
-                                                   for="{{$value . '-' . $key}}">{{__('words.'.$value)}}</label>
-                                            <div class="col-6">
-                                            <span class="switch switch-icon">
-                                                <label>
-                                                    <input type="checkbox" id="{{$value . '-' . $key}}"
-                                                           name="permissions[]" value="{{$value . '-' . $key}}"/>
-                                                    <span></span>
-                                                </label>
+                            @enderror
+                        </div>
+
+                        <div class="input-group col-6 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror"
+                                   value="{{ old('last_name') }}" placeholder="{{__('words.last_name')}}">
+                            @error('last_name')
+                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
                                             </span>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-group col-6 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            </div>
+                            <input type="text" name="email" class="form-control @error('email') is-invalid @enderror"
+                                   value="{{ old('email') }}" placeholder="{{__('words.email')}}">
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                            @enderror
+                        </div>
+
+                        <div class="input-group col-6 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
+                                   value="{{ old('password') }}" placeholder="{{__('words.password')}}">
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-group col-6 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            </div>
+                            <input type="password" name="password_confirmation"
+                                   class="form-control @error('password_confirmation') is-invalid @enderror"
+                                   value="{{ old('password_confirmation') }}"
+                                   placeholder="{{__('words.confirm_password')}}">
+
+                            @error('password_confirmation')
+                            <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>{{__('words.roles')}}</label>
+                            <select name="role_id"
+                                    class="form-control @error('role_id') is-invalid @enderror">
+                                <option value="" selected>{{__('words.choose')}}</option>
+                                @foreach($roles as $role)
+                                    <option value="{{$role->id}}" {{old('role_id') == $role->id ? "selected" : ""}}>{{$role->name}}</option>
+                                @endforeach
+                            </select>
+                            @error('role_id')
+                            <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-group col-6 mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" name="active" type="checkbox" value="1" {{old('active') ? "checked" : ""}}>
+                                <label class="form-check-label">{{__('words.active')}}</label>
                             </div>
                         </div>
-                    @endforeach
-
-
+                    </div>
                 </div>
-
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-4">
@@ -123,7 +144,4 @@
         </div>
         <!-- /.card-body -->
     </div>
-@endsection
-@section('scripts')
-
 @endsection

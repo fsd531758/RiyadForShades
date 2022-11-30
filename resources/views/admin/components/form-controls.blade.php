@@ -45,7 +45,15 @@
                         </button>
                     </div>
                     <div class="modal-body"> {{ __('message.delete_message') }} <b
-                            class="text-danger">{{ $value->name }}</b></div>
+                            class="text-danger">
+                            @if($value->name)
+                                {{$value->name}}
+                            @elseif($value->title)
+                                {{$value->title}}
+                            @else
+                                {{$value->email}}
+                            @endif
+                        </b></div>
                     <div class="modal-footer">
                         <button type="button" class="btn gray btn-outline-secondary"
                                 data-dismiss="modal">{{__('words.cancel')}}</button>

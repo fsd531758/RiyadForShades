@@ -55,7 +55,7 @@ class AdminUserController extends Controller
         try {
             if (!$request->has('active'))
                 $request->request->add(['active' => 0]);
-            $request_data = $request->except(['_token']);
+            $request_data = $request->except(['_token','password_confirmation','role_id']);
             $request_data['created_by'] = auth('admin')->user()->email;
             $admin =  $this->admin->create($request_data);
             $admin->attachRole($request->role_id);
@@ -87,7 +87,7 @@ class AdminUserController extends Controller
             else
                 $request->request->add(['active' => 1]);
 
-            $request_data = $request->except(['_token', 'password', 'password_confirmation']);
+            $request_data = $request->except(['_token', 'password', 'password_confirmation','role_id']);
             $request_data['updated_by'] = auth('admin')->user()->email;
             if ($request->has('password')) {
                 $request_data['password'] = $request->password;
@@ -105,7 +105,7 @@ class AdminUserController extends Controller
     {
         try {
             $admin_user =  $this->admin->find($id);
-            $user = auth::guard('admin')->id();
+            $user = \Auth::guard('admin')->id();
             if ($user == $admin_user->id) {
                 return redirect()->back()->with('error', __('message.active_session'));
             }
