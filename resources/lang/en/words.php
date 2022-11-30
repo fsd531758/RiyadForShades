@@ -51,6 +51,7 @@ return [
     'edit_admin' => 'Edit Admin User',
     'create_admin' => 'Create Admin User',
     'user_profile' => 'User Profile',
+    'master_data' => 'Master Data',
 
     'ar' => [
         'title' => 'Title In Arabic',
