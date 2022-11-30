@@ -51,6 +51,16 @@ return [
     'edit_admin' => 'Edit Admin User',
     'create_admin' => 'Create Admin User',
     'user_profile' => 'User Profile',
+
+    'ar' => [
+        'title' => 'Title In Arabic',
+        'description' => 'Title In Arabic',
+    ],
+
+    'en' => [
+        'title' => 'Title In English',
+        'description' => 'Title In English',
+    ],
 ];
 
 

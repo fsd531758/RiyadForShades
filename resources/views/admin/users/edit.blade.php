@@ -41,8 +41,8 @@
                                placeholder="{{__('words.first_name')}}">
                         @error('first_name')
                         <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
 
@@ -56,8 +56,8 @@
                                placeholder="{{__('words.last_name')}}">
                         @error('last_name')
                         <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                 </div>
@@ -72,8 +72,8 @@
                                value="{{$user->email}}" placeholder="{{__('words.email')}}">
                         @error('email')
                         <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
 
@@ -88,8 +88,8 @@
                                onfocus="this.removeAttribute('readonly');">
                         @error('password')
                         <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                 </div>
@@ -106,8 +106,8 @@
 
                         @error('password_confirmation')
                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                 </div>
@@ -125,19 +125,22 @@
                         </select>
                         @error('role_id')
                         <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="input-group col-6 mb-3">
-                        <div class="form-check">
-                            <input class="form-check-input" name="active" type="checkbox"
-                                   value="1" {{$user->active == 1 ? 'checked' : ''}}>
-                            <label class="form-check-label">{{__('words.active')}}</label>
-                        </div>
+                    <div class="col-6">
+                        <label for="active" class="checkbox-inline">{{__('words.active')}}</label>
+                            <span class="switch switch-icon">
+                                <label>
+                                    <input type="checkbox" id="active"
+                                           name="active" value="1" {{old('active',$user->active) == 1 ? "checked" : ""}}/>
+                                    <span></span>
+                                </label>
+                            </span>
                     </div>
                 </div>
 
