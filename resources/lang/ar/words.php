@@ -70,6 +70,9 @@ return [
     'settings' => 'الإعدادات',
     'show_settings' => 'عرض كل الإعدادت',
     'edit_setting' => 'تعديل الإعدادت',
+    'website_title' => 'إسم الموقع',
+    'address' => 'العنوان',
+    'copyrights' => 'حقوق النشر',
 
     'title' => 'العنوان',
 

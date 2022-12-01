@@ -32,6 +32,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
                 //master data routes
                 Route::resource('master-data','MasterDataController');
+
+                //setting routes
+                Route::resource('settings','SettingController');
             });
 
 

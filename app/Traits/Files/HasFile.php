@@ -77,6 +77,7 @@ trait HasFile
             $this->file()->create(['path' => $image, 'type' => 'icon']);
         }
 
+
         if (request()->hasFile('logo')) {
             if ($this->file && is_object($this->file)) {
                 Storage::delete($this->file->getRawOriginal('path'));

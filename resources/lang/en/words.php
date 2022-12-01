@@ -27,7 +27,7 @@ return [
     'add_new_record' => 'Add new',
     'upload_file' => 'Upload File',
     'drop_file' => 'Drop files here or click to upload.',
-    'file' =>'File',
+    'file' => 'File',
 
     'name' => 'Name',
     'description' => 'Description',
@@ -69,10 +69,14 @@ return [
     'settings' => 'Setting',
     'show_settings' => 'Show Settings',
     'edit_setting' => 'Edit Settings',
+    'website_title' => 'Website Title',
+    'address' => 'Address',
+    'copyrights' => 'Copyrights',
+    'logo' => 'Logo',
 
     'title' => 'Title',
-    'locale-en' =>'English',
-    'locale-ar' =>'العربية',
+    'locale-en' => 'English',
+    'locale-ar' => 'العربية',
 
     'ar' => [
         'title' => 'Title In Arabic',

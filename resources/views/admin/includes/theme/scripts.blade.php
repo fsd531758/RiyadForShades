@@ -26,7 +26,8 @@
 <script src="{{asset('dashboard/js/pages/crud/file-upload/dropzonejs.js')}}"></script>
 <script src="{{asset('Dashboard/plugins/ckeditor/ckeditor.js')}}"></script>
 <!-- Ekko Lightbox -->
-<script src="{{asset('Dashboard//plugins/ekko-lightbox/ekko-lightbox.min.js')}}"></script>
+<script src="{{asset('Dashboard/plugins/ekko-lightbox/ekko-lightbox.min.js')}}"></script>
+<script src="{{asset('Dashboard/js/pages/crud/file-upload/image-input.js')}}"></script>
 
 <script>
     $.fn.dataTable.ext.errMode = 'none';

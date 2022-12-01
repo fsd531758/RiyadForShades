@@ -219,6 +219,16 @@
                     </li>
                 @endif
                 {{-- master data routes end --}}
+
+                {{-- setting route start --}}
+                <li class="menu-item" aria-haspopup="true">
+                    <a href="{{route('settings.index')}}" class="menu-link">
+                        <i class="fas fa-users-cog svg-icon menu-icon"></i>
+
+                        <span class="menu-text">{{__('words.settings')}}</span>
+                    </a>
+                </li>
+                {{-- setting route end --}}
             </ul>
             <!--end::Menu Nav-->
         </div>
