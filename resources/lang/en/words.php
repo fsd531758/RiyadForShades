@@ -79,6 +79,7 @@ return [
     'locale-en' => 'English',
     'locale-ar' => 'العربية',
     'profile_image' => 'Profile Image',
+    'Account settings and more' => 'Account settings and more',
 
     'ar' => [
         'title' => 'Title In Arabic',

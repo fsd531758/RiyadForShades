@@ -76,7 +76,7 @@
                     </div>
                     <div class="navi-text">
                         <div class="font-weight-bold">{{__('words.my_profile')}}</div>
-                        <div class="text-muted">Account settings and more
+                        <div class="text-muted">{{__('words.Account settings and more')}}
                             <span class="label label-light-danger label-inline font-weight-bold">{{__('words.update')}}</span></div>
                     </div>
                 </div>

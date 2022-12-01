@@ -76,6 +76,7 @@ return [
     'logo' => 'الشعار',
     'phone' => 'الهاتف',
     'profile_image' => 'صورة الملف الشخصى',
+    'Account settings and more' => 'إعدادات الحساب والمزيد',
 
     'title' => 'العنوان',
 
