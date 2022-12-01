@@ -28,7 +28,7 @@ class AuthController extends Controller
 
             return redirect()->route('admin.home');
         }
-        return redirect()->back()->with('error', __('message.something_wrong'));
+        return redirect()->back()->with('error', __('message.invalid_login'));
     }
 
     public function logout(Request $request)

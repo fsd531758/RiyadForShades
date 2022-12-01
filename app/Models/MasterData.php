@@ -14,9 +14,19 @@ class MasterData extends Model implements TranslatableContract
 
     protected $table = 'master_data';
 
-    protected $guarded =[];
+    protected $guarded = [];
 
-    public $translatedAttributes = ['title', 'content'];
+    protected $appends = ['file'];
 
-    public $timestamps =true;
+    public $translatedAttributes = ['title', 'description'];
+
+    public $timestamps = true;
+
+    //Scopes start
+    public function getActive()
+    {
+        return $this->active == 1 ? __('words.active') : __('words.inactive');
+    }
+
+    //Scopes end
 }

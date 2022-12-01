@@ -25,9 +25,12 @@ return [
     'show_all' => 'Show All',
     'all' => 'Select All',
     'add_new_record' => 'Add new',
+    'upload_file' => 'Upload File',
+    'drop_file' => 'Drop files here or click to upload.',
+    'file' =>'File',
 
     'name' => 'Name',
-    'description' => 'description',
+    'description' => 'Description',
     'first_name' => 'First name',
     'last_name' => 'Last name',
     'created_by' => 'Created by',
@@ -52,6 +55,15 @@ return [
     'create_admin' => 'Create Admin User',
     'user_profile' => 'User Profile',
     'master_data' => 'Master Data',
+
+    'show_masters' => 'Show All Master Data',
+    'show_master' => 'Show Master Data',
+    'edit_master' => 'Edit Master Data',
+    'create_master' => 'Create Master Data',
+
+    'title' => 'Title',
+    'locale-en' =>'English',
+    'locale-ar' =>'العربية',
 
     'ar' => [
         'title' => 'Title In Arabic',

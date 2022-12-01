@@ -177,6 +177,48 @@
                     </li>
                 @endif
                 {{-- admin routes end --}}
+
+                {{-- master data routes start --}}
+                @if(auth('admin')->user()->hasPermission('read-master_data'))
+                    <li class="menu-item menu-item-submenu {{ request()->routeIs('master-data.*') ? 'menu-item-open menu-item-here' : '' }}"
+                        aria-haspopup="true" data-menu-toggle="hover">
+                        <a href="javascript:;" class="menu-link menu-toggle">
+                            <i class="fas fa-database svg-icon menu-icon"></i>
+                            <span class="menu-text">{{__('words.master_data')}}</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="menu-submenu">
+                            <i class="menu-arrow"></i>
+                            <ul class="menu-subnav">
+
+                                @if(auth('admin')->user()->hasPermission('read-master_data'))
+                                    <li class="menu-item  {{ request()->routeIs('master-data.index') ? 'menu-item-active' : '' }}"
+                                        aria-haspopup="true">
+                                        <a href="{{route('master-data.index')}}" class="menu-link">
+                                            <i class="menu-bullet menu-bullet-dot">
+                                                <span></span>
+                                            </i>
+                                            <span class="menu-text">{{__('words.show_all')}}</span>
+                                        </a>
+                                    </li>
+                                @endif
+
+                                @if(auth('admin')->user()->hasPermission('create-master_data'))
+                                    <li class="menu-item  {{ request()->routeIs('master-data.create') ? 'menu-item-active' : '' }}"
+                                        aria-haspopup="true">
+                                        <a href="{{route('master-data.create')}}" class="menu-link">
+                                            <i class="menu-bullet menu-bullet-dot">
+                                                <span></span>
+                                            </i>
+                                            <span class="menu-text">{{__('words.create')}}</span>
+                                        </a>
+                                    </li>
+                                @endif
+                            </ul>
+                        </div>
+                    </li>
+                @endif
+                {{-- master data routes end --}}
             </ul>
             <!--end::Menu Nav-->
         </div>

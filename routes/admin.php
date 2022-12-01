@@ -25,8 +25,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
                 //role routes
                 Route::resource('roles','RoleController');
 
-                //role routes
+                //admin users routes
                 Route::resource('admin-users','AdminUserController');
+
+                //master data routes
+                Route::resource('master-data','MasterDataController');
             });
 
 

@@ -15,6 +15,7 @@ class CreateMasterDataTable extends Migration
     {
         Schema::create('master_data', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->boolean('active')->nullable()->default(1);
             $table->timestamps();
         });
     }

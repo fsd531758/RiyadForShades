@@ -25,6 +25,8 @@
             <link href="{{asset('dashboard/css/themes/layout/brand/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
             <link href="{{asset('dashboard/css/themes/layout/aside/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
             <link href="{{asset('dashboard/css/custom.ar.css')}}" rel="stylesheet" type="text/css" />
+         <!-- Ekko Lightbox -->
+        <link rel="stylesheet" href="{{asset('Dashboard/plugins/ekko-lightbox/ekko-lightboxAr.css')}}">
             <!--end::Layout Themes-->
         @else
         <!--begin::Page Vendors Styles(used by this page)-->
@@ -41,6 +43,8 @@
             <link href="{{asset('dashboard/css/themes/layout/brand/dark.css')}}" rel="stylesheet" type="text/css" />
             <link href="{{asset('dashboard/css/themes/layout/aside/dark.css')}}" rel="stylesheet" type="text/css" />
             <link href="{{asset('dashboard/css/custom.css')}}" rel="stylesheet" type="text/css" />
+         <!-- Ekko Lightbox -->
+        <link rel="stylesheet" href="{{asset('Dashboard/plugins/ekko-lightbox/ekko-lightbox.css')}}">
             <!--end::Layout Themes-->
         @endif
 
