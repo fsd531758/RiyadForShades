@@ -66,6 +66,10 @@ return [
     'edit_master' => 'Edit Master Data',
     'create_master' => 'Create Master Data',
 
+    'settings' => 'Setting',
+    'show_settings' => 'Show Settings',
+    'edit_setting' => 'Edit Settings',
+
     'title' => 'Title',
     'locale-en' =>'English',
     'locale-ar' =>'العربية',

@@ -61,10 +61,15 @@ return [
     'something_went_wrong_here' => 'حدث خطأ هنا',
     'OOPS!' => 'عفوًا!',
 
+
     'show_masters' => 'عرض كل البيانات الأساسية',
     'show_master' => 'عرض البيانات الأساسية',
     'edit_master' => 'تعديل البيانات الأساسية',
     'create_master' => 'إنشاء البيانات الأساسية',
+
+    'settings' => 'الإعدادات',
+    'show_settings' => 'عرض كل الإعدادت',
+    'edit_setting' => 'تعديل الإعدادت',
 
     'title' => 'العنوان',
 

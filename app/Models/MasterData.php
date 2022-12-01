@@ -16,8 +16,6 @@ class MasterData extends Model implements TranslatableContract
 
     protected $guarded = [];
 
-    protected $appends = ['file'];
-
     public $translatedAttributes = ['title', 'description'];
 
     public $timestamps = true;

@@ -16,7 +16,7 @@ class MasterDataRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'file' => 'required_without:id|size:5000|mimes:xlsx,xls,doc,docx,ppt,pptx,txt,pdf'
+            'file' => 'required_without:id|max:5000|mimes:xlsx,xls,doc,docx,ppt,pptx,txt,pdf'
         ];
         foreach (config('translatable.locales') as $locale) {
             $rules += [$locale . '.title' => ['required', 'string',Rule::unique('master_data_translations','title')->ignore($this->id, 'master_data_id')]];
