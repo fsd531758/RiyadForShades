@@ -61,6 +61,8 @@ class AdminUserController extends Controller
         try {
             if (!$request->has('active'))
                 $request->request->add(['active' => 0]);
+            else
+                $request->request->add(['active' => 1]);
             $request_data = $request->except(['_token','password_confirmation','role_id']);
             $request_data['created_by'] = auth('admin')->user()->email;
             $admin =  $this->admin->create($request_data);
@@ -138,13 +140,20 @@ class AdminUserController extends Controller
         try {
             $show_user =  $this->admin->find($id);
 
-            $request_data = $request->except(['_token', 'password', 'password_confirmation']);
+            $request_data = $request->except(['_token','email', 'password', 'password_confirmation','image','profile_avatar_remove']);
             $request_data['updated_by'] = auth('admin')->user()->email;
             if ($request->has('password')) {
                 $request_data['password'] = $request->password;
             }
+            $get_file = $show_user->file()->first();
+            if (! empty($get_file))
+                $show_user->updateFile();
+            else
+                $show_user->uploadFile();
+
             $show_user->update($request_data);
-            return redirect()->route('admin.home')->with(['success' => __('message.updated_successfully')]);
+
+            return redirect()->back()->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }

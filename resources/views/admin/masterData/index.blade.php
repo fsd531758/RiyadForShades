@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title',__('words.master_data'))
+@section('title',settings()->website_title .' | '. __('words.master_data'))
 @section('breadcrumb')
     <div class="d-flex align-items-baseline flex-wrap mr-5">
         <!--begin::Breadcrumb-->
@@ -55,7 +55,9 @@
                     <th>#</th>
                     <th>{{__('words.title')}}</th>
                     <th>{{__('words.description')}}</th>
-                    <th>{{__('words.activity')}}</th>
+                    @if(auth('admin')->user()->hasPermission('active-master_data'))
+                        <th>{{__('words.activity')}}</th>
+                    @endif
                     <th>{{__('words.created_at')}}</th>
                     <th>{{__('words.updated_at')}}</th>
                     <th>{{__('words.actions')}}</th>
@@ -67,7 +69,9 @@
                         <td>{{$key+1}}</td>
                         <td>{{$master->title}}</td>
                         <td>{!! Str::limit($master->description,100) !!}</td>
-                        <td>{{$master->getActive()}}</td>
+                        @if(auth('admin')->user()->hasPermission('active-master_data'))
+                            <td>{{$master->getActive()}}</td>
+                        @endif
                         <td>{{createdAtFormat($master->created_at)}}</td>
                         <td>{{createdAtFormat($master->created_at) == updatedAtFormat($master->updated_at) ? '--' : updatedAtFormat($master->updated_at)}}</td>
                         <td nowrap="nowrap">

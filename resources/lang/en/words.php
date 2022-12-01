@@ -73,20 +73,31 @@ return [
     'address' => 'Address',
     'copyrights' => 'Copyrights',
     'logo' => 'Logo',
+    'phone' => 'Phone',
 
     'title' => 'Title',
     'locale-en' => 'English',
     'locale-ar' => 'العربية',
+    'profile_image' => 'Profile Image',
 
     'ar' => [
         'title' => 'Title In Arabic',
         'description' => 'Title In Arabic',
+        'address' => 'Address In Arabic',
+        'copyrights' => 'copyrights In Arabic',
+        'phone ' => 'Phone In Arabic',
+        'email ' => 'Email In Arabic',
     ],
 
     'en' => [
         'title' => 'Title In English',
         'description' => 'Title In English',
+        'address' => 'Address In English',
+        'copyrights' => 'Copyrights In English',
+        'phone ' => 'Phone In English',
+        'email ' => 'Email In English',
     ],
+    'developed' => 'Designed and programmed by Mohamed El Soufi',
 ];
 
 

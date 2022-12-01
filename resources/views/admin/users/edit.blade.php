@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title',__('words.edit_admin'))
+@section('title',settings()->website_title .' | '.__('words.edit_admin'))
 @section('breadcrumb')
     <div class="d-flex align-items-baseline flex-wrap mr-5">
         <!--begin::Breadcrumb-->

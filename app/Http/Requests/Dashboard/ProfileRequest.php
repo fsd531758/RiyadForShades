@@ -18,6 +18,7 @@ class ProfileRequest extends FormRequest
             'password_confirmation' => 'required_without:id|same:password',
             'first_name' => 'required_without:id',
             'last_name' => 'required_without:id',
+            'image' => 'nullable|image|max:5000',
         ];
     }
 }

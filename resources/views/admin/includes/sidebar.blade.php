@@ -38,7 +38,7 @@
             <!--begin::Menu Nav-->
             <ul class="menu-nav">
                 {{-- home route start --}}
-                <li class="menu-item" aria-haspopup="true">
+                <li class="menu-item {{ request()->routeIs('admin.home') ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{route('admin.home')}}" class="menu-link">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg-->
@@ -221,13 +221,15 @@
                 {{-- master data routes end --}}
 
                 {{-- setting route start --}}
-                <li class="menu-item" aria-haspopup="true">
+                @if(auth('admin')->user()->hasPermission('read-settings'))
+                <li class="menu-item {{ request()->routeIs('settings.*') ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{route('settings.index')}}" class="menu-link">
                         <i class="fas fa-users-cog svg-icon menu-icon"></i>
 
                         <span class="menu-text">{{__('words.settings')}}</span>
                     </a>
                 </li>
+                @endif
                 {{-- setting route end --}}
             </ul>
             <!--end::Menu Nav-->

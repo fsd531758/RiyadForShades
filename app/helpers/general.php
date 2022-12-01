@@ -21,3 +21,10 @@ function permissionName()
     }
     return implode(',', $data);
 }
+
+function settings(){
+    $setting = \App\Models\Setting::first();
+    if ($setting)
+        return $setting;
+    return '';
+}

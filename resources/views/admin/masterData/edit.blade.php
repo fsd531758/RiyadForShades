@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title',__('words.edit_master'))
+@section('title',settings()->website_title .' | '. __('words.edit_master'))
 @section('breadcrumb')
     <div class="d-flex align-items-baseline flex-wrap mr-5">
         <!--begin::Breadcrumb-->
@@ -103,6 +103,20 @@
                 </div>
                 <div class="card card-custom">
                     <div class="card-body">
+                        @if(auth('admin')->user()->hasPermission('active-master_data'))
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="active" class="checkbox-inline">{{__('words.active')}}</label>
+                                    <span class="switch switch-icon">
+                                <label>
+                                    <input type="checkbox" id="active"
+                                           name="active" value="1" {{old('active',$data->active) == 1 ? "checked" : ""}}/>
+                                    <span></span>
+                                </label>
+                            </span>
+                                </div>
+                            </div>
+                        @endif
                         <div class="form-group">
                             <div class="form-group row">
                                 <div class="col-6">

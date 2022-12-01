@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title',__('words.create_master'))
+@section('title',settings()->website_title .' | '. __('words.create_master'))
 @section('breadcrumb')
     <div class="d-flex align-items-baseline flex-wrap mr-5">
         <!--begin::Breadcrumb-->
@@ -101,27 +101,45 @@
                 <div class="card-body">
                     <div class="form-group">
                         <div class="form-group row">
+                            <div class="col-6 input">
+                                <label for="active" class="checkbox-inline">{{__('words.active')}}</label>
+
+                                <span class="switch switch-icon">
+                                <label>
+                                    <input type="checkbox" id="active"
+                                           name="active" value="1"/>
+                                    <span></span>
+                                </label>
+                            </span>
+                            </div>
+
                             <div class="col-6">
                                 <label for="formFileSm" class="form-label">{{__('words.upload_file')}}</label>
-                                <input class="form-control form-control-sm" name="file" accept=
-                                "application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf"
-                                       id="formFileSm" type="file">
+                                <input type="file" name="file"
+                                       class="form-control form-control-sm @error('file') is-invalid @enderror" accept=
+                                       "application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf"
+                                       id="formFileSm">
+                                @error('file')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-4">
+                                <button type="submit" class="btn btn-block btn-outline-success">
+                                    {{__('words.create')}}
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="card-footer">
-                    <div class="row">
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-block btn-outline-success">
-                                {{__('words.create')}}
-                            </button>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
 
     </form>
 

@@ -40,6 +40,10 @@ class MasterDataController extends Controller
     public function store(MasterDataRequest $request)
     {
         try {
+            if (!$request->has('active'))
+                $request->request->add(['active' => 0]);
+            else
+                $request->request->add(['active' => 1]);
             $requested_data = $request->except(['_token','file']);
             $data = $this->data->create($requested_data);
             $data->uploadFile();
@@ -75,6 +79,10 @@ class MasterDataController extends Controller
     public function update(MasterDataRequest $request, $id)
     {
         try {
+            if (!$request->has('active'))
+                $request->request->add(['active' => 0]);
+            else
+                $request->request->add(['active' => 1]);
             $data = $this->data->find($id);
             $requested_data = $request->except(['_token','file']);
             $data->updateFile();

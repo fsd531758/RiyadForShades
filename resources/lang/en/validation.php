@@ -179,11 +179,19 @@ return [
         'ar' => [
             'title' => 'Title In Arabic',
             'description' => 'Title In Arabic',
+            'address' => 'Address In Arabic',
+            'copyrights' => 'copyrights In Arabic',
+            'phone ' => 'Phone In Arabic',
+            'email ' => 'Email In Arabic',
         ],
 
         'en' => [
             'title' => 'Title In English',
             'description' => 'Title In English',
+            'address' => 'Address In English',
+            'copyrights' => 'Copyrights In English',
+            'phone ' => 'Phone In English',
+            'email ' => 'Email In English',
         ],
         'images' => 'images',
     ],

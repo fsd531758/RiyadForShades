@@ -17,9 +17,9 @@ class CreateSettingTranslationsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('setting_id');
             $table->string('locale')->index();
-            $table->string('website_title');
-            $table->text('address');
-            $table->text('copyrights');
+            $table->string('website_title')->nullable();
+            $table->text('address')->nullable();
+            $table->text('copyrights')->nullable();
 
             $table->unique(['setting_id', 'locale']);
             $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');

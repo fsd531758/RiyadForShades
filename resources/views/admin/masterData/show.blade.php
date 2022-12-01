@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title',__('words.show_master'))
+@section('title',settings()->website_title .' | '.__('words.show_master'))
 @section('breadcrumb')
     <div class="d-flex align-items-baseline flex-wrap mr-5">
         <!--begin::Breadcrumb-->
@@ -73,6 +73,16 @@
         <div class="card card-custom">
             <div class="card-body">
                 <div class="row">
+                    @if(auth('admin')->user()->hasPermission('active-master_data'))
+                    <div class="col-md-6">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{__('words.activity')}}:</h5>
+                            </div>
+                            <p class="m-0">{{ $data->getActive() }}</p>
+                        </div>
+                    </div>
+                    @endif
                     <div class="col-md-6">
                         <div class="form-group">
                             @if(!$data->file)
@@ -92,6 +102,19 @@
                     </div>
                 </div>
             </div>
+
+            @if(auth('admin')->user()->hasPermission('update-master_data'))
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-4">
+                            <a href="{{route('master-data.edit',$data->id)}}"
+                               class="btn btn-block btn-outline-info">
+                                {{__('words.edit')}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
 @endsection

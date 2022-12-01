@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title',__('words.settings'))
+@section('title',settings()->website_title .' | '. __('words.settings'))
 @section('breadcrumb')
     <div class="d-flex align-items-baseline flex-wrap mr-5">
         <!--begin::Breadcrumb-->
@@ -114,13 +114,42 @@
             </div>
             <div class="card card-custom">
                 <div class="card-body">
-                    <div class="form-group">
-                        <div class="form-group row">
-                            <div class="col-6">
-                                <label for="formFileSm" class="form-label">{{__('words.logo')}}</label>
-                                <input class="form-control form-control-sm" name="logo" accept=
-                                "image/*" id="formFileSm" type="file">
+
+                    <div class="form-group row">
+
+                        <div class="input-group col-6">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                             </div>
+                            <input type="text" name="email" class="form-control @error('email') is-invalid @enderror"
+                                   value="{{ old('email') }}" placeholder="{{__('words.email')}}">
+
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+
+                        <div class="input-group col-6">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                            </div>
+                            <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror"
+                                   value="{{ old('phone') }}" placeholder="{{__('words.phone')}}">
+                            @error('phone')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <label for="formFileSm" class="form-label">{{__('words.logo')}}</label>
+                            <input class="form-control form-control-sm" name="logo" accept=
+                            "image/*" id="formFileSm" type="file">
                         </div>
                     </div>
                 </div>

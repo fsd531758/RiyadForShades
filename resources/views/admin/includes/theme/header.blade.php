@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8" />
-    <title>@yield('title',__('words.company_name'))</title>
+    <title>@yield('title',settings()->website_title)</title>
     <meta name="description" content="Header dark theme example" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="canonical" href="https://keenthemes.com/metronic" />
@@ -50,7 +50,7 @@
             <!--end::Layout Themes-->
         @endif
 
-    <link rel="shortcut icon" href="{{asset('dashboard/media/logos/favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{settings()->logo}}" />
 
     @yield('styles')
 

@@ -41,5 +41,10 @@ class Admin extends Authenticatable
     {
         return $this->active == 1 ? __('words.active') : __('words.inactive');
     }
+
+    public function getImageAttribute(){
+        $image = $this->file()->first();
+        return $image ? $image->path : asset('uploads/no-user.jpg');
+    }
     //Scopes end
 }

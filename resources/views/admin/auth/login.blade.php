@@ -4,7 +4,7 @@
 <!--begin::Head-->
 <head>
     <meta charset="utf-8"/>
-    <title>Login Page 5 | Keenthemes</title>
+    <title>{{settings()->website_title}}</title>
     <meta name="description" content="Login page example"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link rel="canonical" href="https://keenthemes.com/metronic"/>
@@ -30,7 +30,6 @@
         <link href="{{asset('dashboard/css/themes/layout/aside/dark.rtl.css')}}" rel="stylesheet" type="text/css"/>
         <link href="{{asset('dashboard/css/custom.ar.css')}}" rel="stylesheet" type="text/css"/>
         <!--end::Layout Themes-->
-        <link rel="shortcut icon" href="{{asset('dashboard/media/logos/favicon.ico')}}"/>
 @else
     <!--begin::Fonts-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>
@@ -49,8 +48,10 @@
         <link href="{{asset('dashboard/css/themes/layout/brand/dark.css')}}" rel="stylesheet" type="text/css"/>
         <link href="{{asset('dashboard/css/themes/layout/aside/dark.css')}}" rel="stylesheet" type="text/css"/>
         <!--end::Layout Themes-->
-        <link rel="shortcut icon" href="{{asset('dashboard/media/logos/favicon.ico')}}"/>
     @endif
+
+    <link rel="shortcut icon" href="{{settings()->logo}}" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <link rel="stylesheet" type="text/css"
@@ -72,7 +73,7 @@
                 <!--begin::Login Header-->
                 <div class="d-flex flex-center mb-15">
                     <a href="#">
-                        <img src="{{asset('dashboard/media/logos/logo-letter-13.png')}}" class="max-h-75px" alt=""/>
+                        <img src="{{settings()->logo}}" class="max-h-75px" alt=""/>
                     </a>
                 </div>
                 <!--end::Login Header-->
