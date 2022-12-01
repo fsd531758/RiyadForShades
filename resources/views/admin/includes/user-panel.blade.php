@@ -50,9 +50,10 @@
         <div class="separator separator-dashed mt-8 mb-5"></div>
         <!--end::Separator-->
         <!--begin::Nav-->
+        @if(auth('admin')->user()->hasPermission('updateProfile-admins'))
         <div class="navi navi-spacer-x-0 p-0">
             <!--begin::Item-->
-            <a href="custom/apps/user/profile-1/personal-information.html" class="navi-item">
+            <a href="{{route('admin.profile')}}" class="navi-item">
                 <div class="navi-link">
                     <div class="symbol symbol-40 bg-light mr-3">
                         <div class="symbol-label">
@@ -74,14 +75,15 @@
                         </div>
                     </div>
                     <div class="navi-text">
-                        <div class="font-weight-bold">My Profile</div>
+                        <div class="font-weight-bold">{{__('words.my_profile')}}</div>
                         <div class="text-muted">Account settings and more
-                            <span class="label label-light-danger label-inline font-weight-bold">update</span></div>
+                            <span class="label label-light-danger label-inline font-weight-bold">{{__('words.update')}}</span></div>
                     </div>
                 </div>
             </a>
             <!--end:Item-->
         </div>
+        @endif
         <!--end::Nav-->
 
     </div>

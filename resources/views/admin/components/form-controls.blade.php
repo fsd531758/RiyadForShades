@@ -26,7 +26,7 @@
           action="{{ route($name . '.destroy', $value->id) }}" method="post">
         @csrf
         @method('delete')
-        @if(auth('admin')->user()->hasPermission('destroy-' . $role))
+        @if(auth('admin')->user()->hasPermission('delete-' . $role))
             <button type="button" class="btn btn-sm btn-clean btn-icon m-1" title="{{__('words.delete')}}"
                     data-toggle="modal" data-target="#deleteModalSizeSm-{{ $value->id }}">
             <span class="svg-icon svg-icon-md svg-icon-primary">

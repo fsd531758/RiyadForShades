@@ -27,6 +27,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
                 //admin users routes
                 Route::resource('admin-users','AdminUserController');
+                Route::get('my-profile','AdminUserController@profile')->name('admin.profile');
+                Route::put('my-profile/{id}/update','AdminUserController@updateProfile')->name('admin.profile.update');
 
                 //master data routes
                 Route::resource('master-data','MasterDataController');

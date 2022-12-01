@@ -9,6 +9,7 @@
     <!--end::Fonts-->
 
     <link href="{{asset('dashboard/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('dashboard/css/pages/error/error-2.css')}}" rel="stylesheet" type="text/css" />
 
     @if(app()->getLocale() == 'ar')
         <!--begin::Page Vendors Styles(used by this page)-->
@@ -36,6 +37,7 @@
             <link href="{{asset('dashboard/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
             <link href="{{asset('dashboard/plugins/custom/prismjs/prismjs.bundle.css')}}" rel="stylesheet" type="text/css" />
             <link href="{{asset('dashboard/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{asset('dashboard/css/pages/error/error-6.css')}}" rel="stylesheet" type="text/css" />
             <!--end::Global Theme Styles-->
             <!--begin::Layout Themes(used by all pages)-->
             <link href="{{asset('dashboard/css/themes/layout/header/base/dark.css')}}" rel="stylesheet" type="text/css" />

@@ -55,6 +55,11 @@ return [
     'upload_file' => 'إرفع ملف',
     'drop_file' => 'قم بإسقاط الملفات هنا أو انقر للتحميل.',
     'file' => 'ملف',
+    'updateProfile' => 'تحديث الملف الشخصي',
+    'my_profile' => 'حسابي',
+    'my_profile_desc' => 'إعدادات الحساب والمزيد',
+    'something_went_wrong_here' => 'حدث خطأ هنا',
+    'OOPS!' => 'عفوًا!',
 
     'show_masters' => 'عرض كل البيانات الأساسية',
     'show_master' => 'عرض البيانات الأساسية',

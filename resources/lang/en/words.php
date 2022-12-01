@@ -55,6 +55,11 @@ return [
     'create_admin' => 'Create Admin User',
     'user_profile' => 'User Profile',
     'master_data' => 'Master Data',
+    'updateProfile' => 'Update Profile',
+    'my_profile' => 'My Profile',
+    'my_profile_desc' => 'Account settings and more',
+    'something_went_wrong_here' => 'Something went wrong here',
+    'OOPS!' => 'OOPS!',
 
     'show_masters' => 'Show All Master Data',
     'show_master' => 'Show Master Data',
