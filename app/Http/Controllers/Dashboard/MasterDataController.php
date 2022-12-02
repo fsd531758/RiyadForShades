@@ -13,7 +13,7 @@ class MasterDataController extends Controller
 
     public function __construct(MasterData $data)
     {
-        $this->middleware(['permission:read-master_data'])->only('index');
+        $this->middleware(['permission:read-master_data'])->only('index','show');
         $this->middleware(['permission:create-master_data'])->only('create');
         $this->middleware(['permission:update-master_data'])->only('edit');
         $this->middleware(['permission:delete-master_data'])->only('destroy');

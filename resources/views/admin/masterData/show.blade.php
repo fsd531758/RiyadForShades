@@ -82,7 +82,7 @@
                             <p class="m-0">{{ $data->getActive() }}</p>
                         </div>
                     </div>
-                    @endif
+
                     <div class="col-md-6">
                         <div class="form-group">
                             @if(!$data->file)
@@ -100,6 +100,7 @@
                             @endif
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
 

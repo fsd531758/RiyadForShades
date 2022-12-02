@@ -25,9 +25,11 @@
 
             <div class="card-toolbar">
                 <!--begin::Dropdown-->
+
                 <div class="dropdown dropdown-inline mr-2">
                     <!--begin::Button-->
-                    <a href="{{route('master-data.create')}}" class="btn btn-primary font-weight-bolder">
+                    @if(auth('admin')->user()->hasPermission('create-master_data'))
+                        <a href="{{route('master-data.create')}}" class="btn btn-primary font-weight-bolder">
 											<span class="svg-icon svg-icon-md">
 												<!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
 												<svg xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +45,8 @@
 												</svg>
                                                 <!--end::Svg Icon-->
 											</span>{{__('words.add_new_record')}}</a>
-                    <!--end::Button-->
+                        <!--end::Button-->
+                    @endif
                 </div>
             </div>
         </div>
@@ -66,6 +69,7 @@
                 <tbody>
                 @foreach($masters as $key => $master)
                     <tr>
+
                         <td>{{$key+1}}</td>
                         <td>{{$master->title}}</td>
                         <td>{!! Str::limit($master->description,100) !!}</td>
@@ -75,7 +79,7 @@
                         <td>{{createdAtFormat($master->created_at)}}</td>
                         <td>{{createdAtFormat($master->created_at) == updatedAtFormat($master->updated_at) ? '--' : updatedAtFormat($master->updated_at)}}</td>
                         <td nowrap="nowrap">
-                            @include('admin.components.form-controls', ['name'=>'master-data', 'value'=>$master,'role'=>'admins'])
+                            @include('admin.components.form-controls', ['name'=>'master-data', 'value'=>$master,'role'=>'master_data'])
                         </td>
                     </tr>
                 @endforeach

@@ -21,21 +21,19 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
             Route::get('logout', 'Auth\AuthController@logout')->name('admin.logout');
 
 
-            Route::middleware(['permission:'.permissionName()])->group(function (){
-                //role routes
-                Route::resource('roles','RoleController');
+            //role routes
+            Route::resource('roles', 'RoleController');
 
-                //admin users routes
-                Route::resource('admin-users','AdminUserController');
-                Route::get('my-profile','AdminUserController@profile')->name('admin.profile');
-                Route::put('my-profile/{id}/update','AdminUserController@updateProfile')->name('admin.profile.update');
+            //admin users routes
+            Route::resource('admin-users', 'AdminUserController');
+            Route::get('my-profile', 'AdminUserController@profile')->name('admin.profile');
+            Route::put('my-profile/{id}/update', 'AdminUserController@updateProfile')->name('admin.profile.update');
 
-                //master data routes
-                Route::resource('master-data','MasterDataController');
+            //master data routes
+            Route::resource('master-data', 'MasterDataController');
 
-                //setting routes
-                Route::resource('settings','SettingController');
-            });
+            //setting routes
+            Route::resource('settings', 'SettingController');
 
 
         });
