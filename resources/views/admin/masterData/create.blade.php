@@ -99,32 +99,50 @@
             </div>
             <div class="card card-custom">
                 <div class="card-body">
-                    <div class="form-group">
-                        <div class="form-group row">
-                            <div class="col-6 input">
-                                <label for="active" class="checkbox-inline">{{__('words.active')}}</label>
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <label class="col-form-label">{{__('words.release_date')}}</label>
+                            <div class="input-group input-group-solid date" id="kt_datetimepicker_3" data-target-input="nearest">
+                                <input type="text" name="date" class="form-control form-control-solid datetimepicker-input @error('date') is-invalid @enderror" placeholder="{{__('words.select_date')}}" data-target="#kt_datetimepicker_3"
+                                value="{{old('date')}}"/>
+                                <div class="input-group-append" data-target="#kt_datetimepicker_3" data-toggle="datetimepicker">
+                                        <span class="input-group-text">
+                                            <i class="ki ki-calendar"></i>
+                                        </span>
+                                </div>
+                                @error('date')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
 
-                                <span class="switch switch-icon">
+                        <div class="col-6">
+                            <label for="formFileSm" class="col-form-label">{{__('words.upload_file')}}</label>
+                            <input type="file" name="file"
+                                   class="form-control form-control-sm @error('file') is-invalid @enderror" accept=
+                                   "application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf"
+                                   id="formFileSm">
+                            @error('file')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-6 input">
+                            <label for="active" class="checkbox-inline">{{__('words.active')}}</label>
+
+                            <span class="switch switch-icon">
                                 <label>
                                     <input type="checkbox" id="active"
                                            name="active" value="1"/>
                                     <span></span>
                                 </label>
                             </span>
-                            </div>
-
-                            <div class="col-6">
-                                <label for="formFileSm" class="form-label">{{__('words.upload_file')}}</label>
-                                <input type="file" name="file"
-                                       class="form-control form-control-sm @error('file') is-invalid @enderror" accept=
-                                       "application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf"
-                                       id="formFileSm">
-                                @error('file')
-                                <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                                @enderror
-                            </div>
                         </div>
                     </div>
 
@@ -140,7 +158,7 @@
                     </div>
                 </div>
             </div>
-
+        </div>
     </form>
 
 @endsection

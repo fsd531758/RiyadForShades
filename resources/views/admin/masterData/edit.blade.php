@@ -103,20 +103,40 @@
                 </div>
                 <div class="card card-custom">
                     <div class="card-body">
-                        @if(auth('admin')->user()->hasPermission('active-master_data'))
-                            <div class="row">
+
+                        <div class="row">
+                            @if(auth('admin')->user()->hasPermission('active-master_data'))
                                 <div class="col-6">
                                     <label for="active" class="checkbox-inline">{{__('words.active')}}</label>
                                     <span class="switch switch-icon">
-                                <label>
-                                    <input type="checkbox" id="active"
-                                           name="active" value="1" {{old('active',$data->active) == 1 ? "checked" : ""}}/>
-                                    <span></span>
-                                </label>
-                            </span>
+                                        <label>
+                                            <input type="checkbox" id="active"
+                                                   name="active" value="1" {{old('active',$data->active) == 1 ? "checked" : ""}}/>
+                                            <span></span>
+                                        </label>
+                                    </span>
                                 </div>
-                            </div>
-                        @endif
+
+                                <div class="col-6">
+                                    <label class="col-form-label">{{__('words.release_date')}}</label>
+                                    <div class="input-group input-group-solid date" id="kt_datetimepicker_3" data-target-input="nearest">
+                                        <input type="text" name="date" class="form-control form-control-solid datetimepicker-input @error('date') is-invalid @enderror" placeholder="{{__('words.select_date')}}" data-target="#kt_datetimepicker_3"
+                                               value="{{old('date',$data->date)}}"/>
+                                        <div class="input-group-append" data-target="#kt_datetimepicker_3" data-toggle="datetimepicker">
+                                        <span class="input-group-text">
+                                            <i class="ki ki-calendar"></i>
+                                        </span>
+                                        </div>
+                                        @error('file')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+
                         <div class="form-group">
                             <div class="form-group row">
                                 <div class="col-6">

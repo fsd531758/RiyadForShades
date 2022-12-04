@@ -28,6 +28,7 @@
 <!-- Ekko Lightbox -->
 <script src="{{asset('Dashboard/plugins/ekko-lightbox/ekko-lightbox.min.js')}}"></script>
 <script src="{{asset('Dashboard/js/pages/crud/file-upload/image-input.js')}}"></script>
+<script src="{{asset('Dashboard/js/pages/crud/forms/widgets/bootstrap-datetimepicker.js')}}"></script>
 
 <script>
     $.fn.dataTable.ext.errMode = 'none';

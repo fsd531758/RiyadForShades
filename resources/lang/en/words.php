@@ -80,6 +80,8 @@ return [
     'locale-ar' => 'العربية',
     'profile_image' => 'Profile Image',
     'Account settings and more' => 'Account settings and more',
+    'release_date' =>'Release Date',
+    'select_date' =>'Select date',
 
     'ar' => [
         'title' => 'Title In Arabic',

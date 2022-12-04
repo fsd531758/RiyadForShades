@@ -46,7 +46,7 @@
                             <div class="col-md-12">
                                 <div class="mb-7 bg-light p-5 rounded h-100">
                                     <div class="card-title">
-                                        <h5 class="font-weight-bolder text-dark">{{__('words.title')}}:</h5>
+                                        <h5 class="font-weight-bolder text-dark">{{__('words.title')}} - {{__('words.locale-' . $locale)}}:</h5>
                                     </div>
                                     <p class="m-0">{{ $data->translate($locale)->title }}</p>
                                 </div>
@@ -58,7 +58,7 @@
                             <div class="col-md-12">
                                 <div class="mb-7 bg-light p-5 rounded h-100">
                                     <div class="card-title">
-                                        <h5 class="font-weight-bolder text-dark">{{__('words.description')}}:</h5>
+                                        <h5 class="font-weight-bolder text-dark">{{__('words.description')}} - {{__('words.locale-' . $locale)}}:</h5>
                                     </div>
                                    {!! $data->translate($locale)->description !!}
                                 </div>
@@ -74,7 +74,7 @@
             <div class="card-body">
                 <div class="row">
                     @if(auth('admin')->user()->hasPermission('active-master_data'))
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="mb-7 bg-light p-5 rounded h-100">
                             <div class="card-title">
                                 <h5 class="font-weight-bolder text-dark">{{__('words.activity')}}:</h5>
@@ -83,7 +83,16 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                        <div class="col-md-4">
+                            <div class="mb-7 bg-light p-5 rounded h-100">
+                                <div class="card-title">
+                                    <h5 class="font-weight-bolder text-dark">{{__('words.release_date')}}:</h5>
+                                </div>
+                                <p class="m-0">{{ $data->date }}</p>
+                            </div>
+                        </div>
+
+                    <div class="col-md-4">
                         <div class="form-group">
                             @if(!$data->file)
                                 <a href="{{asset('uploads/pdf.png')}}"

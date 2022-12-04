@@ -13,7 +13,7 @@ class MasterDataController extends Controller
 
     public function __construct(MasterData $data)
     {
-        $this->middleware(['permission:read-master_data'])->only('index','show');
+        $this->middleware(['permission:read-master_data'])->only('index', 'show');
         $this->middleware(['permission:create-master_data'])->only('create');
         $this->middleware(['permission:update-master_data'])->only('edit');
         $this->middleware(['permission:delete-master_data'])->only('destroy');
@@ -24,12 +24,11 @@ class MasterDataController extends Controller
     {
         try {
             $masters = $this->data->latest('id')->get();
-            return view('admin.masterData.index',compact('masters'));
+            return view('admin.masterData.index', compact('masters'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
-
 
     public function create()
     {
@@ -44,10 +43,12 @@ class MasterDataController extends Controller
                 $request->request->add(['active' => 0]);
             else
                 $request->request->add(['active' => 1]);
-            $requested_data = $request->except(['_token','file']);
+
+            $requested_data = $request->except(['_token', 'file']);
+
             $data = $this->data->create($requested_data);
             $data->uploadFile();
-            return redirect()->route('master-data.index')->with(['success'=>__('message.created_successfully')]);
+            return redirect()->route('master-data.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
@@ -58,7 +59,7 @@ class MasterDataController extends Controller
     {
         try {
             $data = $this->data->find($id);
-            return view('admin.masterData.show',compact('data'));
+            return view('admin.masterData.show', compact('data'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
@@ -69,7 +70,7 @@ class MasterDataController extends Controller
     {
         try {
             $data = $this->data->find($id);
-            return view('admin.masterData.edit',compact('data'));
+            return view('admin.masterData.edit', compact('data'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
@@ -84,11 +85,11 @@ class MasterDataController extends Controller
             else
                 $request->request->add(['active' => 1]);
             $data = $this->data->find($id);
-            $requested_data = $request->except(['_token','file']);
+            $requested_data = $request->except(['_token', 'file']);
             $data->updateFile();
             $data->update($requested_data);
 
-            return redirect()->route('master-data.index')->with(['success'=>__('message.updated_successfully')]);
+            return redirect()->route('master-data.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }

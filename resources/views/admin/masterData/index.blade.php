@@ -61,8 +61,7 @@
                     @if(auth('admin')->user()->hasPermission('active-master_data'))
                         <th>{{__('words.activity')}}</th>
                     @endif
-                    <th>{{__('words.created_at')}}</th>
-                    <th>{{__('words.updated_at')}}</th>
+                    <th>{{__('words.release_date')}}</th>
                     <th>{{__('words.actions')}}</th>
                 </tr>
                 </thead>
@@ -76,8 +75,7 @@
                         @if(auth('admin')->user()->hasPermission('active-master_data'))
                             <td>{{$master->getActive()}}</td>
                         @endif
-                        <td>{{createdAtFormat($master->created_at)}}</td>
-                        <td>{{createdAtFormat($master->created_at) == updatedAtFormat($master->updated_at) ? '--' : updatedAtFormat($master->updated_at)}}</td>
+                        <td>{{$master->date}}</td>
                         <td nowrap="nowrap">
                             @include('admin.components.form-controls', ['name'=>'master-data', 'value'=>$master,'role'=>'master_data'])
                         </td>

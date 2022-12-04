@@ -3,7 +3,7 @@
 @section('breadcrumb')
     <div class="d-flex align-items-baseline flex-wrap mr-5">
         <!--begin::Breadcrumb-->
-        <h5 class="text-dark font-weight-bold my-1 mr-5">{{__('words.roles')}}</h5>
+        <h5 class="text-dark font-weight-bold my-1 mr-5">{{__('words.profile')}}</h5>
         <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
             <li class="breadcrumb-item">
                 <a href="{{route('admin.home')}}" class="text-muted">{{__('words.home')}}</a>

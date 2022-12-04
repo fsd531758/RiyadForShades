@@ -77,6 +77,8 @@ return [
     'phone' => 'الهاتف',
     'profile_image' => 'صورة الملف الشخصى',
     'Account settings and more' => 'إعدادات الحساب والمزيد',
+    'release_date' =>'تاريخ الإصدار',
+    'select_date' =>'حدد التاريخ',
 
     'title' => 'العنوان',
 
