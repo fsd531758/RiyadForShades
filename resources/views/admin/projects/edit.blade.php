@@ -100,7 +100,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card card-primary">
-                                    <div class="card-header">
+                                    <div class="card-header bg-secondary py-1 m-0">
                                         <h4 class="card-title">{{__('words.images')}}</h4>
                                     </div>
                                     <div class="card-body">
@@ -155,7 +155,7 @@
         <div class="row">
             <div class="col-4">
                 <button type="submit" class="btn btn-block btn-outline-success">
-                    {{__('words.create')}}
+                    {{__('words.update')}}
                 </button>
             </div>
         </div>
