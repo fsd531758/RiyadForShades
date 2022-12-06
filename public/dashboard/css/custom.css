@@ -7,3 +7,9 @@
     width: 100px;
     height: 80px;
 }
+
+.flex-column-fluid {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: content;
+}

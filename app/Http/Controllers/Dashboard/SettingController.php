@@ -27,7 +27,7 @@ class SettingController extends Controller
                 return redirect()->back();
             return view('admin.setting.index',compact('setting'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __('message.updated_successfully')]);
         }
     }
 
@@ -41,7 +41,7 @@ class SettingController extends Controller
     public function store(SettingRequest $request)
     {
         try {
-            $requested_setting = $request->except(['_token','logo']);
+            $requested_setting = $request->except(['_token','logo','phones','emails']);
             $setting = $this->setting->create($requested_setting);
             $setting->uploadFile();
             return redirect()->route('settings.index')->with(['success'=>__('message.created_successfully')]);
@@ -53,15 +53,16 @@ class SettingController extends Controller
 
     public function update(SettingRequest $request, $id)
     {
+
         try {
             $setting = $this->setting->find($id);
-            $requested_setting = $request->except(['_token','logo','profile_avatar_remove']);
+            $requested_setting = $request->except(['_token','logo','profile_avatar_remove','footer_img','contact_img']);
             $setting->update($requested_setting);
-            $setting->updateFile();
+            $setting->updateFiles();
 
             return redirect()->route('settings.index')->with(['success'=>__('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 }

@@ -64,7 +64,7 @@
                 {{-- home route end --}}
 
                 {{-- role routes start --}}
-                @if(auth('admin')->user()->hasPermission('read-roles'))
+                @permission('read-roles')
                     <li class="menu-item menu-item-submenu {{ request()->routeIs('roles.*') ? 'menu-item-open menu-item-here' : '' }}"
                         aria-haspopup="true" data-menu-toggle="hover">
                         <a href="javascript:;" class="menu-link menu-toggle">
@@ -92,7 +92,7 @@
                             <i class="menu-arrow"></i>
                             <ul class="menu-subnav">
 
-                                @if(auth('admin')->user()->hasPermission('read-roles'))
+                                @permission('read-roles')
                                     <li class="menu-item  {{ request()->routeIs('roles.index') ? 'menu-item-active' : '' }}"
                                         aria-haspopup="true">
                                         <a href="{{route('roles.index')}}" class="menu-link">
@@ -102,9 +102,9 @@
                                             <span class="menu-text">{{__('words.show_all')}}</span>
                                         </a>
                                     </li>
-                                @endif
+                                @endpermission
 
-                                @if(auth('admin')->user()->hasPermission('create-roles'))
+                                @permission('create-roles')
                                     <li class="menu-item  {{ request()->routeIs('roles.create') ? 'menu-item-active' : '' }}"
                                         aria-haspopup="true">
                                         <a href="{{route('roles.create')}}" class="menu-link">
@@ -114,15 +114,15 @@
                                             <span class="menu-text">{{__('words.create')}}</span>
                                         </a>
                                     </li>
-                                @endif
+                                @endpermission
                             </ul>
                         </div>
                     </li>
-                @endif
+                @endpermission
                 {{-- role routes end --}}
 
                 {{-- admin routes start --}}
-                @if(auth('admin')->user()->hasPermission('read-admins'))
+                @permission('read-admins')
                     <li class="menu-item menu-item-submenu {{ request()->routeIs('admin-users.*') ? 'menu-item-open menu-item-here' : '' }}"
                         aria-haspopup="true" data-menu-toggle="hover">
                         <a href="javascript:;" class="menu-link menu-toggle">
@@ -149,7 +149,7 @@
                             <i class="menu-arrow"></i>
                             <ul class="menu-subnav">
 
-                                @if(auth('admin')->user()->hasPermission('read-admins'))
+                                @permission('read-admins')
                                     <li class="menu-item  {{ request()->routeIs('admin-users.index') ? 'menu-item-active' : '' }}"
                                         aria-haspopup="true">
                                         <a href="{{route('admin-users.index')}}" class="menu-link">
@@ -159,9 +159,9 @@
                                             <span class="menu-text">{{__('words.show_all')}}</span>
                                         </a>
                                     </li>
-                                @endif
+                                @endpermission
 
-                                @if(auth('admin')->user()->hasPermission('create-admins'))
+                                @permission('create-admins')
                                     <li class="menu-item  {{ request()->routeIs('admin-users.create') ? 'menu-item-active' : '' }}"
                                         aria-haspopup="true">
                                         <a href="{{route('admin-users.create')}}" class="menu-link">
@@ -171,57 +171,57 @@
                                             <span class="menu-text">{{__('words.create')}}</span>
                                         </a>
                                     </li>
-                                @endif
+                                @endpermission
                             </ul>
                         </div>
                     </li>
-                @endif
+                @endpermission
                 {{-- admin routes end --}}
 
-                {{-- master data routes start --}}
-                @if(auth('admin')->user()->hasPermission('read-master_data'))
-                    <li class="menu-item menu-item-submenu {{ request()->routeIs('master-data.*') ? 'menu-item-open menu-item-here' : '' }}"
-                        aria-haspopup="true" data-menu-toggle="hover">
-                        <a href="javascript:;" class="menu-link menu-toggle">
-                            <i class="fas fa-database svg-icon menu-icon"></i>
-                            <span class="menu-text">{{__('words.master_data')}}</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="menu-submenu">
-                            <i class="menu-arrow"></i>
-                            <ul class="menu-subnav">
+                {{-- project routes start --}}
+                @permission('read-projects')
+                <li class="menu-item menu-item-submenu {{ request()->routeIs('projects.*') ? 'menu-item-open menu-item-here' : '' }}"
+                    aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="javascript:;" class="menu-link menu-toggle">
+                        <i class="fas fa-project-diagram svg-icon menu-icon"></i>
+                        <span class="menu-text">{{__('words.projects')}}</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="menu-submenu">
+                        <i class="menu-arrow"></i>
+                        <ul class="menu-subnav">
 
-                                @if(auth('admin')->user()->hasPermission('read-master_data'))
-                                    <li class="menu-item  {{ request()->routeIs('master-data.index') ? 'menu-item-active' : '' }}"
-                                        aria-haspopup="true">
-                                        <a href="{{route('master-data.index')}}" class="menu-link">
-                                            <i class="menu-bullet menu-bullet-dot">
-                                                <span></span>
-                                            </i>
-                                            <span class="menu-text">{{__('words.show_all')}}</span>
-                                        </a>
-                                    </li>
-                                @endif
+                            @permission('read-projects')
+                            <li class="menu-item  {{ request()->routeIs('projects.index') ? 'menu-item-active' : '' }}"
+                                aria-haspopup="true">
+                                <a href="{{route('projects.index')}}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">{{__('words.show_all')}}</span>
+                                </a>
+                            </li>
+                            @endpermission
 
-                                @if(auth('admin')->user()->hasPermission('create-master_data'))
-                                    <li class="menu-item  {{ request()->routeIs('master-data.create') ? 'menu-item-active' : '' }}"
-                                        aria-haspopup="true">
-                                        <a href="{{route('master-data.create')}}" class="menu-link">
-                                            <i class="menu-bullet menu-bullet-dot">
-                                                <span></span>
-                                            </i>
-                                            <span class="menu-text">{{__('words.create')}}</span>
-                                        </a>
-                                    </li>
-                                @endif
-                            </ul>
-                        </div>
-                    </li>
-                @endif
-                {{-- master data routes end --}}
+                            @permission('create-projects')
+                            <li class="menu-item  {{ request()->routeIs('projects.create') ? 'menu-item-active' : '' }}"
+                                aria-haspopup="true">
+                                <a href="{{route('projects.create')}}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">{{__('words.create')}}</span>
+                                </a>
+                            </li>
+                            @endpermission
+                        </ul>
+                    </div>
+                </li>
+                @endpermission
+                {{-- project routes end --}}
 
                 {{-- setting route start --}}
-                @if(auth('admin')->user()->hasPermission('read-settings'))
+                @permission('read-settings')
                 <li class="menu-item {{ request()->routeIs('settings.*') ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{route('settings.index')}}" class="menu-link">
                         <i class="fas fa-users-cog svg-icon menu-icon"></i>
@@ -229,7 +229,7 @@
                         <span class="menu-text">{{__('words.settings')}}</span>
                     </a>
                 </li>
-                @endif
+                @endpermission
                 {{-- setting route end --}}
             </ul>
             <!--end::Menu Nav-->

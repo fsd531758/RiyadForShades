@@ -42,6 +42,9 @@ return [
     'active' => 'Active',
     'inactive' => 'Inactive',
     'choose' => 'Choose...',
+    'status' => 'Status',
+    'cover' => 'Cover Image',
+    'images' => 'Images',
 
     'roles' => 'Roles',
     'show_roles' => 'Show Roles',
@@ -80,8 +83,25 @@ return [
     'locale-ar' => 'العربية',
     'profile_image' => 'Profile Image',
     'Account settings and more' => 'Account settings and more',
-    'release_date' =>'Release Date',
-    'select_date' =>'Select date',
+    'release_date' => 'Release Date',
+    'select_date' => 'Select date',
+
+    'meta_title' => 'Meta Title',
+    'meta_description' => 'Meta Description',
+    'footer_description' => 'Footer Description',
+    'facebook' => 'Facebook',
+    'instagram' => 'Instagram',
+    'twitter' => 'Twitter',
+    'linkedin' => 'LinkedIn',
+    'youtube' => 'Youtube',
+    'contact_img' => 'Contact Image',
+    'footer_img' => 'Footer Image',
+
+    'projects' =>'Projects',
+    'show_projects' => 'Show Projects',
+    'show_project' => 'Show Project',
+    'edit_project' => 'Edit Project',
+    'create_project' => 'Create Project',
 
     'ar' => [
         'title' => 'Title In Arabic',
@@ -100,7 +120,7 @@ return [
         'phone ' => 'Phone In English',
         'email ' => 'Email In English',
     ],
-    'developed' => 'Designed and programmed by Mohamed El Soufi',
+    'developed' => 'Designed and programmed by Marwan Tech',
 ];
 
 

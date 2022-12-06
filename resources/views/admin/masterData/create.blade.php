@@ -135,7 +135,6 @@
                     <div class="form-group row">
                         <div class="col-6 input">
                             <label for="active" class="checkbox-inline">{{__('words.active')}}</label>
-
                             <span class="switch switch-icon">
                                 <label>
                                     <input type="checkbox" id="active"

@@ -68,6 +68,33 @@ trait HasFiles
                 $img->delete();
             }
         }
+
+        if (request()->hasFile('logo')) {
+            if ($this->file && is_object($this->file)) {
+                Storage::delete($this->file->getRawOriginal('path'));
+            }
+            $this->files()->where('type','logo')->delete();
+            $image = request()->logo->store('logos');
+            $this->files()->create(['path' => $image, 'type' => 'logo']);
+        }
+
+        if (request()->hasFile('footer_img')) {
+            if ($this->file && is_object($this->file)) {
+                Storage::delete($this->file->getRawOriginal('path'));
+            }
+            $this->files()->where('type','footer_img')->delete();
+            $image = request()->footer_img->store('images');
+            $this->files()->create(['path' => $image, 'type' => 'footer_img']);
+        }
+
+        if (request()->hasFile('contact_img')) {
+            if ($this->file && is_object($this->file)) {
+                Storage::delete($this->file->getRawOriginal('path'));
+            }
+            $this->files()->where('type','contact_img')->delete();
+            $image = request()->contact_img->store('images');
+            $this->files()->create(['path' => $image, 'type' => 'contact_img']);
+        }
     }
 
     public function deleteFiles()

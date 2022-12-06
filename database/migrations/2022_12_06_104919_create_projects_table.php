@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddDateToMasterData extends Migration
+class CreateProjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddDateToMasterData extends Migration
      */
     public function up()
     {
-        Schema::table('master_data', function (Blueprint $table) {
-            $table->date('date')->after('id')->nullable();
+        Schema::create('projects', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->boolean('status')->default(1);
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class AddDateToMasterData extends Migration
      */
     public function down()
     {
-        Schema::table('master_data', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('projects');
     }
 }

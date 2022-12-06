@@ -16,9 +16,9 @@ class AdminUserController extends Controller
 
     public function __construct(Admin $admin, Role $role)
     {
-        $this->middleware(['permission:read-admins'])->only('index');
-        $this->middleware(['permission:create-admins'])->only('create');
-        $this->middleware(['permission:update-admins'])->only('edit');
+        $this->middleware(['permission:read-admins'])->only('index','show');
+        $this->middleware(['permission:create-admins'])->only('create','store');
+        $this->middleware(['permission:update-admins'])->only('edit','update');
         $this->middleware(['permission:delete-admins'])->only('destroy');
         $this->middleware(['permission:updateProfile-admins'])->only('updateProfile');
         $this->admin = $admin;

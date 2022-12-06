@@ -19,7 +19,7 @@ function permissionName()
     foreach ($permissions as $permission) {
         $data [] = $permission->name;
     }
-    return implode(',', $data);
+    return implode('|', $data);
 }
 
 function settings(){

@@ -9,7 +9,7 @@ class SettingSeeder extends Seeder
 {
     public function run()
     {
-       $setting =  Setting::create([
+        $setting = Setting::create([
             'ar' => [
                 'website_title' => 'لوحة التحكم',
             ],
@@ -17,9 +17,19 @@ class SettingSeeder extends Seeder
                 'website_title' => 'Dashboard',
             ],
         ]);
-       $setting->file()->create([
-           'path' => 'favicon.ico',
-           'type' => 'logo'
-       ]);
+        $setting->files()->create([
+            'path' => 'favicon.ico',
+            'type' => 'logo'
+        ]);
+
+        $setting->files()->create([
+            'path' => 'favicon.ico',
+            'type' => 'contact_img'
+        ]);
+
+        $setting->files()->create([
+            'path' => 'favicon.ico',
+            'type' => 'footer_img'
+        ]);
     }
 }

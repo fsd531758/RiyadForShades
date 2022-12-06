@@ -1,4 +1,4 @@
-<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+<div class="content flex-column flex-column-fluid" id="kt_content">
     <!--begin::Entry-->
     @include('admin.includes.alerts.success')
     @include('admin.includes.alerts.errors')

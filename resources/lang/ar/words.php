@@ -39,6 +39,9 @@ return [
     'active' => 'مفعل',
     'inactive' => 'غير مفعل',
     'choose' => 'إختر ...',
+    'status' => 'الحالة',
+    'cover' => 'صورة الغلاف',
+    'images' => 'الصور',
 
     'roles' => 'الأدوار',
     'show_roles' => 'عرض الأدوار',
@@ -81,6 +84,22 @@ return [
     'select_date' =>'حدد التاريخ',
 
     'title' => 'العنوان',
+    'meta_title' => 'عنوان الميتا',
+    'meta_description' =>'الوصف(ميتا)',
+    'footer_description' =>'الوصف(الأسفل)',
+    'facebook' => 'فيسبوك',
+    'instagram' => 'إنستغرام',
+    'twitter' => 'تويتر',
+    'linkedin' => 'لينكدإن',
+    'youtube' => 'يوتيوب',
+    'contact_img' => 'صورة التواصل',
+    'footer_img' => 'صورة الأسفل',
+
+    'projects' =>'المشاريع',
+    'show_projects' => 'عرض المشاريع',
+    'show_project' => 'عرض المشروع',
+    'edit_project' => 'تعديل المشروع',
+    'create_project' => 'إنشاء مشروع',
 
     'ar' => [
         'title' => 'العنوان باللغة العربية',
@@ -99,5 +118,5 @@ return [
         'phone ' => 'الهاتف باللغة الإنجليزية',
         'email ' => 'البريد الإلكتروني باللغة الإنجليزية',
     ],
-    'developed' => 'تصميم وبرمجة محمد الصوفي',
+    'developed' => 'تصميم وبرمجة مروان تك',
 ];

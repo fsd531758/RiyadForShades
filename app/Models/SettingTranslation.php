@@ -11,7 +11,7 @@ class SettingTranslation extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['website_title', 'address','copyrights'];
+    protected $guarded = [];
 
     // accessors & Mutator start
     public function getWebSiteTitleAttribute($val)

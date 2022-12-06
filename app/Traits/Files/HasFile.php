@@ -23,6 +23,11 @@ trait HasFile
             $this->file()->create(['path' => $image, 'type' => 'image']);
         }
 
+        if (request()->hasFile('cover')) {
+            $image = request()->cover->store('images');
+            $this->file()->create(['path' => $image, 'type' => 'cover']);
+        }
+
         if (request()->hasFile('flag')) {
             $image = request()->flag->store('flags');
             $this->file()->create(['path' => $image, 'type' => 'flag']);
@@ -41,6 +46,16 @@ trait HasFile
         if (request()->hasFile('file')) {
             $image = request()->file->store('files');
             $this->file()->create(['path' => $image, 'type' => 'file']);
+        }
+
+        if (request()->hasFile('footer_img')) {
+            $image = request()->footer_img->store('images');
+            $this->file()->create(['path' => $image, 'type' => 'footer_img']);
+        }
+
+        if (request()->hasFile('contact_img')) {
+            $image = request()->contact_img->store('images');
+            $this->file()->create(['path' => $image, 'type' => 'contact_img']);
         }
     }
 
@@ -59,6 +74,15 @@ trait HasFile
             $this->file()->create(['path' => $image, 'type' => 'image']);
         }
 
+        if (request()->hasFile('cover')) {
+            if ($this->file && is_object($this->file)) {
+                Storage::delete($this->file->getRawOriginal('path'));
+            }
+            $this->file()->delete();
+            $image = request()->cover->store('images');
+            $this->file()->create(['path' => $image, 'type' => 'cover']);
+        }
+
         if (request()->hasFile('flag')) {
             if ($this->file && is_object($this->file)) {
                 Storage::delete($this->file->getRawOriginal('path'));
@@ -77,7 +101,6 @@ trait HasFile
             $this->file()->create(['path' => $image, 'type' => 'icon']);
         }
 
-
         if (request()->hasFile('logo')) {
             if ($this->file && is_object($this->file)) {
                 Storage::delete($this->file->getRawOriginal('path'));
@@ -94,6 +117,24 @@ trait HasFile
             $this->file()->delete();
             $image = request()->file->store('files');
             $this->file()->create(['path' => $image, 'type' => 'file']);
+        }
+
+        if (request()->hasFile('footer_img')) {
+            if ($this->file && is_object($this->file)) {
+                Storage::delete($this->file->getRawOriginal('path'));
+            }
+            $this->file()->delete();
+            $image = request()->footer_img->store('images');
+            $this->file()->create(['path' => $image, 'type' => 'footer_img']);
+        }
+
+        if (request()->hasFile('contact_img')) {
+            if ($this->file && is_object($this->file)) {
+                Storage::delete($this->file->getRawOriginal('path'));
+            }
+            $this->file()->delete();
+            $image = request()->contact_img->store('images');
+            $this->file()->create(['path' => $image, 'type' => 'contact_img']);
         }
     }
 
