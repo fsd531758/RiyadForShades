@@ -94,8 +94,8 @@
                 @include('admin.components.images',['label'=>__('words.images'),'name'=>'images[]'])
             </div>
 
-            <div class="row">
-                @if($images)
+            @if($images)
+                <div class="row">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12">
@@ -111,7 +111,7 @@
                                                         <div>
 
                                                             <img src="{{$file->path}}"
-                                                                 class="img-fluid mb-2 image-galley"
+                                                                 class="img-fluid mb-2 w-100 image-galley"
                                                                  alt="product image"/>
 
                                                         </div>
@@ -125,8 +125,8 @@
 
                                                             @error('checkImage')
                                                             <span class="invalid-feedback" role="alert">
-                                                                                        <strong>{{ $message }}</strong>
-                                                                                    </span>
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
                                                             @enderror
                                                         </div>
                                                     </div>
@@ -139,8 +139,8 @@
                             </div>
                         </div>
                     </div>
-                @endif
-            </div>
+                </div>
+            @endif
 
             <div class="form-group row">
                 @include('admin.components.switch',['label'=>__('words.status'),'name'=>'status','val' => old('status',$project->status)])

@@ -32,7 +32,7 @@ class Project extends Model
     // accessors & Mutator start
     public function getCoverAttribute()
     {
-        $cover = $this->file->where('type', 'cover')->first();
+        $cover = $this->files->where('type', 'cover')->first();
         return $cover->path;
     }
 

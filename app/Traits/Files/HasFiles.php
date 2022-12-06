@@ -57,7 +57,7 @@ trait HasFiles
         // delete files or images
         if (request()->has('deleted_files')) {
 
-            foreach (request()->deleted_images as $image) {
+            foreach (request()->deleted_files as $image) {
                 $image_path = public_path('uploads/');
 
                 $img = File::findOrFail($image);

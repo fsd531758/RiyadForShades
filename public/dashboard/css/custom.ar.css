@@ -17,3 +17,7 @@ body {
     -ms-flex: 1 0 auto;
     flex: content;
 }
+
+.image-galley{
+    height: 200px;
+}

@@ -78,7 +78,7 @@ trait HasFile
             if ($this->file && is_object($this->file)) {
                 Storage::delete($this->file->getRawOriginal('path'));
             }
-            $this->file()->delete();
+            $this->file()->where('type','cover')->delete();
             $image = request()->cover->store('images');
             $this->file()->create(['path' => $image, 'type' => 'cover']);
         }

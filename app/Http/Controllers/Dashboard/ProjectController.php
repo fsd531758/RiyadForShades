@@ -25,7 +25,7 @@ class ProjectController extends Controller
     public function index()
     {
         try {
-            $projects = $this->project->latest('id')->active()->get();
+            $projects = $this->project->latest('id')->get();
             return view('admin.projects.index', compact('projects'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __('message.something_wrong')]);
@@ -52,7 +52,7 @@ class ProjectController extends Controller
 
             return redirect()->route('projects.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -67,7 +67,7 @@ class ProjectController extends Controller
             $images = $project->files()->where('type', '!=', 'cover')->get();
             return view('admin.projects.edit', compact('project', 'images'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -79,14 +79,15 @@ class ProjectController extends Controller
             else
                 $request->request->add(['status' => 1]);
 
-            $requested_data = $request->except('_token', 'profile_avatar_remove', 'cover', 'images', 'deleted_files');
-            $data = $project->update($requested_data);
-//            $data->updateFile();
-//            $data->updateFiles();
+            $requested_data = $request->except(['_token', 'profile_avatar_remove', 'cover', 'images', 'deleted_files']);
+            $project->update($requested_data);
+
+            $project->updateFile();
+            $project->updateFiles();
 
             return redirect()->route('projects.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 

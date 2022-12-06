@@ -19,7 +19,7 @@ return [
     'update' => 'Update',
     'show' => 'Show',
     'create' => 'Create',
-    'delete' => 'delete',
+    'delete' => 'Delete',
     'cancel' => 'Cancel',
     'delete_confirm' => 'Delete Confirmation',
     'show_all' => 'Show All',
