@@ -87,7 +87,7 @@ class ProjectController extends Controller
 
             return redirect()->route('projects.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -96,9 +96,9 @@ class ProjectController extends Controller
         try {
             $project->deleteFiles();
             $project->delete();
-            return redirect()->route('organization.products.index')->with(['success' => __('message.deleted_successfully')]);
+            return redirect()->route('projects.index')->with(['success' => __('message.deleted_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 }
