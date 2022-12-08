@@ -1,4 +1,4 @@
-@if($name && $label && $val)
+@if($name && $label || $val)
     <div class="col-6 input">
         <label for="active" class="checkbox-inline">{{$label}}</label>
 

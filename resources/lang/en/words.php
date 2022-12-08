@@ -45,6 +45,7 @@ return [
     'status' => 'Status',
     'cover' => 'Cover Image',
     'images' => 'Images',
+    'image' => 'Image',
 
     'roles' => 'Roles',
     'show_roles' => 'Show Roles',
@@ -79,6 +80,8 @@ return [
     'phone' => 'Phone',
 
     'title' => 'Title',
+    'sub_title' => 'Sub Title',
+    'job_title' => 'Job Title',
     'locale-en' => 'English',
     'locale-ar' => 'العربية',
     'profile_image' => 'Profile Image',
@@ -97,14 +100,28 @@ return [
     'contact_img' => 'Contact Image',
     'footer_img' => 'Footer Image',
 
-    'projects' =>'Projects',
+    'projects' => 'Projects',
     'show_projects' => 'Show Projects',
     'show_project' => 'Show Project',
     'edit_project' => 'Edit Project',
     'create_project' => 'Create Project',
 
+    'teams' => 'Teams',
+    'show_teams' => 'Show Team',
+    'show_team' => 'Show Team member',
+    'edit_team' => 'Edit Team member',
+    'create_team' => 'Create Team member',
+
+    'testimonials' => 'Testimonials',
+    'show_testimonials' => 'Show Testimonial',
+    'show_testimonial' => 'Show Testimonial member',
+    'edit_testimonial' => 'Edit Testimonial member',
+    'create_testimonial' => 'Create Testimonial member',
+
     'ar' => [
         'title' => 'Title In Arabic',
+        'sub_title' => 'Sub Title In Arabic',
+        'job_title' => 'Job Title In Arabic',
         'description' => 'Title In Arabic',
         'address' => 'Address In Arabic',
         'copyrights' => 'copyrights In Arabic',
@@ -114,6 +131,8 @@ return [
 
     'en' => [
         'title' => 'Title In English',
+        'sub_title' => 'Sub Title In English',
+        'job_title' => 'Job Title In English',
         'description' => 'Title In English',
         'address' => 'Address In English',
         'copyrights' => 'Copyrights In English',

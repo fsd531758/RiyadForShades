@@ -8,10 +8,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
     Route::prefix('dashboard')->group(function () {
 
-//        Route::get('/', function (){
-//            return view('admin.auth.login');
-//        });
-
         //admin login
         Route::get('login', 'Auth\AuthController@login')->name('dashboard.login')->middleware('guest:admin');
         Route::post('authenticate', 'Auth\AuthController@authenticate')->name('authenticate');
@@ -30,7 +26,13 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
             Route::put('my-profile/{id}/update', 'AdminUserController@updateProfile')->name('admin.profile.update');
 
             //projects routes
-            Route::resource('projects', 'ProjectController');
+//            Route::resource('projects', 'ProjectController');
+
+            //teams routes
+            Route::resource('teams', 'TeamController');
+
+            //testimonials routes
+            Route::resource('testimonials', 'TestimonialController');
 
             //setting routes
             Route::resource('settings', 'SettingController');

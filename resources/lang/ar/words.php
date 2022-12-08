@@ -42,6 +42,7 @@ return [
     'status' => 'الحالة',
     'cover' => 'صورة الغلاف',
     'images' => 'الصور',
+    'image' => 'الصورة',
 
     'roles' => 'الأدوار',
     'show_roles' => 'عرض الأدوار',
@@ -80,13 +81,15 @@ return [
     'phone' => 'الهاتف',
     'profile_image' => 'صورة الملف الشخصى',
     'Account settings and more' => 'إعدادات الحساب والمزيد',
-    'release_date' =>'تاريخ الإصدار',
-    'select_date' =>'حدد التاريخ',
+    'release_date' => 'تاريخ الإصدار',
+    'select_date' => 'حدد التاريخ',
 
     'title' => 'العنوان',
+    'sub_title' => 'العنوان الفرعي',
+    'job_title' => 'المسمى الوظيفي',
     'meta_title' => 'عنوان الميتا',
-    'meta_description' =>'الوصف(ميتا)',
-    'footer_description' =>'الوصف(الأسفل)',
+    'meta_description' => 'الوصف(ميتا)',
+    'footer_description' => 'الوصف(الأسفل)',
     'facebook' => 'فيسبوك',
     'instagram' => 'إنستغرام',
     'twitter' => 'تويتر',
@@ -95,14 +98,28 @@ return [
     'contact_img' => 'صورة التواصل',
     'footer_img' => 'صورة الأسفل',
 
-    'projects' =>'المشاريع',
+    'projects' => 'المشاريع',
     'show_projects' => 'عرض المشاريع',
     'show_project' => 'عرض المشروع',
     'edit_project' => 'تعديل المشروع',
     'create_project' => 'إنشاء مشروع',
 
+    'teams' => 'فريق العمل',
+    'show_teams' => 'عرض فريق العمل',
+    'show_team' => 'عرض العضو',
+    'edit_team' => 'تعديل العضو',
+    'create_team' => 'إنشاء العضو',
+
+    'testimonials' => 'أراء العملاء',
+    'show_testimonials' => 'عرض أراء العملاء',
+    'show_testimonial' => 'عرض الرأي',
+    'edit_testimonial' => 'تعديل الرأي',
+    'create_testimonial' => 'إنشاء رأى',
+
     'ar' => [
         'title' => 'العنوان باللغة العربية',
+        'sub_title' => 'العنوان الفرعي باللغة العربية',
+        'job_title' => 'االمسمى الوظيفي باللغة العربية',
         'description' => 'الوصف باللغة العربية',
         'address' => 'العنوان باللغة العربية',
         'copyrights' => 'حقوق النشر باللغة العربية',
@@ -112,6 +129,8 @@ return [
 
     'en' => [
         'title' => 'العنوان باللغة الإنجليزية',
+        'sub_title' => 'العنوان الفرعي باللغة الإنجليزية',
+        'job_title' => 'المسمى الوظيفي باللغة الإنجليزية',
         'description' => 'الوصف باللغة الإنجليزية',
         'address' => 'العنوان باللغة الإنجليزية',
         'copyrights' => 'حقوق النشر باللغة الإنجليزية',

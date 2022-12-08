@@ -14,7 +14,7 @@
     @endif
 
 <form action="@yield('form_action')" method="@yield('form_type')" autocomplete="off"
-      enctype="multipart/form-data">
+      enctype="multipart/form-data" id="form">
     <div class="card-body">
         @csrf
         @yield('form_content')

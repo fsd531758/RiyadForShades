@@ -161,7 +161,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fab fa-facebook-square"></i></span>
                         </div>
-                        <input type="text" name="facebook" class="form-control @error('facebook') is-invalid @enderror"
+                        <input type="text" name="facebook" class="form-control link @error('facebook') is-invalid @enderror"
                                value="{{ old('facebook',$setting->facebook) }}" placeholder="{{__('words.facebook')}}">
 
                         @error('facebook')
@@ -179,7 +179,7 @@
                             <span class="input-group-text"><i class="fab fa-instagram"></i></span>
                         </div>
                         <input type="text" name="instagram"
-                               class="form-control @error('instagram') is-invalid @enderror"
+                               class="form-control link @error('instagram') is-invalid @enderror"
                                value="{{ old('instagram',$setting->instagram) }}"
                                placeholder="{{__('words.instagram')}}">
 
@@ -199,7 +199,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fab fa-twitter-square"></i></span>
                         </div>
-                        <input type="text" name="twitter" class="form-control @error('twitter') is-invalid @enderror"
+                        <input type="text" name="twitter" class="form-control link @error('twitter') is-invalid @enderror"
                                value="{{ old('twitter',$setting->twitter) }}" placeholder="{{__('words.twitter')}}">
 
                         @error('twitter')
@@ -216,7 +216,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fab fa-linkedin"></i></span>
                         </div>
-                        <input type="text" name="linkedin" class="form-control @error('linkedin') is-invalid @enderror"
+                        <input type="text" name="linkedin" class="form-control link @error('linkedin') is-invalid @enderror"
                                value="{{ old('linkedin',$setting->linkedin) }}" placeholder="{{__('words.linkedin')}}">
 
                         @error('linkedin')
@@ -234,7 +234,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fab fa-youtube"></i></span>
                         </div>
-                        <input type="text" name="youtube" class="form-control @error('youtube') is-invalid @enderror"
+                        <input type="text" name="youtube" class="form-control link @error('youtube') is-invalid @enderror"
                                value="{{ old('youtube',$setting->youtube) }}" placeholder="{{__('words.youtube')}}">
 
                         @error('youtube')
@@ -377,4 +377,21 @@
     </div>
     @endpermission
 
+@endsection
+
+@section('scripts')
+    <script>
+        $("#form").submit(function(e) {
+            e.preventDefault();
+            let links = document.querySelectorAll('.link');
+            links.forEach(function(link) {
+                let position = link.value.includes('https');
+                if (position > -1) {
+                    let enhancedLink = link.value.replace("https://", "http://");
+                    link.value = enhancedLink;
+                }
+            });
+            this.submit();
+        });
+    </script>
 @endsection
