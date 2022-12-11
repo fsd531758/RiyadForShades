@@ -61,6 +61,7 @@ return [
     'upload_file' => 'إرفع ملف',
     'drop_file' => 'قم بإسقاط الملفات هنا أو انقر للتحميل.',
     'file' => 'ملف',
+    'files' => 'الملفات',
     'updateProfile' => 'تحديث الملف الشخصي',
     'my_profile' => 'حسابي',
     'my_profile_desc' => 'إعدادات الحساب والمزيد',
@@ -119,10 +120,17 @@ return [
     'create_testimonial' => 'إنشاء رأى',
 
     'categories' => 'القوائم',
+    'category' => 'القسم',
     'show_categories' => 'عرض القوائم',
     'show_category' => 'عرض القائمة',
     'edit_category' => 'تعديل القائمة',
     'create_category' => 'إنشاء القائمة',
+
+    'products' => 'المنتجات',
+    'show_products' => 'عرض المنتجات',
+    'show_product' => 'عرض المنتج',
+    'edit_product' => 'تعديل المنتج',
+    'create_product' => 'إنشاء المنتج',
 
     'ar' => [
         'title' => 'العنوان باللغة العربية',

@@ -21,7 +21,6 @@ class ProjectController extends Controller
         $this->project = $project;
     }
 
-
     public function index()
     {
         try {

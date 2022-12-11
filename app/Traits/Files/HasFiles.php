@@ -26,13 +26,12 @@ trait HasFiles
 
         // upload files
         if (request()->has('files')) {
-            foreach (request()->files as $file) {
-                $path = $file->store('images');
-
+            foreach (request()->file('files') as $file) {
+                $path = $file->store('files');
                 $this->files()->create(['path' => $path, 'type' => 'file']);
-
             }
         }
+
 
     }
 
@@ -48,7 +47,7 @@ trait HasFiles
 
         // update files
         if (request()->has('files')) {
-            foreach (request()->files as $file) {
+            foreach (request()->file('files') as $file) {
                 $path = $file->store('files');
                 $this->files()->create(['path' => $path, 'type' => 'file']);
             }

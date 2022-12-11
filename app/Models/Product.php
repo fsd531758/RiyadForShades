@@ -3,28 +3,28 @@
 namespace App\Models;
 
 use App\Traits\Files\HasFile;
+use App\Traits\Files\HasFiles;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Product extends Model
 {
-    use HasFactory, Translatable, HasFile;
+    use HasFactory, Translatable, HasFile, HasFiles;
 
-
-    protected $table = 'categories';
+    protected $table = 'products';
 
     protected $guarded = [];
 
     protected $appends = ['image'];
 
-    public $translatedAttributes = ['title'];
+    public $translatedAttributes = ['title', 'description'];
 
     public $timestamps = true;
 
     // relations start
-    public function products(){
-        return $this->hasMany(Product::class);
+    public function category(){
+        return $this->belongsTo(Category::class);
     }
     // relations end
 
@@ -38,7 +38,7 @@ class Category extends Model
     // accessors & Mutator start
     public function getImageAttribute()
     {
-        $image = $this->file()->first();
+        $image = $this->files->where('type', 'image')->first();
         return $image->path;
     }
 

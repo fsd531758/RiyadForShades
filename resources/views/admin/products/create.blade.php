@@ -1,18 +1,18 @@
 @extends('admin.layouts.master')
-@section('title',settings()->website_title .' | '. __('words.create_project'))
+@section('title',settings()->website_title .' | '. __('words.create_product'))
 @section('breadcrumb')
     <div class="d-flex align-items-baseline flex-wrap mr-5">
         <!--begin::Breadcrumb-->
-        <h5 class="text-dark font-weight-bold my-1 mr-5">{{__('words.projects')}}</h5>
+        <h5 class="text-dark font-weight-bold my-1 mr-5">{{__('words.products')}}</h5>
         <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
             <li class="breadcrumb-item">
                 <a href="{{route('admin.home')}}" class="text-muted">{{__('words.home')}}</a>
             </li>
             <li class="breadcrumb-item">
-                <a href="{{route('projects.index')}}" class="text-muted">{{__('words.show_projects')}}</a>
+                <a href="{{route('products.index')}}" class="text-muted">{{__('words.show_products')}}</a>
             </li>
             <li class="breadcrumb-item">
-                <apan class="text-muted">{{__('words.create_project')}}</apan>
+                <apan class="text-muted">{{__('words.create_product')}}</apan>
             </li>
         </ul>
         <!--end::Breadcrumb-->
@@ -20,7 +20,7 @@
 @endsection
 
 @extends('admin.components.create-form')
-@section('form_action',route('projects.store'))
+@section('form_action',route('products.store'))
 @section('form_type', 'POST')
 
 @section('form_content')
@@ -28,7 +28,7 @@
     <div class="card card-custom mb-2">
         <div class="card-header card-header-tabs-line">
             <div class="card-title">
-                <h3 class="card-label">{{__('words.create_project')}}</h3>
+                <h3 class="card-label">{{__('words.create_product')}}</h3>
             </div>
             <div class="card-toolbar">
                 <ul class="nav nav-tabs nav-bold nav-tabs-line">
@@ -88,12 +88,27 @@
     <div class="card card-custom">
         <div class="card-body">
             <div class="form-group row">
-                @include('admin.components.image',['label'=>__('words.cover'),'value'=>old('cover'),'name'=>'cover','id'=>'kt_image_3'])
+                @include('admin.components.image',['label'=>__('words.image'),'value'=>old('image'),'name'=>'image','id'=>'kt_image_3'])
 
-                @include('admin.components.images',['label'=>__('words.images'),'name'=>'images[]','accept' => 'image/*'])
+                @include('admin.components.images',['label'=>__('words.files'),'name'=>'files[]','accept' => 'application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf'])
             </div>
 
             <div class="form-group row">
+                <div class="form-group col-6">
+                    <label for="exampleSelectd">{{__('words.category')}}</label>
+                    <select class="form-control" id="exampleSelectd" name="category_id">
+                        <option value="">{{__('words.choose')}}</option>
+                        @foreach($categories as $category)
+                            <option value="{{$category->id}}" {{old('category_id') == $category->id ? 'selected' : ''}}>{{$category->title}}</option>
+                        @endforeach
+                    </select>
+                    @error('category_id')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+
                 @include('admin.components.switch',['label'=>__('words.status'),'name'=>'status','val' => old('status')])
             </div>
 

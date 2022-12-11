@@ -16,7 +16,7 @@ class SettingRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'logo' => 'required_without:id|max:5000|image',
+            'logo' => 'required_without:id|max:900|image',
             'phone' => 'nullable|string',
             'email' => 'nullable|email|unique:admins,email,'.$this->id,
 

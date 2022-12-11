@@ -220,6 +220,48 @@
                 @endpermission
                 {{-- category routes end --}}
 
+                {{-- product routes start --}}
+                @permission('read-products')
+                <li class="menu-item menu-item-submenu {{ request()->routeIs('products.*') ? 'menu-item-open menu-item-here' : '' }}"
+                    aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="javascript:;" class="menu-link menu-toggle">
+                        <i class="fab fa-product-hunt svg-icon menu-icon"></i>
+                        <span class="menu-text">{{__('words.products')}}</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="menu-submenu">
+                        <i class="menu-arrow"></i>
+                        <ul class="menu-subnav">
+
+                            @permission('read-products')
+                            <li class="menu-item  {{ request()->routeIs('products.index') ? 'menu-item-active' : '' }}"
+                                aria-haspopup="true">
+                                <a href="{{route('products.index')}}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">{{__('words.show_all')}}</span>
+                                </a>
+                            </li>
+                            @endpermission
+
+                            @permission('create-products')
+                            <li class="menu-item  {{ request()->routeIs('products.create') ? 'menu-item-active' : '' }}"
+                                aria-haspopup="true">
+                                <a href="{{route('products.create')}}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">{{__('words.create')}}</span>
+                                </a>
+                            </li>
+                            @endpermission
+                        </ul>
+                    </div>
+                </li>
+                @endpermission
+                {{-- product routes end --}}
+
                 {{-- team routes start --}}
                 @permission('read-teams')
                 <li class="menu-item menu-item-submenu {{ request()->routeIs('teams.*') ? 'menu-item-open menu-item-here' : '' }}"

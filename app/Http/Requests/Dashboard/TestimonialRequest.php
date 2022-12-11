@@ -15,7 +15,7 @@ class TestimonialRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'image' => 'required_without:id|max:5000|image',
+            'image' => 'required_without:id|max:900|image',
 
         ];
         foreach (config('translatable.locales') as $locale) {

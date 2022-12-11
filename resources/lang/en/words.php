@@ -28,6 +28,7 @@ return [
     'upload_file' => 'Upload File',
     'drop_file' => 'Drop files here or click to upload.',
     'file' => 'File',
+    'files' => 'Files',
 
     'name' => 'Name',
     'description' => 'Description',
@@ -122,10 +123,17 @@ return [
 
 
     'categories' => 'Categories',
+    'category' => 'Category',
     'show_categories' => 'Show Categories',
     'show_category' => 'Show Category',
     'edit_category' => 'Edit Category',
     'create_category' => 'Create Category',
+
+    'products' => 'Products',
+    'show_products' => 'Show Products',
+    'show_product' => 'Show Product',
+    'edit_product' => 'Edit Product',
+    'create_product' => 'Create Product',
 
     'ar' => [
         'title' => 'Title In Arabic',
