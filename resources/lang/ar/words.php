@@ -43,6 +43,8 @@ return [
     'cover' => 'صورة الغلاف',
     'images' => 'الصور',
     'image' => 'الصورة',
+    'icon' => 'الأيقونة',
+    'select_icon' => 'إختر أيقونة',
 
     'roles' => 'الأدوار',
     'show_roles' => 'عرض الأدوار',
@@ -115,6 +117,12 @@ return [
     'show_testimonial' => 'عرض الرأي',
     'edit_testimonial' => 'تعديل الرأي',
     'create_testimonial' => 'إنشاء رأى',
+
+    'categories' => 'القوائم',
+    'show_categories' => 'عرض القوائم',
+    'show_category' => 'عرض القائمة',
+    'edit_category' => 'تعديل القائمة',
+    'create_category' => 'إنشاء القائمة',
 
     'ar' => [
         'title' => 'العنوان باللغة العربية',

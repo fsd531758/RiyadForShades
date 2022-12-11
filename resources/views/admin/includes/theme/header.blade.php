@@ -58,4 +58,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <link href="{{asset('dashboard/css/iconpicker-1.5.0.css')}}" rel="stylesheet" type="text/css" />
 </head>

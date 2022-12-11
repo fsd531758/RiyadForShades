@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 class TeamController extends Controller
 {
-
     private $team;
 
     public function __construct(Team $team)

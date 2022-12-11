@@ -46,6 +46,8 @@ return [
     'cover' => 'Cover Image',
     'images' => 'Images',
     'image' => 'Image',
+    'icon' => 'Icon',
+    'select_icon' => 'Select Icon',
 
     'roles' => 'Roles',
     'show_roles' => 'Show Roles',
@@ -117,6 +119,13 @@ return [
     'show_testimonial' => 'Show Testimonial member',
     'edit_testimonial' => 'Edit Testimonial member',
     'create_testimonial' => 'Create Testimonial member',
+
+
+    'categories' => 'Categories',
+    'show_categories' => 'Show Categories',
+    'show_category' => 'Show Category',
+    'edit_category' => 'Edit Category',
+    'create_category' => 'Create Category',
 
     'ar' => [
         'title' => 'Title In Arabic',

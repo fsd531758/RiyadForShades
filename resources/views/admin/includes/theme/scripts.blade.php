@@ -30,6 +30,22 @@
 <script src="{{asset('Dashboard/js/pages/crud/file-upload/image-input.js')}}"></script>
 <script src="{{asset('Dashboard/js/pages/crud/forms/widgets/bootstrap-datetimepicker.js')}}"></script>
 
+<script src="{{ asset('Dashboard/js/iconpicker-1.5.0.js') }}"></script>
+<!--end::Page Scripts-->
+
+<script>
+    // Default options
+    IconPicker.Init({
+        // Required: You have to set the path of IconPicker JSON file to "jsonUrl" option. e.g. '/content/plugins/IconPicker/dist/iconpicker-1.5.0.json'
+        jsonUrl:"{{ asset('Dashboard/js/iconpicker-1.5.0.json') }}",// Optional: Change the buttons or search placeholder text according to the language.
+        searchPlaceholder: 'Search Icon',
+        showAllButton: "{{__('words.show_all')}}",
+        cancelButton: "{{__('words.cancel')}}",
+        noResultsFound: "{{__('message.no_result')}}", // v1.5.0 and the next versionsborderRadius: '20px', // v1.5.0 and the next versions
+    });
+    IconPicker.Run('#GetIconPicker');
+</script>
+
 <script>
     $.fn.dataTable.ext.errMode = 'none';
     $('#kt_datatable').dataTable( {

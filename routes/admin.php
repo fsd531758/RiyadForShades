@@ -28,6 +28,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
             //projects routes
 //            Route::resource('projects', 'ProjectController');
 
+            //category routes
+            Route::resource('categories', 'CategoryController');
+
             //teams routes
             Route::resource('teams', 'TeamController');
 
