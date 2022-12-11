@@ -175,6 +175,7 @@ return [
         'logo' => 'Logo',
         'tax_number' => 'Tax Number',
         'year_founded' => 'Year Founded',
+        'category_id' => 'Category',
 
         'ar' => [
             'title' => 'Title In Arabic',

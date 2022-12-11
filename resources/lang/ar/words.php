@@ -120,7 +120,7 @@ return [
     'create_testimonial' => 'إنشاء رأى',
 
     'categories' => 'القوائم',
-    'category' => 'القسم',
+    'category' => 'القائمة',
     'show_categories' => 'عرض القوائم',
     'show_category' => 'عرض القائمة',
     'edit_category' => 'تعديل القائمة',
