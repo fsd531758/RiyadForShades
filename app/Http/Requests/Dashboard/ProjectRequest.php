@@ -23,7 +23,7 @@ class ProjectRequest extends FormRequest
         ];
         foreach (config('translatable.locales') as $locale) {
             $rules += [$locale . '.title' => ['required', 'string',Rule::unique('project_translations','title')->ignore($this->id, 'project_id')]];
-            $rules += [$locale . '.description' => ['nullable', 'string','max:400']];
+            $rules += [$locale . '.description' => ['nullable', 'string']];
         }
 
         return $rules;

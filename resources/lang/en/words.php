@@ -32,6 +32,7 @@ return [
 
     'name' => 'Name',
     'description' => 'Description',
+    'short_description' => 'Short Description',
     'first_name' => 'First name',
     'last_name' => 'Last name',
     'created_by' => 'Created by',
@@ -134,6 +135,24 @@ return [
     'show_product' => 'Show Product',
     'edit_product' => 'Edit Product',
     'create_product' => 'Create Product',
+
+    'services' => 'Services',
+    'show_services' => 'Show Services',
+    'show_service' => 'Show Service',
+    'edit_service' => 'Edit Service',
+    'create_service' => 'Create Service',
+
+    'partners' => 'Partners',
+    'show_partners' => 'Show Partners',
+    'show_partner' => 'Show Partner',
+    'edit_partner' => 'Edit Partner',
+    'create_partner' => 'Create Partner',
+
+    'portfolios' => 'Portfolios',
+    'show_portfolios' => 'Show Portfolios',
+    'show_portfolio' => 'Show Portfolio',
+    'edit_portfolio' => 'Edit Portfolio',
+    'create_portfolio' => 'Create Portfolio',
 
     'ar' => [
         'title' => 'Title In Arabic',

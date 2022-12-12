@@ -28,6 +28,7 @@ return [
 
     'name' => 'الإسم',
     'description' => 'الوصف',
+    'sub_description' => 'وصف مختصر',
     'first_name' => 'اإسم الأول',
     'last_name' => 'الإسم الأخير',
     'created_by' => 'الإنشاء بواسطة',
@@ -111,7 +112,7 @@ return [
     'show_teams' => 'عرض فريق العمل',
     'show_team' => 'عرض العضو',
     'edit_team' => 'تعديل العضو',
-    'create_team' => 'إنشاء العضو',
+    'create_team' => 'إنشاء عضو',
 
     'testimonials' => 'أراء العملاء',
     'show_testimonials' => 'عرض أراء العملاء',
@@ -124,13 +125,31 @@ return [
     'show_categories' => 'عرض القوائم',
     'show_category' => 'عرض القائمة',
     'edit_category' => 'تعديل القائمة',
-    'create_category' => 'إنشاء القائمة',
+    'create_category' => 'إنشاء قائمة',
 
     'products' => 'المنتجات',
     'show_products' => 'عرض المنتجات',
     'show_product' => 'عرض المنتج',
     'edit_product' => 'تعديل المنتج',
-    'create_product' => 'إنشاء المنتج',
+    'create_product' => 'إنشاء منتج',
+
+    'services' => 'الخدمات',
+    'show_services' => 'عرض الخدمات',
+    'show_service' => 'عرض الخدمة',
+    'edit_service' => 'تعديل الخدمة',
+    'create_service' => 'إنشاء خدمة',
+
+    'partners' => 'الشركاء',
+    'show_partners' => 'عرض الشركاء',
+    'show_partner' => 'عرض الشريك',
+    'edit_partner' => 'تعديل الشريك',
+    'create_partner' => 'إنشاء شريك',
+
+    'portfolios' => 'سابقة الأعمال',
+    'show_portfolios' => 'عرض سابقة الأعمال',
+    'show_portfolio' => 'عرض سابقة العمل',
+    'edit_portfolio' => 'تعديل سابقة العمل',
+    'create_portfolio' => 'إنشاء سابقة العمل',
 
     'ar' => [
         'title' => 'العنوان باللغة العربية',

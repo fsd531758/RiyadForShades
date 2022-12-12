@@ -73,29 +73,7 @@
     <div class="card card-custom">
         <div class="card-body">
             <div class="form-group row">
-                <div class="form-group">
-                    <label>{{__('words.icon')}}<span class="text-danger"> * </span></label>
-                    <div class="get-and-preview">
-                        <div class="icon-preview"
-                             style="float: left;
-                                                            width: 55px;
-                                                            height: 55px;
-                                                            margin: 0 15px 0 0;
-                                                            border-radius: 5px;
-                                                            background: #fff;
-                                                            text-align: center;
-                                                            font-size: 30px;
-                                                            line-height: 65px;
-                                                            color: #1e1e1e;"
-                             data-toggle="tooltip" title="Preview of selected Icon">
-                            <i id="IconPreview" style="font-size:40px" class="fab fa-github"></i>
-                        </div>
-
-                        <button type="button" class="btn btn-warning my-3" id="GetIconPicker"
-                                data-iconpicker-input="input#IconInput" data-iconpicker-preview="i#IconPreview">{{__('words.select_icon')}}</button>
-                        <input type="text" class="form-control iconpicker" id="IconInput" name="icon" hidden>
-                    </div>
-                </div>
+                @include('admin.components.icon',['label'=>__('words.icon'),'value'=>old('icon','fab fa-github')])
             </div>
 
             <div class="form-group row">
@@ -121,21 +99,4 @@
     </div>
 
 
-@endsection
-
-@section('scripts')
-    <script>
-        $("#form").submit(function (e) {
-            e.preventDefault();
-            let links = document.querySelectorAll('.link');
-            links.forEach(function (link) {
-                let position = link.value.includes('https');
-                if (position > -1) {
-                    let enhancedLink = link.value.replace("https://", "http://");
-                    link.value = enhancedLink;
-                }
-            });
-            this.submit();
-        });
-    </script>
 @endsection

@@ -34,11 +34,20 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
             //product routes
             Route::resource('products', 'ProductController');
 
+            //product routes
+            Route::resource('services', 'ServiceController');
+
             //teams routes
             Route::resource('teams', 'TeamController');
 
             //testimonials routes
             Route::resource('testimonials', 'TestimonialController');
+
+            //partners routes
+            Route::resource('partners', 'PartnerController');
+
+            //portfolios routes
+            Route::resource('portfolios', 'PortfolioController');
 
             //setting routes
             Route::resource('settings', 'SettingController');

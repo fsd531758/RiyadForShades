@@ -6,8 +6,11 @@ return [
         'categories' => ['read', 'create', 'update', 'delete'],
         'products' => ['read', 'create', 'update', 'delete'],
         'projects' => ['read', 'create', 'update', 'delete'],
+        'services' => ['read', 'create', 'update', 'delete'],
         'teams' => ['read', 'create', 'update', 'delete'],
         'testimonials' => ['read', 'create', 'update', 'delete'],
+        'partners' => ['read', 'create', 'update', 'delete'],
+        'portfolios' => ['read', 'create', 'update', 'delete'],
         'settings' => ['read', 'update'],
     ]
 ];

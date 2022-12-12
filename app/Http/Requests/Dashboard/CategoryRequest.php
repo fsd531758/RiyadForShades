@@ -16,7 +16,7 @@ class CategoryRequest extends FormRequest
     {
         $rules = [
             'image' => 'required_without:id|max:900|image',
-
+            'icon' => 'nullable|string',
         ];
         foreach (config('translatable.locales') as $locale) {
             $rules += [$locale . '.title' => ['required', 'string', Rule::unique('category_translations', 'title')->ignore($this->id, 'category_id')]];
