@@ -5,20 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ServiceTranslation extends Model
+class FaqTranslation extends Model
 {
     use HasFactory;
 
-    protected $table = 'service_translations';
+    protected $table = 'faq_translations';
 
     public $timestamps = false;
 
     protected $guarded = [];
 
     // accessors & Mutator start
-    public function getTitleAttribute($val)
+    public function getQuestionAttribute($val)
     {
-        return $this->attributes['title'] = ucwords($val);
+        return $this->attributes['question'] = ucwords($val);
     }
     // accessors & Mutator end
 }

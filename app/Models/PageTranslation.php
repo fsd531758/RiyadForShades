@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ServiceTranslation extends Model
+class PageTranslation extends Model
 {
     use HasFactory;
 
-    protected $table = 'service_translations';
+    protected $table = 'page_translations';
 
     public $timestamps = false;
 
@@ -19,6 +19,11 @@ class ServiceTranslation extends Model
     public function getTitleAttribute($val)
     {
         return $this->attributes['title'] = ucwords($val);
+    }
+
+    public function getSubTitleAttribute($val)
+    {
+        return $this->attributes['sub_title'] = ucwords($val);
     }
     // accessors & Mutator end
 }

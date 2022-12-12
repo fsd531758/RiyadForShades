@@ -28,6 +28,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
             //projects routes
 //            Route::resource('projects', 'ProjectController');
 
+            //slider routes
+            Route::resource('sliders', 'SliderController');
+
             //category routes
             Route::resource('categories', 'CategoryController');
 
@@ -48,6 +51,15 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
             //portfolios routes
             Route::resource('portfolios', 'PortfolioController');
+
+            //blog routes
+            Route::resource('blog', 'BlogController');
+
+            //FAQ routes
+            Route::resource('faqs', 'FaqController');
+
+            //pages routes
+            Route::resource('pages', 'PageController');
 
             //setting routes
             Route::resource('settings', 'SettingController');
