@@ -107,26 +107,26 @@
 
     <div class="card card-custom">
         <div class="card-body">
-            <div class="form-group row">
-                <div class="col form-group">
-                    <label>{{__('words.identifier')}}<span
-                            class="text-danger"> * </span></label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="flaticon-edit"></i></span>
-                        </div>
-                        <input type="text" name="{{'identifier'}}"
-                               placeholder="{{__('words.identifier')}}"
-                               class="form-control  pl-5 min-h-40px @error('identifier') is-invalid @enderror"
-                               value="{{ old('identifier',$page->identifier) }}">
-                        @error('[identifier]')
-                        <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                        @enderror
-                    </div>
-                </div>
-            </div>
+{{--            <div class="form-group row">--}}
+{{--                <div class="col form-group">--}}
+{{--                    <label>{{__('words.identifier')}}<span--}}
+{{--                            class="text-danger"> * </span></label>--}}
+{{--                    <div class="input-group">--}}
+{{--                        <div class="input-group-prepend">--}}
+{{--                            <span class="input-group-text"><i class="flaticon-edit"></i></span>--}}
+{{--                        </div>--}}
+{{--                        <input type="text" name="{{'identifier'}}"--}}
+{{--                               placeholder="{{__('words.identifier')}}"--}}
+{{--                               class="form-control  pl-5 min-h-40px @error('identifier') is-invalid @enderror"--}}
+{{--                               value="{{ old('identifier',$page->identifier) }}">--}}
+{{--                        @error('[identifier]')--}}
+{{--                        <span class="invalid-feedback" role="alert">--}}
+{{--                                    <strong>{{ $message }}</strong>--}}
+{{--                                </span>--}}
+{{--                        @enderror--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
             <div class="form-group row">
                 @include('admin.components.image',['label'=>__('words.image'),'value'=>old('image',$page->image),'name'=>'image','id'=>'kt_image_3'])

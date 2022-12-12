@@ -14,7 +14,7 @@ return [
         'portfolios' => ['read', 'create', 'update', 'delete'],
         'blog' => ['read', 'create', 'update', 'delete'],
         'faqs' => ['read', 'create', 'update', 'delete'],
-        'pages' => ['read', 'create', 'update', 'delete'],
+        'pages' => ['read', 'create', 'update'],
         'settings' => ['read', 'update'],
     ]
 ];

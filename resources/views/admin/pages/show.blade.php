@@ -84,14 +84,14 @@
         <div class="card card-custom">
             <div class="card-body">
                 <div class="row mb-3">
-                    <div class="col-md-4">
-                        <div class="mb-7 bg-light p-5 rounded h-100">
-                            <div class="card-title">
-                                <h5 class="font-weight-bolder text-dark">{{__('words.identifier')}}:</h5>
-                            </div>
-                            <p class="m-0">{{$page->identifier}}</p>
-                        </div>
-                    </div>
+{{--                    <div class="col-md-4">--}}
+{{--                        <div class="mb-7 bg-light p-5 rounded h-100">--}}
+{{--                            <div class="card-title">--}}
+{{--                                <h5 class="font-weight-bolder text-dark">{{__('words.identifier')}}:</h5>--}}
+{{--                            </div>--}}
+{{--                            <p class="m-0">{{$page->identifier}}</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
                     <div class="col-md-4">
                         <div class="mb-7 bg-light p-5 rounded h-100">
