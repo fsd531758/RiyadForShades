@@ -15,20 +15,13 @@ Route::group(['namespace' => 'API', 'middleware' => 'APILocalization'], function
 
 
 // authenticated routes
-    Route::group(['middleware' => ['jwt.verify:api', 'IsVerified']], function () {
+    Route::group(['middleware' => ['jwt.verify:api']], function () {
         Route::group(['namespace' => 'Auth'], function () {
             Route::post('logout', 'AuthController@logout');
             // user routes
-            Route::get('profile', 'AuthController@profile')->withoutMiddleware('IsVerified');
-//        Route::get('profile', 'AuthController@profile');
+            Route::get('profile', 'AuthController@profile');
             Route::post('update', 'AuthController@update');
             Route::post('change-password', 'AuthController@changePassword');
-
-            // firebase notifications
-            Route::post('store-token', 'FirebaseController@storeToken');
-            Route::get('get-user-tokens', 'FirebaseController@getUserTokens');
-            Route::post('delete-user-tokens', 'FirebaseController@deleteUserTokens');
-            Route::post('delete-user-token', 'FirebaseController@deleteUserToken');
         });
     });
 });
