@@ -71,6 +71,11 @@ return [
     'identifier' => 'Identifier',
     'question' => 'Question',
     'answer' => 'Answer',
+    'has_link'=>'Has Link',
+    'has_sub_title'=>'Has Sub Title',
+    'link'=>'Link',
+    'yes'=>'Yes',
+    'no'=>'No',
 
     'show_masters' => 'Show All Master Data',
     'show_master' => 'Show Master Data',

@@ -108,6 +108,55 @@
         <div class="card-body">
             <div class="form-group row">
                 <div class="col form-group">
+                    <label for="exampleSelectd">{{__('words.has_link')}}</label>
+                    <select class="form-control" id="exampleSelectd" name="has_link">
+                        <option value="">{{__('words.choose')}}</option>
+                            <option value="0" {{old('has_link') == "0" ? 'selected' : ''}}>{{__('words.no')}}</option>
+                            <option value="1" {{old('has_link') == "1" ? 'selected' : ''}}>{{__('words.yes')}}</option>
+                    </select>
+                    @error('category_id')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+
+                <div class="col form-group">
+                    <label for="exampleSelectd">{{__('words.has_sub_title')}}</label>
+                    <select class="form-control" id="exampleSelectd" name="has_sub_title">
+                        <option value="">{{__('words.choose')}}</option>
+                            <option value="0" {{old('has_sub_title') == "0" ? 'selected' : ''}}>{{__('words.no')}}</option>
+                            <option value="1" {{old('has_sub_title') == "1" ? 'selected' : ''}}>{{__('words.yes')}}</option>
+                    </select>
+                    @error('category_id')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+
+                <div class="col form-group">
+                    <label>{{__('words.link')}}<span
+                            class="text-danger"></span></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                        </div>
+                        <input type="text" name="{{'link'}}"
+                               placeholder="{{__('words.link')}}"
+                               class="form-control  pl-5 min-h-40px @error('link') is-invalid @enderror"
+                               value="{{ old('link') }}">
+                        @error('[link]')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col form-group">
                     <label>{{__('words.identifier')}}<span
                             class="text-danger"> * </span></label>
                     <div class="input-group">
