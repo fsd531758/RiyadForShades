@@ -3,8 +3,7 @@
 return [
 
     'no_result' => 'خطأ : لا يوجد بيانات متاحة',
-    'user_not_registerd' => 'المستخدم غير مسجل',
-
+    'user_not_registered' => 'المستخدم غير مسجل',
     'not_available' => 'غير متاح',
     'not_active' => 'غير مفعل',
     'doesnt_exist' => 'السجل غير موجود',
