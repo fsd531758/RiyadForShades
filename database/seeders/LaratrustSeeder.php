@@ -15,7 +15,7 @@ class LaratrustSeeder extends Seeder
      */
     public function run()
     {
-        $role = Role::create([
+        $role = Role::firstOrCreate([
             'name' => 'super_admin',
             'display_name' => 'super admin',
             'description' => 'has all permissions',
@@ -24,14 +24,16 @@ class LaratrustSeeder extends Seeder
 
         foreach (\config('laratrust_seeder.roles') as $key => $values){
             foreach ($values as $value){
-                $permission = Permission::create([
+                 Permission::updateOrCreate([
                     'name' => $value . '-' . $key,
                     'display_name' => $value . ' ' . $key,
                     'description' => $value . ' ' . $key,
                 ]);
-                $role->attachPermissions([$permission]);
+
             }
         }
+        $permissions = Permission::all();
+        $role->syncPermissions($permissions);
 
     }
 }
