@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
 {
-    use HasFactory, Translatable, HasFiles;
+    use HasFactory, Translatable, HasFile;
 
     protected $table = 'settings';
 
@@ -21,17 +21,17 @@ class Setting extends Model
     public $timestamps = true;
 
     public function getLogoAttribute(){
-        $logo = $this->files()->where('type','logo')->first();
+        $logo = $this->file()->where('type','logo')->first();
         return $logo->path;
     }
 
     public function getFooterImgAttribute(){
-        $img = $this->files()->where('type','footer_img')->first();
+        $img = $this->file()->where('type','footer_img')->first();
         return $img->path;
     }
 
     public function getContactImgAttribute(){
-        $img = $this->files()->where('type','contact_img')->first();
+        $img = $this->file()->where('type','contact_img')->first();
         return $img->path;
     }
 }

@@ -354,11 +354,11 @@
             <hr>
 
             <div class="form-group row">
-                @include('admin.components.image',['label'=>__('words.logo'),'value'=>$setting->logo,'name'=>'logo','id'=>'kt_image_3'])
+                @include('admin.components.file',['label'=>__('words.logo'),'value'=>$setting->logo,'name'=>'logo','id'=>'kt_image_3','accept' =>'image/*'])
 
-                @include('admin.components.image',['label'=>__('words.contact_img'),'value'=>$setting->contact_img,'name'=>'contact_img','id'=>'kt_image_2'])
+                @include('admin.components.file',['label'=>__('words.contact_img'),'value'=>$setting->contact_img,'name'=>'contact_img','id'=>'kt_image_2','accept' =>'image/*'])
 
-                @include('admin.components.image',['label'=>__('words.footer_img'),'value'=>$setting->footer_img,'name'=>'footer_img','id'=>'kt_image_1'])
+                @include('admin.components.file',['label'=>__('words.footer_img'),'value'=>$setting->footer_img,'name'=>'footer_img','id'=>'kt_image_1','accept' =>'image/*'])
             </div>
 
         </div>

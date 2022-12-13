@@ -17,17 +17,17 @@ class SettingSeeder extends Seeder
                 'website_title' => 'Dashboard',
             ],
         ]);
-        $setting->files()->create([
+        $setting->file()->create([
             'path' => 'favicon.ico',
             'type' => 'logo'
         ]);
 
-        $setting->files()->create([
+        $setting->file()->create([
             'path' => 'favicon.ico',
             'type' => 'contact_img'
         ]);
 
-        $setting->files()->create([
+        $setting->file()->create([
             'path' => 'favicon.ico',
             'type' => 'footer_img'
         ]);

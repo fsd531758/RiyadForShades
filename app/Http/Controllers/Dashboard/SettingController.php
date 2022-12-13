@@ -58,7 +58,7 @@ class SettingController extends Controller
             $setting = $this->setting->find($id);
             $requested_setting = $request->except(['_token','logo','profile_avatar_remove','footer_img','contact_img']);
             $setting->update($requested_setting);
-            $setting->updateFiles();
+            $setting->updateFile();
 
             return redirect()->route('settings.index')->with(['success'=>__('message.updated_successfully')]);
         } catch (\Exception $e) {

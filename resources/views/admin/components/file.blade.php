@@ -13,7 +13,7 @@
                 data-action="change" data-toggle="tooltip" title=""
                 data-original-title="Change avatar">
                 <i class="fa fa-pen icon-sm text-muted"></i>
-                <input type="file" name="{{$name}}" accept="image/*"/>
+                <input type="file" name="{{$name}}" accept="{{$accept}}"/>
                 <input type="hidden" name="profile_avatar_remove"/>
             </label>
             <span
