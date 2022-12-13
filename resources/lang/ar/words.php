@@ -1,5 +1,7 @@
 <?php
 return [
+    'locale-ar' => 'العربية',
+    'locale-en' => 'English',
     'company_name' => 'IT',
     'choose_lang' => 'إختر اللغة',
     'home' => 'الرئيسية',
