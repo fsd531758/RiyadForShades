@@ -27,7 +27,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string|null
      */
-    protected $namespace = 'App\Http\Controllers\Front';
+    protected $namespace = 'App\Http\Controllers';
     protected $dashboard_namespace = 'App\Http\Controllers\Dashboard';
 
     /**
