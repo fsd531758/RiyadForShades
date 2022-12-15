@@ -26,7 +26,7 @@ class AuthController extends Controller
         if ($user) {
             $request->session()->regenerate();
 
-            return redirect()->intended();
+            return redirect()->intended('admin.home');
         }
         return redirect()->back()->with('error', __('message.invalid_login'));
     }

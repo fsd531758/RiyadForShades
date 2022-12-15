@@ -5,10 +5,10 @@ use Illuminate\Support\Facades\Auth;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(['prefix' => LaravelLocalization::setLocale(),
-    'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () { //...
-    Auth::routes();
+    'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
+//    Auth::routes();
 
-    Route::get('/',function (){
+    Route::get('/', function () {
         return view('welcome');
     });
 });
