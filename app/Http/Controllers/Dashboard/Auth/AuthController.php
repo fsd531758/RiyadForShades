@@ -26,7 +26,7 @@ class AuthController extends Controller
         if ($user) {
             $request->session()->regenerate();
 
-            return redirect()->intended('admin.home');
+            return redirect()->intended(route('admin.home'));
         }
         return redirect()->back()->with('error', __('message.invalid_login'));
     }
@@ -40,7 +40,7 @@ class AuthController extends Controller
 
             $request->session()->regenerateToken();
 
-            return redirect()->route('organization.login');
+            return redirect()->route('dashboard.login');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', __('message.something_wrong'));
         }

@@ -10,5 +10,5 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
     Route::get('/', function () {
         return view('welcome');
-    });
+    })->name('home');
 });
