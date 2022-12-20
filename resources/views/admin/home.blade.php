@@ -20,7 +20,7 @@
             <div class="col-xl-4">
                 <div class="card card-custom card-stretch gutter-b wave wave-primary wave-animate-slow">
                     <div class="card-body">
-                        <i class="flaticon-users fa-5x"></i>
+                        <i class="flaticon-users fa-3x"></i>
                         <span class="card-title font-weight-bolder text-dark-75 font-size-h1 mb-0 mt-6 d-block">{{ \App\Models\Admin::count() }}</span>
                         <span class="font-weight-bold font-size-sm">{{__('words.admins')}}</span>
                     </div>
@@ -29,7 +29,7 @@
             <div class="col-xl-4">
                 <div class="card card-custom card-stretch gutter-b wave wave-primary wave-animate-slow">
                     <div class="card-body">
-                        <i class="fas fa-project-diagram  fa-5x"></i>
+                        <i class="fas fa-project-diagram  fa-3x"></i>
                         <span class="card-title font-weight-bolder text-dark-75 font-size-h1 mb-0 mt-6 d-block">{{ \App\Models\Project::count() }}</span>
                         <span class="font-weight-bold font-size-sm">{{__('words.projects')}}</span>
                     </div>
@@ -38,7 +38,7 @@
             <div class="col-xl-4">
                 <div class="card card-custom card-stretch gutter-b wave wave-primary wave-animate-slow">
                     <div class="card-body">
-                        <i class="fab fa-servicestack fa-5x"></i>
+                        <i class="fab fa-servicestack fa-3x"></i>
                         <span class="card-title font-weight-bolder text-dark-75 font-size-h1 mb-0 mt-6 d-block">{{ \App\Models\Service::count() }}</span>
                         <span class="font-weight-bold font-size-sm">{{__('words.services')}}</span>
                     </div>
