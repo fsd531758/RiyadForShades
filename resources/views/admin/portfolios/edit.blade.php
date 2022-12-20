@@ -89,9 +89,9 @@
     <div class="card card-custom">
         <div class="card-body">
             <div class="form-group row">
-                @include('admin.components.file',['label'=>__('words.image'),'value'=>old('image',$portfolio->image),'name'=>'image','id'=>'kt_image_3','accept' =>'image/*'])
+                @include('admin.components.image',['label'=>__('words.image'),'value'=>old('image',$portfolio->image),'name'=>'image','id'=>'kt_image_3'])
 
-                @include('admin.components.files',['label'=>__('words.files'),'name'=>'files[]','accept' => 'application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf'])
+                @include('admin.components.files',['label'=>__('words.files'),'name'=>'files[]','multi'=>'multiple','accept' => 'application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf'])
             </div>
 
             @if($files->isNotEmpty())

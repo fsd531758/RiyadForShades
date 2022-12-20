@@ -89,9 +89,9 @@
     <div class="card card-custom">
         <div class="card-body">
             <div class="form-group row">
-                @include('admin.components.file',['label'=>__('words.cover'),'value'=>old('cover',$project->cover),'name'=>'cover','id'=>'kt_image_3','accept' =>'image/*'])
+                @include('admin.components.image',['label'=>__('words.cover'),'value'=>old('cover',$project->cover),'name'=>'cover','id'=>'kt_image_3'])
 
-                @include('admin.components.files',['label'=>__('words.images'),'name'=>'images[]','accept' => 'image/*'])
+                @include('admin.components.files',['label'=>__('words.images'),'name'=>'images[]','multi'=>'multiple','accept' => 'image/*'])
             </div>
 
             @if($images)

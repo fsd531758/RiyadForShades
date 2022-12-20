@@ -107,7 +107,7 @@
             </div>
 
             <div class="form-group row">
-                @include('admin.components.file',['label'=>__('words.image'),'value'=>old('image'),'name'=>'image','id'=>'kt_image_3','accept' =>'image/*'])
+                @include('admin.components.image',['label'=>__('words.image'),'value'=>old('image'),'name'=>'image','id'=>'kt_image_3'])
 
                 @include('admin.components.switch',['label'=>__('words.status'),'name'=>'status','val' => old('status')])
 

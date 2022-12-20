@@ -29,7 +29,7 @@
     <div class="card card-custom">
         <div class="card-body">
             <div class="form-group row">
-                @include('admin.components.file',['label'=>__('words.image'),'value'=>old('image',$partner->image),'name'=>'image','id'=>'kt_image_3','accept' =>'image/*'])
+                @include('admin.components.image',['label'=>__('words.image'),'value'=>old('image',$partner->image),'name'=>'image','id'=>'kt_image_3'])
 
                 @include('admin.components.switch',['label'=>__('words.status'),'name'=>'status','val' => old('status',$partner->status)])
             </div>
