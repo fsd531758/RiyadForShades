@@ -15,6 +15,7 @@ return [
         'blog' => ['read', 'create', 'update', 'delete'],
         'faqs' => ['read', 'create', 'update', 'delete'],
         'pages' => ['read', 'create', 'update'],
+        'contacts' => ['read', 'create', 'update', 'delete'],
         'settings' => ['read', 'update'],
     ]
 ];

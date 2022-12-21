@@ -177,6 +177,7 @@ return [
         'year_founded' => 'Year Founded',
         'category_id' => 'Category',
         'identifier' => 'Identifier',
+        'social' => 'Social Media Link',
 
         'ar' => [
             'title' => 'Title In Arabic',

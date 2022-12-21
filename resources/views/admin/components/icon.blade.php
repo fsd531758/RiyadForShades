@@ -19,7 +19,7 @@
 
             <button type="button" class="btn btn-warning my-3" id="GetIconPicker"
                     data-iconpicker-input="input#IconInput" data-iconpicker-preview="i#IconPreview">{{__('words.select_icon')}}</button>
-            <input type="text" class="form-control iconpicker" id="IconInput" name="icon" hidden>
+            <input type="text" class="form-control iconpicker" id="IconInput" name="icon" value="{{$value}}" hidden>
         </div>
     </div>
 @endif

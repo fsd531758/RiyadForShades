@@ -40,6 +40,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
             //product routes
             Route::resource('services', 'ServiceController');
 
+            //product routes
+            Route::resource('projects', 'ProjectController');
+
             //teams routes
             Route::resource('teams', 'TeamController');
 
@@ -61,10 +64,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
             //pages routes
             Route::resource('pages', 'PageController');
 
+            //contact routes
+            Route::resource('contacts', 'SettingContactController');
+
             //setting routes
             Route::resource('settings', 'SettingController');
-
-
         });
     });
 });

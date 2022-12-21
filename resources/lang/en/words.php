@@ -187,6 +187,15 @@ return [
     'edit_faq' => 'Edit FAQ',
     'create_faq' => 'Create FAQ',
 
+    'contact' => 'Contact',
+    'contacts' => 'Contacts',
+    'show_contacts' => 'Show Contacts',
+    'show_contact' => 'Show Contact',
+    'edit_contact' => 'Edit Contact',
+    'create_contact' => 'Create Contact',
+    'type' => 'Type',
+    'social' => 'Social Media Link',
+
     'ar' => [
         'title' => 'Title In Arabic',
         'sub_title' => 'Sub Title In Arabic',
