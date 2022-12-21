@@ -35,7 +35,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fab fa-contao"></i></span>
                         </div>
-                        <select class="form-control" id="type" name="type">
+                        <select id="type" name="type" class="form-control @error('contact') is-invalid @enderror">
                             <option value="">{{__('words.choose')}}</option>
 
                             <option
@@ -48,8 +48,8 @@
                         </select>
                         @error('type')
                         <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                 </div>

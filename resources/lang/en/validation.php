@@ -177,6 +177,7 @@ return [
         'year_founded' => 'Year Founded',
         'category_id' => 'Category',
         'identifier' => 'Identifier',
+        'contact' => 'Contact',
         'social' => 'Social Media Link',
 
         'ar' => [

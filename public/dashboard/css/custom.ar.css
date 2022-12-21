@@ -21,3 +21,7 @@ body {
 .image-galley{
     height: 200px;
 }
+
+.toast-message{
+    margin-right: 30px;
+}

@@ -187,6 +187,7 @@ return [
         'tax_number' => 'رقم السجل',
         'year_founded' => 'سنة التأسيس',
         'identifier' => 'المعرف',
+        'contact' => 'وسيلة الإتصال',
         'social' => 'رابط موقع تواصل إجتماعى',
 
         'ar' => [

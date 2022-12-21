@@ -16,7 +16,7 @@
 <script src="{{asset('dashboard/js/pages/widgets.js')}}"></script>
 <!--end::Page Scripts-->
 
-<script src="{{asset('dashboard/js/pages/features/miscellaneous/toastr.js')}}"></script>
+{{--<script src="{{asset('dashboard/js/pages/features/miscellaneous/toastr.js')}}"></script>--}}
 
 <!--end::Page Vendors-->
 <!--begin::Page Scripts(used by this page)-->
