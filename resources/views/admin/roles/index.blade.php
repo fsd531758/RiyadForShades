@@ -49,32 +49,34 @@
         </div>
         <div class="card-body">
             <!--begin: Datatable-->
-            <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>{{__('words.name')}}</th>
-                    <th>{{__('words.description')}}</th>
-                    <th>{{__('words.created_at')}}</th>
-                    <th>{{__('words.updated_at')}}</th>
-                    <th>{{__('words.actions')}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($roles as $key => $role)
+            <div style='overflow-x:auto'>
+                <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
+                    <thead>
                     <tr>
-                        <td>{{$key+1}}</td>
-                        <td>{{$role->name}}</td>
-                        <td>{{$role->description}}</td>
-                        <td>{{createdAtFormat($role->created_at)}}</td>
-                        <td>{{createdAtFormat($role->created_at) == updatedAtFormat($role->updated_at) ? '--' : updatedAtFormat($role->updated_at)}}</td>
-                        <td nowrap="nowrap">
-                            @include('admin.components.form-controls', ['name'=>'roles', 'value'=>$role,'role'=>'roles'])
-                        </td>
+                        <th>#</th>
+                        <th>{{__('words.name')}}</th>
+                        <th>{{__('words.description')}}</th>
+                        <th>{{__('words.created_at')}}</th>
+                        <th>{{__('words.updated_at')}}</th>
+                        <th>{{__('words.actions')}}</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach($roles as $key => $role)
+                        <tr>
+                            <td>{{$key+1}}</td>
+                            <td>{{$role->name}}</td>
+                            <td>{{$role->description}}</td>
+                            <td>{{createdAtFormat($role->created_at)}}</td>
+                            <td>{{createdAtFormat($role->created_at) == updatedAtFormat($role->updated_at) ? '--' : updatedAtFormat($role->updated_at)}}</td>
+                            <td nowrap="nowrap">
+                                @include('admin.components.form-controls', ['name'=>'roles', 'value'=>$role,'role'=>'roles'])
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
             <!--end: Datatable-->
         </div>
 

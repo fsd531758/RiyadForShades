@@ -52,35 +52,37 @@
         </div>
         <div class="card-body">
             <!--begin: Datatable-->
-            <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>{{__('words.question')}}</th>
-                    <th>{{__('words.answer')}}</th>
-                    <th>{{__('words.status')}}</th>
-                    <th>{{__('words.created_at')}}</th>
-                    <th>{{__('words.updated_at')}}</th>
-                    <th>{{__('words.actions')}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($faqs as $key => $faq)
+            <div style='overflow-x:auto'>
+                <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
+                    <thead>
                     <tr>
-
-                        <td>{{$key+1}}</td>
-                        <td>{{$faq->question}}</td>
-                        <td>{!! $faq->answer !!}</td>
-                        <td>{{$faq->getActive()}}</td>
-                        <td>{{createdAtFormat($faq->created_at)}}</td>
-                        <td>{{createdAtFormat($faq->created_at) == updatedAtFormat($faq->updated_at) ? '--' : updatedAtFormat($faq->updated_at)}}</td>
-                        <td nowrap="nowrap">
-                            @include('admin.components.form-controls', ['name'=>'faqs', 'value'=>$faq,'role'=>'faqs'])
-                        </td>
+                        <th>#</th>
+                        <th>{{__('words.question')}}</th>
+                        <th>{{__('words.answer')}}</th>
+                        <th>{{__('words.status')}}</th>
+                        <th>{{__('words.created_at')}}</th>
+                        <th>{{__('words.updated_at')}}</th>
+                        <th>{{__('words.actions')}}</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach($faqs as $key => $faq)
+                        <tr>
+
+                            <td>{{$key+1}}</td>
+                            <td>{{$faq->question}}</td>
+                            <td>{!! $faq->answer !!}</td>
+                            <td>{{$faq->getActive()}}</td>
+                            <td>{{createdAtFormat($faq->created_at)}}</td>
+                            <td>{{createdAtFormat($faq->created_at) == updatedAtFormat($faq->updated_at) ? '--' : updatedAtFormat($faq->updated_at)}}</td>
+                            <td nowrap="nowrap">
+                                @include('admin.components.form-controls', ['name'=>'faqs', 'value'=>$faq,'role'=>'faqs'])
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
             <!--end: Datatable-->
         </div>
 

@@ -52,49 +52,51 @@
         </div>
         <div class="card-body">
             <!--begin: Datatable-->
-            <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>{{__('words.image')}}</th>
-                    <th>{{__('words.title')}}</th>
-                    <th>{{__('words.job_title')}}</th>
-                    <th>{{__('words.description')}}</th>
-                    <th>{{__('words.status')}}</th>
-                    <th>{{__('words.created_at')}}</th>
-                    <th>{{__('words.updated_at')}}</th>
-                    <th>{{__('words.actions')}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($testimonials as $key => $testimonial)
+            <div style='overflow-x:auto'>
+                <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
+                    <thead>
                     <tr>
-
-                        <td>{{$key+1}}</td>
-                        <td>
-                            @if(!$testimonial->image)
-                                <img class="index_image"
-                                     src="{{asset('uploads/default_image.png')}}" alt="logo">
-                            @else
-                                <img class="index_image"
-                                     src="{{$testimonial->image}}"
-                                     onerror="this.src='{{asset('uploads/default_image.png')}}'"
-                                     alt="logo">
-                            @endif
-                        </td>
-                        <td>{{$testimonial->title}}</td>
-                        <td>{{$testimonial->job_title}}</td>
-                        <td>{!! Str::limit($testimonial->description,100) !!}</td>
-                        <td>{{$testimonial->getActive()}}</td>
-                        <td>{{createdAtFormat($testimonial->created_at)}}</td>
-                        <td>{{createdAtFormat($testimonial->created_at) == updatedAtFormat($testimonial->updated_at) ? '--' : updatedAtFormat($testimonial->updated_at)}}</td>
-                        <td nowrap="nowrap">
-                            @include('admin.components.form-controls', ['name'=>'testimonials', 'value'=>$testimonial,'role'=>'testimonials'])
-                        </td>
+                        <th>#</th>
+                        <th>{{__('words.image')}}</th>
+                        <th>{{__('words.title')}}</th>
+                        <th>{{__('words.job_title')}}</th>
+                        <th>{{__('words.description')}}</th>
+                        <th>{{__('words.status')}}</th>
+                        <th>{{__('words.created_at')}}</th>
+                        <th>{{__('words.updated_at')}}</th>
+                        <th>{{__('words.actions')}}</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach($testimonials as $key => $testimonial)
+                        <tr>
+
+                            <td>{{$key+1}}</td>
+                            <td>
+                                @if(!$testimonial->image)
+                                    <img class="index_image"
+                                         src="{{asset('uploads/default_image.png')}}" alt="logo">
+                                @else
+                                    <img class="index_image"
+                                         src="{{$testimonial->image}}"
+                                         onerror="this.src='{{asset('uploads/default_image.png')}}'"
+                                         alt="logo">
+                                @endif
+                            </td>
+                            <td>{{$testimonial->title}}</td>
+                            <td>{{$testimonial->job_title}}</td>
+                            <td>{!! Str::limit($testimonial->description,100) !!}</td>
+                            <td>{{$testimonial->getActive()}}</td>
+                            <td>{{createdAtFormat($testimonial->created_at)}}</td>
+                            <td>{{createdAtFormat($testimonial->created_at) == updatedAtFormat($testimonial->updated_at) ? '--' : updatedAtFormat($testimonial->updated_at)}}</td>
+                            <td nowrap="nowrap">
+                                @include('admin.components.form-controls', ['name'=>'testimonials', 'value'=>$testimonial,'role'=>'testimonials'])
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
             <!--end: Datatable-->
         </div>
 

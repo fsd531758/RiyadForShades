@@ -49,38 +49,40 @@
         </div>
         <div class="card-body">
             <!--begin: Datatable-->
-            <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>{{__('words.first_name')}}</th>
-                    <th>{{__('words.last_name')}}</th>
-                    <th>{{__('words.email')}}</th>
-                    <th>{{__('words.roles')}}</th>
-                    <th>{{__('words.activity')}}</th>
-                    <th>{{__('words.created_at')}}</th>
-                    <th>{{__('words.updated_at')}}</th>
-                    <th>{{__('words.actions')}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($users as $key => $user)
+            <div style='overflow-x:auto'>
+                <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
+                    <thead>
                     <tr>
-                        <td>{{$key+1}}</td>
-                        <td>{{$user->first_name}}</td>
-                        <td>{{$user->last_name}}</td>
-                        <td>{{$user->email}}</td>
-                        <td>{{$user->roles()->first() ? $user->roles()->first()->name : ''}}</td>
-                        <td>{{$user->getActive()}}</td>
-                        <td>{{createdAtFormat($user->created_at)}}</td>
-                        <td>{{createdAtFormat($user->created_at) == updatedAtFormat($user->updated_at) ? '--' : updatedAtFormat($user->updated_at)}}</td>
-                        <td nowrap="nowrap">
-                            @include('admin.components.form-controls', ['name'=>'admin-users', 'value'=>$user,'role'=>'admins'])
-                        </td>
+                        <th>#</th>
+                        <th>{{__('words.first_name')}}</th>
+                        <th>{{__('words.last_name')}}</th>
+                        <th>{{__('words.email')}}</th>
+                        <th>{{__('words.roles')}}</th>
+                        <th>{{__('words.activity')}}</th>
+                        <th>{{__('words.created_at')}}</th>
+                        <th>{{__('words.updated_at')}}</th>
+                        <th>{{__('words.actions')}}</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach($users as $key => $user)
+                        <tr>
+                            <td>{{$key+1}}</td>
+                            <td>{{$user->first_name}}</td>
+                            <td>{{$user->last_name}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$user->roles()->first() ? $user->roles()->first()->name : ''}}</td>
+                            <td>{{$user->getActive()}}</td>
+                            <td>{{createdAtFormat($user->created_at)}}</td>
+                            <td>{{createdAtFormat($user->created_at) == updatedAtFormat($user->updated_at) ? '--' : updatedAtFormat($user->updated_at)}}</td>
+                            <td nowrap="nowrap">
+                                @include('admin.components.form-controls', ['name'=>'admin-users', 'value'=>$user,'role'=>'admins'])
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
             <!--end: Datatable-->
         </div>
 

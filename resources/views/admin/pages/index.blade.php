@@ -28,8 +28,8 @@
 
                 <div class="dropdown dropdown-inline mr-2">
                     <!--begin::Button-->
-                   @permission('create-pages')
-                   <a href="{{route('pages.create')}}" class="btn btn-primary font-weight-bolder">
+                    @permission('create-pages')
+                    <a href="{{route('pages.create')}}" class="btn btn-primary font-weight-bolder">
                      <span class="svg-icon svg-icon-md">
                        <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
                        <svg xmlns="http://www.w3.org/2000/svg"
@@ -45,56 +45,58 @@
                        </svg>
                          <!--end::Svg Icon-->
                        </span>{{__('words.add_new_record')}}</a>
-                   <!--end::Button-->
-                   @endpermission
+                    <!--end::Button-->
+                    @endpermission
                 </div>
             </div>
         </div>
         <div class="card-body">
             <!--begin: Datatable-->
-            <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>{{__('words.image')}}</th>
-                    <th>{{__('words.title')}}</th>
-                    <th>{{__('words.sub_title')}}</th>
-                    <th>{{__('words.description')}}</th>
-{{--                    <th>{{__('words.identifier')}}</th>--}}
-                    <th>{{__('words.created_at')}}</th>
-                    <th>{{__('words.updated_at')}}</th>
-                    <th>{{__('words.actions')}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($pages as $key => $page)
+            <div style='overflow-x:auto'>
+                <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
+                    <thead>
                     <tr>
-
-                        <td>{{$key+1}}</td>
-                        <td>
-                            @if(!$page->image)
-                                <img class="index_image"
-                                     src="{{asset('uploads/default_image.png')}}" alt="logo">
-                            @else
-                                <img class="index_image"
-                                     src="{{$page->image}}"
-                                     onerror="this.src='{{asset('uploads/default_image.png')}}'"
-                                     alt="logo">
-                            @endif
-                        </td>
-                        <td>{{$page->title}}</td>
-                        <td>{{$page->sub_title}}</td>
-                        <td>{!! $page->description !!}</td>
-{{--                        <td>{{$page->identifier}}</td>--}}
-                        <td>{{createdAtFormat($page->created_at)}}</td>
-                        <td>{{createdAtFormat($page->created_at) == updatedAtFormat($page->updated_at) ? '--' : updatedAtFormat($page->updated_at)}}</td>
-                        <td nowrap="nowrap">
-                            @include('admin.components.form-controls', ['name'=>'pages', 'value'=>$page,'role'=>'pages'])
-                        </td>
+                        <th>#</th>
+                        <th>{{__('words.image')}}</th>
+                        <th>{{__('words.title')}}</th>
+                        <th>{{__('words.sub_title')}}</th>
+                        <th>{{__('words.description')}}</th>
+                        {{--                    <th>{{__('words.identifier')}}</th>--}}
+                        <th>{{__('words.created_at')}}</th>
+                        <th>{{__('words.updated_at')}}</th>
+                        <th>{{__('words.actions')}}</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach($pages as $key => $page)
+                        <tr>
+
+                            <td>{{$key+1}}</td>
+                            <td>
+                                @if(!$page->image)
+                                    <img class="index_image"
+                                         src="{{asset('uploads/default_image.png')}}" alt="logo">
+                                @else
+                                    <img class="index_image"
+                                         src="{{$page->image}}"
+                                         onerror="this.src='{{asset('uploads/default_image.png')}}'"
+                                         alt="logo">
+                                @endif
+                            </td>
+                            <td>{{$page->title}}</td>
+                            <td>{{$page->sub_title}}</td>
+                            <td>{!! $page->description !!}</td>
+                            {{--                        <td>{{$page->identifier}}</td>--}}
+                            <td>{{createdAtFormat($page->created_at)}}</td>
+                            <td>{{createdAtFormat($page->created_at) == updatedAtFormat($page->updated_at) ? '--' : updatedAtFormat($page->updated_at)}}</td>
+                            <td nowrap="nowrap">
+                                @include('admin.components.form-controls', ['name'=>'pages', 'value'=>$page,'role'=>'pages'])
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
             <!--end: Datatable-->
         </div>
 

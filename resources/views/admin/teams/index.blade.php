@@ -52,49 +52,51 @@
         </div>
         <div class="card-body">
             <!--begin: Datatable-->
-            <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>{{__('words.image')}}</th>
-                    <th>{{__('words.title')}}</th>
-                    <th>{{__('words.sub_title')}}</th>
-                    <th>{{__('words.description')}}</th>
-                    <th>{{__('words.status')}}</th>
-                    <th>{{__('words.created_at')}}</th>
-                    <th>{{__('words.updated_at')}}</th>
-                    <th>{{__('words.actions')}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($teams as $key => $team)
+            <div style='overflow-x:auto'>
+                <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
+                    <thead>
                     <tr>
-
-                        <td>{{$key+1}}</td>
-                        <td>
-                            @if(!$team->image)
-                                <img class="index_image"
-                                     src="{{asset('uploads/default_image.png')}}" alt="logo">
-                            @else
-                                <img class="index_image"
-                                     src="{{$team->image}}"
-                                     onerror="this.src='{{asset('uploads/default_image.png')}}'"
-                                     alt="logo">
-                            @endif
-                        </td>
-                        <td>{{$team->title}}</td>
-                        <td>{{$team->sub_title}}</td>
-                        <td>{!! Str::limit($team->description,100) !!}</td>
-                        <td>{{$team->getActive()}}</td>
-                        <td>{{createdAtFormat($team->created_at)}}</td>
-                        <td>{{createdAtFormat($team->created_at) == updatedAtFormat($team->updated_at) ? '--' : updatedAtFormat($team->updated_at)}}</td>
-                        <td nowrap="nowrap">
-                            @include('admin.components.form-controls', ['name'=>'teams', 'value'=>$team,'role'=>'teams'])
-                        </td>
+                        <th>#</th>
+                        <th>{{__('words.image')}}</th>
+                        <th>{{__('words.title')}}</th>
+                        <th>{{__('words.sub_title')}}</th>
+                        <th>{{__('words.description')}}</th>
+                        <th>{{__('words.status')}}</th>
+                        <th>{{__('words.created_at')}}</th>
+                        <th>{{__('words.updated_at')}}</th>
+                        <th>{{__('words.actions')}}</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach($teams as $key => $team)
+                        <tr>
+
+                            <td>{{$key+1}}</td>
+                            <td>
+                                @if(!$team->image)
+                                    <img class="index_image"
+                                         src="{{asset('uploads/default_image.png')}}" alt="logo">
+                                @else
+                                    <img class="index_image"
+                                         src="{{$team->image}}"
+                                         onerror="this.src='{{asset('uploads/default_image.png')}}'"
+                                         alt="logo">
+                                @endif
+                            </td>
+                            <td>{{$team->title}}</td>
+                            <td>{{$team->sub_title}}</td>
+                            <td>{!! Str::limit($team->description,100) !!}</td>
+                            <td>{{$team->getActive()}}</td>
+                            <td>{{createdAtFormat($team->created_at)}}</td>
+                            <td>{{createdAtFormat($team->created_at) == updatedAtFormat($team->updated_at) ? '--' : updatedAtFormat($team->updated_at)}}</td>
+                            <td nowrap="nowrap">
+                                @include('admin.components.form-controls', ['name'=>'teams', 'value'=>$team,'role'=>'teams'])
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
             <!--end: Datatable-->
         </div>
 

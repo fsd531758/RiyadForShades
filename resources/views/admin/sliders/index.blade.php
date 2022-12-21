@@ -52,47 +52,49 @@
         </div>
         <div class="card-body">
             <!--begin: Datatable-->
-            <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>{{__('words.image')}}</th>
-                    <th>{{__('words.title')}}</th>
-                    <th>{{__('words.description')}}</th>
-                    <th>{{__('words.status')}}</th>
-                    <th>{{__('words.created_at')}}</th>
-                    <th>{{__('words.updated_at')}}</th>
-                    <th>{{__('words.actions')}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($sliders as $key => $slider)
+            <div style='overflow-x:auto'>
+                <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
+                    <thead>
                     <tr>
-
-                        <td>{{$key+1}}</td>
-                        <td>
-                            @if(!$slider->image)
-                                <img class="index_image"
-                                     src="{{asset('uploads/default_image.png')}}" alt="logo">
-                            @else
-                                <img class="index_image"
-                                     src="{{$slider->image}}"
-                                     onerror="this.src='{{asset('uploads/default_image.png')}}'"
-                                     alt="logo">
-                            @endif
-                        </td>
-                        <td>{{$slider->title}}</td>
-                        <td>{!! $slider->description !!}</td>
-                        <td>{{$slider->getActive()}}</td>
-                        <td>{{createdAtFormat($slider->created_at)}}</td>
-                        <td>{{createdAtFormat($slider->created_at) == updatedAtFormat($slider->updated_at) ? '--' : updatedAtFormat($slider->updated_at)}}</td>
-                        <td nowrap="nowrap">
-                            @include('admin.components.form-controls', ['name'=>'sliders', 'value'=>$slider,'role'=>'sliders'])
-                        </td>
+                        <th>#</th>
+                        <th>{{__('words.image')}}</th>
+                        <th>{{__('words.title')}}</th>
+                        <th>{{__('words.description')}}</th>
+                        <th>{{__('words.status')}}</th>
+                        <th>{{__('words.created_at')}}</th>
+                        <th>{{__('words.updated_at')}}</th>
+                        <th>{{__('words.actions')}}</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach($sliders as $key => $slider)
+                        <tr>
+
+                            <td>{{$key+1}}</td>
+                            <td>
+                                @if(!$slider->image)
+                                    <img class="index_image"
+                                         src="{{asset('uploads/default_image.png')}}" alt="logo">
+                                @else
+                                    <img class="index_image"
+                                         src="{{$slider->image}}"
+                                         onerror="this.src='{{asset('uploads/default_image.png')}}'"
+                                         alt="logo">
+                                @endif
+                            </td>
+                            <td>{{$slider->title}}</td>
+                            <td>{!! $slider->description !!}</td>
+                            <td>{{$slider->getActive()}}</td>
+                            <td>{{createdAtFormat($slider->created_at)}}</td>
+                            <td>{{createdAtFormat($slider->created_at) == updatedAtFormat($slider->updated_at) ? '--' : updatedAtFormat($slider->updated_at)}}</td>
+                            <td nowrap="nowrap">
+                                @include('admin.components.form-controls', ['name'=>'sliders', 'value'=>$slider,'role'=>'sliders'])
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
             <!--end: Datatable-->
         </div>
 

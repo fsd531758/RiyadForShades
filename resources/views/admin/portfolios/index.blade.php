@@ -52,45 +52,47 @@
         </div>
         <div class="card-body">
             <!--begin: Datatable-->
-            <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>{{__('words.image')}}</th>
-                    <th>{{__('words.title')}}</th>
-                    <th>{{__('words.status')}}</th>
-                    <th>{{__('words.created_at')}}</th>
-                    <th>{{__('words.updated_at')}}</th>
-                    <th>{{__('words.actions')}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($portfolios as $key => $portfolio)
+            <div style='overflow-x:auto'>
+                <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
+                    <thead>
                     <tr>
-
-                        <td>{{$key+1}}</td>
-                        <td>
-                            @if(!$portfolio->image)
-                                <img class="index_image"
-                                     src="{{asset('uploads/default_image.png')}}" alt="logo">
-                            @else
-                                <img class="index_image"
-                                     src="{{$portfolio->image}}"
-                                     onerror="this.src='{{asset('uploads/default_image.png')}}'"
-                                     alt="logo">
-                            @endif
-                        </td>
-                        <td>{{$portfolio->title}}</td>
-                        <td>{{$portfolio->getActive()}}</td>
-                        <td>{{createdAtFormat($portfolio->created_at)}}</td>
-                        <td>{{createdAtFormat($portfolio->created_at) == updatedAtFormat($portfolio->updated_at) ? '--' : updatedAtFormat($portfolio->updated_at)}}</td>
-                        <td nowrap="nowrap">
-                            @include('admin.components.form-controls', ['name'=>'portfolios', 'value'=>$portfolio,'role'=>'portfolios'])
-                        </td>
+                        <th>#</th>
+                        <th>{{__('words.image')}}</th>
+                        <th>{{__('words.title')}}</th>
+                        <th>{{__('words.status')}}</th>
+                        <th>{{__('words.created_at')}}</th>
+                        <th>{{__('words.updated_at')}}</th>
+                        <th>{{__('words.actions')}}</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach($portfolios as $key => $portfolio)
+                        <tr>
+
+                            <td>{{$key+1}}</td>
+                            <td>
+                                @if(!$portfolio->image)
+                                    <img class="index_image"
+                                         src="{{asset('uploads/default_image.png')}}" alt="logo">
+                                @else
+                                    <img class="index_image"
+                                         src="{{$portfolio->image}}"
+                                         onerror="this.src='{{asset('uploads/default_image.png')}}'"
+                                         alt="logo">
+                                @endif
+                            </td>
+                            <td>{{$portfolio->title}}</td>
+                            <td>{{$portfolio->getActive()}}</td>
+                            <td>{{createdAtFormat($portfolio->created_at)}}</td>
+                            <td>{{createdAtFormat($portfolio->created_at) == updatedAtFormat($portfolio->updated_at) ? '--' : updatedAtFormat($portfolio->updated_at)}}</td>
+                            <td nowrap="nowrap">
+                                @include('admin.components.form-controls', ['name'=>'portfolios', 'value'=>$portfolio,'role'=>'portfolios'])
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
             <!--end: Datatable-->
         </div>
 

@@ -52,37 +52,39 @@
         </div>
         <div class="card-body">
             <!--begin: Datatable-->
-            <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>{{__('words.contact')}}</th>
-                    <th>{{__('words.type')}}</th>
-                    <th>{{__('words.icon')}}</th>
-                    <th>{{__('words.status')}}</th>
-                    <th>{{__('words.created_at')}}</th>
-                    <th>{{__('words.updated_at')}}</th>
-                    <th>{{__('words.actions')}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($contacts as $key => $contact)
+            <div style='overflow-x:auto'>
+                <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
+                    <thead>
                     <tr>
-
-                        <td>{{$key+1}}</td>
-                        <td>{{$contact->contact}}</td>
-                        <td>{{$contact->type}}</td>
-                        <td><i id="IconPreview" style="font-size:40px" class="{{$contact->icon}}"></i></td>
-                        <td>{{$contact->getActive()}}</td>
-                        <td>{{createdAtFormat($contact->created_at)}}</td>
-                        <td>{{createdAtFormat($contact->created_at) == updatedAtFormat($contact->updated_at) ? '--' : updatedAtFormat($contact->updated_at)}}</td>
-                        <td nowrap="nowrap">
-                            @include('admin.components.form-controls', ['name'=>'contacts', 'value'=>$contact,'role'=>'contacts'])
-                        </td>
+                        <th>#</th>
+                        <th>{{__('words.contact')}}</th>
+                        <th>{{__('words.type')}}</th>
+                        <th>{{__('words.icon')}}</th>
+                        <th>{{__('words.status')}}</th>
+                        <th>{{__('words.created_at')}}</th>
+                        <th>{{__('words.updated_at')}}</th>
+                        <th>{{__('words.actions')}}</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach($contacts as $key => $contact)
+                        <tr>
+
+                            <td>{{$key+1}}</td>
+                            <td>{{$contact->contact}}</td>
+                            <td>{{$contact->type}}</td>
+                            <td><i id="IconPreview" style="font-size:40px" class="{{$contact->icon}}"></i></td>
+                            <td>{{$contact->getActive()}}</td>
+                            <td>{{createdAtFormat($contact->created_at)}}</td>
+                            <td>{{createdAtFormat($contact->created_at) == updatedAtFormat($contact->updated_at) ? '--' : updatedAtFormat($contact->updated_at)}}</td>
+                            <td nowrap="nowrap">
+                                @include('admin.components.form-controls', ['name'=>'contacts', 'value'=>$contact,'role'=>'contacts'])
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
             <!--end: Datatable-->
         </div>
 
