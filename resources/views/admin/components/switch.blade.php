@@ -1,5 +1,5 @@
 @if($name && $label || $val)
-    <div class="col-6 input">
+    <div class="col-md-6 col-sm-12 input">
         <label for="active" class="checkbox-inline">{{$label}}</label>
 
         <span class="switch switch-icon">

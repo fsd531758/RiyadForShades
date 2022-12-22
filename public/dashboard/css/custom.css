@@ -1,12 +1,13 @@
-@media (min-width: 992px){
+@media (min-width: 992px) {
     .header-fixed.subheader-fixed .subheader {
         top: 0px;
     }
 }
 
 @media (max-width: 992px) {
-    .dataTables_wrapper{
+    .dataTables_wrapper {
         max-width: 300px;
+        overflow-x: auto
     }
 }
 
@@ -21,6 +22,6 @@
     flex: content;
 }
 
-.image-galley{
+.image-galley {
     height: 200px;
 }

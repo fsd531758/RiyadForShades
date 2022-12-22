@@ -23,13 +23,14 @@
 <script src="{{asset('dashboard/js/pages/crud/datatables/basic/paginations.js')}}"></script>
 <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 <script src="{{asset('dashboard/plugins/custom/datatables/datatables.bundle.js')}}"></script>
-<script src="{{asset('dashboard/js/pages/crud/file-upload/dropzonejs.js')}}"></script>
+{{--<script src="{{asset('dashboard/js/pages/crud/file-upload/dropzonejs.js')}}"></script>--}}
 <script src="{{asset('Dashboard/plugins/ckeditor/ckeditor.js')}}"></script>
 <!-- Ekko Lightbox -->
 <script src="{{asset('Dashboard/plugins/ekko-lightbox/ekko-lightbox.min.js')}}"></script>
 <script src="{{asset('Dashboard/js/pages/crud/file-upload/image-input.js')}}"></script>
 <script src="{{asset('Dashboard/js/pages/crud/forms/widgets/bootstrap-datetimepicker.js')}}"></script>
-
+<script src="{{asset('Dashboard/js/pages/crud/forms/widgets/bootstrap-datepicker.js')}}"></script>
+<script src="{{asset('dashboard/js/pages/crud/forms/widgets/bootstrap-timepicker.js')}}"></script>
 <script src="{{ asset('Dashboard/js/iconpicker-1.5.0.js') }}"></script>
 <!--end::Page Scripts-->
 
@@ -72,9 +73,14 @@
 <script>
     CKEDITOR.config.language = "{{App()->getLocale()}}";
     CKEDITOR.config.removeButtons = 'Maximize,ShowBlocks,NewPage,BidiLtr,BidiRtl,Language,Source,CreateDiv,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Image,Flash,Table,HorizontalRule,Smiley,SpecialChar,PageBreak,Iframe,About';
-    $('.yearpicker').yearpicker();
-    // $ ('#datepicker') .datepicker();
-    // $('.datepicker-default').datepicker-default();
+    // $('.yearpicker').yearpicker();
+    $('#kt_datetimepicker_1').datetimepicker({
+        format: 'YYYY/MM/DD hh:mm A'
+    });
+
+    $('#kt_datepicker_2').datepicker({
+        format: 'yyyy/mm/dd'
+    });
 </script>
 
 @yield('scripts')

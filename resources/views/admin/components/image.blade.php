@@ -1,5 +1,5 @@
 @if($name && $label && $id)
-    <div class="col-md-4">
+    <div class="col-md-4 col-sm-12">
         <div class="form-group">
             <label class="d-block">{{$label}}</label>
             <div class="image-input-wrapper"

@@ -49,7 +49,6 @@
         </div>
         <div class="card-body">
             <!--begin: Datatable-->
-            <div style='overflow-x:auto'>
                 <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
                     <thead>
                     <tr>
@@ -82,7 +81,6 @@
                     @endforeach
                     </tbody>
                 </table>
-            </div>
             <!--end: Datatable-->
         </div>
 

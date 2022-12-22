@@ -9,10 +9,12 @@ body {
 }
 
 @media (max-width: 992px) {
-    .dataTables_wrapper{
-     max-width: 300px;
-   }
+    .dataTables_wrapper {
+        max-width: 300px;
+        overflow-x: auto
+    }
 }
+
 .index_image {
     width: 100px;
     height: 80px;
@@ -24,10 +26,10 @@ body {
     flex: content;
 }
 
-.image-galley{
+.image-galley {
     height: 200px;
 }
 
-.toast-message{
+.toast-message {
     margin-right: 30px;
 }

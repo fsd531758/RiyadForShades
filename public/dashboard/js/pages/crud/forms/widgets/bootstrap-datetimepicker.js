@@ -26,11 +26,11 @@ var KTBootstrapDatetimepicker = function () {
 
         // Demo 6
         $('#kt_datetimepicker_6').datetimepicker({
-            defaultDate: '11/1/2020',
+            defaultDate: '11/1/2023',
             disabledDates: [
-                moment('12/25/2020'),
-                new Date(2020, 11 - 1, 21),
-                '11/22/2022 00:53'
+                moment('12/25/2023'),
+                new Date(2023, 11 - 1, 21),
+                '11/22/2023 00:53'
             ]
         });
 

@@ -1,18 +1,10 @@
 @if(Session::has('success'))
     <script>
-        {{--toastr.options =--}}
-        {{--    {--}}
-        {{--        "closeButton" : true,--}}
-        {{--        "progressBar" : true,--}}
-        {{--        "positionClass": 'toast-top-left',--}}
-        {{--    }--}}
-        {{--toastr.success("{{ Session::get('success') }}");--}}
-
         toastr.options = {
-            "closeButton": false,
+            "closeButton": true,
             "debug": false,
             "newestOnTop": false,
-            "progressBar": false,
+            "progressBar": true,
             "positionClass": "{{app()->getLocale() == 'ar' ? 'toast-top-left' : 'toast-top-right'}}",
             "preventDuplicates": false,
             "onclick": null,

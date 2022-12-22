@@ -1,7 +1,7 @@
 @if(Session::has('error'))
     <script>
         toastr.options = {
-            "closeButton": false,
+            "closeButton": true,
             "debug": false,
             "newestOnTop": false,
             "progressBar": true,
