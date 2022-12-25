@@ -9,7 +9,6 @@
     <!--end::Fonts-->
 
     <link href="{{asset('dashboard/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('dashboard/css/pages/error/error-2.css')}}" rel="stylesheet" type="text/css" />
 
     @if(app()->getLocale() == 'ar')
         <!--begin::Page Vendors Styles(used by this page)-->
