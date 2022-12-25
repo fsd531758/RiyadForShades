@@ -24,21 +24,21 @@
 <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 <script src="{{asset('dashboard/plugins/custom/datatables/datatables.bundle.js')}}"></script>
 {{--<script src="{{asset('dashboard/js/pages/crud/file-upload/dropzonejs.js')}}"></script>--}}
-<script src="{{asset('Dashboard/plugins/ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('dashboard/plugins/ckeditor/ckeditor.js')}}"></script>
 <!-- Ekko Lightbox -->
-<script src="{{asset('Dashboard/plugins/ekko-lightbox/ekko-lightbox.min.js')}}"></script>
-<script src="{{asset('Dashboard/js/pages/crud/file-upload/image-input.js')}}"></script>
-<script src="{{asset('Dashboard/js/pages/crud/forms/widgets/bootstrap-datetimepicker.js')}}"></script>
-<script src="{{asset('Dashboard/js/pages/crud/forms/widgets/bootstrap-datepicker.js')}}"></script>
+<script src="{{asset('dashboard/plugins/ekko-lightbox/ekko-lightbox.min.js')}}"></script>
+<script src="{{asset('dashboard/js/pages/crud/file-upload/image-input.js')}}"></script>
+<script src="{{asset('dashboard/js/pages/crud/forms/widgets/bootstrap-datetimepicker.js')}}"></script>
+<script src="{{asset('dashboard/js/pages/crud/forms/widgets/bootstrap-datepicker.js')}}"></script>
 <script src="{{asset('dashboard/js/pages/crud/forms/widgets/bootstrap-timepicker.js')}}"></script>
-<script src="{{ asset('Dashboard/js/iconpicker-1.5.0.js') }}"></script>
+<script src="{{ asset('dashboard/js/iconpicker-1.5.0.js') }}"></script>
 <!--end::Page Scripts-->
 
 <script>
     // Default options
     IconPicker.Init({
         // Required: You have to set the path of IconPicker JSON file to "jsonUrl" option. e.g. '/content/plugins/IconPicker/dist/iconpicker-1.5.0.json'
-        jsonUrl:"{{ asset('Dashboard/js/iconpicker-1.5.0.json') }}",// Optional: Change the buttons or search placeholder text according to the language.
+        jsonUrl:"{{ asset('dashboard/js/iconpicker-1.5.0.json') }}",// Optional: Change the buttons or search placeholder text according to the language.
         searchPlaceholder: 'Search Icon',
         showAllButton: "{{__('words.show_all')}}",
         cancelButton: "{{__('words.cancel')}}",
