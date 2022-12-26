@@ -76,6 +76,8 @@ return [
     'link'=>'Link',
     'yes'=>'Yes',
     'no'=>'No',
+    'import'=>'Import',
+    'export'=>'Export',
 
     'show_masters' => 'Show All Master Data',
     'show_master' => 'Show Master Data',

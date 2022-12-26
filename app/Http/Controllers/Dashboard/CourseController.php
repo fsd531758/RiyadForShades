@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Exports\CoursesExport;
 use App\Http\Controllers\Controller;
 use App\Imports\CoursesImport;
 use App\Models\Course;
@@ -14,9 +15,9 @@ class CourseController extends Controller
 
     public function __construct(Course $course)
     {
-        $this->middleware(['permission:read-courses'])->only('index', 'show');
+        $this->middleware(['permission:read-courses'])->only('index');
         $this->middleware(['permission:create-courses'])->only('create', 'store');
-        $this->middleware(['permission:update-courses'])->only('edit', 'update');
+        $this->middleware(['permission:export-courses'])->only('export');
         $this->middleware(['permission:delete-courses'])->only('destroy');
         $this->course = $course;
     }
@@ -36,7 +37,7 @@ class CourseController extends Controller
         return view('admin.courses.create');
     }
 
-    public function store(Request $request)
+    public function import(Request $request)
     {
         try {
             Excel::import(new CoursesImport(), $request->courses);
@@ -47,23 +48,8 @@ class CourseController extends Controller
         }
     }
 
-    public function show(Course $course)
+    public function export()
     {
-        //
-    }
-
-    public function edit(Course $course)
-    {
-        //
-    }
-
-    public function update(Request $request, Course $course)
-    {
-        //
-    }
-
-    public function destroy(Course $course)
-    {
-        //
+        return Excel::download(new CoursesExport, 'courses.xlsx');
     }
 }

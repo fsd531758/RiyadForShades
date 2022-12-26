@@ -20,7 +20,7 @@
 @endsection
 
 @extends('admin.components.create-form')
-@section('form_action',route('courses.store'))
+@section('form_action',route('courses.import'))
 @section('form_type', 'POST')
 
 @section('form_content')

@@ -17,6 +17,6 @@ return [
         'pages' => ['read', 'create', 'update'],
         'contacts' => ['read', 'create', 'update', 'delete'],
         'settings' => ['read', 'update'],
-        'courses' => ['read', 'create', 'update', 'delete'],
+        'courses' => ['read', 'create', 'export'],
     ]
 ];

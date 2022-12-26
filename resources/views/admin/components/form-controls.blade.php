@@ -21,12 +21,12 @@
     @endif
 
 
+    @if(auth('admin')->user()->hasPermission('delete-' . $role))
+        <form id="delete-form-{{ $value->id }}" style="display: inline-table;"
+              action="{{ route($name . '.destroy', $value->id) }}" method="post">
+            @csrf
+            @method('delete')
 
-    <form id="delete-form-{{ $value->id }}" style="display: inline-table;"
-          action="{{ route($name . '.destroy', $value->id) }}" method="post">
-        @csrf
-        @method('delete')
-        @if(auth('admin')->user()->hasPermission('delete-' . $role))
             <button type="button" class="btn btn-sm btn-clean btn-icon m-1" title="{{__('words.delete')}}"
                     data-toggle="modal" data-target="#deleteModalSizeSm-{{ $value->id }}">
             <span class="svg-icon svg-icon-md svg-icon-primary">
@@ -34,33 +34,34 @@
                 <i class="fa fa-trash"></i>
             </span>
             </button>
-        @endif
-        <div class="modal fade" id="deleteModalSizeSm-{{$value->id}}" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">{{__('words.delete_confirm')}}</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body"> {{ __('message.delete_message') }} <b
-                            class="text-danger">
-                            @if($value->name)
-                                {{$value->name}}
-                            @elseif($value->title)
-                                {{$value->title}}
-                            @else
-                                {{$value->email}}
-                            @endif
-                        </b></div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn gray btn-outline-secondary"
-                                data-dismiss="modal">{{__('words.cancel')}}</button>
-                        <button type="submit" class="btn gray btn-outline-danger">{{__('words.delete')}}</button>
+            <div class="modal fade" id="deleteModalSizeSm-{{$value->id}}" tabindex="-1" role="dialog"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">{{__('words.delete_confirm')}}</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body"> {{ __('message.delete_message') }} <b
+                                class="text-danger">
+                                @if($value->name)
+                                    {{$value->name}}
+                                @elseif($value->title)
+                                    {{$value->title}}
+                                @else
+                                    {{$value->email}}
+                                @endif
+                            </b></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn gray btn-outline-secondary"
+                                    data-dismiss="modal">{{__('words.cancel')}}</button>
+                            <button type="submit" class="btn gray btn-outline-danger">{{__('words.delete')}}</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    @endif
 @endif
