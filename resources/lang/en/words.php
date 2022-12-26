@@ -196,6 +196,13 @@ return [
     'type' => 'Type',
     'social' => 'Social Media Link',
 
+    'course' => 'Course',
+    'courses' => 'Courses',
+    'show_courses' => 'Show Courses',
+    'show_course' => 'Show Course',
+    'edit_course' => 'Edit Course',
+    'create_course' => 'Create Course',
+
     'ar' => [
         'title' => 'Title In Arabic',
         'sub_title' => 'Sub Title In Arabic',

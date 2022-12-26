@@ -694,6 +694,48 @@
                 @endpermission
                 {{-- contact routes end --}}
 
+                {{-- course routes start --}}
+                @permission('read-courses')
+                <li class="menu-item menu-item-submenu {{ request()->routeIs('courses.*') ? 'menu-item-open menu-item-here' : '' }}"
+                    aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="javascript:;" class="menu-link menu-toggle">
+                        <i class="fas fa-upload svg-icon menu-icon"></i>
+                        <span class="menu-text">{{__('words.courses')}}</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="menu-submenu">
+                        <i class="menu-arrow"></i>
+                        <ul class="menu-subnav">
+
+                            @permission('read-courses')
+                            <li class="menu-item  {{ request()->routeIs('courses.index') ? 'menu-item-active' : '' }}"
+                                aria-haspopup="true">
+                                <a href="{{route('courses.index')}}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">{{__('words.show_all')}}</span>
+                                </a>
+                            </li>
+                            @endpermission
+
+                            @permission('create-courses')
+                            <li class="menu-item  {{ request()->routeIs('courses.create') ? 'menu-item-active' : '' }}"
+                                aria-haspopup="true">
+                                <a href="{{route('courses.create')}}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">{{__('words.create')}}</span>
+                                </a>
+                            </li>
+                            @endpermission
+                        </ul>
+                    </div>
+                </li>
+                @endpermission
+                {{-- course routes end --}}
+
                 {{-- setting route start --}}
                 @permission('read-settings')
                 <li class="menu-item {{ request()->routeIs('settings.*') ? 'menu-item-active' : '' }}" aria-haspopup="true">

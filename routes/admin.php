@@ -69,6 +69,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
             //setting routes
             Route::resource('settings', 'SettingController');
+
+            //course routes
+            Route::resource('courses', 'CourseController');
         });
     });
 });
