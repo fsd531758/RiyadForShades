@@ -205,6 +205,12 @@ return [
     'edit_course' => 'Edit Course',
     'create_course' => 'Create Course',
 
+
+    'contact_details' => 'Contact Details',
+    'contact_request' => 'Contact request from: ',
+    'message' => 'Message',
+    'rights' => 'All Rights Reserved By ',
+
     'ar' => [
         'title' => 'Title In Arabic',
         'sub_title' => 'Sub Title In Arabic',

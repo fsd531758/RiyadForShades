@@ -137,7 +137,7 @@
             }
 
             .es-m-txt-l, .es-m-txt-l h1, .es-m-txt-l h2, .es-m-txt-l h3 {
-                text-align: {{(App::isLocale('ar') ? 'right' : 'left')}}  !important
+                text-align: {{(App::isLocale('ar') ? 'right' : 'left')}}   !important
             }
 
             .es-m-txt-r img, .es-m-txt-c img, .es-m-txt-l img {
@@ -473,14 +473,15 @@
                                                             <td align="center"
                                                                 style="padding:0;Margin:0;padding-top:10px;padding-bottom:15px">
                                                                 <h1 style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:'trebuchet ms', helvetica, sans-serif;font-size:30px;font-style:normal;font-weight:normal;color:#333333">
-                                                                    {{__('custom_validation.quote_details')}}
+                                                                    {{__('words.contact_details')}}
                                                                 </h1></td>
                                                         </tr>
                                                         <tr style="border-collapse:collapse">
                                                             <td align="center"
                                                                 style="Margin:0;padding-top:5px;padding-bottom:5px;padding-left:40px;padding-right:40px">
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                                                                    {{__('custom_validation.mail_quote_request') . $quote->name}}</p></td>
+                                                                    {{__('words.contact_request') . $contact->name}}</p>
+                                                            </td>
                                                         </tr>
                                                     </table>
                                                 </td>
@@ -515,7 +516,8 @@
                                                             <td align="{{(App::isLocale('ar') ? 'right' : 'left')}}"
                                                                 style="padding:20px;Margin:0"><h4
                                                                     style="Margin:0;line-height:22px;mso-line-height-rule:exactly;font-family:'trebuchet ms', helvetica, sans-serif;font-size:18px">
-                                                                    {{__('custom_validation.quote_details')}} :</h4></td>
+                                                                    {{__('words.contact_details')}} :</h4>
+                                                            </td>
                                                         </tr>
                                                         <tr style="border-collapse:collapse">
                                                             <td align="{{(App::isLocale('ar') ? 'right' : 'left')}}"
@@ -527,27 +529,26 @@
                                                                     role="presentation">
                                                                     <tr style="border-collapse:collapse">
                                                                         <td style="padding:0;Margin:0;font-size:14px;line-height:21px">
-                                                                            <strong> {{__('custom_validation.name')}} : {{$quote->name}}</strong>
+                                                                            <strong> {{__('words.name')}}
+                                                                                : {{$contact->name}}</strong>
                                                                         </td>
                                                                     </tr>
                                                                     <tr style="border-collapse:collapse">
                                                                         <td style="padding:0;Margin:0;font-size:14px;line-height:21px">
-                                                                            <strong>{{__('custom_validation.phone')}} : {{$quote->phone}}</strong>
+                                                                            <strong>{{__('words.phone')}}
+                                                                                : {{$contact->phone}}</strong>
                                                                         </td>
                                                                     </tr>
                                                                     <tr style="border-collapse:collapse">
                                                                         <td style="padding:0;Margin:0;font-size:14px;line-height:21px">
-                                                                            <strong>{{__('custom_validation.email')}} : {{$quote->email}}</strong>
+                                                                            <strong>{{__('words.email')}}
+                                                                                : {{$contact->email}}</strong>
                                                                         </td>
                                                                     </tr>
                                                                     <tr style="border-collapse:collapse">
                                                                         <td style="padding:0;Margin:0;font-size:14px;line-height:21px">
-                                                                            <strong>{{__('custom_validation.service_name')}} : {{$quote->service->name}}</strong>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr style="border-collapse:collapse">
-                                                                        <td style="padding:0;Margin:0;font-size:14px;line-height:21px">
-                                                                            <strong>{{__('custom_validation.message')}} : {{$quote->message}}</strong>
+                                                                            <strong>{{__('words.message')}}
+                                                                                : {{$contact->message}}</strong>
                                                                         </td>
                                                                     </tr>
                                                                 </table>
@@ -580,7 +581,7 @@
                                             <tr style="border-collapse:collapse">
                                                 <td align="{{(App::isLocale('ar') ? 'right' : 'left')}}"
                                                     style="padding:0;Margin:0;width:560px;text-align: center;font-size: 10px;">
-                                                    {{__('custom_validation.rights')}}
+                                                    {{__('words.rights') . settings()->website_title . '&copy;'. ' ' . now()->year }}
                                                 </td>
                                             </tr>
                                         </table>
