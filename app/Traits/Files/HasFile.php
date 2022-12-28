@@ -63,11 +63,15 @@ trait HasFile
     {
         if (request()->hasFile('image')) {
             //Delete the old image from the public images folder
-            if ($this->file && is_object($this->file)) {
-                Storage::delete($this->file()->where('type','image')->first()->getRawOriginal('path'));
-                //Delete the old image from the images table
-                $this->file()->where('type','image')->delete();
+            $file = $this->file()->where('type', 'image');
+            if ($file->first()) {
+                if ($this->file && is_object($this->file)) {
+                    Storage::delete($this->file()->where('type', 'image')->first()->getRawOriginal('path'));
+                    //Delete the old image from the images table
+                    $file->delete();
+                }
             }
+
             //Store the new image in public images folder & set the path in $image variable
             $image = request()->image->store('images');
             //Create a new user's image in images table
@@ -75,64 +79,92 @@ trait HasFile
         }
 
         if (request()->hasFile('cover')) {
-            if ($this->file && is_object($this->file)) {
-                Storage::delete($this->file()->where('type','cover')->first()->getRawOriginal('path'));
+            $file = $this->file()->where('type', 'cover');
+            if ($file->first()) {
+                if ($this->file && is_object($this->file)) {
+                    Storage::delete($this->file()->where('type', 'cover')->first()->getRawOriginal('path'));
+                }
+                $file->delete();
             }
-            $this->file()->where('type','cover')->delete();
+
             $image = request()->cover->store('images');
             $this->file()->create(['path' => $image, 'type' => 'cover']);
         }
 
         if (request()->hasFile('flag')) {
-            if ($this->file && is_object($this->file)) {
-                Storage::delete($this->file()->where('type','flag')->first()->getRawOriginal('path'));
+            $file = $this->file()->where('type', 'flag');
+            if ($file->first()) {
+                if ($this->file && is_object($this->file)) {
+                    Storage::delete($this->file()->where('type', 'flag')->first()->getRawOriginal('path'));
+                }
+                $file->delete();
             }
-            $this->file()->where('type','flag')->delete();
+
             $image = request()->flag->store('flags');
             $this->file()->create(['path' => $image, 'type' => 'flag']);
         }
 
         if (request()->hasFile('icon')) {
-            if ($this->file && is_object($this->file)) {
-                Storage::delete($this->file()->where('type','icon')->first()->getRawOriginal('path'));
+            $file = $this->file()->where('type', 'icon');
+            if ($file->first()) {
+                if ($this->file && is_object($this->file)) {
+                    Storage::delete($this->file()->where('type', 'icon')->first()->getRawOriginal('path'));
+                }
+                $file->delete();
             }
-            $this->file()->where('type','icon')->delete();
+
             $image = request()->icon->store('icons');
             $this->file()->create(['path' => $image, 'type' => 'icon']);
         }
 
         if (request()->hasFile('logo')) {
-            if ($this->file && is_object($this->file)) {
-                Storage::delete($this->file()->where('type','logo')->first()->getRawOriginal('path'));
+            $file = $this->file()->where('type', 'logo');
+            if ($file->first()) {
+                if ($this->file && is_object($this->file)) {
+                    Storage::delete($this->file()->where('type', 'logo')->first()->getRawOriginal('path'));
+                }
+                $file->delete();
             }
-            $this->file()->where('type','logo')->delete();
+
             $image = request()->logo->store('logos');
             $this->file()->create(['path' => $image, 'type' => 'logo']);
         }
 
         if (request()->hasFile('file')) {
-            if ($this->file && is_object($this->file)) {
-                Storage::delete($this->file()->where('type','file')->first()->getRawOriginal('path'));
+            $file = $this->file()->where('type', 'file');
+            if ($file->first()) {
+                if ($this->file && is_object($this->file)) {
+                    Storage::delete($this->file()->where('type', 'file')->first()->getRawOriginal('path'));
+                }
+                $file->delete();
             }
-            $this->file()->where('type','file')->delete();
+
             $image = request()->file->store('files');
             $this->file()->create(['path' => $image, 'type' => 'file']);
         }
 
         if (request()->hasFile('footer_img')) {
-            if ($this->file && is_object($this->file)) {
-                Storage::delete($this->file()->where('type','footer_img')->first()->getRawOriginal('path'));
+            $file = $this->file()->where('type', 'footer_img');
+            if ($file->first()) {
+                if ($this->file && is_object($this->file)) {
+                    Storage::delete($this->file()->where('type', 'footer_img')->first()->getRawOriginal('path'));
+                }
+                $file->delete();
             }
-            $this->file()->where('type','footer_img')->delete();
+
             $image = request()->footer_img->store('images');
             $this->file()->create(['path' => $image, 'type' => 'footer_img']);
         }
 
         if (request()->hasFile('contact_img')) {
-            if ($this->file && is_object($this->file)) {
-                Storage::delete($this->file()->where('type','contact_img')->first()->getRawOriginal('path'));
+            $file = $this->file()->where('type', 'contact_img');
+            if ($file->first()) {
+                if ($this->file && is_object($this->file)) {
+                    Storage::delete($this->file()->where('type', 'contact_img')->first()->getRawOriginal('path'));
+                }
+                $file->delete();
             }
-            $this->file()->where('type','contact_img')->delete();
+
             $image = request()->contact_img->store('images');
             $this->file()->create(['path' => $image, 'type' => 'contact_img']);
         }
