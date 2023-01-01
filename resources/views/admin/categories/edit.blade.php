@@ -78,7 +78,8 @@
             </div>
 
             <div class="form-group row">
-                @include('admin.components.image',['label'=>__('words.image'),'value'=>old('image',$category->image),'name'=>'image','id'=>'kt_image_3'])
+                @include('admin.components.image',['label'=>__('words.image'),'value'=>old('image',$category->image),'name'=>'image','id'=>'kt_image_3','deleteImage'=>'deleteImage'])
+
 
                 @include('admin.components.switch',['label'=>__('words.status'),'name'=>'status','val' => old('status',$category->status)])
             </div>

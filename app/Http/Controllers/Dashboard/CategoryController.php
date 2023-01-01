@@ -72,15 +72,18 @@ class CategoryController extends Controller
             else
                 $request->request->add(['status' => 1]);
 
-            $requested_data = $request->except(['_token', 'profile_avatar_remove', 'image']);
+            $requested_data = $request->except(['_token', 'profile_avatar_remove', 'image','deleteFile']);
             $requested_data['updated_at'] = Carbon::now();
+            if ($request->has('deleteFile')){
+                $category->deleteFile();
+            }
             $category->update($requested_data);
 
             $category->updateFile();
 
             return redirect()->route('categories.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 

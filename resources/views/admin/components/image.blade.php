@@ -28,5 +28,8 @@
             </span>
             </div>
         </div>
+        @isset($deleteImage)
+            @include('admin.components.deleteImage')
+        @endisset
     </div>
 @endif

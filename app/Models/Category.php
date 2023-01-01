@@ -39,7 +39,9 @@ class Category extends Model
     public function getImageAttribute()
     {
         $image = $this->file()->first();
-        return $image->path;
+        if ($image)
+            return $image->path;
+        return '';
     }
 
     public function getActive()
