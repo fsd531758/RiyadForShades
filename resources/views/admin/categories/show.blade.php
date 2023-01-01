@@ -105,7 +105,7 @@
                             <div class="card-title">
                                 <h5 class="font-weight-bolder text-dark">{{__('words.icon')}}:</h5>
                             </div>
-                            <i class="{{ $category->icon }} fa-lg"></i>
+                            <i class="{{ $category->icon }} fa-5x"></i>
                         </div>
                     </div>
                 </div>
