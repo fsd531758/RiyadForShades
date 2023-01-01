@@ -205,6 +205,13 @@ return [
     'edit_course' => 'Edit Course',
     'create_course' => 'Create Course',
 
+    'news_letter' => 'News Letter',
+    'news_letters' => 'News Letters',
+    'show_news_letters' => 'Show News Letters',
+    'show_news_letter' => 'Show News Letter',
+    'edit_news_letter' => 'Edit News Letter',
+    'create_news_letter' => 'Create News Letter',
+
 
     'contact_details' => 'Contact Details',
     'contact_request' => 'Contact request from: ',

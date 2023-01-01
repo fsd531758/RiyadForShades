@@ -99,7 +99,7 @@ class ProjectController extends Controller
             $project->delete();
             return redirect()->route('projects.index')->with(['success' => __('message.deleted_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 }

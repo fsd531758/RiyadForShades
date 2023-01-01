@@ -736,6 +736,48 @@
                 @endpermission
                 {{-- course routes end --}}
 
+                {{-- news letter routes start --}}
+                @permission('read-courses')
+                <li class="menu-item menu-item-submenu {{ request()->routeIs('news-letters.*') ? 'menu-item-open menu-item-here' : '' }}"
+                    aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="javascript:;" class="menu-link menu-toggle">
+                        <i class="fad fa-newspaper svg-icon menu-icon"></i>
+                        <span class="menu-text">{{__('words.news_letters')}}</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="menu-submenu">
+                        <i class="menu-arrow"></i>
+                        <ul class="menu-subnav">
+
+                            @permission('read-courses')
+                            <li class="menu-item  {{ request()->routeIs('news-letters.index') ? 'menu-item-active' : '' }}"
+                                aria-haspopup="true">
+                                <a href="{{route('news-letters.index')}}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">{{__('words.show_all')}}</span>
+                                </a>
+                            </li>
+                            @endpermission
+
+                            @permission('create-courses')
+                            <li class="menu-item  {{ request()->routeIs('news-letters.create') ? 'menu-item-active' : '' }}"
+                                aria-haspopup="true">
+                                <a href="{{route('news-letters.create')}}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">{{__('words.create')}}</span>
+                                </a>
+                            </li>
+                            @endpermission
+                        </ul>
+                    </div>
+                </li>
+                @endpermission
+                {{-- news letter routes end --}}
+
                 {{-- setting route start --}}
                 @permission('read-settings')
                 <li class="menu-item {{ request()->routeIs('settings.*') ? 'menu-item-active' : '' }}" aria-haspopup="true">

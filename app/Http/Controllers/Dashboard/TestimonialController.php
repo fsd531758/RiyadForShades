@@ -51,7 +51,7 @@ class TestimonialController extends Controller
 
             return redirect()->route('testimonials.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -92,7 +92,7 @@ class TestimonialController extends Controller
             $testimonial->delete();
             return redirect()->route('testimonials.index')->with(['success' => __('message.deleted_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 }

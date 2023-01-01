@@ -67,6 +67,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
             //contact routes
             Route::resource('contacts', 'SettingContactController');
 
+            //news-letter routes
+            Route::resource('news-letters', 'NewsLetterController');
+
             //setting routes
             Route::resource('settings', 'SettingController');
 

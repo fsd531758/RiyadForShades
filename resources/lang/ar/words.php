@@ -203,6 +203,13 @@ return [
     'edit_course' => 'تعديل الدورة',
     'create_course' => 'إنشاء دورات',
 
+    'news_letter' => 'القائمة البريدية',
+    'news_letters' => 'القوائم البريدية',
+    'show_news_letters' => 'عرض القوائم البريدية',
+    'show_news_letter' => 'عرض القائمة البريدية',
+    'edit_news_letter' => 'تعديل القائمة البريدية',
+    'create_news_letter' => 'إنشاء قائمة بريدية',
+
     'contact_details' => 'تفاصيل الإتصال',
     'contact_request' => 'طلب إتصال مقدم من: ',
     'message' => 'الرسالة',

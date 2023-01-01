@@ -124,7 +124,7 @@ class AuthController extends Controller
             }
             return failureResponse( 'error');
         } catch (\Exception $e) {
-            return failureResponse('error', $e->getMessage());
+            return failureResponse('error',__('message.something_wrong'));
         }
     }
 
