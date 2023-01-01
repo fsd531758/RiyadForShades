@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\FaqRequest;
 use App\Models\Faq;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class FaqController extends Controller
 {
@@ -71,6 +72,7 @@ class FaqController extends Controller
                 $request->request->add(['status' => 1]);
 
             $requested_data = $request->except(['_token']);
+            $requested_data['updated_at'] = Carbon::now();
             $faq->update($requested_data);
             return redirect()->route('faqs.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {

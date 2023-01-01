@@ -7,6 +7,7 @@ use App\Http\Requests\Dashboard\TestimonialRequest;
 use App\Models\Team;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class TestimonialController extends Controller
 {
@@ -73,6 +74,7 @@ class TestimonialController extends Controller
                 $request->request->add(['status' => 1]);
 
             $requested_data = $request->except(['_token', 'profile_avatar_remove', 'image']);
+            $requested_data['updated_at'] = Carbon::now();
             $testimonial->update($requested_data);
 
             $testimonial->updateFile();

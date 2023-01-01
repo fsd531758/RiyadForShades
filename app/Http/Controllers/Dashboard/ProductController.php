@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class ProductController extends Controller
 {
@@ -93,6 +94,7 @@ class ProductController extends Controller
                 $request->request->add(['status' => 1]);
 
             $requested_data = $request->except(['_token', 'profile_avatar_remove', 'image', 'files', 'deleted_files']);
+            $requested_data['updated_at'] = Carbon::now();
             $product->update($requested_data);
 
             $product->updateFile();

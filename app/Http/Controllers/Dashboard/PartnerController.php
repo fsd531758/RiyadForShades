@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\PartnerRequest;
 use App\Models\Partner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class PartnerController extends Controller
 {
@@ -72,6 +73,7 @@ class PartnerController extends Controller
                 $request->request->add(['status' => 1]);
 
             $requested_data = $request->except(['_token', 'profile_avatar_remove', 'image']);
+            $requested_data['updated_at'] = Carbon::now();
             $partner->update($requested_data);
 
             $partner->updateFile();

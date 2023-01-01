@@ -7,6 +7,7 @@ use App\Http\Requests\Dashboard\ServiceRequest;
 use App\Http\Requests\Dashboard\SliderRequest;
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class SliderController extends Controller
 {
@@ -63,6 +64,7 @@ class SliderController extends Controller
     {
         try {
             $requested_data = $request->except(['_token', 'profile_avatar_remove', 'image']);
+            $requested_data['updated_at'] = Carbon::now();
             $slider->update($requested_data);
 
             $slider->updateFile();

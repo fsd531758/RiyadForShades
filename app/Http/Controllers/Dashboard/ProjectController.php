@@ -7,6 +7,7 @@ use App\Http\Requests\Dashboard\ProjectRequest;
 use App\Models\Project;
 use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class ProjectController extends Controller
 {
@@ -79,6 +80,7 @@ class ProjectController extends Controller
                 $request->request->add(['status' => 1]);
 
             $requested_data = $request->except(['_token', 'profile_avatar_remove', 'cover', 'images', 'deleted_files']);
+            $requested_data['updated_at'] = Carbon::now();
             $project->update($requested_data);
 
             $project->updateFile();

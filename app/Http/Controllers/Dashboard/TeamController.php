@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\TeamRequest;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class TeamController extends Controller
 {
@@ -72,6 +73,7 @@ class TeamController extends Controller
                 $request->request->add(['status' => 1]);
 
             $requested_data = $request->except(['_token', 'profile_avatar_remove', 'image']);
+            $requested_data['updated_at'] = Carbon::now();
             $team->update($requested_data);
 
             $team->updateFile();

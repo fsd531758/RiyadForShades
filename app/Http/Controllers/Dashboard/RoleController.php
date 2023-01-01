@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\RoleRequest;
 use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class RoleController extends Controller
 {
@@ -78,6 +79,7 @@ class RoleController extends Controller
                 return redirect()->back()->with(['error' => __('message.error_admin_role_update')]);
             $request_data = $request->except(['_token', 'permissions']);
             $request_data['updated_by'] = auth('admin')->user()->email;
+            $requested_data['updated_at'] = Carbon::now();
             //update role
             $role->update($request_data);
             $role->syncPermissions($request->permissions); //update role permassion

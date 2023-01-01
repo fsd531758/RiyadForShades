@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\SettingRequest;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class SettingController extends Controller
 {
@@ -57,6 +58,7 @@ class SettingController extends Controller
         try {
             $setting = $this->setting->find($id);
             $requested_setting = $request->except(['_token','logo','profile_avatar_remove','footer_img','contact_img']);
+            $requested_data['updated_at'] = Carbon::now();
             $setting->update($requested_setting);
             $setting->updateFile();
 

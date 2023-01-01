@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\PageRequest;
 use App\Models\Page;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class PageController extends Controller
 {
@@ -63,7 +64,7 @@ class PageController extends Controller
         try {
             $requested_data = $request->except(['_token', 'profile_avatar_remove', 'image']);
             $page->update($requested_data);
-
+            $requested_data['updated_at'] = Carbon::now();
             $page->updateFile();
 
             return redirect()->route('pages.index')->with(['success' => __('message.updated_successfully')]);

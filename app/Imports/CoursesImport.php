@@ -3,16 +3,17 @@
 namespace App\Imports;
 
 use App\Models\Course;
+use Maatwebsite\Excel\Concerns\SkipsEmptyRows;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class CoursesImport implements ToModel,WithHeadingRow
+class CoursesImport implements ToModel, WithHeadingRow, SkipsEmptyRows
 {
     /**
-    * @param array $row
-    *
-    * @return \Illuminate\Database\Eloquent\Model|null
-    */
+     * @param array $row
+     *
+     * @return \Illuminate\Database\Eloquent\Model|null
+     */
     public function model(array $row)
     {
         return new Course([

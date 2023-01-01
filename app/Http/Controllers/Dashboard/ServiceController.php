@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\ServiceRequest;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class ServiceController extends Controller
 {
@@ -72,6 +73,7 @@ class ServiceController extends Controller
                 $request->request->add(['status' => 1]);
 
             $requested_data = $request->except(['_token', 'profile_avatar_remove', 'image']);
+            $requested_data['updated_at'] = Carbon::now();
             $service->update($requested_data);
 
             $service->updateFile();

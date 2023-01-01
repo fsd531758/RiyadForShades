@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\PortfolioRequest;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class PortfolioController extends Controller
 {
@@ -82,6 +83,7 @@ class PortfolioController extends Controller
                 $request->request->add(['status' => 1]);
 
             $requested_data = $request->except(['_token', 'profile_avatar_remove', 'image', 'files', 'deleted_files']);
+            $requested_data['updated_at'] = Carbon::now();
             $portfolio->update($requested_data);
 
             $portfolio->updateFile();

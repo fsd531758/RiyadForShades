@@ -7,6 +7,7 @@ use App\Http\Requests\Dashboard\SettingContactRequest;
 use App\Models\Contact;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class SettingContactController extends Controller
 {
@@ -85,6 +86,7 @@ class SettingContactController extends Controller
 
             $contact = $this->contact->find($id);
             $requested_data = $request->except(['_token', 'profile_avatar_remove', 'image']);
+            $requested_data['updated_at'] = Carbon::now();
             $contact->update($requested_data);
 
             return redirect()->route('contacts.index')->with(['success' => __('message.updated_successfully')]);
