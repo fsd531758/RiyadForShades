@@ -211,6 +211,8 @@ return [
     'show_news_letter' => 'Show News Letter',
     'edit_news_letter' => 'Edit News Letter',
     'create_news_letter' => 'Create News Letter',
+    'show_subscribed_users' => 'Show Subscribed Users',
+    'subscribed' => 'Subscribed Users In News Letter',
 
 
     'contact_details' => 'Contact Details',

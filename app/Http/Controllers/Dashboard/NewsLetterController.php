@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\NewsLetterRequest;
 use App\Jobs\NewsLetterJob;
 use App\Models\Faq;
 use App\Models\NewsLetter;
@@ -18,6 +19,7 @@ class NewsLetterController extends Controller
     public function __construct(NewsLetter $news_letter, NewsLetterMessage $message)
     {
         $this->middleware(['permission:read-news_letters'])->only('index', 'show');
+        $this->middleware(['permission:show_subscribed_users-news_letters'])->only('subscribedUsers');
         $this->middleware(['permission:create-news_letters'])->only('create', 'store');
         $this->middleware(['permission:update-news_letters'])->only('edit', 'update');
         $this->middleware(['permission:delete-news_letters'])->only('destroy');
@@ -41,7 +43,7 @@ class NewsLetterController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(NewsLetterRequest $request)
     {
         try {
             $mail_body = $request->message;
@@ -55,7 +57,7 @@ class NewsLetterController extends Controller
 
             return redirect()->route('news-letters.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -69,7 +71,7 @@ class NewsLetterController extends Controller
         return view('admin.news_letters.edit', compact('newsLetter'));
     }
 
-    public function update(Request $request, NewsLetterMessage $newsLetter)
+    public function update(NewsLetterRequest $request, NewsLetterMessage $newsLetter)
     {
         try {
             $requested_data = $request->except(['_token']);
@@ -88,6 +90,15 @@ class NewsLetterController extends Controller
             return redirect()->route('news-letters.index')->with(['success' => __('message.deleted_successfully')]);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __('message.deleted_successfully')]);
+        }
+    }
+
+    public function subscribedUsers(){
+        try {
+            $users = $this->news_letter->latest('id')->get();
+            return view('admin.news_letters.subscribed',compact('users'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 }

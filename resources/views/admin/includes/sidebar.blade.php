@@ -737,11 +737,11 @@
                 {{-- course routes end --}}
 
                 {{-- news letter routes start --}}
-                @permission('read-courses')
+                @permission('read-news_letters')
                 <li class="menu-item menu-item-submenu {{ request()->routeIs('news-letters.*') ? 'menu-item-open menu-item-here' : '' }}"
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
-                        <i class="fad fa-newspaper svg-icon menu-icon"></i>
+                        <i class="fas fa-mail-bulk svg-icon menu-icon"></i>
                         <span class="menu-text">{{__('words.news_letters')}}</span>
                         <i class="menu-arrow"></i>
                     </a>
@@ -749,7 +749,7 @@
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
 
-                            @permission('read-courses')
+                            @permission('read-news_letters')
                             <li class="menu-item  {{ request()->routeIs('news-letters.index') ? 'menu-item-active' : '' }}"
                                 aria-haspopup="true">
                                 <a href="{{route('news-letters.index')}}" class="menu-link">
@@ -761,7 +761,7 @@
                             </li>
                             @endpermission
 
-                            @permission('create-courses')
+                            @permission('create-news_letters')
                             <li class="menu-item  {{ request()->routeIs('news-letters.create') ? 'menu-item-active' : '' }}"
                                 aria-haspopup="true">
                                 <a href="{{route('news-letters.create')}}" class="menu-link">
@@ -769,6 +769,18 @@
                                         <span></span>
                                     </i>
                                     <span class="menu-text">{{__('words.create')}}</span>
+                                </a>
+                            </li>
+                            @endpermission
+
+                            @permission('show_subscribed_users-news_letters')
+                            <li class="menu-item  {{ request()->routeIs('news-letters.subscribed') ? 'menu-item-active' : '' }}"
+                                aria-haspopup="true">
+                                <a href="{{route('news-letters.subscribed')}}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">{{__('words.subscribed')}}</span>
                                 </a>
                             </li>
                             @endpermission

@@ -69,6 +69,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
             //news-letter routes
             Route::resource('news-letters', 'NewsLetterController');
+            Route::get('subscribed-users', 'NewsLetterController@subscribedUsers')->name('news-letters.subscribed');
 
             //setting routes
             Route::resource('settings', 'SettingController');

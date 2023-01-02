@@ -209,6 +209,8 @@ return [
     'show_news_letter' => 'عرض القائمة البريدية',
     'edit_news_letter' => 'تعديل القائمة البريدية',
     'create_news_letter' => 'إنشاء قائمة بريدية',
+    'show_subscribed_users' => 'عرض المشتركين فى القائمة البريدية',
+    'subscribed' => 'المشتركين فى القوائم البريدية',
 
     'contact_details' => 'تفاصيل الإتصال',
     'contact_request' => 'طلب إتصال مقدم من: ',
