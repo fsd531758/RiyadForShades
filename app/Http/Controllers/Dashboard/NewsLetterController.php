@@ -3,28 +3,32 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\NewsLetterJob;
 use App\Models\Faq;
 use App\Models\NewsLetter;
+use App\Models\NewsLetterMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
 class NewsLetterController extends Controller
 {
     private $news_letter;
+    private $message;
 
-    public function __construct(NewsLetter $news_letter)
+    public function __construct(NewsLetter $news_letter, NewsLetterMessage $message)
     {
         $this->middleware(['permission:read-news_letters'])->only('index', 'show');
         $this->middleware(['permission:create-news_letters'])->only('create', 'store');
         $this->middleware(['permission:update-news_letters'])->only('edit', 'update');
         $this->middleware(['permission:delete-news_letters'])->only('destroy');
         $this->news_letter = $news_letter;
+        $this->message = $message;
     }
 
     public function index()
     {
         try {
-            $news_letters = $this->news_letter->latest('id')->get();
+            $news_letters = $this->message->latest('id')->get();
             return view('admin.news_letters.index', compact('news_letters'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __('message.something_wrong')]);
@@ -40,26 +44,32 @@ class NewsLetterController extends Controller
     public function store(Request $request)
     {
         try {
-            $requested_data = $request->except(['_token']);
-            $this->news_letter->create($requested_data);
+            $mail_body = $request->message;
+
+            $emails = $this->news_letter->chunk(100,function ($data) use ($mail_body){
+                dispatch(new NewsLetterJob($data,$mail_body));
+            });
+
+
+            $this->message->create($request->all());
 
             return redirect()->route('news-letters.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
-    public function show(NewsLetter $newsLetter)
+    public function show(NewsLetterMessage $newsLetter)
     {
         return view('admin.news_letters.show', compact('newsLetter'));
     }
 
-    public function edit(NewsLetter $newsLetter)
+    public function edit(NewsLetterMessage $newsLetter)
     {
         return view('admin.news_letters.edit', compact('newsLetter'));
     }
 
-    public function update(Request $request, NewsLetter $newsLetter)
+    public function update(Request $request, NewsLetterMessage $newsLetter)
     {
         try {
             $requested_data = $request->except(['_token']);
@@ -71,7 +81,7 @@ class NewsLetterController extends Controller
         }
     }
 
-    public function destroy(NewsLetter $newsLetter)
+    public function destroy(NewsLetterMessage $newsLetter)
     {
         try {
             $newsLetter->delete();
