@@ -63,10 +63,10 @@ trait HasFile
     {
         if (request()->hasFile('image')) {
             //Delete the old image from the public images folder
-            $file = $this->file()->where('type', 'image');
-            if ($file->first()) {
+            $file = $this->file()->where('type', 'image')->first();
+            if (isset($file)) {
                 if ($this->file && is_object($this->file)) {
-                    Storage::delete($this->file()->where('type', 'image')->first()->getRawOriginal('path'));
+                    Storage::delete($file->getRawOriginal('path'));
                     //Delete the old image from the images table
                     $file->delete();
                 }
@@ -79,10 +79,10 @@ trait HasFile
         }
 
         if (request()->hasFile('cover')) {
-            $file = $this->file()->where('type', 'cover');
-            if ($file->first()) {
+            $file = $this->file()->where('type', 'cover')->first();
+            if (isset($file)) {
                 if ($this->file && is_object($this->file)) {
-                    Storage::delete($this->file()->where('type', 'cover')->first()->getRawOriginal('path'));
+                    Storage::delete($file->getRawOriginal('path'));
                 }
                 $file->delete();
             }
@@ -92,10 +92,10 @@ trait HasFile
         }
 
         if (request()->hasFile('flag')) {
-            $file = $this->file()->where('type', 'flag');
-            if ($file->first()) {
+            $file = $this->file()->where('type', 'flag')->first();
+            if (isset($file)) {
                 if ($this->file && is_object($this->file)) {
-                    Storage::delete($this->file()->where('type', 'flag')->first()->getRawOriginal('path'));
+                    Storage::delete($file->getRawOriginal('path'));
                 }
                 $file->delete();
             }
@@ -105,10 +105,10 @@ trait HasFile
         }
 
         if (request()->hasFile('icon')) {
-            $file = $this->file()->where('type', 'icon');
-            if ($file->first()) {
+            $file = $this->file()->where('type', 'icon')->first();
+            if (isset($file)) {
                 if ($this->file && is_object($this->file)) {
-                    Storage::delete($this->file()->where('type', 'icon')->first()->getRawOriginal('path'));
+                    Storage::delete($file->getRawOriginal('path'));
                 }
                 $file->delete();
             }
@@ -118,10 +118,10 @@ trait HasFile
         }
 
         if (request()->hasFile('logo')) {
-            $file = $this->file()->where('type', 'logo');
-            if ($file->first()) {
+            $file = $this->file()->where('type', 'logo')->first();
+            if (isset($file)) {
                 if ($this->file && is_object($this->file)) {
-                    Storage::delete($this->file()->where('type', 'logo')->first()->getRawOriginal('path'));
+                    Storage::delete($file->getRawOriginal('path'));
                 }
                 $file->delete();
             }
@@ -131,10 +131,10 @@ trait HasFile
         }
 
         if (request()->hasFile('file')) {
-            $file = $this->file()->where('type', 'file');
-            if ($file->first()) {
+            $file = $this->file()->where('type', 'file')->first();
+            if (isset($file)) {
                 if ($this->file && is_object($this->file)) {
-                    Storage::delete($this->file()->where('type', 'file')->first()->getRawOriginal('path'));
+                    Storage::delete($file->getRawOriginal('path'));
                 }
                 $file->delete();
             }
@@ -144,10 +144,10 @@ trait HasFile
         }
 
         if (request()->hasFile('footer_img')) {
-            $file = $this->file()->where('type', 'footer_img');
-            if ($file->first()) {
+            $file = $this->file()->where('type', 'footer_img')->first();
+            if (isset($file)) {
                 if ($this->file && is_object($this->file)) {
-                    Storage::delete($this->file()->where('type', 'footer_img')->first()->getRawOriginal('path'));
+                    Storage::delete($file->getRawOriginal('path'));
                 }
                 $file->delete();
             }
@@ -157,10 +157,10 @@ trait HasFile
         }
 
         if (request()->hasFile('contact_img')) {
-            $file = $this->file()->where('type', 'contact_img');
-            if ($file->first()) {
+            $file = $this->file()->where('type', 'contact_img')->first();
+            if (isset($file)) {
                 if ($this->file && is_object($this->file)) {
-                    Storage::delete($this->file()->where('type', 'contact_img')->first()->getRawOriginal('path'));
+                    Storage::delete($file->getRawOriginal('path'));
                 }
                 $file->delete();
             }
