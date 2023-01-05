@@ -58,7 +58,7 @@
                         <th>#</th>
                         <th>{{__('words.image')}}</th>
                         <th>{{__('words.title')}}</th>
-                        <th>{{__('words.short_description')}}</th>
+                        {{-- <th>{{__('words.short_description')}}</th> --}}
                         <th>{{__('words.status')}}</th>
                         <th>{{__('words.created_at')}}</th>
                         <th>{{__('words.updated_at')}}</th>
@@ -82,7 +82,7 @@
                                 @endif
                             </td>
                             <td>{{$service->title}}</td>
-                            <td>{!! $service->short_description !!}</td>
+                            {{-- <td>{!! $service->short_description !!}</td> --}}
                             <td>{{$service->getActive()}}</td>
                             <td>{{createdAtFormat($service->created_at)}}</td>
                             <td>{{createdAtFormat($service->created_at) == updatedAtFormat($service->updated_at) ? '--' : updatedAtFormat($service->updated_at)}}</td>

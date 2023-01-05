@@ -1,0 +1,94 @@
+// intro
+.intro {
+   .intro-body {
+      .price-a {
+         padding: 0.3rem 2rem;
+
+         &:hover {
+            background-color: #000;
+            transition: all ease .3s;
+         }
+      }
+   }
+}
+
+// intro
+
+// about 
+.title-box-d .title-d:after {
+   left: auto;
+   right: 0
+}
+
+// about 
+
+// features
+.link-icon span {
+   padding-inline-start: 4px;
+}
+
+.title-c {
+   margin-inline-start: -40px;
+}
+
+// features
+
+// services
+.section-property {
+   .carousel-item-b {
+      margin-bottom: 25px;
+   }
+
+   .img-box-a {
+      img {
+         height: 450px;
+         object-fit: cover;
+         width: 100%;
+      }
+   }
+
+   .card-header-a {
+      .card-title-a {
+         padding-bottom: 1rem;
+         font-size: 1.7rem;
+      }
+      p {
+         color: #fff;
+         font-size: 14px;
+      }
+   }
+}
+
+// services
+
+// footer
+.socials-a {
+   .list-inline-item:not(:last-child) {
+      margin: 0;
+      margin-inline-end: 25px;
+   }
+}
+
+// footer
+
+// about page
+.intro-single {
+   .title-single-box {
+      border: 0;
+      border-inline-start: 3px solid #2eca6a;
+      padding-inline-start: 25px;
+   }
+}
+.section-about p {
+   text-align: justify;
+ }
+
+.sinse-box .sinse-title span {
+   right: 15px;
+}
+
+// about page
+
+.section-property .card-overlay-a-content p {
+   text-align: justify;
+ }

@@ -221,7 +221,7 @@
                 {{-- slider routes end --}}
 
                 {{-- category routes start --}}
-                @permission('read-categories')
+                {{-- @permission('read-categories')
                 <li class="menu-item menu-item-submenu {{ request()->routeIs('categories.*') ? 'menu-item-open menu-item-here' : '' }}"
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
@@ -259,11 +259,11 @@
                         </ul>
                     </div>
                 </li>
-                @endpermission
+                @endpermission --}}
                 {{-- category routes end --}}
 
                 {{-- product routes start --}}
-                @permission('read-products')
+                {{-- @permission('read-products')
                 <li class="menu-item menu-item-submenu {{ request()->routeIs('products.*') ? 'menu-item-open menu-item-here' : '' }}"
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
@@ -301,7 +301,7 @@
                         </ul>
                     </div>
                 </li>
-                @endpermission
+                @endpermission --}}
                 {{-- product routes end --}}
 
                 {{-- service routes start --}}
@@ -347,7 +347,7 @@
                 {{-- service routes end --}}
 
                 {{-- project routes start --}}
-                @permission('read-projects')
+                {{-- @permission('read-projects')
                 <li class="menu-item menu-item-submenu {{ request()->routeIs('projects.*') ? 'menu-item-open menu-item-here' : '' }}"
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
@@ -385,12 +385,12 @@
                         </ul>
                     </div>
                 </li>
-                @endpermission
+                @endpermission --}}
                 {{-- project routes end --}}
 
 
                 {{-- team routes start --}}
-                @permission('read-teams')
+                {{-- @permission('read-teams')
                 <li class="menu-item menu-item-submenu {{ request()->routeIs('teams.*') ? 'menu-item-open menu-item-here' : '' }}"
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
@@ -428,11 +428,11 @@
                         </ul>
                     </div>
                 </li>
-                @endpermission
+                @endpermission --}}
                 {{-- team routes end --}}
 
                 {{-- testimonial routes start --}}
-                @permission('read-testimonials')
+                {{-- @permission('read-testimonials')
                 <li class="menu-item menu-item-submenu {{ request()->routeIs('testimonials.*') ? 'menu-item-open menu-item-here' : '' }}"
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
@@ -470,11 +470,11 @@
                         </ul>
                     </div>
                 </li>
-                @endpermission
+                @endpermission --}}
                 {{-- testimonial routes end --}}
 
                 {{-- partner routes start --}}
-                @permission('read-partners')
+                {{-- @permission('read-partners')
                 <li class="menu-item menu-item-submenu {{ request()->routeIs('partners.*') ? 'menu-item-open menu-item-here' : '' }}"
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
@@ -512,11 +512,11 @@
                         </ul>
                     </div>
                 </li>
-                @endpermission
+                @endpermission --}}
                 {{-- partner routes end --}}
 
                 {{-- portfolio routes start --}}
-                @permission('read-portfolios')
+                {{-- @permission('read-portfolios')
                 <li class="menu-item menu-item-submenu {{ request()->routeIs('portfolios.*') ? 'menu-item-open menu-item-here' : '' }}"
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
@@ -554,22 +554,22 @@
                         </ul>
                     </div>
                 </li>
-                @endpermission
+                @endpermission --}}
                 {{-- portfolio routes end --}}
 
                 {{-- page routes start --}}
-                @permission('read-pages')
+                {{-- @permission('read-pages')
                 <li class="menu-item {{ request()->routeIs('pages.*') ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{route('pages.index')}}" class="menu-link">
                         <i class="fas fa-file svg-icon menu-icon"></i>
                         <span class="menu-text">{{__('words.pages')}}</span>
                     </a>
                 </li>
-                @endpermission
+                @endpermission --}}
                 {{-- page routes end --}}
 
                 {{-- blog routes start --}}
-                @permission('read-blog')
+                {{-- @permission('read-blog')
                 <li class="menu-item menu-item-submenu {{ request()->routeIs('blog.*') ? 'menu-item-open menu-item-here' : '' }}"
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
@@ -607,11 +607,11 @@
                         </ul>
                     </div>
                 </li>
-                @endpermission
+                @endpermission --}}
                 {{-- blog routes end --}}
 
                 {{-- faq routes start --}}
-                @permission('read-faqs')
+                {{-- @permission('read-faqs')
                 <li class="menu-item menu-item-submenu {{ request()->routeIs('faqs.*') ? 'menu-item-open menu-item-here' : '' }}"
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
@@ -649,7 +649,7 @@
                         </ul>
                     </div>
                 </li>
-                @endpermission
+                @endpermission --}}
                 {{-- faq routes end --}}
 
                 {{-- contact routes start --}}
@@ -695,7 +695,7 @@
                 {{-- contact routes end --}}
 
                 {{-- course routes start --}}
-                @permission('read-courses')
+                {{-- @permission('read-courses')
                 <li class="menu-item menu-item-submenu {{ request()->routeIs('courses.*') ? 'menu-item-open menu-item-here' : '' }}"
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
@@ -733,11 +733,11 @@
                         </ul>
                     </div>
                 </li>
-                @endpermission
+                @endpermission --}}
                 {{-- course routes end --}}
 
                 {{-- news letter routes start --}}
-                @permission('read-news_letters')
+                {{-- @permission('read-news_letters')
                 <li class="menu-item menu-item-submenu {{ request()->routeIs('news-letters.*') ? 'menu-item-open menu-item-here' : '' }}"
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
@@ -787,7 +787,7 @@
                         </ul>
                     </div>
                 </li>
-                @endpermission
+                @endpermission --}}
                 {{-- news letter routes end --}}
 
                 {{-- setting route start --}}
