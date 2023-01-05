@@ -1476,11 +1476,12 @@ a:hover {
 }
 
 .card-box-ico {
-  padding: 1rem 3rem 1rem 2.5rem;
+  /* padding: 3rem; */
+  width: 100%;
   border: 5px solid #2eca6a;
 }
 .card-box-ico span {
-  font-size: 3.8rem;
+  font-size: 3rem;
   color: #000000;
   margin-top: 1.3rem;
   margin-left: 0.5rem;
@@ -1488,11 +1489,14 @@ a:hover {
 
 .title-c {
   font-weight: 600;
-  margin-left: -40px;
+  /* margin-left: -40px; */
+  margin-inline-start:unset !important;
+  -webkit-margin-start:unset !important;
+  padding: 10px;;
 }
 @media (min-width: 768px) {
   .title-c {
-    font-size: 1.8rem;
+    font-size: 1.1rem;
   }
 }
 @media (min-width: 992px) {

@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
-Route::group(['prefix' => LaravelLocalization::setLocale(),
-    'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
+// Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
     Route::prefix('dashboard')->group(function () {
 
         //admin login
@@ -84,4 +83,4 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
             Route::get('courses/export', 'CourseController@export')->name('courses.export');
         });
     });
-});
+// });
