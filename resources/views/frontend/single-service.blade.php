@@ -27,10 +27,10 @@
       <section class="section-about pb-5">
         <div class="container">
           <div class="row">
-            <div class="col-md-12 section-t8 position-relative">
+            <div class="col-md-12">
                 <div class="row">
-                  <div class="col-md-6 col-lg-5"><img class="img-fluid" width="300px" height="300px" src="{{ asset( $service->image )}}" alt="{{ 'صورة ' . $service->title}}"></div>
-                  <div class="col-md-6 col-lg-5 section-md-t3">
+                  <div class="col-md-6 col-lg-5"><img class="img-fluid" width="500px" height="300px" src="{{ asset( $service->image )}}" alt="{{ 'صورة ' . $service->title}}"></div>
+                  <div class="col-md-6 col-lg-5">
                       {!! $service->description !!}
                   </div>
                 </div>

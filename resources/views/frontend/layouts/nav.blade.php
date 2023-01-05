@@ -4,7 +4,10 @@
          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault"
              aria-controls="navbarDefault" aria-expanded="false"
              aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+             <a href="{{ route('home') }}">
              <img src="{{ asset(settings()->logo) }}" width="70px" height="70px" alt="">
+
+             </a>
              <a
              class="navbar-brand text-brand" href="{{ route('home') }}">ورد الياسمين <span class="color-b">للزراعة </span></a>
          <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
