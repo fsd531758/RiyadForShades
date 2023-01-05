@@ -13,9 +13,9 @@ class ServicesController extends Controller
         return view('frontend.services', compact('services'));
     }
 
-    // public function show($id)
-    // {
-    //     $data = Service::findOrFail($id);
-    //     return $data;
-    // }
+    public function show($id)
+    {
+        $service = Service::findOrFail($id);
+        return view('frontend.single-service',compact('service'));
+    }
 }

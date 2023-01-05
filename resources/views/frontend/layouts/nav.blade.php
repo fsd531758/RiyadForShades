@@ -13,7 +13,7 @@
                          href="{{ route('home') }}">الرئيسية</a></li>
                  <li class="nav-item"><a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}"
                          href="{{ route('about') }}">من نحن</a></li>
-                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('services') ? 'active' : '' }}"
+                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('services','service') ? 'active' : '' }}"
                          href="{{ route('services') }}">الخدمات</a></li>
                  <li class="nav-item"><a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}"
                          href="{{ route('contact') }}">تواصل معنا</a></li>

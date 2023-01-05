@@ -15,12 +15,13 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
     Route::get('/', function () {
         return view('welcome');
     })->name('home');
-    
+
 });
 
 
 Route::get('/', [HomeController::class , 'index'])->name('home');
 Route::get('/about', [AboutController::class , 'index'])->name('about');
 Route::get('/services', [ServicesController::class , 'index'])->name('services');
+Route::get('/services/{id}', [ServicesController::class , 'show'])->name('service');
 Route::get('/contact', [ContactController::class , 'index'])->name('contact');
 Route::post('/contact-save', [ContactController::class , 'store'])->name('contact.save');
