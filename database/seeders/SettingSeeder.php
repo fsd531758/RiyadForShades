@@ -13,9 +13,9 @@ class SettingSeeder extends Seeder
             'ar' => [
                 'website_title' => 'لوحة التحكم',
             ],
-            'en' => [
-                'website_title' => 'Dashboard',
-            ],
+            // 'en' => [
+            //     'website_title' => 'Dashboard',
+            // ],
         ]);
         $setting->file()->create([
             'path' => 'favicon.ico',

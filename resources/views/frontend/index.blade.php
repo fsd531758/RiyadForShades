@@ -55,8 +55,8 @@
           <div class="row">
             <div class="col-md-12">
               <div class="title-wrap d-flex justify-content-between">
-                <div class="title-box">
-                  <h2 class="title-a">ما يميزنا</h2>
+                <div class="title-box-d">
+                  <h2 class="title-d">ما يميزنا</h2>
                 </div>
               </div>
             </div>
@@ -66,10 +66,7 @@
               <div class="col-md-4">
                 <div class="card-box-c foo">
                   <div class="card-header-c d-flex">
-                    <div class="card-box-ico"><h2 class="title-c"> <i class="{{ $advantage->icon }}"></i> {{ $advantage->title }}</h2></div>
-                    {{-- <div class="card-title-c align-self-center">
-                      <h2 class="title-c">{{ $advantage->title }}</h2>
-                    </div> --}}
+                    <div class="card-box-ico"><h6 class="title-c"> <i class="{{ $advantage->icon }}"></i> {{ $advantage->title }}</h6></div>
                   </div>
                   <div class="card-body-c">
                     <p class="content-c">{!! $advantage->description !!} </p>
@@ -88,8 +85,8 @@
           <div class="row">
             <div class="col-md-12">
               <div class="title-wrap d-flex justify-content-between">
-                <div class="title-box">
-                  <h2 class="title-a">خدماتنا</h2>
+                <div class="title-box-d">
+                  <h2 class="title-d">خدماتنا</h2>
                 </div>
                 <div class="title-link"><a href="{{ route('services') }}">جميع الخدمات<span class="bi bi-chevron-left"></span></a></div>
               </div>
@@ -125,8 +122,8 @@
           <div class="row">
             <div class="col-md-12">
               <div class="title-wrap">
-                <div class="title-box">
-                  <h2 class="title-a">تواصل معنا</h2>
+                <div class="title-box-d">
+                  <h2 class="title-d">تواصل معنا</h2>
                 </div>
               </div>
             </div>

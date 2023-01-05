@@ -11,7 +11,7 @@
     <meta property="og:url" content="{{route('home')}}">
     <meta property="og:image" content="http://image.jpg">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href="assets/img/favicon.png" rel="icon" type="image/x-icon">
+    <link href="{{ settings()->logo }}" rel="icon" type="image/x-icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
