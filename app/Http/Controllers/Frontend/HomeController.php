@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Slider;
 use App\Models\Page;
 use App\Models\Service;
-use App\Models\Advantage;
+use App\Models\Feature;
 
 class HomeController extends Controller
 {
@@ -21,9 +21,8 @@ class HomeController extends Controller
         $services = Service::paginate(6);
 
         //advantages
-        // $advantages = Advantage::paginate(3);
+        $advantages = Feature::paginate(3);
 
-        // return view('frontend.index', compact('slider', 'about', 'services', 'advantages'));
-        return view('frontend.index', compact('slider', 'about', 'services'));
+        return view('frontend.index', compact('slider', 'about', 'services', 'advantages'));
     }
 }

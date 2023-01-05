@@ -152,6 +152,13 @@ return [
     'edit_service' => 'Edit Service',
     'create_service' => 'Create Service',
 
+    'features' => 'Features',
+    'show_features' => 'Show Features',
+    'show_feature' => 'Show Feature',
+    'edit_feature' => 'Edit Feature',
+    'create_feature' => 'Create Feature',
+
+
     'partners' => 'Partners',
     'show_partners' => 'Show Partners',
     'show_partner' => 'Show Partner',

@@ -45,6 +45,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
             //teams routes
             Route::resource('teams', 'TeamController');
+            //features routes
+            Route::resource('features', 'FeatureController');
 
             //testimonials routes
             Route::resource('testimonials', 'TestimonialController');

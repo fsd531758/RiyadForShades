@@ -8,6 +8,7 @@ return [
         'products' => ['read', 'create', 'update', 'delete'],
         'projects' => ['read', 'create', 'update', 'delete'],
         'services' => ['read', 'create', 'update', 'delete'],
+        'features' => ['read', 'create', 'update', 'delete'],
         'teams' => ['read', 'create', 'update', 'delete'],
         'testimonials' => ['read', 'create', 'update', 'delete'],
         'partners' => ['read', 'create', 'update', 'delete'],

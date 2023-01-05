@@ -150,6 +150,11 @@ return [
     'edit_service' => 'تعديل الخدمة',
     'create_service' => 'إنشاء خدمة',
 
+    'features' => 'المميزات',
+    'show_features' => 'عرض المميزات',
+    'edit_feature' => 'تعديل الميزة',
+    'create_feature' => 'إنشاء الميزة',
+
     'partners' => 'الشركاء',
     'show_partners' => 'عرض الشركاء',
     'show_partner' => 'عرض الشريك',

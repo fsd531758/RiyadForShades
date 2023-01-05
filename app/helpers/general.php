@@ -41,3 +41,10 @@ function settings(){
         return $setting;
     return '';
 }
+
+function contacts(){
+    $contacts = \App\Models\Contact::active()->get();
+    if ($contacts)
+        return $contacts;
+    return '';
+}
