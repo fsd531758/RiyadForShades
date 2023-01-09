@@ -16,7 +16,6 @@ class CreateFeatureTranslationsTable extends Migration
         Schema::create('feature_translations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title')->nullable();
-            $table->text('description')->nullable();
 
             $table->unsignedBigInteger('feature_id');
             $table->string('locale')->index();

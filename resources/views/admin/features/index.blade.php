@@ -58,7 +58,7 @@
                         <th>#</th>
                         <th>{{__('words.icon')}}</th>
                         <th>{{__('words.title')}}</th>
-                        <th>{{__('words.description')}}</th>
+                        {{-- <th>{{__('words.description')}}</th> --}}
                         <th>{{__('words.status')}}</th>
                         <th>{{__('words.created_at')}}</th>
                         <th>{{__('words.updated_at')}}</th>
@@ -83,7 +83,7 @@
                             </td> --}}
                             <td><i id="IconPreview" style="font-size:40px" class="{{$feature->icon}}"></i></td>
                             <td>{{$feature->title}}</td>
-                            <td>{!! Str::limit($feature->description,100) !!}</td>
+                            {{-- <td>{!! Str::limit($feature->description,100) !!}</td> --}}
                             <td>{{$feature->getActive()}}</td>
                             <td>{{createdAtFormat($feature->created_at)}}</td>
                             <td>{{createdAtFormat($feature->created_at) == updatedAtFormat($feature->updated_at) ? '--' : updatedAtFormat($feature->updated_at)}}</td>

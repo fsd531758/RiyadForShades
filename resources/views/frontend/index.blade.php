@@ -68,9 +68,9 @@
                   <div class="card-header-c d-flex">
                     <div class="card-box-ico"><h6 class="title-c"> <i class="{{ $advantage->icon }}"></i> {{ $advantage->title }}</h6></div>
                   </div>
-                  <div class="card-body-c">
+                  {{-- <div class="card-body-c">
                     <p class="content-c">{!! $advantage->description !!} </p>
-                  </div>
+                  </div> --}}
                 </div>
               </div>
             @endforeach

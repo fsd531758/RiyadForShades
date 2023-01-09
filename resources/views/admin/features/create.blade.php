@@ -67,7 +67,7 @@
 
 
 
-                        <div class="col form-group">
+                        {{-- <div class="col form-group">
                             <label>{{__('words.description')}}({{__('words.locale-' . $locale)}})<span
                                     class="text-danger">*</span></label>
                             <textarea
@@ -80,7 +80,7 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
-                        </div>
+                        </div> --}}
                     </div>
                 @endforeach
             </div>

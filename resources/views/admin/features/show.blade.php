@@ -53,7 +53,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            {{-- <div class="col-md-6">
                                 <div class="mb-7 bg-light p-5 rounded h-100">
                                     <div class="card-title">
                                         <h5 class="font-weight-bolder text-dark">{{__('words.short_description')}}
@@ -61,9 +61,9 @@
                                     </div>
                                     <p class="m-0">{{ $feature->translate($locale)->short_description }}</p>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
-
+{{-- 
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-7 bg-light p-5 rounded h-100">
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> --}}
                     </div>
                 @endforeach
             </div>
