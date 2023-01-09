@@ -102,7 +102,7 @@
                     <div class="card-overlay-a-content">
                       <div class="card-header-a">
                         <h2 class="card-title-a">{{ $service->title }}</h2>
-                        {!! $service->description !!}
+                        {{-- {!! $service->description !!} --}}
                       </div>
                     </div>
                   </div>
