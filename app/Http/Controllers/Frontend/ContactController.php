@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
 use App\Models\ContactForm;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Mail;
 class ContactController extends Controller
 {
     
@@ -21,6 +21,23 @@ class ContactController extends Controller
        $data = $request->all();
        $contact = new ContactForm($data);
        $contact->save();
+
+         //start send email to admin
+         $user_email=ADMIN_EMAIL;
+         $user_name=$contact->name;
+         $subject='New Message';
+
+         Mail::send('mail.contact_admin', [
+             'user_email'   =>  $user_email,    
+             'user_name'    =>  $user_name,
+             'result' =>  $contact,
+             
+            ], function ($message) use ($user_email, $user_name, $subject) {
+                $message->from(env('MAIL_FROM_ADDRESS'));
+                $message->to($user_email, $user_name)->subject($subject);
+         });
+         //end send email to admin
+
        return redirect()->back()->with(['success'=>('تم إستلام رسالتكم بنجاح وسيتم الرد عليكم في أقرب وقت')]);
 
     }

@@ -3,6 +3,7 @@
 use App\Models\Permission;
 
 const PAGINATION_COUNT = 15;
+const ADMIN_EMAIL = 'nessimboula@gmail.com';
 
 function successResponse( $msg, $data = [])
 {
