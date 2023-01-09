@@ -599,14 +599,14 @@
                 {{-- portfolio routes end --}}
 
                 {{-- page routes start --}}
-                {{-- @permission('read-pages')
+                @permission('read-pages')
                 <li class="menu-item {{ request()->routeIs('pages.*') ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{route('pages.index')}}" class="menu-link">
                         <i class="fas fa-file svg-icon menu-icon"></i>
                         <span class="menu-text">{{__('words.pages')}}</span>
                     </a>
                 </li>
-                @endpermission --}}
+                @endpermission
                 {{-- page routes end --}}
 
                 {{-- blog routes start --}}

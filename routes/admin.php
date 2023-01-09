@@ -75,12 +75,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             //setting routes
             Route::resource('settings', 'SettingController');
 
-            //course routes
-            Route::get('courses', 'CourseController@index')->name('courses.index');
-            Route::get('courses/{id}/show', 'CourseController@index')->name('courses.show');
-            Route::get('courses/create', 'CourseController@create')->name('courses.create');
-            Route::post('courses/import', 'CourseController@import')->name('courses.import');
-            Route::get('courses/export', 'CourseController@export')->name('courses.export');
+            // //course routes
+            // Route::get('courses', 'CourseController@index')->name('courses.index');
+            // Route::get('courses/{id}/show', 'CourseController@index')->name('courses.show');
+            // Route::get('courses/create', 'CourseController@create')->name('courses.create');
+            // Route::post('courses/import', 'CourseController@import')->name('courses.import');
+            // Route::get('courses/export', 'CourseController@export')->name('courses.export');
         });
     });
 });
