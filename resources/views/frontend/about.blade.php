@@ -13,8 +13,8 @@
             <div class="col-md-12 col-lg-4">
               <nav class="breadcrumb-box d-flex justify-content-lg-end" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">{{ $about->title}}</li>
+                  <li class="breadcrumb-item"><a href="{{ route('home') }}">الرئيسية</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"> <a href="{{ route('about') }}">{{ $about->title}}</a></li>
                 </ol>
               </nav>
             </div>
