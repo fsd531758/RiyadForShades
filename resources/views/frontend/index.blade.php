@@ -101,7 +101,7 @@
                   <div class="card-overlay">
                     <div class="card-overlay-a-content">
                       <div class="card-header-a">
-                        <h2 class="card-title-a">{{ $service->title }}</h2>
+                        <h2 class="card-title-a"><a href="{{ route('service',$service->id) }}">{{ $service->title }}</a></h2>
                         {{-- {!! $service->description !!} --}}
                       </div>
                     </div>

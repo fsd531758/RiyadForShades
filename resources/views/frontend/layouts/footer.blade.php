@@ -7,7 +7,7 @@
                     <ul class="list-inline">
 
                         @foreach (contacts() as $contact)
-                            <li class="list-inline-item"><a href="{{ $contact->contact }}"><i class="{{ $contact->icon }}"
+                            <li class="list-inline-item"><a href="{{ $contact->contact }}" target="_blank"><i class="{{ $contact->icon }}"
                                         aria-hidden="true"></i></a></li>
                         @endforeach
                     </ul>
