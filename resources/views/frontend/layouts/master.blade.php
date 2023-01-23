@@ -22,6 +22,7 @@
     <link href="{{asset('assets')}}/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="{{asset('assets')}}/css/style.css" rel="stylesheet">
     <link href="{{asset('assets')}}/css/over.css" rel="stylesheet">
+    <link href="{{asset('assets')}}/dist/css/lightbox.css" rel="stylesheet" />
     @stack('css')
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
@@ -43,6 +44,8 @@
     <script src="{{asset('assets')}}/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="{{asset('assets')}}/vendor/php-email-form/validate.js"></script>
     <script src="{{asset('assets')}}/js/main.js"></script>
+    <script src="{{asset('assets')}}/dist/js/lightbox-plus-jquery.js"></script>
+    {{-- <script src="{{asset('assets')}}/dist/js/lightbox.js"></script> --}}
     @stack('scripts')
   </body>
 </html>
