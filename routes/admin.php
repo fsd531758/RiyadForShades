@@ -40,6 +40,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             Route::resource('services', 'ServiceController');
 
             //product routes
+            Route::resource('galleries', 'GalleryController');
+
+            //product routes
             Route::resource('projects', 'ProjectController');
 
             //teams routes

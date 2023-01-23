@@ -146,11 +146,18 @@ return [
     'edit_product' => 'Edit Product',
     'create_product' => 'Create Product',
 
+
     'services' => 'Services',
     'show_services' => 'Show Services',
     'show_service' => 'Show Service',
     'edit_service' => 'Edit Service',
     'create_service' => 'Create Service',
+    
+    'galleries' => 'Portfolios',
+    'show_galleries' => 'Show Portfolios',
+    'show_gallery' => 'Show Portfolio',
+    'edit_gallery' => 'Edit Portfolio',
+    'create_gallery' => 'Create Portfolio',
 
     'features' => 'Features',
     'show_features' => 'Show Features',

@@ -20,5 +20,6 @@ return [
         'settings' => ['read', 'update'],
         'courses' => ['read', 'create', 'export'],
         'news_letters' => ['read','show_subscribed_users' ,'create', 'update', 'delete'],
+        'galleries' => ['read', 'create', 'update', 'delete'],
     ]
 ];

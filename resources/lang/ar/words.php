@@ -150,6 +150,11 @@ return [
     'edit_service' => 'تعديل الخدمة',
     'create_service' => 'إنشاء خدمة',
 
+    'galleries' => 'سابقة الاعمال',
+    'show_gallery' => 'عرض سابقة الاعمال',
+    'edit_gallery' => 'تعديل سابقة الاعمال',
+    'create_gallery' => 'اضافة سابقة الاعمال',
+
     'features' => 'المميزات',
     'show_features' => 'عرض المميزات',
     'edit_feature' => 'تعديل الميزة',
