@@ -98,7 +98,7 @@
                 <div class="col-md-6  card-body pt-3">
                     <div class="mb-7 bg-light p-5 rounded h-100">
                         <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">@lang('general.stock'):</h5>
+                            <h5 class="font-weight-bolder text-dark">{{ __('words.stock') }}:</h5>
                         </div>
                         <p class="m-0">{{ $data->stock }}</p>
                     </div>
@@ -106,7 +106,7 @@
                 <div class="col-md-6  card-body pt-3">
                     <div class="mb-7 bg-light p-5 rounded h-100">
                         <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">@lang('general.sku'):</h5>
+                            <h5 class="font-weight-bolder text-dark">{{ __('words.sku') }}:</h5>
                         </div>
                         <p class="m-0">{{ $data->sku }}</p>
                     </div>
@@ -114,7 +114,7 @@
                 <div class="col-md-6  card-body pt-3">
                     <div class="mb-7 bg-light p-5 rounded h-100">
                         <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">@lang('general.featured'):</h5>
+                            <h5 class="font-weight-bolder text-dark">{{ __('words.featured') }}:</h5>
                         </div>
                         <p class="m-0">{{ $data->featured==0?'No':'Yes' }}</p>
                     </div>

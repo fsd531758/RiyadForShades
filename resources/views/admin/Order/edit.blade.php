@@ -117,11 +117,11 @@
         </div>
 
 
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-center">
             <!--begin::Button-->
             <a href="{{ route('order_products.index', ['order_id' => $order->id]) }}"
                 class="btn btn-primary font-weight-bolder">
-                @lang('general.edit')
+                {{__('words.edit')}}
             </a>
             <!--end::Button-->
         </div>
@@ -140,7 +140,7 @@
                         <th>{{ __('words.updated_at') }}</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody> 
                     @foreach ($products as $key => $product)
                         <tr>
                             <td>{{ $key + 1 }}</td>

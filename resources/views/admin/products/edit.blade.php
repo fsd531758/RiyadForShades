@@ -140,49 +140,49 @@
                             </div>
 
                             <div class="form-group">
-                                <label>@lang('general.price')<span class="text-danger"> * </span></label>
+                                <label>{{ __('words.price') }}<span class="text-danger"> * </span></label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="flaticon-edit"></i></span>
                                     </div>
-                                    <input type="number" name="price" placeholder="@lang('general.price')"
+                                    <input type="number" name="price" placeholder="{{ __('words.price') }}"
                                         class="form-control  pl-5 min-h-40px @error('price') is-invalid @enderror"
                                         value="{{ old('price',$data->price ) }}">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>@lang('general.sku')<span class="text-danger"> * </span></label>
+                                <label>{{ __('words.sku') }}<span class="text-danger"> * </span></label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="flaticon-edit"></i></span>
                                     </div>
-                                    <input type="number" name="sku" placeholder="@lang('general.sku')"
+                                    <input type="number" name="sku" placeholder="{{ __('words.sku') }}"
                                         class="form-control  pl-5 min-h-40px @error('sku') is-invalid @enderror"
                                         value="{{ old('sku',$data->sku) }}">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>@lang('general.stock')<span class="text-danger"> * </span></label>
+                                <label>{{ __('words.stock') }}<span class="text-danger"> * </span></label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="flaticon-edit"></i></span>
                                     </div>
-                                    <input type="number" name="stock" placeholder="@lang('general.stock')"
+                                    <input type="number" name="stock" placeholder="{{ __('words.stock') }}"
                                         class="form-control  pl-5 min-h-40px @error('stock') is-invalid @enderror"
                                         value="{{ old('stock',$data->stock) }}">
                                 </div>
                             </div>
                             <div class="d-flex justify-content-start">
                                 @if ($data->featured==1)
-                                <input type="checkbox" checked name="featured" placeholder="@lang('general.featured')"
+                                <input type="checkbox" checked name="featured" placeholder="{{ __('words.featured') }}"
                                 class="form-check @error('featured') is-invalid @enderror"
                                 value="1")>
-                                <label class="p-3">@lang('general.featured')</label>  
+                                <label class="p-3">{{ __('words.featured') }}</label>  
                                 @else   
-                                <input type="checkbox" name="featured" placeholder="@lang('general.featured')"
+                                <input type="checkbox" name="featured" placeholder="{{ __('words.featured') }}"
                                 class="form-check @error('featured') is-invalid @enderror"
                                 value="1")>
-                                <label class="p-3">@lang('general.featured')</label>
+                                <label class="p-3">{{ __('words.featured') }}</label>
                                 @endif
                             </div>
                         </div>

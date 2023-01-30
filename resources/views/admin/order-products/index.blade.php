@@ -66,18 +66,18 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($order_products as $key => $order_product)
+                    @foreach($products as $key => $product)
                         <tr>
 
                             <td>{{$key+1}}</td>
-                            <td>{{$order_product->name}}</td>
-                            <td>{{$order_product->count}}</td>
-                            <td>{{$order_product->price}}</td>
-                            <td>{{$order_product->product_total}}</td>
-                            <td>{{createdAtFormat($order_product->created_at)}}</td>
-                            <td>{{createdAtFormat($order_product->created_at) == updatedAtFormat($order_product->updated_at) ? '--' : updatedAtFormat($order_product->updated_at)}}</td>
+                            <td>{{$product->name}}</td>
+                            <td>{{$product->count}}</td>
+                            <td>{{$product->price}}</td>
+                            <td>{{$product->product_total}}</td>
+                            <td>{{createdAtFormat($product->created_at)}}</td>
+                            <td>{{createdAtFormat($product->created_at) == updatedAtFormat($product->updated_at) ? '--' : updatedAtFormat($product->updated_at)}}</td>
                             <td nowrap="nowrap">
-                                @include('admin.components.form-controls', ['name'=>'order_products', 'value'=>$order_product,'role'=>'order_products'])
+                                @include('admin.components.form-controls', ['name'=>'order_products', 'value'=>$product,'role'=>'order_products'])
                             </td>
                         </tr>
                     @endforeach

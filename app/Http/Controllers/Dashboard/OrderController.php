@@ -84,11 +84,11 @@ class OrderController extends Controller
     {
         
         try {
-            $data =  $request->all();
+            $requested_data = $request->except(['_token', 'profile_avatar_remove','kt_datatable_length']);
     
             $order = $this->order->findOrfail($id);
-            $order->fill($data)->save();
-            return $order ? redirect(route('orders.index', $id))->with(['success' => trans('general.updated_success')]) : redirect()->back();
+            $order->fill($requested_data)->save();
+            return $order ? redirect(route('orders.index', $id))->with(['success' => trans('words.updated_success')]) : redirect()->back();
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
@@ -99,7 +99,7 @@ class OrderController extends Controller
         try {
             $Order = $this->order->findOrfail($id);
             $Order->delete();
-            return redirect(route('orders.index'))->with(['success' => trans('general.deleted_success')]);
+            return redirect(route('orders.index'))->with(['success' => trans('words.deleted_success')]);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __($e->getMessage())]);
         }

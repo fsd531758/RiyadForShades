@@ -27,7 +27,7 @@
                 <div class="col-md-6 mb-5">
                     <div class="mb-7 bg-light p-5 rounded h-100">
                         <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">@lang('general.name'):</h5>
+                            <h5 class="font-weight-bolder text-dark">{{ __('words.name') }}:</h5>
                         </div>
                         <p class="m-0">{{ $data->product_name }}</p>
                     </div>
@@ -35,7 +35,7 @@
                 <div class="col-md-6 mb-5">
                     <div class="mb-7 bg-light p-5 rounded h-100">
                         <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">@lang('general.count'):</h5>
+                            <h5 class="font-weight-bolder text-dark">{{ __('words.count') }}:</h5>
                         </div>
                         <p class="m-0">{{ $data->count }}</p>
                     </div>
@@ -43,7 +43,7 @@
                 <div class="col-md-6 mb-5">
                     <div class="mb-7 bg-light p-5 rounded h-100">
                         <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">@lang('general.price'):</h5>
+                            <h5 class="font-weight-bolder text-dark">{{ __('words.price') }}:</h5>
                         </div>
                         <p class="m-0">{{ $data->price }}</p>
                     </div>
@@ -51,7 +51,7 @@
                 <div class="col-md-6 mb-5">
                     <div class="mb-7 bg-light p-5 rounded h-100">
                         <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">@lang('general.product_total'):</h5>
+                            <h5 class="font-weight-bolder text-dark">{{ __('words.product_total') }}:</h5>
                         </div>
                         <p class="m-0">{{ $data->product_total }}</p>
                     </div>

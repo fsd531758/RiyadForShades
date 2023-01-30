@@ -22,5 +22,6 @@ return [
         'news_letters' => ['read','show_subscribed_users' ,'create', 'update', 'delete'],
         'galleries' => ['read', 'create', 'update', 'delete'],
         'orders' => ['read', 'create', 'update', 'delete'],
+        'order_products' => ['read', 'create', 'update', 'delete'],
     ]
 ];

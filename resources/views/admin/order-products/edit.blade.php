@@ -35,9 +35,9 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="form-group">
-                                <label class="col-form-label">@lang('general.aside.product')</label>
+                                <label class="col-form-label">{{ __('words.aside.product') }}</label>
                                 <select class="form-control selectpicker @error('status') is-invalid @enderror" name="product_id"
-                                    title="@lang('general.aside.product')">
+                                    title="{{ _('words.aside.product') }}_">
                                     <option value="{{ $data->product->id }}" selected>{{ $data->product->title }}</option>
                                     @foreach ($products as $product)
                                     <option value="{{ $product->id }}">{{ $product->title }}</option>
@@ -46,12 +46,12 @@
                             </div>
         
                             <div class="form-group">
-                                <label>@lang('general.count')<span class="text-danger"> * </span></label>
+                                <label>{{ __('words.count') }}<span class="text-danger"> * </span></label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="flaticon-edit"></i></span>
                                     </div>
-                                    <input type="text" name="count" placeholder="@lang('general.count')"
+                                    <input type="text" name="count" placeholder="{{ __('words.count') }}"
                                         class="form-control  pl-5 min-h-40px @error('count') is-invalid @enderror"
                                         value="{{ old('count', $data->count) }}">
                                 </div>
