@@ -15,7 +15,6 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('image');
             $table->string('price');
             $table->string('stock');
             $table->boolean('featured')->default(false)->nullable();
@@ -36,5 +35,6 @@ class CreateProductsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('products');
+        
     }
 }

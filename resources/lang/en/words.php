@@ -233,6 +233,10 @@ return [
     'contact_request' => 'Contact request from: ',
     'message' => 'Message',
     'rights' => 'All Rights Reserved By ',
+    'sku' => 'SKU',
+    'stock' => 'Stock',
+    'featured' => 'Featured?',
+    'price' => 'Price',
 
     'ar' => [
         'title' => 'Title In Arabic',

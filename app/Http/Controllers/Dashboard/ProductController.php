@@ -29,6 +29,7 @@ class ProductController extends Controller
     {
         try {
             $products = $this->product->latest('id')->get();
+        
             return view('admin.products.index', compact('products'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __($e->getMessage())]);
@@ -56,7 +57,7 @@ class ProductController extends Controller
             $requested_data = $request->except(['_token', 'profile_avatar_remove', 'image', 'files']);
             $product = $this->product->create($requested_data);
             $product->uploadFile();
-            $product->uploadFiles();
+            
 
             return redirect()->route('products.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {

@@ -92,14 +92,6 @@
                     'id' => 'kt_image_3',
                     'accept' => 'image/*',
                 ])
-
-                @include('admin.components.files', [
-                    'label' => __('words.files'),
-                    'name' => 'files[]',
-                    'multi' => 'multiple',
-                    'accept' =>
-                        'application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf',
-                ])
             </div>
 
             <div class="form-group row">
@@ -156,7 +148,7 @@
                         <option value="">{{ __('words.choose') }}</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}"
-                                {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->title }}
+                                {{ old('category_id') == $category->id ? 'selected' : '' }}> {{ $category->translate($locale)->title }}
                             </option>
                         @endforeach
                     </select>

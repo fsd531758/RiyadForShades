@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Translatable;
 use App\Traits\Files\HasFile;
 use App\Traits\Files\HasFiles;
+
 class Product extends Model
 {
     // use Translatable, HasFactory;
@@ -18,7 +19,7 @@ class Product extends Model
 
     use HasFactory, Translatable, HasFile, HasFiles;
 
-    protected $table = 'portfolios';
+    protected $table = 'products';
 
     protected $guarded = [];
 
@@ -29,7 +30,8 @@ class Product extends Model
     public $timestamps = true;
 
     // relations start
-    public function category(){
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
     // relations end
@@ -45,7 +47,7 @@ class Product extends Model
     public function getImageAttribute()
     {
         $image = $this->files->where('type', 'image')->first();
-        return $image->path;
+        return $image->path != null ? $image->path : 'none' ;
     }
 
     public function getActive()
