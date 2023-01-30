@@ -72,9 +72,9 @@
 
     <div class="card card-custom">
         <div class="card-body">
-            <div class="form-group row">
+            {{-- <div class="form-group row">
                 @include('admin.components.icon',['label'=>__('words.icon'),'value'=>old('icon','fab fa-github')])
-            </div>
+            </div> --}}
 
             <div class="form-group row">
                 @include('admin.components.image',['label'=>__('words.image'),'value'=>old('image'),'name'=>'image','id'=>'kt_image_3'])

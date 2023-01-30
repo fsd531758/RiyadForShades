@@ -72,7 +72,7 @@ class AuthController extends Controller
             $token = JWTAuth::fromUser($user);
             return successResponse('success', ['token' => $token, 'user' => $user]);
         } catch (\Exception $e) {
-            return failureResponse( 'error', __('message.something_wrong'));
+            return failureResponse( 'error', __($e->getMessage()));
         }
 
     }
@@ -105,7 +105,7 @@ class AuthController extends Controller
             return successResponse('success', $get_user);
         } catch (\Exception $e) {
             DB::rollBack();
-            return failureResponse( 'error', __('message.something_wrong'));
+            return failureResponse( 'error', __($e->getMessage()));
         }
     }
 
@@ -124,7 +124,7 @@ class AuthController extends Controller
             }
             return failureResponse( 'error');
         } catch (\Exception $e) {
-            return failureResponse('error',__('message.something_wrong'));
+            return failureResponse('error',__($e->getMessage()));
         }
     }
 
@@ -153,7 +153,7 @@ class AuthController extends Controller
             return successResponse('success', 'please check your email');
         } catch (\Exception $e) {
             DB::rollBack();
-            return failureResponse('error', __('message.something_wrong'));
+            return failureResponse('error', __($e->getMessage()));
         }
     }
 
@@ -173,7 +173,7 @@ class AuthController extends Controller
             return failureResponse( 'error', 'verification code or email is wrong');
         } catch (\Exception $e) {
             DB::rollBack();
-            return failureResponse( 'error', __('message.something_wrong'));
+            return failureResponse( 'error', __($e->getMessage()));
         }
     }
 
@@ -185,7 +185,7 @@ class AuthController extends Controller
             return successResponse( 'success', $user);
         }catch (\Exception $e) {
             DB::rollBack();
-            return failureResponse('error', __('message.something_wrong'));
+            return failureResponse('error', __($e->getMessage()));
         }
     }
 }

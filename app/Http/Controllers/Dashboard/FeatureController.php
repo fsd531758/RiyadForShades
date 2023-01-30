@@ -85,7 +85,7 @@ class FeatureController extends Controller
 
             return redirect()->route('features.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 

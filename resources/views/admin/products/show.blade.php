@@ -95,6 +95,30 @@
                 </div>
                 <br>
                 <br>
+                <div class="col-md-6  card-body pt-3">
+                    <div class="mb-7 bg-light p-5 rounded h-100">
+                        <div class="card-title">
+                            <h5 class="font-weight-bolder text-dark">@lang('general.stock'):</h5>
+                        </div>
+                        <p class="m-0">{{ $data->stock }}</p>
+                    </div>
+                </div>
+                <div class="col-md-6  card-body pt-3">
+                    <div class="mb-7 bg-light p-5 rounded h-100">
+                        <div class="card-title">
+                            <h5 class="font-weight-bolder text-dark">@lang('general.sku'):</h5>
+                        </div>
+                        <p class="m-0">{{ $data->sku }}</p>
+                    </div>
+                </div>
+                <div class="col-md-6  card-body pt-3">
+                    <div class="mb-7 bg-light p-5 rounded h-100">
+                        <div class="card-title">
+                            <h5 class="font-weight-bolder text-dark">@lang('general.featured'):</h5>
+                        </div>
+                        <p class="m-0">{{ $data->featured==0?'No':'Yes' }}</p>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="mb-7 bg-light p-5 rounded h-100">

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CategoryTranslation extends Model
 {
+
     use HasFactory;
 
     protected $table = 'category_translations';
@@ -14,4 +15,11 @@ class CategoryTranslation extends Model
     public $timestamps = false;
 
     protected $guarded = [];
+
+    // accessors & Mutator start
+    public function getTitleAttribute($val)
+    {
+        return $this->attributes['title'] = ucwords($val);
+    }
+
 }

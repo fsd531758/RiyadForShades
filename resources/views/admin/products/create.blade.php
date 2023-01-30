@@ -91,6 +91,46 @@
                 @include('admin.components.image',['label'=>__('words.image'),'value'=>old('image'),'name'=>'image','id'=>'kt_image_3','accept' =>'image/*'])
 
                 @include('admin.components.files',['label'=>__('words.files'),'name'=>'files[]','multi'=>'multiple','accept' => 'application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf'])
+
+                <div class="form-group">
+                    <label>@lang('general.price')<span class="text-danger"> * </span></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                        </div>
+                        <input type="number" name="price" placeholder="@lang('general.price')"
+                            class="form-control  pl-5 min-h-40px @error('price') is-invalid @enderror"
+                            value="{{ old('price') }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>@lang('general.sku')<span class="text-danger"> * </span></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                        </div>
+                        <input type="number" name="sku" placeholder="@lang('general.sku')"
+                            class="form-control  pl-5 min-h-40px @error('sku') is-invalid @enderror"
+                            value="{{ old('sku') }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>@lang('general.stock')<span class="text-danger"> * </span></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                        </div>
+                        <input type="number" name="stock" placeholder="@lang('general.stock')"
+                            class="form-control  pl-5 min-h-40px @error('stock') is-invalid @enderror"
+                            value="{{ old('stock') }}">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-start">
+                        <input type="checkbox" name="featured" placeholder="@lang('general.featured')"
+                        class="form-check"
+                        value="1">
+                        <label class="p-3">@lang('general.featured')</label>
+                </div>
             </div>
 
             <div class="form-group row">

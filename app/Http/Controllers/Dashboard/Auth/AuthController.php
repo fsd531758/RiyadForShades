@@ -42,7 +42,7 @@ class AuthController extends Controller
 
             return redirect()->route('dashboard.login');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', __('message.something_wrong'));
+            return redirect()->back()->with('error', __($e->getMessage()));
         }
     }
 }

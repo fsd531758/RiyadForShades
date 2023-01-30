@@ -21,5 +21,6 @@ return [
         'courses' => ['read', 'create', 'export'],
         'news_letters' => ['read','show_subscribed_users' ,'create', 'update', 'delete'],
         'galleries' => ['read', 'create', 'update', 'delete'],
+        'orders' => ['read', 'create', 'update', 'delete'],
     ]
 ];

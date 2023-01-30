@@ -19,6 +19,9 @@ class ProductRequest extends FormRequest
             'image' => 'required_without:id|max:5000|image',
             'files' => 'nullable|array',
             'files.*' => 'mimes:ppt,pptx,doc,docx,pdf,xls,xlsx,txt|max:5000',
+            'price' =>  'required' ,
+            'stock' =>  'required|integer|min:0' ,
+            'sku' =>  'required' ,
 
         ];
         foreach (config('translatable.locales') as $locale) {

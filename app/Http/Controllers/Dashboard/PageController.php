@@ -27,7 +27,7 @@ class PageController extends Controller
             $pages = $this->page->latest('id')->get();
             return view('admin.pages.index', compact('pages'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 
@@ -45,7 +45,7 @@ class PageController extends Controller
 
             return redirect()->route('pages.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 
@@ -69,7 +69,7 @@ class PageController extends Controller
 
             return redirect()->route('pages.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }    }
 
     public function destroy(Page $page)

@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
-use App\Traits\Files\HasFile;
-use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Illuminate\Database\Eloquent\Model;
+use Astrotomic\Translatable\Translatable;
+use App\Traits\Files\HasFile;
+use App\Traits\Files\HasFiles;
 
-class Category extends Model
+class Category extends Model implements TranslatableContract
 {
-    use HasFactory, Translatable, HasFile;
 
+    use HasFactory, Translatable, HasFile, HasFiles;
 
     protected $table = 'categories';
 
@@ -22,11 +24,6 @@ class Category extends Model
 
     public $timestamps = true;
 
-    // relations start
-    public function products(){
-        return $this->hasMany(Product::class);
-    }
-    // relations end
 
     // Scopes start
     public function scopeActive($query)
@@ -38,10 +35,8 @@ class Category extends Model
     // accessors & Mutator start
     public function getImageAttribute()
     {
-        $image = $this->file()->first();
-        if ($image)
-            return $image->path;
-        return '';
+        $image = $this->files->where('type', 'image')->first();
+        return $image->path;
     }
 
     public function getActive()

@@ -26,7 +26,7 @@ class PortfolioController extends Controller
             $portfolios = $this->portfolio->latest('id')->get();
             return view('admin.portfolios.index', compact('portfolios'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 
@@ -50,7 +50,7 @@ class PortfolioController extends Controller
 
             return redirect()->route('portfolios.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 
@@ -60,7 +60,7 @@ class PortfolioController extends Controller
             $files = $portfolio->files()->where('type', '!=', 'image')->get();
             return view('admin.portfolios.show', compact('portfolio', 'files'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 
@@ -70,7 +70,7 @@ class PortfolioController extends Controller
             $files = $portfolio->files()->where('type', '!=', 'image')->get();
             return view('admin.portfolios.edit', compact('portfolio', 'files'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 
@@ -91,7 +91,7 @@ class PortfolioController extends Controller
 
             return redirect()->route('portfolios.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 
@@ -102,7 +102,7 @@ class PortfolioController extends Controller
             $portfolio->delete();
             return redirect()->route('portfolios.index')->with(['success' => __('message.deleted_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 }

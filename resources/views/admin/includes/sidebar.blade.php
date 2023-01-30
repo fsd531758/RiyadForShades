@@ -220,7 +220,7 @@
                 {{-- slider routes end --}}
 
                 {{-- category routes start --}}
-                {{-- @permission('read-categories')
+                @permission('read-categories')
                 <li class="menu-item menu-item-submenu {{ request()->routeIs('categories.*') ? 'menu-item-open menu-item-here' : '' }}"
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
@@ -258,11 +258,11 @@
                         </ul>
                     </div>
                 </li>
-                @endpermission --}}
+                @endpermission
                 {{-- category routes end --}}
 
                 {{-- product routes start --}}
-                {{-- @permission('read-products')
+                @permission('read-products')
                 <li class="menu-item menu-item-submenu {{ request()->routeIs('products.*') ? 'menu-item-open menu-item-here' : '' }}"
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
@@ -300,26 +300,26 @@
                         </ul>
                     </div>
                 </li>
-                @endpermission --}}
+                @endpermission
                 {{-- product routes end --}}
 
-                {{-- service routes start --}}
-                @permission('read-services')
-                    <li class="menu-item menu-item-submenu {{ request()->routeIs('services.*') ? 'menu-item-open menu-item-here' : '' }}"
+                {{-- order routes start --}}
+                @permission('read-orders')
+                    <li class="menu-item menu-item-submenu {{ request()->routeIs('orders.*') ? 'menu-item-open menu-item-here' : '' }}"
                         aria-haspopup="true" data-menu-toggle="hover">
                         <a href="javascript:;" class="menu-link menu-toggle">
-                            <i class="fab fa-servicestack svg-icon menu-icon"></i>
-                            <span class="menu-text">{{ __('words.services') }}</span>
+                            <i class="fab fa-product-hunt svg-icon menu-icon"></i>
+                            <span class="menu-text">{{ __('words.orders') }}</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="menu-submenu">
                             <i class="menu-arrow"></i>
                             <ul class="menu-subnav">
 
-                                @permission('read-services')
-                                    <li class="menu-item  {{ request()->routeIs('services.index') ? 'menu-item-active' : '' }}"
+                                @permission('read-orders')
+                                    <li class="menu-item  {{ request()->routeIs('orders.index') ? 'menu-item-active' : '' }}"
                                         aria-haspopup="true">
-                                        <a href="{{ route('services.index') }}" class="menu-link">
+                                        <a href="{{ route('orders.index') }}" class="menu-link">
                                             <i class="menu-bullet menu-bullet-dot">
                                                 <span></span>
                                             </i>
@@ -327,23 +327,11 @@
                                         </a>
                                     </li>
                                 @endpermission
-
-                                @permission('create-services')
-                                    <li class="menu-item  {{ request()->routeIs('services.create') ? 'menu-item-active' : '' }}"
-                                        aria-haspopup="true">
-                                        <a href="{{ route('services.create') }}" class="menu-link">
-                                            <i class="menu-bullet menu-bullet-dot">
-                                                <span></span>
-                                            </i>
-                                            <span class="menu-text">{{ __('words.create') }}</span>
-                                        </a>
-                                    </li>
-                                @endpermission
                             </ul>
                         </div>
                     </li>
                 @endpermission
-                {{-- service routes end --}}
+                {{-- order routes end --}}
 
                 
                 {{-- gallery routes start --}}
@@ -352,7 +340,7 @@
                     <li class="menu-item menu-item-submenu {{ request()->routeIs('galleries.*') ? 'menu-item-open menu-item-here' : '' }}"
                         aria-haspopup="true" data-menu-toggle="hover">
                         <a href="javascript:;" class="menu-link menu-toggle">
-                            <i class="fab fa-galleriestack svg-icon menu-icon"></i>
+                            <i class="fab fa-product-hunt svg-icon menu-icon"></i>
                             <span class="menu-text">{{ __('words.galleries') }}</span>
                             <i class="menu-arrow"></i>
                         </a>

@@ -33,7 +33,7 @@ class NewsLetterController extends Controller
             $news_letters = $this->message->latest('id')->get();
             return view('admin.news_letters.index', compact('news_letters'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 
@@ -57,7 +57,7 @@ class NewsLetterController extends Controller
 
             return redirect()->route('news-letters.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 
@@ -79,7 +79,7 @@ class NewsLetterController extends Controller
             $newsLetter->update($requested_data);
             return redirect()->route('news-letters.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 
@@ -98,7 +98,7 @@ class NewsLetterController extends Controller
             $users = $this->news_letter->latest('id')->get();
             return view('admin.news_letters.subscribed',compact('users'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 }

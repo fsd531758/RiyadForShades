@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductTranslation extends Model
 {
+    // protected $fillable = [
+    // 'title','description',
+    // ];
+
     use HasFactory;
 
     protected $table = 'product_translations';

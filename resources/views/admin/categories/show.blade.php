@@ -100,14 +100,14 @@
                              alt="category image"/>
                     </div>
 
-                    <div class="col-md-4">
+                    {{-- <div class="col-md-4">
                         <div class="mb-7 bg-light p-5 rounded h-100">
                             <div class="card-title">
                                 <h5 class="font-weight-bolder text-dark">{{__('words.icon')}}:</h5>
                             </div>
                             <i class="{{ $category->icon }} fa-5x"></i>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
             </div>

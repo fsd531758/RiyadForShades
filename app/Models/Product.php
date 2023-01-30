@@ -2,17 +2,23 @@
 
 namespace App\Models;
 
-use App\Traits\Files\HasFile;
-use App\Traits\Files\HasFiles;
-use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Astrotomic\Translatable\Translatable;
+use App\Traits\Files\HasFile;
+use App\Traits\Files\HasFiles;
 class Product extends Model
 {
+    // use Translatable, HasFactory;
+
+    // public $translatedAttributes = [
+    //     'title','description',
+    // ];
+    // protected $fillable = ['image','category_id','price','stock','featured','sku'];
+
     use HasFactory, Translatable, HasFile, HasFiles;
 
-    protected $table = 'products';
+    protected $table = 'portfolios';
 
     protected $guarded = [];
 
@@ -47,4 +53,5 @@ class Product extends Model
         return $this->status == 1 ? __('words.active') : __('words.inactive');
     }
     // accessors & Mutator end
+
 }

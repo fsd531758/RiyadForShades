@@ -27,7 +27,7 @@ class RoleController extends Controller
             $roles =  $this->role->latest('id')->get();
             return view('admin.roles.index', compact('roles'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 
@@ -47,7 +47,7 @@ class RoleController extends Controller
 
             return redirect()->route('roles.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 
@@ -57,7 +57,7 @@ class RoleController extends Controller
             $role =  $this->role->find($id);
             return view('admin.roles.show', compact('role'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 
@@ -67,7 +67,7 @@ class RoleController extends Controller
             $role =  $this->role->find($id);
             return view('admin.roles.edit', compact('role'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 
@@ -85,7 +85,7 @@ class RoleController extends Controller
             $role->syncPermissions($request->permissions); //update role permassion
             return redirect()->route('roles.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 
@@ -99,7 +99,7 @@ class RoleController extends Controller
             $role->delete();
             return redirect()->route('roles.index')->with(['success' => __('message.deleted_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
     }
 }
