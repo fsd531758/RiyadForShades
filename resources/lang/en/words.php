@@ -197,6 +197,13 @@ return [
     'edit_blog' => 'Edit Blog',
     'create_blog' => 'Create Blog',
 
+    'orders' => 'Orders',
+    'order' => 'Order',
+    'show_orders' => 'Show Orders',
+    'show_order' => 'Show Order',
+    'edit_order' => 'Edit Order',
+    'create_order' => 'Create Order',
+
     'faqs' => 'FAQs',
     'show_faqs' => 'Show FAQs',
     'show_faq' => 'Show FAQ',

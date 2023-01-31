@@ -18,6 +18,10 @@
                          href="{{ route('about') }}">من نحن</a></li>
                  <li class="nav-item"><a class="nav-link {{ request()->routeIs('services','service') ? 'active' : '' }}"
                          href="{{ route('services') }}">الخدمات</a></li>
+
+                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('products','product') ? 'active' : '' }}"
+                         href="{{ route('products') }}">المنتجات</a></li>
+
                  <li class="nav-item"><a class="nav-link {{ request()->routeIs('galleries','gallery') ? 'active' : '' }}"
                          href="{{ route('galleries') }}">سابقة الاعمال</a></li>
                  <li class="nav-item"><a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}"

@@ -66,28 +66,28 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($blogs as $key => $blog)
+                @foreach($blogs as $key => $value)
                     <tr>
 
                         <td>{{$key+1}}</td>
                         <td>
-                            @if(!$blog->image)
+                            @if(!$value->image)
                                 <img class="index_image"
                                      src="{{asset('uploads/default_image.png')}}" alt="logo">
                             @else
                                 <img class="index_image"
-                                     src="{{$blog->image}}"
+                                     src="{{$value->image}}"
                                      onerror="this.src='{{asset('uploads/default_image.png')}}'"
                                      alt="logo">
                             @endif
                         </td>
-                        <td>{{$blog->title}}</td>
-                        <td>{!! $blog->description !!}</td>
-                        <td>{{$blog->getActive()}}</td>
-                        <td>{{createdAtFormat($blog->created_at)}}</td>
-                        <td>{{createdAtFormat($blog->created_at) == updatedAtFormat($blog->updated_at) ? '--' : updatedAtFormat($blog->updated_at)}}</td>
+                        <td>{{$value->title}}</td>
+                        <td>{!! $value->description !!}</td>
+                        <td>{{$value->getActive()}}</td>
+                        <td>{{createdAtFormat($value->created_at)}}</td>
+                        <td>{{createdAtFormat($value->created_at) == updatedAtFormat($value->updated_at) ? '--' : updatedAtFormat($value->updated_at)}}</td>
                         <td nowrap="nowrap">
-                            @include('admin.components.form-controls', ['name'=>'blog', 'value'=>$blog,'role'=>'blog'])
+                            @include('admin.components.form-controls', ['name'=>'blog', 'value'=>$value,'role'=>'blog'])
                         </td>
                     </tr>
                 @endforeach

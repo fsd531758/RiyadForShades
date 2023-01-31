@@ -20,11 +20,10 @@ class GalleryRequest extends FormRequest
     {
         $rules = [
             'image' => 'required_without:id|max:900|image',
-            'title' => ['required', 'string', Rule::unique('gallery_translations', 'title')->ignore($this->id, 'gallery_id')]
         ];
-        // foreach (config('translatable.locales') as $locale) {
-        //     $rules += [$locale . '.title' => ['required', 'string', Rule::unique('gallery_translations', 'title')->ignore($this->id, 'gallery_id')]];
-        // }
+        foreach (config('translatable.locales') as $locale) {
+            $rules += [$locale . '.title' => ['required', 'string', Rule::unique('gallery_translations', 'title')->ignore($this->id, 'gallery_id')]];
+        }
 
         return $rules;
     }

@@ -13,7 +13,7 @@
                     </ul>
                 </div>
                 <div class="copyright-footer">
-                    <p class="copyright color-text-a">جميع الحقوق محفوظة &copy; 2022 <a href="http://marwan.tech/ar">مروان تك</a></p>
+                    <p class="copyright color-text-a">جميع الحقوق محفوظة &copy; 2022 <a href="http://marwan.tech/ar">مروان جروب لتقنية المعلومات</a></p>
                 </div>
             </div>
         </div>

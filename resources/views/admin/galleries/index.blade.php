@@ -65,27 +65,26 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($galleries as $key => $gallery)
+                    @foreach($galleries as $key => $value)
                         <tr>
-
                             <td>{{$key+1}}</td>
                             <td>
-                                @if(!$gallery->image)
+                                @if(!$value->image)
                                     <img class="index_image"
                                          src="{{asset('uploads/default_image.png')}}" alt="logo">
                                 @else
                                     <img class="index_image"
-                                         src="{{$gallery->image}}"
+                                         src="{{$value->image}}"
                                          onerror="this.src='{{asset('uploads/default_image.png')}}'"
                                          alt="logo">
                                 @endif
                             </td>
-                            <td>{{$gallery->title}}</td>
-                            <td>{{$gallery->getActive()}}</td>
-                            <td>{{createdAtFormat($gallery->created_at)}}</td>
-                            <td>{{createdAtFormat($gallery->created_at) == updatedAtFormat($gallery->updated_at) ? '--' : updatedAtFormat($gallery->updated_at)}}</td>
+                            <td>{{$value->title}}</td>
+                            <td>{{$value->getActive()}}</td>
+                            <td>{{createdAtFormat($value->created_at)}}</td>
+                            <td>{{createdAtFormat($value->created_at) == updatedAtFormat($value->updated_at) ? '--' : updatedAtFormat($value->updated_at)}}</td>
                             <td nowrap="nowrap">
-                                @include('admin.components.form-controls', ['name'=>'galleries', 'value'=>$gallery,'role'=>'galleries'])
+                                @include('admin.components.form-controls', ['name'=>'galleries', 'value'=>$value,'role'=>'galleries'])
                             </td>
                         </tr>
                     @endforeach

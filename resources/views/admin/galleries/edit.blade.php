@@ -57,7 +57,7 @@
                                 <input type="text" name="{{ $locale . '[title]' }}"
                                        placeholder="{{__('words.title')}}"
                                        class="form-control  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
-                                       value="{{ old($locale . '.title',$gallery->translate($locale)->title) }}">
+                                       value="{{ old($locale . '.title', $gallery->translate($locale)->title) }}">
                                 @error($locale . '[title]')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

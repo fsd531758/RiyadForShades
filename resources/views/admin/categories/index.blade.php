@@ -65,27 +65,27 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($categories as $key => $category)
+                    @foreach($categories as $key => $value)
                         <tr>
 
                             <td>{{$key+1}}</td>
                             <td>
-                                @if(!$category->image)
+                                @if(!$value->image)
                                     <img class="index_image"
                                          src="{{asset('uploads/default_image.png')}}" alt="logo">
                                 @else
                                     <img class="index_image"
-                                         src="{{$category->image}}"
+                                         src="{{$value->image}}"
                                          onerror="this.src='{{asset('uploads/default_image.png')}}'"
                                          alt="logo">
                                 @endif
                             </td>
-                            <td>{{$category->title}}</td>
-                            <td>{{$category->getActive()}}</td>
-                            <td>{{createdAtFormat($category->created_at)}}</td>
-                            <td>{{createdAtFormat($category->created_at) == updatedAtFormat($category->updated_at) ? '--' : updatedAtFormat($category->updated_at)}}</td>
+                            <td>{{$value->title}}</td>
+                            <td>{{$value->getActive()}}</td>
+                            <td>{{createdAtFormat($value->created_at)}}</td>
+                            <td>{{createdAtFormat($value->created_at) == updatedAtFormat($value->updated_at) ? '--' : updatedAtFormat($value->updated_at)}}</td>
                             <td nowrap="nowrap">
-                                @include('admin.components.form-controls', ['name'=>'categories', 'value'=>$category,'role'=>'categories'])
+                                @include('admin.components.form-controls', ['name'=>'categories', 'value'=>$value,'role'=>'categories'])
                             </td>
                         </tr>
                     @endforeach

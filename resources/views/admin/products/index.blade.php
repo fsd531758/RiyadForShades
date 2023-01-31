@@ -68,7 +68,6 @@
                     <tbody>
                     @foreach($products as $key => $product)
                         <tr>
-
                             <td>{{$key+1}}</td>
                             <td>
                                 @if(!$product->image)
@@ -82,7 +81,7 @@
                                 @endif
                             </td>
                             <td>{{$product->title}}</td>
-                            <td>{{$product->category ? $product->category->name : ''}}</td>
+                            <td>{{ $product->title }}</td>
                             <td>{{$product->getActive()}}</td>
                             <td>{{createdAtFormat($product->created_at)}}</td>
                             <td>{{createdAtFormat($product->created_at) == updatedAtFormat($product->updated_at) ? '--' : updatedAtFormat($product->updated_at)}}</td>
