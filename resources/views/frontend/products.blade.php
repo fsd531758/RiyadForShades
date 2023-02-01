@@ -114,17 +114,14 @@
         //     let cartArr = [];
         // });
         let cart;
-        if (localStorage.getItem("products")!==null && JSON.parse(localStorage.getItem("products")).length) {
+        if (localStorage.getItem("products") !== null && JSON.parse(localStorage.getItem("products")).length) {
             cartArr = JSON.parse(localStorage.getItem("products"));
         } else {
             cartArr = [];
-
         }
 
-
-        function toogle(product,index){
-
-            $('#toggle'+index).empty();
+        function toogle(product, index) {
+            $('#toggle' + index).empty();
             $('#toggle' + index).append(` 
             <a class="d-flex">
                 <button class="btn btn-link "
@@ -133,7 +130,7 @@
                 </button>
 
                 <input id="form1" min="1" name="quantity"
-                    value="1" type="number"
+                    value="${findProduct(JSON.parse(localStorage.getItem("products")),product).index === -1 ? 1 : findProduct(JSON.parse(localStorage.getItem("products")),product).product.qty}" type="number"
                     class="form-control form-control-sm" />
 
                 <button class="btn btn-link" id="btn${index}"
@@ -144,21 +141,32 @@
             
             `);
 
-            var btnAdd=document.querySelector(`#btn${index}`);
-            btnAdd.addEventListener('click', function(){
-                this.parentNode.querySelector('input[type=number]').stepUp();
-                addToCart(index,product)
-            });
 
-            console.log('hereeee',btnAdd);
+            // const input = document.querySelector('#form1');
+            // console.log({cart})
+            // console.log('found product', findProduct(cartArr, product))
+            // input.value = findProduct(cartArr, product).product.qty
+            var btnAdd = document.querySelector(`#btn${index}`);
+            btnAdd.addEventListener('click', function() {
+                this.parentNode.querySelector('input[type=number]').stepUp();
+                addToCart(index, product)
+            });
+            const input = document.querySelectorAll('#form1');
+            console.log({input: input.value})
+            console.log('found product', findProduct(cartArr, product))
+            console.log('hereeee', btnAdd);
 
         }
+
+        const input = document.querySelectorAll('#form1');
+            console.log({input})
+            
 
 
         function addToCart(index, product) {
             console.log(product.id);
-            console.log(findProduct(cartArr, product))
-            if (!cartArr.length || findProduct(cartArr, product) === -1) {
+            // console.log('found product', findProduct(cartArr, product))
+            if (!cartArr.length || findProduct(cartArr, product).index === -1) {
                 product['qty'] = 1;
                 cartArr.push(product);
                 localStorage.setItem("products", JSON.stringify(cartArr));
@@ -175,22 +183,26 @@
 
 
             }
-
-            function findProduct(arr, product) {
-                let index = -1;
-                for (let i = 0; i < arr.length; i++) {
-                    if (arr[i].id === product.id) {
-                        index = i
-                    }
-                }
-                return index;
-            }
             console.log(cartArr);
             console.log({
                 newArr
             });
 
 
+        }
+
+        function findProduct(arr, product) {
+            let index = -1;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].id === product.id) {
+                    index = i
+                }
+            }
+            let modProduct = arr.find(item => item.id === product.id);
+            return {
+                index,
+                product: modProduct
+            };
         }
     </script>
 @endpush
