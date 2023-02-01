@@ -79,24 +79,8 @@
                                                     <div class="row">
                                                         <div class="col-md-6 col-lg-6 col-xl-7 d-flex"
                                                             id="toggle{{ $loop->index }}">
-                                                            {{-- <a class="d-flex" onclick="addToCart({{ $loop->index }})">
-                                                                <button class="btn btn-link "
-                                                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                                                    <i class="fas fa-minus"></i>
-                                                                </button>
-
-                                                                <input id="form1" min="1" name="quantity"
-                                                                    value="1" type="number"
-                                                                    class="form-control form-control-sm" />
-
-                                                                <button class="btn btn-link "
-                                                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                                                    <i class="fas fa-plus"></i>
-                                                                </button>
-                                                            </a> --}}
-
                                                             <a class="btn btn-success px-4 mx-2"
-                                                                onclick="addToCart({{ $loop->index }},{{ $product }})"><i
+                                                                onclick="toogle({{ $product }},{{ $loop->index }})"><i
                                                                     class="fas fa-shopping-cart"></i> اضف للسلة</a>
                                                         </div>
 
@@ -125,58 +109,88 @@
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 @endpush
 @push('scripts')
-<script>
-    // $(document).ready(function(){
-    //     let cartArr = [];
-    // });
-let cart;
-if(JSON.parse(localStorage.getItem("products")).length){
-    cartArr = JSON.parse(localStorage.getItem("products"));
-}
-else{
-    cartArr = [];
-
-}
-
-    function addToCart(index, product) {
-        console.log(product.id);
-        console.log(findProduct(cartArr, product))
-        if (!cartArr.length || findProduct(cartArr, product) === -1) {
-            product['qty'] = 1;
-            cartArr.push(product);
-            localStorage.setItem("products", JSON.stringify(cartArr));
+    <script>
+        // $(document).ready(function(){
+        //     let cartArr = [];
+        // });
+        let cart;
+        if (localStorage.getItem("products")!==null && JSON.parse(localStorage.getItem("products")).length) {
+            cartArr = JSON.parse(localStorage.getItem("products"));
         } else {
-            let newArr = cartArr.map(item => {
-                if (item.id === product.id) {
-                    item['qty']++;
-                }
-                return item;
-            })
-            cartArr = newArr;
-            localStorage.setItem("products", JSON.stringify(cartArr));
-            console.log(JSON.parse(localStorage.getItem("products")));
-
+            cartArr = [];
 
         }
 
-        function findProduct(arr, product) {
-            let index = -1;
-            for (let i = 0; i < arr.length; i++) {
-                if (arr[i].id === product.id) {
-                    index = i
-                }
+
+        function toogle(product,index){
+
+            $('#toggle'+index).empty();
+            $('#toggle' + index).append(` 
+            <a class="d-flex">
+                <button class="btn btn-link "
+                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                    <i class="fas fa-minus"></i>
+                </button>
+
+                <input id="form1" min="1" name="quantity"
+                    value="1" type="number"
+                    class="form-control form-control-sm" />
+
+                <button class="btn btn-link" id="btn${index}"
+                    >
+                    <i class="fas fa-plus"></i>
+                </button>
+            </a>
+            
+            `);
+
+            var btnAdd=document.querySelector(`#btn${index}`);
+            btnAdd.addEventListener('click', function(){
+                this.parentNode.querySelector('input[type=number]').stepUp();
+                addToCart(index,product)
+            });
+
+            console.log('hereeee',btnAdd);
+
+        }
+
+
+        function addToCart(index, product) {
+            console.log(product.id);
+            console.log(findProduct(cartArr, product))
+            if (!cartArr.length || findProduct(cartArr, product) === -1) {
+                product['qty'] = 1;
+                cartArr.push(product);
+                localStorage.setItem("products", JSON.stringify(cartArr));
+            } else {
+                let newArr = cartArr.map(item => {
+                    if (item.id === product.id) {
+                        item['qty']++;
+                    }
+                    return item;
+                })
+                cartArr = newArr;
+                localStorage.setItem("products", JSON.stringify(cartArr));
+                console.log(JSON.parse(localStorage.getItem("products")));
+
+
             }
-            return index;
+
+            function findProduct(arr, product) {
+                let index = -1;
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i].id === product.id) {
+                        index = i
+                    }
+                }
+                return index;
+            }
+            console.log(cartArr);
+            console.log({
+                newArr
+            });
+
+
         }
-        console.log(cartArr);
-        console.log({
-            newArr
-        });
-        
-
-        // $('#toggle'+index).empty();
-        // $('#toggle'+index).append("<a class='d-flex'><button class='btn btn-link'  onclick='this.parentNode.querySelector('input[type=number]').stepDown()'><i class='fas fa-minus'></i></button><input id='form1' min='1' name='quantity' value='1' type='number'class='form-control form-control-sm' /><button class='btn btn-link' onclick='this.parentNode.querySelector('input[type=number]').stepUp()'><i class='fas fa-plus'></i></button></a>");
-
-    }
-</script>
+    </script>
 @endpush
