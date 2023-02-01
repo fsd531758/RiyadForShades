@@ -22,6 +22,7 @@
 <!--begin::Page Scripts(used by this page)-->
 <script src="{{asset('dashboard/js/pages/crud/datatables/basic/paginations.js')}}"></script>
 <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="{{asset('dashboard/plugins/custom/datatables/datatables.bundle.js')}}"></script>
 {{--<script src="{{asset('dashboard/js/pages/crud/file-upload/dropzonejs.js')}}"></script>--}}
 <script src="{{asset('dashboard/plugins/ckeditor/ckeditor.js')}}"></script>
@@ -72,4 +73,3 @@
     });
 </script>
 
-@yield('scripts')

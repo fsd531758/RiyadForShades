@@ -77,7 +77,8 @@
                                                 <div class="btn_main" id="product{{ $loop->index }}"
                                                     product="{{ $product }}">
                                                     <div class="row">
-                                                        <div class="col-md-6 col-lg-6 col-xl-7 d-flex" id="toggle{{ $loop->index }}">
+                                                        <div class="col-md-6 col-lg-6 col-xl-7 d-flex"
+                                                            id="toggle{{ $loop->index }}">
                                                             {{-- <a class="d-flex" onclick="addToCart({{ $loop->index }})">
                                                                 <button class="btn btn-link "
                                                                     onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
@@ -94,7 +95,9 @@
                                                                 </button>
                                                             </a> --}}
 
-                                                            <a class="btn btn-success px-4 mx-2" onclick="addToCart({{ $loop->index }})"><i class="fas fa-shopping-cart"></i>  اضف للسلة</a>
+                                                            <a class="btn btn-success px-4 mx-2"
+                                                                onclick="addToCart({{ $loop->index }},{{ $product }})"><i
+                                                                    class="fas fa-shopping-cart"></i> اضف للسلة</a>
                                                         </div>
 
                                                         <div class="col-md-4 col-lg-4 col-xl-1 offset-lg-1">
@@ -121,16 +124,59 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 @endpush
-
+@push('scripts')
 <script>
-    let cartArr = [];
+    // $(document).ready(function(){
+    //     let cartArr = [];
+    // });
+let cart;
+if(JSON.parse(localStorage.getItem("products")).length){
+    cartArr = JSON.parse(localStorage.getItem("products"));
+}
+else{
+    cartArr = [];
 
-    function addToCart(index) {
-        cartArr.push(JSON.parse($('#product' + index).attr('product')));
-        localStorage.setItem("products", JSON.stringify(cartArr));
-        let cart = JSON.parse(localStorage.getItem("products"));
-        $('#toggle'+index).empty();
-        $('#toggle'+index).append("<a class='d-flex'><button class='btn btn-link'  onclick='this.parentNode.querySelector('input[type='number']').stepDown()'><i class='fas fa-minus'></i></button><input id='form1' min='1' name='quantity'value='1' type='number'class='form-control form-control-sm' /><button class='btn btn-link 'onclick='this.parentNode.querySelector('input[type='number']').stepUp()'><i class='fas fa-plus'></i></button></a>");
+}
+
+    function addToCart(index, product) {
+        console.log(product.id);
+        console.log(findProduct(cartArr, product))
+        if (!cartArr.length || findProduct(cartArr, product) === -1) {
+            product['qty'] = 1;
+            cartArr.push(product);
+            localStorage.setItem("products", JSON.stringify(cartArr));
+        } else {
+            let newArr = cartArr.map(item => {
+                if (item.id === product.id) {
+                    item['qty']++;
+                }
+                return item;
+            })
+            cartArr = newArr;
+            localStorage.setItem("products", JSON.stringify(cartArr));
+            console.log(JSON.parse(localStorage.getItem("products")));
+
+
+        }
+
+        function findProduct(arr, product) {
+            let index = -1;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].id === product.id) {
+                    index = i
+                }
+            }
+            return index;
+        }
+        console.log(cartArr);
+        console.log({
+            newArr
+        });
+        
+
+        // $('#toggle'+index).empty();
+        // $('#toggle'+index).append("<a class='d-flex'><button class='btn btn-link'  onclick='this.parentNode.querySelector('input[type=number]').stepDown()'><i class='fas fa-minus'></i></button><input id='form1' min='1' name='quantity' value='1' type='number'class='form-control form-control-sm' /><button class='btn btn-link' onclick='this.parentNode.querySelector('input[type=number]').stepUp()'><i class='fas fa-plus'></i></button></a>");
 
     }
 </script>
+@endpush
