@@ -121,6 +121,14 @@
         }
 
         function toogle(product, index) {
+
+
+            if (!cartArr.length || findProduct(cartArr, product).index === -1) {
+                product['qty'] = 1;
+                cartArr.push(product);
+                localStorage.setItem("products", JSON.stringify(cartArr));
+            } 
+           
             $('#toggle' + index).empty();
             $('#toggle' + index).append(` 
             <a class="d-flex">
@@ -129,8 +137,8 @@
                     <i class="fas fa-minus"></i>
                 </button>
 
-                <input id="form1" min="1" name="quantity"
-                    value="${findProduct(JSON.parse(localStorage.getItem("products")),product).index === -1 ? 1 : findProduct(JSON.parse(localStorage.getItem("products")),product).product.qty}" type="number"
+                <input id="form${index}" min="1" name="quantity"
+                    value="1" type="number"
                     class="form-control form-control-sm" />
 
                 <button class="btn btn-link" id="btn${index}"
@@ -141,33 +149,28 @@
             
             `);
 
-
-            // const input = document.querySelector('#form1');
-            // console.log({cart})
-            // console.log('found product', findProduct(cartArr, product))
-            // input.value = findProduct(cartArr, product).product.qty
             var btnAdd = document.querySelector(`#btn${index}`);
             btnAdd.addEventListener('click', function() {
                 this.parentNode.querySelector('input[type=number]').stepUp();
-                addToCart(index, product)
+                addToCart(index, product);
             });
-            const input = document.querySelectorAll('#form1');
+
+
+
+            const input = document.querySelector(`#form${index}`);
+            input.value=findProduct(JSON.parse(localStorage.getItem("products")),product).product.qty;
             console.log({input: input.value})
             console.log('found product', findProduct(cartArr, product))
             console.log('hereeee', btnAdd);
 
+
         }
-
-        const input = document.querySelectorAll('#form1');
-            console.log({input})
-            
-
 
         function addToCart(index, product) {
             console.log(product.id);
             // console.log('found product', findProduct(cartArr, product))
             if (!cartArr.length || findProduct(cartArr, product).index === -1) {
-                product['qty'] = 1;
+                product['qty'] = 2;
                 cartArr.push(product);
                 localStorage.setItem("products", JSON.stringify(cartArr));
             } else {
