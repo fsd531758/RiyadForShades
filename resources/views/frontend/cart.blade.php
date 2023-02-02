@@ -67,9 +67,8 @@
                                 <div class="row g-0">
                                     <div class="col-lg-8">
                                         <div class="p-5">
-                                            <div class="d-flex justify-content-between align-items-center mb-5">
-                                                <h1 class="fw-bold mb-0 text-black">عربة التسوق</h1>
-                                                <h6 class="mb-0 text-muted">3 منتجات</h6>
+                                            <div class="d-flex justify-content-between align-items-center mb-5"
+                                                id="totalProducts">
                                             </div>
                                             <hr class="my-4">
                                             <div id="shopping">
@@ -97,7 +96,7 @@
                                                         </button>
                                                     </div>
                                                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                                        <h6 class="mb-0">€ 44.00</h6>
+                                                        <h6 class="mb-0">SAR 44.00</h6>
                                                     </div>
                                                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                                                         <a href="#!" class="text-muted"><i
@@ -123,21 +122,9 @@
                                             <h3 class="fw-bold mb-5 mt-2 pt-1">تفاصيل الطلب</h3>
                                             <hr class="my-4">
 
-                                            <div class="d-flex justify-content-between mb-4">
-                                                <h5 class="text-uppercase">3 منتجات</h5>
-                                                <h5>€ 132.00</h5>
-                                            </div>
-                                            {{-- 
-                                            <h5 class="text-uppercase mb-3">شحن</h5>
+                                            <div class="d-flex justify-content-between mb-4" id="details2">
 
-                                            <div class="mb-4 pb-2">
-                                                <select class="select">
-                                                    <option value="1">التوصيل القياسي - €5.00</option>
-                                                    <option value="2">اثنين</option>
-                                                    <option value="3">ثلاثة</option>
-                                                    <option value="4">أربعة</option>
-                                                </select>
-                                            </div> --}}
+                                            </div>
                                             <div class="form-group pt-2">
                                                 <input type="text" name="name" class="form-control"
                                                     placeholder="الاسم">
@@ -156,9 +143,8 @@
                                             </div>
                                             <hr class="my-4">
 
-                                            <div class="d-flex justify-content-between mb-5">
-                                                <h5 class="text-uppercase">السعر الكلي</h5>
-                                                <h5>€ 137.00</h5>
+                                            <div class="d-flex justify-content-between mb-5" id="billDetail">
+
                                             </div>
 
                                             <button type="button" class="btn btn-dark btn-block btn-lg"
@@ -189,25 +175,55 @@
         let count = !localStorage.getItem("itemsCount") ? 0 : localStorage.getItem("itemsCount");
         array = [];
         array = JSON.parse(localStorage.getItem("products"));
-        array.forEach(element => {
-            $("#shopping").append(
-                `<div class="row mb-4 d-flex justify-content-between align-items-center"><div class="col-md-2 col-lg-2 col-xl-2"><img src="${element.image}" class="img-fluid rounded-3" alt="Cotton T-shirt"></div><div class="col-md-3 col-lg-3 col-xl-3"><h6 class="text-muted">${element.title}</h6> <h6 class="text-black mb-0">${element.category}</h6></div><div class="col-md-3 col-lg-3 col-xl-2 d-flex"><button class="btn btn-link px-1" id="btnRemove${element.id}"><i class="fas fa-minus"></i></button><input id="form1" min="0" name="quantity" value="${element.qty}"type="number" class="form-control form-control-sm" /><button class="btn btn-link px-2" id="btn${element.id}"><i class="fas fa-plus"></i></button></div><div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1"><h6 class="mb-0">${element.price}</h6></div><div class="col-md-1 col-lg-1 col-xl-1 text-end"><a href="#!" class="text-muted"><iclass="fas fa-times"></i></a></div></div><hr class="my-4">`
-            );
 
-            var btnAdd = document.querySelector(`#btn${element.id}`);
-            btnAdd.addEventListener('click', function() {
-                this.parentNode.querySelector('input[type=number]').stepUp();
-                addToProducts(element);
+        main();
+
+        function main() {
+            $('#totalProducts').empty();
+            $('#totalProducts').append(`
+                                <h1 class="fw-bold mb-0 text-black">عربة التسوق</h1>
+                                <h6 class="mb-0 text-muted">${localStorage.getItem("itemsCount")} منتجات</h6>
+                        `);
+
+            let totalPrice=0;
+
+            $("#shopping").empty();
+            array.forEach(element => {
+                $("#shopping").append(
+                    `<div class="row mb-4 d-flex justify-content-between align-items-center"><div class="col-md-2 col-lg-2 col-xl-2"><img src="${element.image}" class="img-fluid rounded-3" alt="Cotton T-shirt"></div><div class="col-md-3 col-lg-3 col-xl-3"><h6 class="text-muted">${element.title}</h6> <h6 class="text-black mb-0">${element.category}</h6></div><div class="col-md-3 col-lg-3 col-xl-2 d-flex"><button class="btn btn-link px-1" id="btnRemove${element.id}"><i class="fas fa-minus"></i></button><input id="form1" min="1" name="quantity" value="${element.qty}"type="number" class="form-control form-control-sm" /><button class="btn btn-link px-2" id="btn${element.id}"><i class="fas fa-plus"></i></button></div><div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1"><h6 class="mb-0">SAR ${element.price * element.qty}</h6></div><div class="col-md-1 col-lg-1 col-xl-1 text-end"><a href="#!" class="text-muted"><iclass="fas fa-times"></i></a></div></div><hr class="my-4">`
+                );
+
+                totalPrice+=element.price * element.qty;
+
+                var btnAdd = document.querySelector(`#btn${element.id}`);
+                btnAdd.addEventListener('click', function() {
+                    this.parentNode.querySelector('input[type=number]').stepUp();
+                    addToProducts(element);
+                });
+
+                var btnRemove = document.querySelector(`#btnRemove${element.id}`);
+
+                btnRemove.addEventListener('click', function() {
+                    this.parentNode.querySelector('input[type=number]').stepDown();
+                    deletFromCart(element.id, element)
+                });
+
             });
 
-            var btnRemove = document.querySelector(`#btnRemove${element.id}`);
 
-            btnRemove.addEventListener('click', function() {
-                this.parentNode.querySelector('input[type=number]').stepDown();
-                deletFromCart()
-            });
+            $('#billDetail').empty();
+            $('#billDetail').append(`
+                            <h5 class="text-uppercase">السعر الكلي</h5>
+                            <h5>SAR ${totalPrice}</h5>
+                        `);
 
-        });
+            $('#details2').empty();
+            $('#details2').append(`
+                                                <h5 class="text-uppercase">${localStorage.getItem("itemsCount")} منتجات</h5>
+                                                <h5>SAR ${totalPrice}</h5>
+                        `);
+
+        }
 
         function addToProducts(product) {
             localStorage.setItem("itemsCount", ++count);
@@ -218,6 +234,12 @@
                             <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
                         </a>`);
 
+            $('#totalProducts').empty();
+            $('#totalProducts').append(`
+                                <h1 class="fw-bold mb-0 text-black">عربة التسوق</h1>
+                                <h6 class="mb-0 text-muted">${localStorage.getItem("itemsCount")} منتجات</h6>
+                        `);
+
             let newArr = array.map(item => {
                 if (item.id === product.id) {
                     item['qty']++;
@@ -227,16 +249,55 @@
             array = newArr;
             localStorage.setItem("products", JSON.stringify(array));
             console.log(JSON.parse(localStorage.getItem("products")));
+
+            main();
+
+
         }
 
-        function deletFromCart(){
-            localStorage.setItem("itemsCount", --count);
-            $('#cart').remove();
+        function deletFromCart(index, product) {
+            if (findProduct(JSON.parse(localStorage.getItem("products")), product).product.qty > 1) {
+                localStorage.setItem("itemsCount", --count);
+
+                let newArr = array.map(item => {
+                    if (item.id === product.id) {
+                        item['qty']--;
+                    }
+                    return item;
+                })
+                array = newArr;
+                localStorage.setItem("products", JSON.stringify(array));
+                console.log(findProduct(JSON.parse(localStorage.getItem("products")), product).product.qty);
+                $('#cart').remove();
                 $('#flag').append(`
-                        <a href="{{ route('cart') }}" id="cart">
-                            <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
-                        </a>
+                                    <a href="{{ route('cart') }}" id="cart">
+                                    <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
+                                    </a>`);
+
+                $('#totalProducts').empty();
+                $('#totalProducts').append(`
+                                <h1 class="fw-bold mb-0 text-black">عربة التسوق</h1>
+                                <h6 class="mb-0 text-muted">${localStorage.getItem("itemsCount")} منتجات</h6>
                         `);
+
+            }
+
+            main();
+        }
+
+
+        function findProduct(arr, product) {
+            let index = -1;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].id === product.id) {
+                    index = i
+                }
+            }
+            let modProduct = arr.find(item => item.id === product.id);
+            return {
+                index,
+                product: modProduct
+            };
         }
     </script>
 @endpush

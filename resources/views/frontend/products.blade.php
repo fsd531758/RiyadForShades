@@ -71,7 +71,7 @@
                                             <div class="box_main">
                                                 <h4 class="shirt_text">{{ $product->title }}</h4>
                                                 <p class="price_text">السعر <span
-                                                        style="color: #262626;">${{ $product->price }}</span></p>
+                                                        style="color: #262626;">SAR {{ $product->price }}</span></p>
                                                 <div><img class="electronic_img img-box-a img-a img-fluid"
                                                         src="{{ asset($product->image) }}"></div>
                                                 <div class="btn_main" id="product{{ $loop->index }}"
@@ -170,7 +170,7 @@
 
             btnRemove.addEventListener('click', function() {
                 this.parentNode.querySelector('input[type=number]').stepDown();
-                deletFromCart()
+                deletFromCart(index, product)
             });
 
             const input = document.querySelector(`#form${index}`);
@@ -178,9 +178,6 @@
         }
 
         function addToCart(index, product) {
-            console.log('count of items',
-                localStorage.getItem("itemsCount")
-            );
             localStorage.setItem("itemsCount", ++count);
             if (!cartArr.length || findProduct(cartArr, product).index === -1) {
                 product['qty'] = 2;
@@ -203,15 +200,28 @@
                         </a>`);
         }
 
-        function deletFromCart(){
-            localStorage.setItem("itemsCount", --count);
-            $('#cart').remove();
+        function deletFromCart(index, product) {
+            if (findProduct(JSON.parse(localStorage.getItem("products")), product).product.qty > 1) {
+                localStorage.setItem("itemsCount", --count);
+
+                let newArr = cartArr.map(item => {
+                    if (item.id === product.id) {
+                        item['qty']--;
+                    }
+                    return item;
+                })
+                cartArr = newArr;
+                localStorage.setItem("products", JSON.stringify(cartArr));
+
+                $('#cart').remove();
                 $('#flag').append(`
-                        <a href="{{ route('cart') }}" id="cart">
-                            <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
-                        </a>
-                        `);
+                                    <a href="{{ route('cart') }}" id="cart">
+                                    <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
+                                    </a>`);
+
+            }
         }
+
         function findProduct(arr, product) {
             let index = -1;
             for (let i = 0; i < arr.length; i++) {
