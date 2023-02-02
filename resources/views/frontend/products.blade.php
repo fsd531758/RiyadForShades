@@ -80,7 +80,7 @@
                                                         <div class="col-md-6 col-lg-6 col-xl-7 d-flex"
                                                             id="toggle{{ $loop->index }}">
                                                             <a class="btn btn-success px-4 mx-2"
-                                                                onclick="toogle({{ $product }},{{ $loop->index }})"><i
+                                                                onclick="toogle({{ $product }},{{ $product->category->title }},{{ $loop->index }})"><i
                                                                     class="fas fa-shopping-cart"></i> اضف للسلة</a>
                                                         </div>
 
@@ -113,18 +113,24 @@
         // $(document).ready(function(){
         //     let cartArr = [];
         // });
+
+
+
         let cart;
+
         if (localStorage.getItem("products") !== null && JSON.parse(localStorage.getItem("products")).length) {
             cartArr = JSON.parse(localStorage.getItem("products"));
         } else {
             cartArr = [];
         }
 
-        function toogle(product, index) {
+        function toogle(product, cat, index) {
 
 
             if (!cartArr.length || findProduct(cartArr, product).index === -1) {
                 product['qty'] = 1;
+                console.log(cat);
+                // product['category'] = cat;
                 cartArr.push(product);
                 localStorage.setItem("products", JSON.stringify(cartArr));
             } 
