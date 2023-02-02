@@ -144,8 +144,7 @@
             $('#toggle' + index).empty();
             $('#toggle' + index).append(` 
             <a class="d-flex">
-                <button class="btn btn-link "
-                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                <button class="btn btn-link" id="btnRemove${index}">
                     <i class="fas fa-minus"></i>
                 </button>
 
@@ -165,6 +164,13 @@
             btnAdd.addEventListener('click', function() {
                 this.parentNode.querySelector('input[type=number]').stepUp();
                 addToCart(index, product);
+            });
+
+            var btnRemove = document.querySelector(`#btnRemove${index}`);
+
+            btnRemove.addEventListener('click', function() {
+                this.parentNode.querySelector('input[type=number]').stepDown();
+                deletFromCart()
             });
 
             const input = document.querySelector(`#form${index}`);
@@ -197,6 +203,15 @@
                         </a>`);
         }
 
+        function deletFromCart(){
+            localStorage.setItem("itemsCount", --count);
+            $('#cart').remove();
+                $('#flag').append(`
+                        <a href="{{ route('cart') }}" id="cart">
+                            <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
+                        </a>
+                        `);
+        }
         function findProduct(arr, product) {
             let index = -1;
             for (let i = 0; i < arr.length; i++) {
