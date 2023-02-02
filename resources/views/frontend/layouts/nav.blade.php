@@ -1,6 +1,6 @@
  <!-- Header/Navbar-->
  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
-     <div class="container">
+     <div class="container" id="flag">
          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault"
              aria-controls="navbarDefault" aria-expanded="false"
              aria-label="Toggle navigation"><span></span><span></span><span></span></button>
@@ -16,10 +16,12 @@
                          href="{{ route('home') }}">الرئيسية</a></li>
                  <li class="nav-item"><a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}"
                          href="{{ route('about') }}">من نحن</a></li>
-                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('services', 'service') ? 'active' : '' }}"
+                 <li class="nav-item"><a
+                         class="nav-link {{ request()->routeIs('services', 'service') ? 'active' : '' }}"
                          href="{{ route('services') }}">الخدمات</a></li>
 
-                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('products', 'product') ? 'active' : '' }}"
+                 <li class="nav-item"><a
+                         class="nav-link {{ request()->routeIs('products', 'product') ? 'active' : '' }}"
                          href="{{ route('products') }}">المنتجات</a></li>
 
                  <li class="nav-item"><a
@@ -29,10 +31,14 @@
                          href="{{ route('contact') }}">تواصل معنا</a></li>
              </ul>
          </div>
-         <a href="{{ route('cart') }}">
-             <i class="fas fa-shopping-cart fa-lg text-success"></i>
-
-         </a>
      </div>
  </nav>
  <!-- End Header/Navbar-->
+ @push('scripts')
+     <script>
+         $('#flag').append(`
+      <a href="{{ route('cart') }}" id="cart"> 
+         <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
+     </a>`)
+     </script>
+ @endpush

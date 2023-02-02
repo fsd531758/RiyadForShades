@@ -80,7 +80,7 @@
                                                         <div class="col-md-6 col-lg-6 col-xl-7 d-flex"
                                                             id="toggle{{ $loop->index }}">
                                                             <a class="btn btn-success px-4 mx-2"
-                                                                onclick="toogle({{ $product }},{{ $product->category->title }},{{ $loop->index }})"><i
+                                                                onclick="toogle({{ $product }},{{ $product->category }},{{ $loop->index }})"><i
                                                                     class="fas fa-shopping-cart"></i> اضف للسلة</a>
                                                         </div>
 
@@ -110,13 +110,10 @@
 @endpush
 @push('scripts')
     <script>
-        // $(document).ready(function(){
-        //     let cartArr = [];
-        // });
-
-
-
         let cart;
+        let count = !localStorage.getItem("itemsCount") ? 0 : localStorage.getItem("itemsCount");
+
+        localStorage.setItem("itemsCount", count);
 
         if (localStorage.getItem("products") !== null && JSON.parse(localStorage.getItem("products")).length) {
             cartArr = JSON.parse(localStorage.getItem("products"));
@@ -126,15 +123,24 @@
 
         function toogle(product, cat, index) {
 
-
             if (!cartArr.length || findProduct(cartArr, product).index === -1) {
                 product['qty'] = 1;
-                console.log(cat);
-                // product['category'] = cat;
+                product['category'] = cat.title;
                 cartArr.push(product);
                 localStorage.setItem("products", JSON.stringify(cartArr));
-            } 
-           
+                localStorage.setItem("itemsCount", ++count);
+                console.log('count of items',
+                    localStorage.getItem("itemsCount")
+                );
+
+                $('#cart').remove();
+                $('#flag').append(`
+                        <a href="{{ route('cart') }}" id="cart">
+                            <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
+                        </a>
+                        `);
+            }
+
             $('#toggle' + index).empty();
             $('#toggle' + index).append(` 
             <a class="d-flex">
@@ -161,20 +167,15 @@
                 addToCart(index, product);
             });
 
-
-
             const input = document.querySelector(`#form${index}`);
-            input.value=findProduct(JSON.parse(localStorage.getItem("products")),product).product.qty;
-            console.log({input: input.value})
-            console.log('found product', findProduct(cartArr, product))
-            console.log('hereeee', btnAdd);
-
-
+            input.value = findProduct(JSON.parse(localStorage.getItem("products")), product).product.qty;
         }
 
         function addToCart(index, product) {
-            console.log(product.id);
-            // console.log('found product', findProduct(cartArr, product))
+            console.log('count of items',
+                localStorage.getItem("itemsCount")
+            );
+            localStorage.setItem("itemsCount", ++count);
             if (!cartArr.length || findProduct(cartArr, product).index === -1) {
                 product['qty'] = 2;
                 cartArr.push(product);
@@ -188,16 +189,12 @@
                 })
                 cartArr = newArr;
                 localStorage.setItem("products", JSON.stringify(cartArr));
-                console.log(JSON.parse(localStorage.getItem("products")));
-
-
             }
-            console.log(cartArr);
-            console.log({
-                newArr
-            });
-
-
+            $('#cart').remove();
+            $('#flag').append(`
+                        <a href="{{ route('cart') }}" id="cart">
+                            <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
+                        </a>`);
         }
 
         function findProduct(arr, product) {
