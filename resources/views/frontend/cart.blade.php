@@ -65,93 +65,95 @@
                         <div class="card card-registration card-registration-2" style="border-radius: 15px;">
                             <div class="card-body p-0">
                                 <div class="row g-0">
-                                    <div class="col-lg-8">
-                                        <div class="p-5">
-                                            <div class="d-flex justify-content-between align-items-center mb-5"
-                                                id="totalProducts">
-                                            </div>
-                                            <hr class="my-4">
-                                            <div id="shopping">
-                                                {{-- <div class="row mb-4 d-flex justify-content-between align-items-center">
-                                                    <div class="col-md-2 col-lg-2 col-xl-2">
-                                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp"
-                                                            class="img-fluid rounded-3" alt="Cotton T-shirt">
-                                                    </div>
-                                                    <div class="col-md-3 col-lg-3 col-xl-3">
-                                                        <h6 class="text-muted">Shirt</h6>
-                                                        <h6 class="text-black mb-0">Cotton T-shirt</h6>
-                                                    </div>
-                                                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                                        <button class="btn btn-link px-2"
-                                                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                                            <i class="fas fa-minus"></i>
-                                                        </button>
-
-                                                        <input id="form1" min="0" name="quantity" value="1"
-                                                            type="number" class="form-control form-control-sm" />
-
-                                                        <button class="btn btn-link px-2"
-                                                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                                            <i class="fas fa-plus"></i>
-                                                        </button>
-                                                    </div>
-                                                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                                        <h6 class="mb-0">SAR 44.00</h6>
-                                                    </div>
-                                                    <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                                        <a href="#!" class="text-muted"><i
-                                                                class="fas fa-times"></i></a>
-                                                    </div>
+                                    <form action="{{ route('order.submit') }}" method="post">
+                                        <div class="col-lg-8">
+                                            <div class="p-5">
+                                                <div class="d-flex justify-content-between align-items-center mb-5"
+                                                    id="totalProducts">
                                                 </div>
-                                                <hr class="my-4"> --}}
-                                            </div>
+                                                <hr class="my-4">
+                                                <div id="shopping">
+                                                    {{-- <div class="row mb-4 d-flex justify-content-between align-items-center">
+                                                        <div class="col-md-2 col-lg-2 col-xl-2">
+                                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp"
+                                                                class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                                        </div>
+                                                        <div class="col-md-3 col-lg-3 col-xl-3">
+                                                            <h6 class="text-muted">Shirt</h6>
+                                                            <h6 class="text-black mb-0">Cotton T-shirt</h6>
+                                                        </div>
+                                                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                                            <button class="btn btn-link px-2"
+                                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                                                <i class="fas fa-minus"></i>
+                                                            </button>
+
+                                                            <input id="form1" min="0" name="quantity" value="1"
+                                                                type="number" class="form-control form-control-sm" />
+
+                                                            <button class="btn btn-link px-2"
+                                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                                                <i class="fas fa-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                                            <h6 class="mb-0">SAR 44.00</h6>
+                                                        </div>
+                                                        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                                            <a href="#!" class="text-muted"><i
+                                                                    class="fas fa-times"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="my-4"> --}}
+                                                </div>
 
 
 
 
-                                            <div class="pt-5">
-                                                <h6 class="mb-0"><a href="{{ route('products') }}" class="text-body"><i
-                                                            class="fas fa-long-arrow-alt-left me-2"></i>العودة للمتجر
-                                                </h6>
-                                                </a>
+                                                <div class="pt-5">
+                                                    <h6 class="mb-0"><a href="{{ route('products') }}" class="text-body"><i
+                                                                class="fas fa-long-arrow-alt-left me-2"></i>العودة للمتجر
+                                                    </h6>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 bg-grey">
-                                        <div class="p-5">
-                                            <h3 class="fw-bold mb-5 mt-2 pt-1">تفاصيل الطلب</h3>
-                                            <hr class="my-4">
+                                        <div class="col-lg-4 bg-grey">
+                                            <div class="p-5">
+                                                <h3 class="fw-bold mb-5 mt-2 pt-1">تفاصيل الطلب</h3>
+                                                <hr class="my-4">
 
-                                            <div class="d-flex justify-content-between mb-4" id="details2">
+                                                <div class="d-flex justify-content-between mb-4" id="details2">
+
+                                                </div>
+                                                <div class="form-group pt-2">
+                                                    <input type="text" name="name" class="form-control"
+                                                        placeholder="الاسم">
+                                                </div>
+                                                <div class="form-group pt-2">
+                                                    <input type="text" name="phone" class="form-control"
+                                                        placeholder="رقم الجوال">
+                                                </div>
+                                                <div class="form-group pt-2">
+                                                    <input type="text" name="email" class="form-control"
+                                                        placeholder="البريد الالكتروني">
+                                                </div>
+                                                <div class="form-group pt-2">
+                                                    <input type="text" name="address" class="form-control"
+                                                        placeholder="العنوان">
+                                                </div>
+                                                <hr class="my-4">
+
+                                                <div class="d-flex justify-content-between mb-5" id="billDetail">
+
+                                                </div>
+
+                                                <button type="button" class="btn btn-dark btn-block btn-lg"
+                                                    data-mdb-ripple-color="dark">طلب</button>
 
                                             </div>
-                                            <div class="form-group pt-2">
-                                                <input type="text" name="name" class="form-control"
-                                                    placeholder="الاسم">
-                                            </div>
-                                            <div class="form-group pt-2">
-                                                <input type="text" name="phone" class="form-control"
-                                                    placeholder="رقم الجوال">
-                                            </div>
-                                            <div class="form-group pt-2">
-                                                <input type="text" name="email" class="form-control"
-                                                    placeholder="البريد الالكتروني">
-                                            </div>
-                                            <div class="form-group pt-2">
-                                                <input type="text" name="address" class="form-control"
-                                                    placeholder="العنوان">
-                                            </div>
-                                            <hr class="my-4">
-
-                                            <div class="d-flex justify-content-between mb-5" id="billDetail">
-
-                                            </div>
-
-                                            <button type="button" class="btn btn-dark btn-block btn-lg"
-                                                data-mdb-ripple-color="dark">طلب</button>
-
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\GalleryController;
 use App\Http\Controllers\Frontend\ServicesController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\OrderController;
 
 Route::group(['prefix' => LaravelLocalization::setLocale(),
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
@@ -34,3 +35,4 @@ Route::get('/products', [ProductController::class , 'index'])->name('products');
 Route::get('/products/{id}', [ProductController::class , 'show'])->name('product');
 Route::get('/contact', [ContactController::class , 'index'])->name('contact');
 Route::post('/contact-save', [ContactController::class , 'store'])->name('contact.save');
+Route::post('/order', [OrderController::class , 'order_post'])->name('order.submit');
