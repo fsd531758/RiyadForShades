@@ -70,7 +70,8 @@
                         <div class="card card-registration card-registration-2" style="border-radius: 15px;">
                             <div class="card-body p-0">
                                 <div>
-                                    <form class="row g-0" action="{{ route('order.submit') }}" method="post">
+                                    <form class="row g-0" action="{{ route('order.submit') }}" method="post"
+                                        id="reset">
                                         @csrf
                                         <div class="col-lg-8">
                                             <div class="p-5">
@@ -113,7 +114,7 @@
                                                         placeholder="رقم الجوال">
                                                 </div>
                                                 <div class="form-group pt-2">
-                                                    <input type="text" name="email" class="form-control" email 
+                                                    <input type="text" name="email" class="form-control" email
                                                         placeholder="البريد الالكتروني">
                                                 </div>
                                                 <div class="form-group pt-2">
@@ -149,6 +150,11 @@
 
 @push('scripts')
     <script>
+        $("#reset").submit(function(event) {
+            localStorage.removeItem('itemsCount');
+            localStorage.removeItem('products');
+        });
+
         // $(document).ready(function(){
         const cart = JSON.parse(localStorage.getItem('products'));
         let count = !localStorage.getItem("itemsCount") ? 0 : localStorage.getItem("itemsCount");
@@ -273,12 +279,12 @@
         }
 
 
-        function deleteItem(product){
-             
+        function deleteItem(product) {
+
             if (findProduct(JSON.parse(localStorage.getItem("products")), product).product.qty >= 1) {
-                localStorage.setItem("itemsCount", count=count-product.qty);
-                 let newArr=[];
-                 array.map(item => {
+                localStorage.setItem("itemsCount", count = count - product.qty);
+                let newArr = [];
+                array.map(item => {
                     if (item.id !== product.id) {
                         newArr.push(item);
                     }
