@@ -71,7 +71,7 @@
                                             <div class="box_main">
                                                 <h4 class="shirt_text">{{ $product->title }}</h4>
                                                 <p class="price_text">السعر <span style="color: #262626;">
-                                                        {{ $product->price }} س.ر</span></p>
+                                                        {{ $product->price }} ر.س</span></p>
                                                 <div><img class="electronic_img img-box-a img-a img-fluid"
                                                         src="{{ asset($product->image) }}"></div>
                                                 <div class="btn_main" id="product{{ $loop->index }}"

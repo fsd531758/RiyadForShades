@@ -169,7 +169,7 @@
             $("#shopping").empty();
             array.forEach(element => {
                 $("#shopping").append(
-                    `<div class="row mb-4 d-flex justify-content-between align-items-center"><div class="col-md-2 col-lg-2 col-xl-2"><img src="${element.image}" class="img-fluid rounded-3" alt="Cotton T-shirt"></div><div class="col-md-3 col-lg-3 col-xl-3"><h6 class="text-muted">${element.title}</h6> <h6 class="text-black mb-0">${element.category}</h6></div><div class="col-md-3 col-lg-3 col-xl-2 d-flex"><button class="btn btn-link px-1" id="btnRemove${element.id}"><i class="fas fa-minus"></i></button><input id="form1" min="1" max="${element.stock}" name="quantity[]" value="${element.qty}"type="number" class="form-control form-control-sm" /> <input name="products[]" hidden  value="${element.id}"/> <button class="btn btn-link px-2" id="btn${element.id}"><i class="fas fa-plus"></i></button></div><div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1"><h6 class="mb-0">${element.price * element.qty} س.ر </h6></div><div class="col-md-1 col-lg-1 col-xl-1 text-end"><a href="#!" class="text-muted"><span><i class="fas fa-times" id="removeItem${element.id}"></i></span></a></div></div><hr class="my-4">`
+                    `<div class="row mb-4 d-flex justify-content-between align-items-center"><div class="col-md-2 col-lg-2 col-xl-2"><img src="${element.image}" class="img-fluid rounded-3" alt="Cotton T-shirt"></div><div class="col-md-3 col-lg-3 col-xl-3"><h6 class="text-muted">${element.title}</h6> <h6 class="text-black mb-0">${element.category}</h6></div><div class="col-md-3 col-lg-3 col-xl-2 d-flex"><button class="btn btn-link px-1" id="btnRemove${element.id}"><i class="fas fa-minus"></i></button><input id="form1" min="1" max="${element.stock}" name="quantity[]" value="${element.qty}"type="number" class="form-control form-control-sm" /> <input name="products[]" hidden  value="${element.id}"/> <button class="btn btn-link px-2" id="btn${element.id}"><i class="fas fa-plus"></i></button></div><div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1"><h6 class="mb-0">${element.price * element.qty} ر.س </h6></div><div class="col-md-1 col-lg-1 col-xl-1 text-end"><a href="#!" class="text-muted"><span><i class="fas fa-times" id="removeItem${element.id}"></i></span></a></div></div><hr class="my-4">`
                 );
 
                 totalPrice += element.price * element.qty;
@@ -199,13 +199,13 @@
             $('#billDetail').empty();
             $('#billDetail').append(`
                             <h5 class="text-uppercase">السعر الكلي</h5>
-                            <h5>${totalPrice} س.ر </h5>
+                            <h5>${totalPrice} ر.س </h5>
                         `);
 
             $('#details2').empty();
             $('#details2').append(`
                                                 <h5 class="text-uppercase">${localStorage.getItem("itemsCount")} منتجات</h5>
-                                                <h5>${totalPrice} س.ر </h5>
+                                                <h5>${totalPrice} ر.س </h5>
                         `);
 
         }
