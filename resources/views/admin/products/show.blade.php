@@ -75,7 +75,7 @@
         <div class="card card-custom">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 pt-4">
                         <div class="mb-7 bg-light p-5 rounded h-100">
                             <div class="card-title">
                                 <h5 class="font-weight-bolder text-dark">{{__('words.activity')}}:</h5>
@@ -84,41 +84,42 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-4 pt-4">
                         <div class="mb-7 bg-light p-5 rounded h-100">
                             <div class="card-title">
                                 <h5 class="font-weight-bolder text-dark">{{__('words.category')}}:</h5>
                             </div>
-                            <p class="m-0">{{ $product->category ? $product->category->name : '' }}</p>
+                            <p class="m-0">{{ $product->category ? $product->category->title : 'لايوجد' }}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 pt-4">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{ __('words.stock') }}:</h5>
+                            </div>
+                            <p class="m-0">{{ $product->stock }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 pt-4">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{ __('words.sku') }}:</h5>
+                            </div>
+                            <p class="m-0">{{ $product->sku }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 pt-4">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{ __('words.featured') }}:</h5>
+                            </div>
+                            <p class="m-0">{{ $product->featured==0?'No':'Yes' }}</p>
                         </div>
                     </div>
                 </div>
                 <br>
                 <br>
-                <div class="col-md-6  card-body pt-3">
-                    <div class="mb-7 bg-light p-5 rounded h-100">
-                        <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">{{ __('words.stock') }}:</h5>
-                        </div>
-                        <p class="m-0">{{ $data->stock }}</p>
-                    </div>
-                </div>
-                <div class="col-md-6  card-body pt-3">
-                    <div class="mb-7 bg-light p-5 rounded h-100">
-                        <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">{{ __('words.sku') }}:</h5>
-                        </div>
-                        <p class="m-0">{{ $data->sku }}</p>
-                    </div>
-                </div>
-                <div class="col-md-6  card-body pt-3">
-                    <div class="mb-7 bg-light p-5 rounded h-100">
-                        <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">{{ __('words.featured') }}:</h5>
-                        </div>
-                        <p class="m-0">{{ $data->featured==0?'No':'Yes' }}</p>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="mb-7 bg-light p-5 rounded h-100">

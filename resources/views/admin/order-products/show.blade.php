@@ -24,45 +24,48 @@
 
         <div class="card card-custom">
             <div class="card-body">
-                <div class="col-md-6 mb-5">
-                    <div class="mb-7 bg-light p-5 rounded h-100">
-                        <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">{{ __('words.name') }}:</h5>
+                <div class="row">
+                    <div class="col-md-6 mb-5">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{ __('words.name') }}:</h5>
+                            </div>
+                            <p class="m-0">{{ $order_Product->product_name }}</p>
                         </div>
-                        <p class="m-0">{{ $data->product_name }}</p>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{ __('words.count') }}:</h5>
+                            </div>
+                            <p class="m-0">{{ $order_Product->count }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{ __('words.price') }}:</h5>
+                            </div>
+                            <p class="m-0">{{ $order_Product->price }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{ __('words.product_total') }}:</h5>
+                            </div>
+                            <p class="m-0">{{ $order_Product->product_total }}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-5">
-                    <div class="mb-7 bg-light p-5 rounded h-100">
-                        <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">{{ __('words.count') }}:</h5>
-                        </div>
-                        <p class="m-0">{{ $data->count }}</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-5">
-                    <div class="mb-7 bg-light p-5 rounded h-100">
-                        <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">{{ __('words.price') }}:</h5>
-                        </div>
-                        <p class="m-0">{{ $data->price }}</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-5">
-                    <div class="mb-7 bg-light p-5 rounded h-100">
-                        <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">{{ __('words.product_total') }}:</h5>
-                        </div>
-                        <p class="m-0">{{ $data->product_total }}</p>
-                    </div>
-                </div>
+
             </div>
 
             @permission('update-order_products')
             <div class="card-footer">
                 <div class="row">
                     <div class="col-4">
-                        <a href="{{route('order_products.edit',$order_product->id)}}"
+                        <a href="{{route('order_products.edit',$order_Product->id)}}"
                            class="btn btn-block btn-outline-info">
                             {{__('words.edit')}}
                         </a>

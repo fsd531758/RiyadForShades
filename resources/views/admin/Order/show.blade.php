@@ -29,46 +29,49 @@
 
         <div class="card card-custom">
             <div class="card-body">
-                <div class="col-md-6  card-body pt-3">
-                    <div class="mb-7 bg-light p-5 rounded h-100">
-                        <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">{{__('words.name')}}:</h5>
+                <div class="row">
+                    <div class="col-md-6  card-body pt-3">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{__('words.name')}}:</h5>
+                            </div>
+                            <p class="m-0">{{ $order->name }}</p>
                         </div>
-                        <p class="m-0">{{ $order->name }}</p>
+                    </div>
+                    <div class="col-md-6  card-body pt-3">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{__('words.email')}}:</h5>
+                            </div>
+                            <p class="m-0">{{ $order->email }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6  card-body pt-3">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{__('words.phone')}}:</h5>
+                            </div>
+                            <p class="m-0">{{ $order->phone }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6  card-body pt-3">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{__('words.address')}}:</h5>
+                            </div>
+                            <p class="m-0">{{ $order->address }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6  card-body pt-3">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{__('words.total')}}:</h5>
+                            </div>
+                            <p class="m-0">{{ $order->cart_total }}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6  card-body pt-3">
-                    <div class="mb-7 bg-light p-5 rounded h-100">
-                        <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">{{__('words.email')}}:</h5>
-                        </div>
-                        <p class="m-0">{{ $order->email }}</p>
-                    </div>
-                </div>
-                <div class="col-md-6  card-body pt-3">
-                    <div class="mb-7 bg-light p-5 rounded h-100">
-                        <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">{{__('words.phone')}}:</h5>
-                        </div>
-                        <p class="m-0">{{ $order->phone }}</p>
-                    </div>
-                </div>
-                <div class="col-md-6  card-body pt-3">
-                    <div class="mb-7 bg-light p-5 rounded h-100">
-                        <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">{{__('words.address')}}:</h5>
-                        </div>
-                        <p class="m-0">{{ $order->address }}</p>
-                    </div>
-                </div>
-                <div class="col-md-6  card-body pt-3">
-                    <div class="mb-7 bg-light p-5 rounded h-100">
-                        <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">{{__('words.total')}}:</h5>
-                        </div>
-                        <p class="m-0">{{ $order->cart_total }}</p>
-                    </div>
-                </div>
+
             </div>
 
             <div class="d-flex justify-content-center">

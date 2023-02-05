@@ -20,7 +20,7 @@
 @endsection
 
 @extends('admin.components.create-form')
-@section('form_action',route('order_products.update',$order_product->id))
+@section('form_action',route('order_products.update',$order_Product->id))
 @section('form_type', 'POST')
 
 @section('form_content')
@@ -34,18 +34,18 @@
                 <div class="row">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="form-group">
-                                <label class="col-form-label">{{ __('words.aside.product') }}</label>
+                            <div class="form-group col-md-6">
+                                <label class="col-form-label">{{ __('words.product') }}</label>
                                 <select class="form-control selectpicker @error('status') is-invalid @enderror" name="product_id"
                                     title="{{ _('words.aside.product') }}_">
-                                    <option value="{{ $data->product->id }}" selected>{{ $data->product->title }}</option>
+                                    <option value="{{ $order_Product->product->id }}" selected>{{ $order_Product->product->title }}</option>
                                     @foreach ($products as $product)
                                     <option value="{{ $product->id }}">{{ $product->title }}</option>
                                     @endforeach
                                 </select>
                             </div>
         
-                            <div class="form-group">
+                            <div class="form-group col-md-6">
                                 <label>{{ __('words.count') }}<span class="text-danger"> * </span></label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -53,7 +53,7 @@
                                     </div>
                                     <input type="text" name="count" placeholder="{{ __('words.count') }}"
                                         class="form-control  pl-5 min-h-40px @error('count') is-invalid @enderror"
-                                        value="{{ old('count', $data->count) }}">
+                                        value="{{ old('count', $order_Product->count) }}">
                                 </div>
                             </div>
                         </div>

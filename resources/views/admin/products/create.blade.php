@@ -85,59 +85,62 @@
     <div class="card card-custom">
         <div class="card-body">
             <div class="form-group row">
-                @include('admin.components.image', [
-                    'label' => __('words.image'),
-                    'value' => old('image'),
-                    'name' => 'image',
-                    'id' => 'kt_image_3',
-                    'accept' => 'image/*',
-                ])
-            </div>
-
-            <div class="form-group row">
-                <div class="form-group">
-                    <label>{{ __('words.price') }}<span class="text-danger"> * </span></label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="flaticon-edit"></i></span>
-                        </div>
-                        <input type="number" name="price" placeholder="{{ __('words.price') }}"
-                            class="form-control  pl-5 min-h-40px @error('price') is-invalid @enderror"
-                            value="{{ old('price') }}">
-                    </div>
+                <div class="col-md-3">
+                    @include('admin.components.image', [
+                        'label' => __('words.image'),
+                        'value' => old('image'),
+                        'name' => 'image',
+                        'id' => 'kt_image_3',
+                        'accept' => 'image/*',
+                    ])
                 </div>
-            </div>
-            <div class="form-group row">
-                <div class="form-group">
-                    <label>{{ __('words.sku') }}<span class="text-danger"> * </span></label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                <div class="col-md-9">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>{{ __('words.price') }}<span class="text-danger"> * </span></label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                                </div>
+                                <input type="number" name="price" placeholder="{{ __('words.price') }}"
+                                    class="form-control  pl-5 min-h-40px @error('price') is-invalid @enderror"
+                                    value="{{ old('price') }}">
+                            </div>
                         </div>
-                        <input type="number" name="sku" placeholder="{{ __('words.sku') }}"
-                            class="form-control  pl-5 min-h-40px @error('sku') is-invalid @enderror"
-                            value="{{ old('sku') }}">
                     </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="form-group">
-                    <label>{{ __('words.stock') }}<span class="text-danger"> * </span></label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>{{ __('words.sku') }}<span class="text-danger"> * </span></label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                                </div>
+                                <input type="number" name="sku" placeholder="{{ __('words.sku') }}"
+                                    class="form-control  pl-5 min-h-40px @error('sku') is-invalid @enderror"
+                                    value="{{ old('sku') }}">
+                            </div>
                         </div>
-                        <input type="number" name="stock" placeholder="{{ __('words.stock') }}"
-                            class="form-control  pl-5 min-h-40px @error('stock') is-invalid @enderror"
-                            value="{{ old('stock') }}">
                     </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="d-flex justify-content-start">
-                    <input type="checkbox" name="featured" placeholder="{{ __('words.featured') }}" class="form-check"
-                        value="1">
-                    <label class="p-3">{{ __('words.featured') }}</label>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>{{ __('words.stock') }}<span class="text-danger"> * </span></label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                                </div>
+                                <input type="number" name="stock" placeholder="{{ __('words.stock') }}"
+                                    class="form-control  pl-5 min-h-40px @error('stock') is-invalid @enderror"
+                                    value="{{ old('stock') }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="d-flex justify-content-start">
+                            <input type="checkbox" name="featured" placeholder="{{ __('words.featured') }}" class="form-check"
+                                value="1">
+                            <label class="p-3">{{ __('words.featured') }}</label>
+                        </div>
+                    </div>
                 </div>
             </div>
 

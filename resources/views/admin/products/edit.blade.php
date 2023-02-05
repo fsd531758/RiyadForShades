@@ -86,20 +86,17 @@
     <div class="card card-custom">
         <div class="card-body">
             <div class="form-group row">
-                @include('admin.components.image', [
-                    'label' => __('words.image'),
-                    'value' => old('image', $product->image),
-                    'name' => 'image',
-                    'id' => 'kt_image_3',
-                    'accept' => 'image/*',
-                ])
-
-            </div>
-
-            <div class="row">
-                <div class="container-fluid">
-
-                    <div class="form-group row">
+                <div class="col-md-3">
+                    @include('admin.components.image', [
+                        'label' => __('words.image'),
+                        'value' => old('image', $product->image),
+                        'name' => 'image',
+                        'id' => 'kt_image_3',
+                        'accept' => 'image/*',
+                    ])
+                </div>
+                <div class="col-md-9">
+                    <div class="form-group">
                         <div class="form-group">
                             <label>{{ __('words.price') }}<span class="text-danger"> * </span></label>
                             <div class="input-group">
@@ -112,7 +109,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group">
                         <div class="form-group">
                             <label>{{ __('words.sku') }}<span class="text-danger"> * </span></label>
                             <div class="input-group">
@@ -125,7 +122,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group">
                         <div class="form-group">
                             <label>{{ __('words.stock') }}<span class="text-danger"> * </span></label>
                             <div class="input-group">
@@ -138,7 +135,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group">
                         <div class="d-flex justify-content-start">
                             @if ($product->featured == 1)
                                 <input type="checkbox" checked name="featured" placeholder="{{ __('words.featured') }}"
@@ -152,6 +149,8 @@
                         </div>
                     </div>
                 </div>
+
+
             </div>
 
             <br>

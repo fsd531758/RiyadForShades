@@ -38,63 +38,65 @@
                 <div class="row">
                     <div class="container-fluid">
 
-                        <div class="form-group row">
-                            <label>{{ __('words.name') }}<span class="text-danger"> * </span></label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label>{{ __('words.name') }}<span class="text-danger"> * </span></label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                                    </div>
+                                    <input type="text" name="name" placeholder="{{ __('words.name') }}"
+                                        class="form-control  pl-5 min-h-40px @error('name') is-invalid @enderror"
+                                        value="{{ old('name', $order->name) }}">
                                 </div>
-                                <input type="text" name="name" placeholder="{{ __('words.name') }}"
-                                    class="form-control  pl-5 min-h-40px @error('name') is-invalid @enderror"
-                                    value="{{ old('name', $order->name) }}">
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label>{{ __('words.email') }}<span class="text-danger"> * </span></label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="flaticon-edit"></i></span>
+    
+                            <div class="form-group col-md-6">
+                                <label>{{ __('words.email') }}<span class="text-danger"> * </span></label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                                    </div>
+                                    <input type="text" name="email" placeholder="{{ __('words.email') }}"
+                                        class="form-control  pl-5 min-h-40px @error('email') is-invalid @enderror"
+                                        value="{{ old('email', $order->email) }}">
                                 </div>
-                                <input type="text" name="email" placeholder="{{ __('words.email') }}"
-                                    class="form-control  pl-5 min-h-40px @error('email') is-invalid @enderror"
-                                    value="{{ old('email', $order->email) }}">
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label>{{ __('words.phone') }}<span class="text-danger"> * </span></label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="flaticon-edit"></i></span>
+    
+                            <div class="form-group col-md-6">
+                                <label>{{ __('words.phone') }}<span class="text-danger"> * </span></label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                                    </div>
+                                    <input type="text" name="phone" placeholder="{{ __('words.phone') }}"
+                                        class="form-control  pl-5 min-h-40px @error('phone') is-invalid @enderror"
+                                        value="{{ old('phone', $order->phone) }}">
                                 </div>
-                                <input type="text" name="phone" placeholder="{{ __('words.phone') }}"
-                                    class="form-control  pl-5 min-h-40px @error('phone') is-invalid @enderror"
-                                    value="{{ old('phone', $order->phone) }}">
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label>{{ __('words.address') }}<span class="text-danger"> * </span></label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="flaticon-edit"></i></span>
+    
+                            <div class="form-group col-md-6">
+                                <label>{{ __('words.address') }}<span class="text-danger"> * </span></label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                                    </div>
+                                    <input type="text" name="address" placeholder="{{ __('words.address') }}"
+                                        class="form-control  pl-5 min-h-40px @error('address') is-invalid @enderror"
+                                        value="{{ old('address', $order->address) }}">
                                 </div>
-                                <input type="text" name="address" placeholder="{{ __('words.address') }}"
-                                    class="form-control  pl-5 min-h-40px @error('address') is-invalid @enderror"
-                                    value="{{ old('address', $order->address) }}">
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label>{{ __('words.total') }}<span class="text-danger"> * </span></label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="flaticon-edit"></i></span>
+    
+                            <div class="form-group col-md-6">
+                                <label>{{ __('words.total') }}<span class="text-danger"> * </span></label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                                    </div>
+                                    <input type="text" disabled name="cart_total" placeholder="{{ __('words.total') }}"
+                                        class="form-control  pl-5 min-h-40px @error('total') is-invalid @enderror"
+                                        value="{{ old('total', $order->cart_total) }}">
                                 </div>
-                                <input type="text" disabled name="cart_total" placeholder="{{ __('words.total') }}"
-                                    class="form-control  pl-5 min-h-40px @error('total') is-invalid @enderror"
-                                    value="{{ old('total', $order->cart_total) }}">
                             </div>
                         </div>
                     </div>
@@ -121,7 +123,7 @@
             <!--begin::Button-->
             <a href="{{ route('order_products.index', ['order_id' => $order->id]) }}"
                 class="btn btn-primary font-weight-bolder">
-                {{__('words.edit')}}
+                {{ __('words.edit') }}
             </a>
             <!--end::Button-->
         </div>
@@ -140,7 +142,7 @@
                         <th>{{ __('words.updated_at') }}</th>
                     </tr>
                 </thead>
-                <tbody> 
+                <tbody>
                     @foreach ($products as $key => $product)
                         <tr>
                             <td>{{ $key + 1 }}</td>

@@ -247,6 +247,7 @@ return [
     'total' => 'Total',
     'count' => 'Count',
     'product_total' => 'Product Total',
+    'product'=>'Product',
     
 
     'ar' => [

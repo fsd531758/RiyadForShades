@@ -30,7 +30,7 @@
     <div class="card card-custom">
         <div class="card-body">
             <div class="form-group row">
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label class="col-form-label">{{ __('words.product') }}</label>
                     <select class="form-control selectpicker @error('status') is-invalid @enderror" name="product_id"
                         title="{{ __('words.product') }}">
@@ -40,7 +40,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label>{{ __('words.count') }}<span class="text-danger"> * </span></label>
                     <div class="input-group">
                         <div class="input-group-prepend">

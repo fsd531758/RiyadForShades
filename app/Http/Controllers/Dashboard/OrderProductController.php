@@ -101,8 +101,8 @@ class OrderProductController extends Controller
     {
 
         try {
-            $data = $this->orderProduct->findorfail($id);
-            return view('admin.order-products.show', compact('data'));
+            $order_Product = $this->orderProduct->findorfail($id);
+            return view('admin.order-products.show', compact('order_Product'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
@@ -119,11 +119,11 @@ class OrderProductController extends Controller
     public function edit($id)
     {
         try {
-            $data = $this->orderProduct->findOrfail($id);
-            if(!isset($data->product->id))
+            $order_Product = $this->orderProduct->findOrfail($id);
+            if(!isset($order_Product->product->id))
             return redirect()->back()->with(['warning' => trans('words.warning_deleted_product')]);
             $products=$this->product->get();
-            return view('admin.order-products.edit', compact('data','products'));
+            return view('admin.order-products.edit', compact('order_Product','products'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
