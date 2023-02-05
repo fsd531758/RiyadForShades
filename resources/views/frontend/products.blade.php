@@ -70,8 +70,8 @@
                                         <div class="col-lg-4 col-sm-4">
                                             <div class="box_main">
                                                 <h4 class="shirt_text">{{ $product->title }}</h4>
-                                                <p class="price_text">السعر <span
-                                                        style="color: #262626;">SAR {{ $product->price }}</span></p>
+                                                <p class="price_text">السعر <span style="color: #262626;">
+                                                        {{ $product->price }} س.ر</span></p>
                                                 <div><img class="electronic_img img-box-a img-a img-fluid"
                                                         src="{{ asset($product->image) }}"></div>
                                                 <div class="btn_main" id="product{{ $loop->index }}"
@@ -148,7 +148,7 @@
                     <i class="fas fa-minus"></i>
                 </button>
 
-                <input id="form${index}" min="1" name="quantity"
+                <input id="form${index}" min="1" max="${product.stock}" name="quantity"
                     value="1" type="number"
                     class="form-control form-control-sm" />
 
@@ -178,21 +178,26 @@
         }
 
         function addToCart(index, product) {
-            localStorage.setItem("itemsCount", ++count);
+
             if (!cartArr.length || findProduct(cartArr, product).index === -1) {
                 product['qty'] = 2;
                 cartArr.push(product);
                 localStorage.setItem("products", JSON.stringify(cartArr));
+                localStorage.setItem("itemsCount", ++count);
             } else {
                 let newArr = cartArr.map(item => {
-                    if (item.id === product.id) {
+                    if (item.id === product.id && item['qty'] <= product.stock) {
                         item['qty']++;
+                        localStorage.setItem("itemsCount", ++count);
                     }
                     return item;
                 })
                 cartArr = newArr;
                 localStorage.setItem("products", JSON.stringify(cartArr));
             }
+
+
+
             $('#cart').remove();
             $('#flag').append(`
                         <a href="{{ route('cart') }}" id="cart">
