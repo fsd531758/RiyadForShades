@@ -71,6 +71,48 @@
                 </div>
             </div>
 
+            <div class="d-flex justify-content-center">
+                <!--begin::Button-->
+                <a href="{{ route('order_products.index', ['order_id' => $order->id]) }}"
+                    class="btn btn-primary font-weight-bolder">
+                    {{__('words.edit')}}
+                </a>
+                <!--end::Button-->
+            </div>
+    
+            <div class="card-body">
+                <!--begin: Datatable-->
+                <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>{{ __('words.name') }}</th>
+                            <th>{{ __('words.count') }}</th>
+                            <th>{{ __('words.price') }}</th>
+                            <th>{{ __('words.product_total') }}</th>
+                            <th>{{ __('words.created_at') }}</th>
+                            <th>{{ __('words.updated_at') }}</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        @foreach ($products as $key => $product)
+                            <tr>
+                                <td>{{ $key + 1 }}</td>
+                                <td>{{ $product->title }}</td>
+                                <td>{{ $product->count }}</td>
+                                <td>{{ $product->price }}</td>
+                                <td>{{ $product->product_total }}</td>
+                                <td>{{ createdAtFormat($product->created_at) }}</td>
+                                <td>{{ createdAtFormat($product->created_at) == updatedAtFormat($product->updated_at) ? '--' : updatedAtFormat($product->updated_at) }}
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                <!--end: Datatable-->
+            </div>
+
+
             @permission('update-orders')
             <div class="card-footer">
                 <div class="row">

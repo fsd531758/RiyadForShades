@@ -80,7 +80,7 @@
                                          alt="logo">
                                 @endif
                             </td>
-                            <td>{{$product->title}}</td>
+                            <td>{{ $product->title }}</td>
                             <td>{{ $product->title }}</td>
                             <td>{{$product->getActive()}}</td>
                             <td>{{createdAtFormat($product->created_at)}}</td>

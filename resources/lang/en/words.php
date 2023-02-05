@@ -244,6 +244,10 @@ return [
     'stock' => 'Stock',
     'featured' => 'Featured?',
     'price' => 'Price',
+    'total' => 'Total',
+    'count' => 'Count',
+    'product_total' => 'Product Total',
+    
 
     'ar' => [
         'title' => 'Title In Arabic',

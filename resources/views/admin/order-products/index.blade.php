@@ -70,7 +70,7 @@
                         <tr>
 
                             <td>{{$key+1}}</td>
-                            <td>{{$product->name}}</td>
+                            <td>{{ $product->title }}</td>
                             <td>{{$product->count}}</td>
                             <td>{{$product->price}}</td>
                             <td>{{$product->product_total}}</td>
