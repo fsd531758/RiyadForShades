@@ -276,7 +276,7 @@
         function deleteItem(product){
              
             if (findProduct(JSON.parse(localStorage.getItem("products")), product).product.qty >= 1) {
-                localStorage.setItem("itemsCount", localStorage.getItem("itemsCount")-product.qty);
+                localStorage.setItem("itemsCount", count=count-product.qty);
                  let newArr=[];
                  array.map(item => {
                     if (item.id !== product.id) {
