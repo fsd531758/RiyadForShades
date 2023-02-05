@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Product;
-use App\Models\Order_product;
+use App\Models\Order_Product;
 use App\Http\Requests\OrderRequest;
 
 class OrderController extends Controller
@@ -27,7 +27,7 @@ class OrderController extends Controller
 
         for($i=0; $i<count($products); $i++){
             $product=Product::findorfail($products[$i]);
-            Order_product::create(["order_id"=>$order->id,"product_id"=>$products[$i],"product_name"=>$product->title,"count"=>$quantities[$i],"price"=>$product->price,"product_total"=>$quantities[$i]*$product->price]);  
+            Order_Product::create(["order_id"=>$order->id,"product_id"=>$products[$i],"product_name"=>$product->title,"count"=>$quantities[$i],"price"=>$product->price,"product_total"=>$quantities[$i]*$product->price]);  
             
             $product->update(["stock"=>$product->stock - $quantities[$i]]);
         }
