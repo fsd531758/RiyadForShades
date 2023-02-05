@@ -191,6 +191,13 @@ return [
     'edit_blog' => 'تعديل المدونة',
     'create_blog' => 'إنشاء مدونة',
 
+    'order_products' => 'منتجات الطلب',
+    'order_product' => 'منتج الطلب',
+    'show_order_products' => 'عرض منتجات الطلب',
+    'show_order_product' => 'عرض منتج في الطلب',
+    'edit_order_product' => 'نعديل منتج في الطلب',
+    'create_order_product' => 'اضافة منتج للطلب',
+
     'orders' => 'الطلبات',
     'order' => 'الطلب',
     'show_orders' => 'عرض الطلبات',
