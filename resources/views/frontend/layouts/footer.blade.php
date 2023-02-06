@@ -1,5 +1,5 @@
 <!-- Footer-->
-<footer>
+<footer style="color:white; background-image: url({{asset('uploads/images/footer_bg.jpg')}});">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
