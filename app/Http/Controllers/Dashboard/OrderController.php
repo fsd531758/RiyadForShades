@@ -88,7 +88,7 @@ class OrderController extends Controller
     
             $order = $this->order->findOrfail($id);
             $order->fill($requested_data)->save();
-            return $order ? redirect(route('orders.index', $id))->with(['success' => trans('words.updated_success')]) : redirect()->back();
+            return $order ? redirect(route('orders.index', $id))->with(['success' => trans('message.updated_successfully')]) : redirect()->back();
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
@@ -99,7 +99,7 @@ class OrderController extends Controller
         try {
             $Order = $this->order->findOrfail($id);
             $Order->delete();
-            return redirect(route('orders.index'))->with(['success' => trans('words.deleted_success')]);
+            return redirect(route('orders.index'))->with(['success' => trans('message.deleted_successfully')]);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __($e->getMessage())]);
         }

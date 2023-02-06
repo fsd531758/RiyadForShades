@@ -85,7 +85,7 @@ class OrderProductController extends Controller
             $order_id=$requested_data['order_id'];
             $order=$this->order->findOrfail($order_id);
             $order->update(['cart_total'=>$order->cart_total+$requested_data['product_total']]);
-            return $Order_Product ? redirect(route('order_products.index',['order_id'=>$order_id]))->with(['success' => trans('words.added_success')]) : redirect()->back();
+            return $Order_Product ? redirect(route('order_products.index',['order_id'=>$order_id]))->with(['success' => trans('message.created_successfully')]) : redirect()->back();
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
@@ -140,7 +140,6 @@ class OrderProductController extends Controller
     {
         try {
             $requested_data = $request->except(['_token', 'profile_avatar_remove','kt_datatable_length']);
-            dd($requested_data);
             $Order_Product = $this->orderProduct->findOrfail($id);
             $product=$this->product->findOrfail($requested_data['product_id']);
             if($requested_data['count'] > $product->stock+$Order_Product->count)
@@ -153,7 +152,7 @@ class OrderProductController extends Controller
             $Order_Product->fill($requested_data)->save();
             $order->update(['cart_total'=>$order->cart_total+ $product_total]);
     
-            return $Order_Product ? redirect(route('order_products.index',['order_id'=>$Order_Product->order->id]))->with(['success' => trans('words.updated_success')]) : redirect()->back();
+            return $Order_Product ? redirect(route('order_products.index',['order_id'=>$Order_Product->order->id]))->with(['success' => trans('message.updated_successfully')]) : redirect()->back();
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __($e->getMessage())]);
         }
@@ -180,7 +179,7 @@ class OrderProductController extends Controller
                 $order->update(['cart_total'=>$order_total]);
             }
             $Order_Product->delete();
-            return redirect(route('order_products.index',['order_id'=>$Order_id]))->with(['success' => trans('words.deleted_success')]);
+            return redirect(route('order_products.index',['order_id'=>$Order_id]))->with(['success' => trans('message.deleted_successfully')]);
 
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __($e->getMessage())]);

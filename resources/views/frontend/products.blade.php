@@ -80,8 +80,8 @@
                                                         <div class="col-md-6 col-lg-6 col-xl-7 d-flex"
                                                             id="toggle{{ $loop->index }}">
                                                             <a class="btn btn-success px-4 mx-2"
-                                                                onclick="toogle({{ $product }},{{ $product->category }},{{ $loop->index }})"><i
-                                                                    class="fas fa-shopping-cart"></i> اضف للسلة</a>
+                                                                onclick="toogle({{ $product }},{{ $product->category }},{{ $loop->index }})">
+                                                                اضف للسلة</a>
                                                         </div>
 
                                                         <div class="col-md-4 col-lg-4 col-xl-1 offset-lg-1">
@@ -121,6 +121,8 @@
             cartArr = [];
         }
 
+
+
         function toogle(product, cat, index) {
 
             if (!cartArr.length || findProduct(cartArr, product).index === -1) {
@@ -135,11 +137,19 @@
 
                 $('#cart').remove();
                 $('#flag').append(`
-                        <a href="{{ route('cart') }}" id="cart">
-                            <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
-                        </a>
-                        `);
+                                    <div style='position: relative;' id="cart">
+                                        <div class='coustom'>
+                                            <div style='font-size: 11px;'>
+                                                ${localStorage.getItem("itemsCount")}
+                                            </div>
+                                        </div>
+                                        <a href="{{ route('cart') }}"> 
+                                            <i  class="fas fa-shopping-cart"></i>
+                                        </a>                
+                                    </div>
+                                `);
             }
+
 
             $('#toggle' + index).empty();
             $('#toggle' + index).append(` 
@@ -186,7 +196,7 @@
                 localStorage.setItem("itemsCount", ++count);
             } else {
                 let newArr = cartArr.map(item => {
-                    if (item.id === product.id && item['qty'] <= product.stock) {
+                    if (item.id === product.id && item['qty'] < product.stock) {
                         item['qty']++;
                         localStorage.setItem("itemsCount", ++count);
                     }
@@ -200,9 +210,17 @@
 
             $('#cart').remove();
             $('#flag').append(`
-                        <a href="{{ route('cart') }}" id="cart">
-                            <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
-                        </a>`);
+                                <div style='position: relative;' id="cart">
+                                    <div class='coustom'>
+                                        <div style='font-size: 11px;'>
+                                            ${localStorage.getItem("itemsCount")}
+                                        </div>
+                                    </div>
+                                    <a href="{{ route('cart') }}"> 
+                                        <i  class="fas fa-shopping-cart"></i>
+                                    </a>                
+                                </div>
+                            `);
         }
 
         function deletFromCart(index, product) {
@@ -220,9 +238,17 @@
 
                 $('#cart').remove();
                 $('#flag').append(`
-                                    <a href="{{ route('cart') }}" id="cart">
-                                    <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
-                                    </a>`);
+                                    <div style='position: relative;' id="cart">
+                                        <div class='coustom'>
+                                            <div style='font-size: 11px;'>
+                                                ${localStorage.getItem("itemsCount")}
+                                            </div>
+                                        </div>
+                                        <a href="{{ route('cart') }}" > 
+                                            <i  class="fas fa-shopping-cart"></i>
+                                        </a>                
+                                    </div>
+                                `);
 
             }
         }
@@ -240,5 +266,6 @@
                 product: modProduct
             };
         }
+
     </script>
 @endpush

@@ -1,6 +1,7 @@
  <!-- Header/Navbar-->
  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
      <div class="container" id="flag">
+        
          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault"
              aria-controls="navbarDefault" aria-expanded="false"
              aria-label="Toggle navigation"><span></span><span></span><span></span></button>
@@ -33,12 +34,22 @@
          </div>
      </div>
  </nav>
- <!-- End Header/Navbar-->
+ <!-- End Header/Navbar--> 
  @push('scripts')
+
+
      <script>
          $('#flag').append(`
-      <a href="{{ route('cart') }}" id="cart"> 
-         <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
-     </a>`)
+           <div style='position: relative;'  id="cart">
+               <div class='coustom'>
+                   <div style='font-size: 11px;'>
+                       ${localStorage.getItem("itemsCount")}
+                   </div>
+               </div>
+               <a href="{{ route('cart') }}"> 
+                   <i class="fas fa-shopping-cart"></i>
+               </a>                
+           </div>
+       `);
      </script>
  @endpush

@@ -153,6 +153,7 @@
         $("#reset").submit(function(event) {
             localStorage.removeItem('itemsCount');
             localStorage.removeItem('products');
+            localStorage.setItem('itemsCount',0);
         });
 
         // $(document).ready(function(){
@@ -220,9 +221,17 @@
 
             $('#cart').remove();
             $('#flag').append(`
-                        <a href="{{ route('cart') }}" id="cart">
-                            <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
-                        </a>`);
+                                <div style='position: relative;' id="cart">
+                                    <div class='coustom'>
+                                        <div style='font-size: 11px;'>
+                                            ${localStorage.getItem("itemsCount")}
+                                        </div>
+                                    </div>
+                                    <a href="{{ route('cart') }}"> 
+                                        <i  class="fas fa-shopping-cart"></i>
+                                    </a>                
+                                </div>
+                            `);
 
             $('#totalProducts').empty();
             $('#totalProducts').append(`
@@ -231,7 +240,7 @@
                         `);
 
             let newArr = array.map(item => {
-                if (item.id === product.id && product.qty <= product.stock) {
+                if (item.id === product.id && product.qty < product.stock) {
                     item['qty']++;
                     localStorage.setItem("itemsCount", ++count);
 
@@ -263,9 +272,17 @@
                 console.log(findProduct(JSON.parse(localStorage.getItem("products")), product).product.qty);
                 $('#cart').remove();
                 $('#flag').append(`
-                                    <a href="{{ route('cart') }}" id="cart">
-                                    <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
-                                    </a>`);
+                                <div style='position: relative;' id="cart">
+                                    <div class='coustom'>
+                                        <div style='font-size: 11px;'>
+                                            ${localStorage.getItem("itemsCount")}
+                                        </div>
+                                    </div>
+                                    <a href="{{ route('cart') }}" > 
+                                        <i  class="fas fa-shopping-cart"></i>
+                                    </a>                
+                                </div>
+                            `);
 
                 $('#totalProducts').empty();
                 $('#totalProducts').append(`
@@ -296,9 +313,17 @@
                 // console.log(findProduct(JSON.parse(localStorage.getItem("products")), product).product.qty);
                 $('#cart').remove();
                 $('#flag').append(`
-                                    <a href="{{ route('cart') }}" id="cart">
-                                    <i class="fas fa-shopping-cart fa-lg text-success"></i>${localStorage.getItem("itemsCount")}
-                                    </a>`);
+                                    <div style='position: relative;' id="cart">
+                                        <div class='coustom'>
+                                            <div style='font-size: 11px;'>
+                                                ${localStorage.getItem("itemsCount")}
+                                            </div>
+                                        </div>
+                                        <a href="{{ route('cart') }}" > 
+                                            <i  class="fas fa-shopping-cart"></i>
+                                        </a>                
+                                    </div>
+                                `);
 
                 $('#totalProducts').empty();
                 $('#totalProducts').append(`
