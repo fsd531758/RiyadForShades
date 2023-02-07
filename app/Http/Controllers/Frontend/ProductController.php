@@ -20,3 +20,4 @@ class ProductController extends Controller
         return view('frontend.single-product',compact('product'));
     }
 }
+ 
