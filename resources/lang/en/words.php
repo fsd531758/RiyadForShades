@@ -4,6 +4,7 @@ return [
     'choose_lang' => 'Choose Language',
     'home' => 'Home',
     'sign_in_to_admin' => 'Sign In To Dashboard',
+    'sign_in_to_user' => 'Sign In To User',
     'sign_in' => 'Sign In',
     'sign_out' => 'Sign Out',
     'sign_in_desc' => 'Enter your details to login to your account:',

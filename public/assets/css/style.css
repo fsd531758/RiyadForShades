@@ -2265,6 +2265,33 @@ footer .credits {
     height: 400px;
 }
 
+.whats {
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    z-index: 200;
+    display: inline-block;
+    border: none !important;
+    outline: none !important;
+    background-color: #1cce3a;
+    cursor: pointer;
+    padding: 10px 12px;
+    border-radius: 50%;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-box-shadow: 2px 2px 5px #b0afaf, -2px -2px 5px #b0afaf;
+    box-shadow: 2px 2px 5px #b0afaf, -2px -2px 5px #b0afaf;
+}
+.whats:hover {
+    -webkit-box-shadow: 2px 2px 5px #7a7979, -2px -2px 5px #7a7979;
+    box-shadow: 2px 2px 5px #7a7979, -2px -2px 5px #7a7979;
+}
+.whats i {
+    font-size: 45px;
+    color: #fff;
+}
+
 .buy_bt {
     float: left;
     width: 100%;

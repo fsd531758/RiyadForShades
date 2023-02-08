@@ -23,6 +23,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         return view('frontend.cart');
     })->name('cart');
 
+    Route::get('login', 'Auth\AuthController@login')->name('front.login');
+
 });
 
 

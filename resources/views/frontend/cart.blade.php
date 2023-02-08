@@ -168,7 +168,7 @@
             $('#totalProducts').empty();
             $('#totalProducts').append(`
                                 <h1 class="fw-bold mb-0 text-black">عربة التسوق</h1>
-                                <h6 class="mb-0 text-muted">${localStorage.getItem("itemsCount")} منتجات</h6>
+                                <h6 class="mb-0 text-muted"> عدد المنتجات: ${localStorage.getItem("itemsCount")} </h6>
                         `);
 
             let totalPrice = 0;
@@ -211,7 +211,7 @@
 
             $('#details2').empty();
             $('#details2').append(`
-                                                <h5 class="text-uppercase">${localStorage.getItem("itemsCount")} منتجات</h5>
+                                                <h5 class="text-uppercase"> عدد المنتجات: ${localStorage.getItem("itemsCount")}</h5>
                                                 <h5>${totalPrice} ر.س </h5>
                         `);
 
@@ -236,7 +236,7 @@
             $('#totalProducts').empty();
             $('#totalProducts').append(`
                                 <h1 class="fw-bold mb-0 text-black">عربة التسوق</h1>
-                                <h6 class="mb-0 text-muted">${localStorage.getItem("itemsCount")} منتجات</h6>
+                                <h6 class="mb-0 text-muted"> عدد المنتجات: ${localStorage.getItem("itemsCount")} </h6>
                         `);
 
             let newArr = array.map(item => {
@@ -287,7 +287,7 @@
                 $('#totalProducts').empty();
                 $('#totalProducts').append(`
                                 <h1 class="fw-bold mb-0 text-black">عربة التسوق</h1>
-                                <h6 class="mb-0 text-muted">${localStorage.getItem("itemsCount")} منتجات</h6>
+                                <h6 class="mb-0 text-muted"> عدد المنتجات: ${localStorage.getItem("itemsCount")} </h6>
                         `);
 
             }
@@ -328,7 +328,7 @@
                 $('#totalProducts').empty();
                 $('#totalProducts').append(`
                                 <h1 class="fw-bold mb-0 text-black">عربة التسوق</h1>
-                                <h6 class="mb-0 text-muted">${localStorage.getItem("itemsCount")} منتجات</h6>
+                                <h6 class="mb-0 text-muted"> عدد المنتجات: ${localStorage.getItem("itemsCount")}</h6>
                         `);
 
             }
