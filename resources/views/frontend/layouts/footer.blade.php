@@ -1,13 +1,10 @@
 <!-- Footer-->
 <footer style="color:white; background-image: url({{ asset('uploads/images/footer_bg.jpg') }});">
-    <div class="container" id="footer">
+    <div class="container">
+        <section id="footer">
+
+        </section>
         <!-- Start button WhatsApp -->
-        {{-- <a id="whats" class="whats" href="https://web.whatsapp.com/{{ settings()->whatsapp }}" target="_blank">
-            <div style="width: 40px;">
-                <img style="width:100%;"
-                    src="https://cdn3.iconfinder.com/data/icons/social-media-logos-flat-colorful/2048/5302_-_Whatsapp-512.png">
-            </div>
-        </a> --}}
         <div class="row">
             <div class="col-md-12">
                 <div class="socials-a">
@@ -28,3 +25,20 @@
     </div>
 </footer>
 <!-- End  Footer-->
+
+@push('scripts')
+    <script>
+        $('#footer').append(`
+                        <div style='position: fixed; bottom: 150px; left: 50px;  background-color: #26a356; width:60px; height:60px; border-radius:50%;     display: flex;align-items: center;justify-content: center;'  id="cart">
+                            <div class='coustom2'>
+                                <div style='font-size: 15px;'>
+                                    ${localStorage.getItem("itemsCount")}
+                                </div>
+                            </div>
+                            <a href="{{ route('cart') }}"> 
+                                <i class="fas fa-shopping-cart fa-sm" style="color: white;"></i>
+                            </a>                
+                        </div>
+                                    `);
+    </script>
+@endpush

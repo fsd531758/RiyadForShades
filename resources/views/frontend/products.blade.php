@@ -148,6 +148,19 @@
                                         </a>                
                                     </div>
                                 `);
+                $('#footer').empty();
+                $('#footer').append(`
+                        <div style='position: fixed; bottom: 150px; left: 50px;  background-color: #26a356; width:60px; height:60px; border-radius:50%;     display: flex;align-items: center;justify-content: center;'  id="cart">
+                            <div class='coustom2'>
+                                <div style='font-size: 15px;'>
+                                    ${localStorage.getItem("itemsCount")}
+                                </div>
+                            </div>
+                            <a href="{{ route('cart') }}"> 
+                                <i class="fas fa-shopping-cart fa-sm" style="color: white;"></i>
+                            </a>                
+                        </div>
+                                    `);
             }
 
 
@@ -221,6 +234,19 @@
                                     </a>                
                                 </div>
                             `);
+            $('#footer').empty();
+            $('#footer').append(`
+                        <div style='position: fixed; bottom: 150px; left: 50px;  background-color: #26a356; width:60px; height:60px; border-radius:50%;     display: flex;align-items: center;justify-content: center;'  id="cart">
+                            <div class='coustom2'>
+                                <div style='font-size: 15px;'>
+                                    ${localStorage.getItem("itemsCount")}
+                                </div>
+                            </div>
+                            <a href="{{ route('cart') }}"> 
+                                <i class="fas fa-shopping-cart fa-sm" style="color: white;"></i>
+                            </a>                
+                        </div>
+                                    `);
         }
 
         function deletFromCart(index, product) {
@@ -249,6 +275,20 @@
                                         </a>                
                                     </div>
                                 `);
+                $('#footer').empty();
+                $('#footer').append(`
+                        <div style='position: fixed; bottom: 150px; left: 50px;  background-color: #26a356; width:60px; height:60px; border-radius:50%;     display: flex;align-items: center;justify-content: center;'  id="cart">
+                            <div class='coustom2'>
+                                <div style='font-size: 15px;'>
+                                    ${localStorage.getItem("itemsCount")}
+                                </div>
+                            </div>
+                            <a href="{{ route('cart') }}"> 
+                                <i class="fas fa-shopping-cart fa-sm" style="color: white;"></i>
+                            </a>                
+                        </div>
+                                    `);
+
 
             }
         }
@@ -266,6 +306,5 @@
                 product: modProduct
             };
         }
-
     </script>
 @endpush

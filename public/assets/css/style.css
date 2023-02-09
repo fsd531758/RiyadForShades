@@ -2362,3 +2362,21 @@ footer .credits {
     z-index: 1000;
     font-size: 32px;
 }
+
+.coustom2 {
+    position: absolute;
+    top: 0px;
+    left: 40px;
+    background: #ff6600;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    z-index: 1000;
+    font-size: 32px;
+   
+}
+

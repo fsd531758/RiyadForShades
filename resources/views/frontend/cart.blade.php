@@ -153,7 +153,7 @@
         $("#reset").submit(function(event) {
             localStorage.removeItem('itemsCount');
             localStorage.removeItem('products');
-            localStorage.setItem('itemsCount',0);
+            localStorage.setItem('itemsCount', 0);
         });
 
         // $(document).ready(function(){
@@ -232,6 +232,20 @@
                                     </a>                
                                 </div>
                             `);
+            $('#footer').empty();
+            $('#footer').append(`
+                        <div style='position: fixed; bottom: 150px; left: 50px;  background-color: #26a356; width:60px; height:60px; border-radius:50%;     display: flex;align-items: center;justify-content: center;'  id="cart">
+                            <div class='coustom2'>
+                                <div style='font-size: 15px;'>
+                                    ${localStorage.getItem("itemsCount")}
+                                </div>
+                            </div>
+                            <a href="{{ route('cart') }}"> 
+                                <i class="fas fa-shopping-cart fa-sm" style="color: white;"></i>
+                            </a>                
+                        </div>
+                                    `);
+
 
             $('#totalProducts').empty();
             $('#totalProducts').append(`
@@ -283,6 +297,19 @@
                                     </a>                
                                 </div>
                             `);
+                $('#footer').empty();
+                $('#footer').append(`
+                        <div style='position: fixed; bottom: 150px; left: 50px;  background-color: #26a356; width:60px; height:60px; border-radius:50%;     display: flex;align-items: center;justify-content: center;'  id="cart">
+                            <div class='coustom2'>
+                                <div style='font-size: 15px;'>
+                                    ${localStorage.getItem("itemsCount")}
+                                </div>
+                            </div>
+                            <a href="{{ route('cart') }}"> 
+                                <i class="fas fa-shopping-cart fa-sm" style="color: white;"></i>
+                            </a>                
+                        </div>
+                                    `);
 
                 $('#totalProducts').empty();
                 $('#totalProducts').append(`
@@ -324,6 +351,19 @@
                                         </a>                
                                     </div>
                                 `);
+                $('#footer').empty();
+                $('#footer').append(`
+                        <div style='position: fixed; bottom: 150px; left: 50px;  background-color: #26a356; width:60px; height:60px; border-radius:50%;     display: flex;align-items: center;justify-content: center;'  id="cart">
+                            <div class='coustom2'>
+                                <div style='font-size: 15px;'>
+                                    ${localStorage.getItem("itemsCount")}
+                                </div>
+                            </div>
+                            <a href="{{ route('cart') }}"> 
+                                <i class="fas fa-shopping-cart fa-sm" style="color: white;"></i>
+                            </a>                
+                        </div>
+                                    `);
 
                 $('#totalProducts').empty();
                 $('#totalProducts').append(`
