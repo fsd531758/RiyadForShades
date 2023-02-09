@@ -2349,8 +2349,8 @@ footer .credits {
 
 .coustom {
     position: absolute;
-    top: 0px;
-    left: 20px;
+    top: -3px;
+    left: 28px;
     background: #ff6600;
     border-radius: 50%;
     width: 20px;
