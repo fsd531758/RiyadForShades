@@ -42,7 +42,7 @@ class OrderProductController extends Controller
             return view('admin.order-products.index',compact('products','order_id'));
 
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -58,7 +58,7 @@ class OrderProductController extends Controller
             $products=$this->product->get();
             return view('admin.order-products.create',compact('products','order_id'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
 
 
@@ -87,7 +87,7 @@ class OrderProductController extends Controller
             $order->update(['cart_total'=>$order->cart_total+$requested_data['product_total']]);
             return $Order_Product ? redirect(route('order_products.index',['order_id'=>$order_id]))->with(['success' => trans('message.created_successfully')]) : redirect()->back();
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -104,7 +104,7 @@ class OrderProductController extends Controller
             $order_Product = $this->orderProduct->findorfail($id);
             return view('admin.order-products.show', compact('order_Product'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
 
 
@@ -125,7 +125,7 @@ class OrderProductController extends Controller
             $products=$this->product->get();
             return view('admin.order-products.edit', compact('order_Product','products'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -154,7 +154,7 @@ class OrderProductController extends Controller
     
             return $Order_Product ? redirect(route('order_products.index',['order_id'=>$Order_Product->order->id]))->with(['success' => trans('message.updated_successfully')]) : redirect()->back();
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -182,7 +182,7 @@ class OrderProductController extends Controller
             return redirect(route('order_products.index',['order_id'=>$Order_id]))->with(['success' => trans('message.deleted_successfully')]);
 
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 }

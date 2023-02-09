@@ -28,7 +28,7 @@ class CourseController extends Controller
             $courses = $this->course->latest('id')->get();
             return view('admin.courses.index', compact('courses'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -44,7 +44,7 @@ class CourseController extends Controller
 
             return redirect()->route('courses.index')->with('success', __('message.created_successfully'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 

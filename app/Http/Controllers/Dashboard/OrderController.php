@@ -30,7 +30,7 @@ class OrderController extends Controller
             $orders = $this->order::OrderBy('created_at','DESC')->paginate(20);
             return view('admin.Order.index', compact('orders'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -55,7 +55,7 @@ class OrderController extends Controller
             $products= $this->orderProduct->where('order_id',$order->id)->get();
             return view('admin.Order.show', compact('order','products'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -67,7 +67,7 @@ class OrderController extends Controller
             $products=$this->orderProduct->where('order_id',$order->id)->get();
             return view('admin.Order.edit', compact('order','products'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -90,7 +90,7 @@ class OrderController extends Controller
             $order->fill($requested_data)->save();
             return $order ? redirect(route('orders.index', $id))->with(['success' => trans('message.updated_successfully')]) : redirect()->back();
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -101,7 +101,7 @@ class OrderController extends Controller
             $Order->delete();
             return redirect(route('orders.index'))->with(['success' => trans('message.deleted_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 

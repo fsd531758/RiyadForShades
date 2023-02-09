@@ -27,7 +27,7 @@ class ServiceController extends Controller
             $services = $this->service->latest('id')->get();
             return view('admin.services.index', compact('services'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -50,7 +50,7 @@ class ServiceController extends Controller
 
             return redirect()->route('services.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -80,7 +80,7 @@ class ServiceController extends Controller
 
             return redirect()->route('services.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 

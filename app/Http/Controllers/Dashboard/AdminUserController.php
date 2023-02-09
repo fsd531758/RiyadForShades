@@ -31,7 +31,7 @@ class AdminUserController extends Controller
             $users =  $this->admin->latest('id')->get();
             return view('admin.users.index', compact('users'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -41,7 +41,7 @@ class AdminUserController extends Controller
             $user =  $this->admin->find($id);
             return view('admin.users.show', compact('user'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -51,7 +51,7 @@ class AdminUserController extends Controller
             $roles = $this->role->latest('id')->get();
             return view('admin.users.create', compact('roles'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -69,7 +69,7 @@ class AdminUserController extends Controller
             $admin->attachRole($request->role_id);
             return redirect()->route('admin-users.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -81,7 +81,7 @@ class AdminUserController extends Controller
             $user =  $this->admin->find($id);
             return view('admin.users.edit', compact('user', 'roles'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -104,7 +104,7 @@ class AdminUserController extends Controller
             $show_user->syncRoles([$request->role_id]);
             return redirect()->route('admin-users.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -120,7 +120,7 @@ class AdminUserController extends Controller
             $admin_user->delete();
             return redirect()->route('admin-users.index')->with(['success' => __('message.deleted_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
 
     }
@@ -131,7 +131,7 @@ class AdminUserController extends Controller
             $profile =  auth('admin')->user();
             return view('admin.users.profile', compact('profile'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -155,7 +155,7 @@ class AdminUserController extends Controller
 
             return redirect()->back()->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 

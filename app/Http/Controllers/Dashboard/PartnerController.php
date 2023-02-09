@@ -27,7 +27,7 @@ class PartnerController extends Controller
             $partners = $this->partner->latest('id')->get();
             return view('admin.partners.index', compact('partners'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -50,7 +50,7 @@ class PartnerController extends Controller
 
             return redirect()->route('partners.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -80,7 +80,7 @@ class PartnerController extends Controller
 
             return redirect()->route('partners.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 

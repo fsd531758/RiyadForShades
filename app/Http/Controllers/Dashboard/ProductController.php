@@ -32,7 +32,7 @@ class ProductController extends Controller
         
             return view('admin.products.index', compact('products'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -42,7 +42,7 @@ class ProductController extends Controller
             $categories = $this->category->active()->latest('id')->get();
             return view('admin.products.create', compact('categories'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -61,7 +61,7 @@ class ProductController extends Controller
 
             return redirect()->route('products.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -71,7 +71,7 @@ class ProductController extends Controller
             $files = $product->files()->where('type', '!=', 'image')->get();
             return view('admin.products.show', compact('product', 'files'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -82,7 +82,7 @@ class ProductController extends Controller
             $categories = $this->category->latest('id')->get();
             return view('admin.products.edit', compact('product', 'files', 'categories'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -103,7 +103,7 @@ class ProductController extends Controller
 
             return redirect()->route('products.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -114,7 +114,7 @@ class ProductController extends Controller
             $product->delete();
             return redirect()->route('products.index')->with(['success' => __('message.deleted_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 }

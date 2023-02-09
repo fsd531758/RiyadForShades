@@ -30,7 +30,7 @@ class SettingContactController extends Controller
             $contacts = $this->setting->first()->contact()->latest('id')->get();
             return view('admin.contacts.index', compact('contacts'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -52,7 +52,7 @@ class SettingContactController extends Controller
 
             return redirect()->route('contacts.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' =>__($e->getMessage())]);
+            return redirect()->back()->with(['error' =>__('message.something_wrong')]);
         }
     }
 
@@ -62,7 +62,7 @@ class SettingContactController extends Controller
             $contact = $this->contact->find($id);
             return view('admin.contacts.show', compact('contact'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -72,7 +72,7 @@ class SettingContactController extends Controller
             $contact = $this->contact->find($id);
             return view('admin.contacts.edit', compact('contact'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -91,7 +91,7 @@ class SettingContactController extends Controller
 
             return redirect()->route('contacts.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 

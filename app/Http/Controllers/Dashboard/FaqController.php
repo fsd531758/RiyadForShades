@@ -27,7 +27,7 @@ class FaqController extends Controller
             $faqs = $this->faq->latest('id')->get();
             return view('admin.faqs.index', compact('faqs'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -49,7 +49,7 @@ class FaqController extends Controller
 
             return redirect()->route('faqs.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -76,7 +76,7 @@ class FaqController extends Controller
             $faq->update($requested_data);
             return redirect()->route('faqs.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 

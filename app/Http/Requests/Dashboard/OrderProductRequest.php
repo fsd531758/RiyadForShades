@@ -25,13 +25,13 @@ class OrderProductRequest extends FormRequest
 
         return  $rules;
     }
-    public function messages()
-    {
-        $messages = [
-            'product_id.required' => trans('requests.product'),
-            'count.required' => trans('requests.count'),
-        ];
+    // public function messages()
+    // {
+    //     $messages = [
+    //         'product_id.required' => trans('requests.product'),
+    //         'count.required' => trans('requests.count'),
+    //     ];
 
-        return $messages;
-    }
+    //     return $messages;
+    // }
 }

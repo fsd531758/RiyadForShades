@@ -179,6 +179,7 @@ return [
         'identifier' => 'Identifier',
         'contact' => 'Contact',
         'social' => 'Social Media Link',
+        
 
         'ar' => [
             'title' => 'Title In Arabic',

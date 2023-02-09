@@ -27,7 +27,7 @@ class GalleryController extends Controller
             $galleries = $this->gallery->latest('id')->get();
             return view('admin.galleries.index', compact('galleries'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -51,7 +51,7 @@ class GalleryController extends Controller
 
             return redirect()->route('galleries.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -81,7 +81,7 @@ class GalleryController extends Controller
 
             return redirect()->route('galleries.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 

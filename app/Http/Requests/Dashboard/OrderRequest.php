@@ -26,14 +26,14 @@ class OrderRequest extends FormRequest
 
         return  $rules;
     }
-    public function messages()
-    {
-        $messages = [
-            'name.required' => trans('requests.name'),
-            'phone.required' => trans('requests.phone'),
-            'address.required' => trans('requests.address'),
-        ];
+    // public function messages()
+    // {
+    //     $messages = [
+    //         'name.required' => trans('requests.name'),
+    //         'phone.required' => trans('requests.phone'),
+    //         'address.required' => trans('requests.address'),
+    //     ];
 
-        return $messages;
-    }
+    //     return $messages;
+    // }
 }

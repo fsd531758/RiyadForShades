@@ -44,7 +44,7 @@ class AuthController extends Controller
 
             return redirect()->route('/');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', __($e->getMessage()));
+            return redirect()->back()->with('error', __('message.something_wrong'));
         }
     }
 }

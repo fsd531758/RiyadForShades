@@ -28,7 +28,7 @@ class ProjectController extends Controller
             $projects = $this->project->latest('id')->get();
             return view('admin.projects.index', compact('projects'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -52,7 +52,7 @@ class ProjectController extends Controller
 
             return redirect()->route('projects.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -67,7 +67,7 @@ class ProjectController extends Controller
             $images = $project->files()->where('type', '!=', 'cover')->get();
             return view('admin.projects.edit', compact('project', 'images'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -88,7 +88,7 @@ class ProjectController extends Controller
 
             return redirect()->route('projects.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -99,7 +99,7 @@ class ProjectController extends Controller
             $project->delete();
             return redirect()->route('projects.index')->with(['success' => __('message.deleted_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 }

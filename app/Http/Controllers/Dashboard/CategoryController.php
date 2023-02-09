@@ -27,7 +27,7 @@ class CategoryController extends Controller
             $categories = $this->category->latest('id')->get();
             return view('admin.categories.index', compact('categories'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -50,7 +50,7 @@ class CategoryController extends Controller
 
             return redirect()->route('categories.index')->with(['success' => __('message.created_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
@@ -83,7 +83,7 @@ class CategoryController extends Controller
 
             return redirect()->route('categories.index')->with(['success' => __('message.updated_successfully')]);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => __($e->getMessage())]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 
