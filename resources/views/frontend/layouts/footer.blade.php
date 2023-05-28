@@ -28,8 +28,8 @@
 
 @push('scripts')
     <script>
-        if(localStorage.getItem("itemsCount") ===null)
-        localStorage.setItem("itemsCount", 0) 
+        if (localStorage.getItem("itemsCount") === null)
+            localStorage.setItem("itemsCount", 0)
         $('#footer').append(`
                         <div style='position: fixed; bottom: 150px; left: 50px;  background-color: #26a356; width:60px; height:60px; border-radius:50%;     display: flex;align-items: center;justify-content: center;'  id="cart">
                             <div class='coustom2'>

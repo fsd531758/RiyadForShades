@@ -15,9 +15,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
 //    Auth::routes();
 
-    Route::get('/', function () {
-        return view('welcome');
-    })->name('home');
+    // Route::get('/', function () {
+    //     return view('welcome');
+    // })->name('home');
 
     Route::get('/cart', function () {
         return view('frontend.cart');

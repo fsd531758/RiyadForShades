@@ -1,7 +1,7 @@
  <!-- Header/Navbar-->
  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
      <div class="container" id="flag">
-        
+
          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault"
              aria-controls="navbarDefault" aria-expanded="false"
              aria-label="Toggle navigation"><span></span><span></span><span></span></button>
@@ -34,11 +34,11 @@
          </div>
      </div>
  </nav>
- <!-- End Header/Navbar--> 
+ <!-- End Header/Navbar-->
  @push('scripts')
-
-
      <script>
+         if (localStorage.getItem("itemsCount") === null)
+             localStorage.setItem("itemsCount", 0)
          $('#flag').append(`
            <div style='position: relative;'  id="cart">
                <div class='coustom'>
