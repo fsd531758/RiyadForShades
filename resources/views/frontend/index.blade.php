@@ -70,7 +70,8 @@
                             <div class="card-box-c foo">
                                 <div class="card-header-c d-flex">
                                     <div class="card-box-ico">
-                                        <h6 class="title-c"> <i class="{{ $advantage->icon }}"></i> {{ $advantage->title }}
+                                        <i class="{{ $advantage->icon }}"></i>
+                                        <h6 class="title-c"> {{ $advantage->title }}
                                         </h6>
                                     </div>
                                 </div>
@@ -155,7 +156,7 @@
                                     <div class="col-md-6 mb-3">
                                         <div class="form-group">
                                             <input class="form-control form-control-lg form-control-a" type="text"
-                                                name="name" placeholder="الإسم" required>
+                                                name="name" placeholder="@lang('words.name')" required>
                                             @error('name')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -164,7 +165,7 @@
                                     <div class="col-md-6 mb-3">
                                         <div class="form-group">
                                             <input class="form-control form-control-lg form-control-a" name="email"
-                                                type="email" placeholder="البريد الإلكتروني" required>
+                                                type="email" placeholder="@lang('words.email')" required>
                                             @error('email')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -173,7 +174,7 @@
                                     <div class="col-md-12 mb-3">
                                         <div class="form-group">
                                             <input class="form-control form-control-lg form-control-a" type="text"
-                                                name="phone" placeholder="الهاتف" required>
+                                                name="phone" placeholder="@lang('words.phone')" required>
                                             @error('phone')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -181,14 +182,15 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea class="form-control" name="message" cols="45" rows="8" placeholder="الرسالة" required></textarea>
+                                            <textarea class="form-control" name="message" cols="45" rows="8" placeholder="@lang('words.message')"
+                                                required></textarea>
                                             @error('message')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-12 mt-3">
-                                        <button class="btn btn-a" type="submit">إرسال</button>
+                                        <button class="btn btn-a" type="submit">@lang('words.send')</button>
                                     </div>
                                 </div>
                             </form>
@@ -199,12 +201,13 @@
                                 <div class="icon-box-icon"><span class="bi bi-envelope"></span></div>
                                 <div class="icon-box-content table-cell">
                                     <div class="icon-box-title">
-                                        <h4 class="icon-title">إتصل بنا</h4>
+                                        <h4 class="icon-title">@lang('words.call_us')</h4>
                                     </div>
                                     <div class="icon-box-content">
-                                        <p class="mb-1">البريد الإلكتروني: <span
+                                        <p class="mb-1">@lang('words.email'): <span
                                                 class="color-a">contact@example.com</span></p>
-                                        <p class="mb-1">الهاتف: <span class="color-a">0096632564157</span></p>
+                                        <p class="mb-1">@lang('words.phone'): <span class="color-a">0096632564157</span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -212,10 +215,10 @@
                                 <div class="icon-box-icon"><span class="bi bi-geo-alt"></span></div>
                                 <div class="icon-box-content table-cell">
                                     <div class="icon-box-title">
-                                        <h4 class="icon-title">الموقع</h4>
+                                        <h4 class="icon-title">@lang('words.address')</h4>
                                     </div>
                                     <div class="icon-box-content">
-                                        <p class="mb-1">المملكة العربية السعودية</p>
+                                        <p class="mb-1">{{ settings()->address }}</p>
                                     </div>
                                 </div>
                             </div>
