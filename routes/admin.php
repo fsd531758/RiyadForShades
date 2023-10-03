@@ -24,23 +24,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             Route::get('my-profile', 'AdminUserController@profile')->name('admin.profile');
             Route::put('my-profile/{id}/update', 'AdminUserController@updateProfile')->name('admin.profile.update');
 
-            //projects routes
-//            Route::resource('projects', 'ProjectController');
-
             //slider routes
             Route::resource('sliders', 'SliderController');
-
-            //category routes
-            Route::resource('categories', 'CategoryController');
-
-            //product routes
-            Route::resource('products', 'ProductController');
-
-            //product routes
-            Route::resource('orders', 'OrderController');
-
-            //product routes
-            Route::resource('order_products', 'OrderProductController');
 
             //product routes
             Route::resource('services', 'ServiceController');
@@ -48,28 +33,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             //product routes
             Route::resource('galleries', 'GalleryController');
 
-            //product routes
-            Route::resource('projects', 'ProjectController');
-
-            //teams routes
-            Route::resource('teams', 'TeamController');
             //features routes
             Route::resource('features', 'FeatureController');
-
-            //testimonials routes
-            Route::resource('testimonials', 'TestimonialController');
-
-            //partners routes
-            Route::resource('partners', 'PartnerController');
-
-            //portfolios routes
-            Route::resource('portfolios', 'PortfolioController');
-
-            //blog routes
-            Route::resource('blog', 'BlogController');
-
-            //FAQ routes
-            Route::resource('faqs', 'FaqController');
 
             //pages routes
             Route::resource('pages', 'PageController');
@@ -77,19 +42,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             //contact routes
             Route::resource('contacts', 'SettingContactController');
 
-            //news-letter routes
-            Route::resource('news-letters', 'NewsLetterController');
-            Route::get('subscribed-users', 'NewsLetterController@subscribedUsers')->name('news-letters.subscribed');
-
             //setting routes
             Route::resource('settings', 'SettingController');
-
-            // //course routes
-            // Route::get('courses', 'CourseController@index')->name('courses.index');
-            // Route::get('courses/{id}/show', 'CourseController@index')->name('courses.show');
-            // Route::get('courses/create', 'CourseController@create')->name('courses.create');
-            // Route::post('courses/import', 'CourseController@import')->name('courses.import');
-            // Route::get('courses/export', 'CourseController@export')->name('courses.export');
         });
     });
 });

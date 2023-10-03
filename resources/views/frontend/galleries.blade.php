@@ -7,15 +7,15 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-8">
                         <div class="title-single-box">
-                            <h1 class="title-single">سابقة الاعمال</h1>
+                            <h1 class="title-single">@lang('words.galleries')</h1>
                         </div>
                     </div>
                     <div class="col-md-12 col-lg-4">
                         <nav class="breadcrumb-box d-flex justify-content-lg-end" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('home') }}">الرئيسية</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('home') }}">@lang('words.home')</a></li>
                                 <li class="breadcrumb-item active" aria-current="page"> <a
-                                        href="{{ route('galleries') }}">سابقة الاعمال</a></li>
+                                        href="{{ route('galleries') }}">@lang('words.galleries')</a></li>
                             </ol>
                         </nav>
                     </div>
@@ -33,7 +33,8 @@
                             <div class="carousel-item-b">
                                 <div class="card-box-a ">
                                     <div class="img-box-a">
-                                        <a href="{{ asset($gallery->image) }}" data-lightbox="portfolio"><img src="{{ asset($gallery->image) }}" alt="{{ $gallery->title }}"></a>
+                                        <a href="{{ asset($gallery->image) }}" data-lightbox="portfolio"><img
+                                                src="{{ asset($gallery->image) }}" alt="{{ $gallery->title }}"></a>
                                     </div>
                                 </div>
                             </div>

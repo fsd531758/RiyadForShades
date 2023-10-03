@@ -5,6 +5,7 @@ return [
     'company_name' => 'IT',
     'choose_lang' => 'إختر اللغة',
     'home' => 'الرئيسية',
+    'about_us' => 'من نحن',
     'sign_in_to_admin' => 'تسجيل الدخول للوحة التحكم',
     'sign_in_to_user' => 'تسجيل الدخول',
     'sign_in' => 'تسجيل الدخول',
@@ -74,13 +75,22 @@ return [
     'identifier' => 'المعرف',
     'question' => 'السؤال',
     'answer' => 'الإجابة',
-    'has_link'=>'يوجد رابط',
-    'has_sub_title'=>'يوجد عنوان فرعي',
-    'link'=>'رابط',
-    'yes'=>'نعم',
-    'no'=>'لا',
-    'import'=>'استيراد',
-    'export'=>'تصدير',
+    'has_link' => 'يوجد رابط',
+    'has_sub_title' => 'يوجد عنوان فرعي',
+    'link' => 'رابط',
+    'yes' => 'نعم',
+    'no' => 'لا',
+    'import' => 'استيراد',
+    'export' => 'تصدير',
+
+    'more_about_us' => 'المزيد عن الشركة',
+    'customer_satisfaction' => 'من أجل راحة عملائنا',
+    'read_more' => 'أقرأ المزيد',
+    'contact_us' => 'تواصل معنا',
+    'send' => 'إرسال',
+    'call_us' => 'إتصل بنا',
+    'social_links' => 'مواقع التواصل الإجتماعى',
+    'Ksa' => 'المملكة العربية السعودية',
 
     'show_masters' => 'عرض كل البيانات الأساسية',
     'show_master' => 'عرض البيانات الأساسية',
@@ -151,10 +161,10 @@ return [
     'edit_service' => 'تعديل الخدمة',
     'create_service' => 'إنشاء خدمة',
 
-    'galleries' => 'سابقة الاعمال',
-    'show_gallery' => 'عرض سابقة الاعمال',
-    'edit_gallery' => 'تعديل سابقة الاعمال',
-    'create_gallery' => 'اضافة سابقة الاعمال',
+    'galleries' => 'معرض الصور',
+    'show_gallery' => 'عرض معرض الصور',
+    'edit_gallery' => 'تعديل صورة',
+    'create_gallery' => 'اضافة صورة',
 
     'features' => 'المميزات',
     'show_features' => 'عرض المميزات',
@@ -205,7 +215,7 @@ return [
     'show_order' => 'عرض الطلب',
     'edit_order' => 'تعديل الطلب',
     'create_order' => 'إنشاء طلب',
-    
+
     'faqs' => 'الأسئلة الشائعة',
     'show_faqs' => 'عرض الأسئلة الشائعة',
     'show_faq' => 'عرض السؤال',
@@ -248,7 +258,7 @@ return [
     'total' => 'اجمالي السعر',
     'count' => 'العدد',
     'product_total' => 'اجمالي سعر المنتج',
-    'product'=>'المنتج',
+    'product' => 'المنتج',
 
 
 
