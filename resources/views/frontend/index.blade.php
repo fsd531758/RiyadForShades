@@ -204,10 +204,16 @@
                                         <h4 class="icon-title">@lang('words.call_us')</h4>
                                     </div>
                                     <div class="icon-box-content">
-                                        <p class="mb-1">@lang('words.email'): <span
-                                                class="color-a">contact@example.com</span></p>
-                                        <p class="mb-1">@lang('words.phone'): <span class="color-a">0096632564157</span>
-                                        </p>
+
+                                        @foreach (contacts() as $contact)
+                                            @if ($contact->type == 'phone')
+                                                <p class="mb-1">@lang('words.phone') : <span
+                                                        class="color-a">{{ $contact->contact }}</span></p>
+                                            @elseif ($contact->type == 'email')
+                                                <p class="mb-1">@lang('words.email') : <span
+                                                        class="color-a">{{ $contact->contact }}</span></p>
+                                            @endif
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>

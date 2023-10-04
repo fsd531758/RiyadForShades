@@ -101,11 +101,15 @@
                                             <h4 class="icon-title">@lang('words.call_us')</h4>
                                         </div>
                                         <div class="icon-box-content">
-                                            <p class="mb-1">@lang('words.email') : <span
-                                                    class="color-a">{{ settings()->email }}</span></p>
-                                            <p class="mb-1">@lang('words.phone'): <span
-                                                    class="color-a">{{ settings()->phone }}</span>
-                                            </p>
+                                            @foreach (contacts() as $contact)
+                                                @if ($contact->type == 'phone')
+                                                    <p class="mb-1">@lang('words.phone') : <span
+                                                            class="color-a">{{ $contact->contact }}</span></p>
+                                                @elseif ($contact->type == 'email')
+                                                    <p class="mb-1">@lang('words.email') : <span
+                                                            class="color-a">{{ $contact->contact }}</span></p>
+                                                @endif
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -129,19 +133,16 @@
                                         <div class="icon-box-content">
                                             <div class="socials-footer">
                                                 <ul class="list-inline">
-                                                    <li class="list-inline-item"><a class="link-one"
-                                                            href="{{ settings()->facebook }}"><i class="bi bi-facebook"
-                                                                aria-hidden="true"></i></a></li>
-                                                    <li class="list-inline-item"><a class="link-one"
-                                                            href="{{ settings()->twitter }}"><i class="bi bi-twitter"
-                                                                aria-hidden="true"></i></a></li>
-                                                    <li class="list-inline-item"><a class="link-one"
-                                                            href="{{ settings()->instagram }}"><i class="bi bi-instagram"
-                                                                aria-hidden="true"></i></a></li>
-                                                    <li class="list-inline-item"><a class="link-one"
-                                                            href="{{ settings()->youtube }}"><i class="bi bi-youtube"
-                                                                aria-hidden="true"></i></a></li>
+                                                    @foreach (contacts() as $contact)
+                                                        @if ($contact->type == 'social')
+                                                            <li class="list-inline-item"><a
+                                                                    href="{{ $contact->contact }}" target="_blank"><i
+                                                                        class="{{ $contact->icon }}"
+                                                                        aria-hidden="true"></i></a></li>
+                                                        @endif
+                                                    @endforeach
                                                 </ul>
+
                                             </div>
                                         </div>
                                     </div>

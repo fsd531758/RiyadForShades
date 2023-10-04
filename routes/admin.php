@@ -44,6 +44,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
 
             //setting routes
             Route::resource('settings', 'SettingController');
+
+            //contact routes
+            Route::resource('contact_requests', 'ContactRequestController');
         });
     });
 });

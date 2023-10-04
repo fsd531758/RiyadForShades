@@ -95,6 +95,9 @@ return [
     "marwan_copyrights" => "تصميم وبرمجة",
     "marwan_company" => "مروان جروب لتقنية المعلومات",
 
+    "contact_requests" => "طلبات تواصل معنا",
+    'show_contact_requests' => 'رسائل طلبات التواصل',
+
     'show_masters' => 'عرض كل البيانات الأساسية',
     'show_master' => 'عرض البيانات الأساسية',
     'edit_master' => 'تعديل البيانات الأساسية',

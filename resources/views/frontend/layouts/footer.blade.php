@@ -1,5 +1,5 @@
 <!-- Footer-->
-<footer style="color:white; background-image: url({{ asset('uploads/images/footer_bg.jpg') }});">
+<footer style="background-image: url({{ settings()->footer_img }});">
     <div class="container">
         <section id="footer">
 
@@ -10,15 +10,20 @@
                 <div class="socials-a">
                     <ul class="list-inline">
 
+
+
+
                         @foreach (contacts() as $contact)
-                            <li class="list-inline-item"><a href="{{ $contact->contact }}" target="_blank"><i
-                                        class="{{ $contact->icon }}" aria-hidden="true"></i></a></li>
+                            @if ($contact->type == 'social')
+                                <li class="list-inline-item"><a href="{{ $contact->contact }}" target="_blank"><i
+                                            class="{{ $contact->icon }}" aria-hidden="true"></i></a></li>
+                            @endif
                         @endforeach
                     </ul>
                 </div>
                 <div class="copyright-footer">
-                    <p class="copyright color-text-a">جميع الحقوق محفوظة &copy; 2022 <a
-                            href="http://marwan.tech/ar">مروان جروب لتقنية المعلومات</a></p>
+                    <p class="copyright color-text-a">{{ __('words.marwan_copyrights') }} <a
+                            href="https://marwan.tech/ar/service-request">{{ __('words.marwan_company') }}</a></p>
                 </div>
             </div>
         </div>

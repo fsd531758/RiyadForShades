@@ -101,4 +101,17 @@
 .copyright-footer a:hover {
 	color: #2eca6a;
 }
+
+footer {
+	background-repeat: no-repeat;
+	width: 100% !important;
+	background-size: 100%;
+	padding: 50px 0px;
+	position: relative;
+}
+
+.socials-footer ul li {
+	font-size: 20px;
+	padding: 0px 10px;
+}
 /*# sourceMappingURL=over.css.map */

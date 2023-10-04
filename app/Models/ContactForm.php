@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class ContactForm extends Model
 {
     use HasFactory;
+
+    protected $table = 'contact_forms';
+
     protected $guarded = [];
+
+    public $timestamps = true;
 }
