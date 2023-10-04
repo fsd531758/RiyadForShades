@@ -3,14 +3,13 @@
 namespace App\Models;
 
 use App\Traits\Files\HasFile;
-use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
 class Gallery extends Model
 {
-    use HasFactory, Translatable, HasFile;
+    use HasFactory, HasFile;
 
     protected $table = 'galleries';
 
@@ -18,7 +17,6 @@ class Gallery extends Model
 
     protected $appends = ['image'];
 
-    public $translatedAttributes = ['title'];
 
     public $timestamps = true;
 
@@ -33,7 +31,7 @@ class Gallery extends Model
     // accessors & Mutator start
     public function getImageAttribute()
     {
-        $image = $this->file()->first();
+        $image = $this->file;
         return $image->path;
     }
 

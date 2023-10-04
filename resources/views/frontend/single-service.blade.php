@@ -30,8 +30,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-6 col-lg-5"><img class="img-fluid" width="500px" height="300px"
-                                    src="{{ asset($service->image) }}" alt="{{ $service->title }}"></div>
+                            <div class="col-md-6 col-lg-5 services-content">
+                                <img class="img-fluid" src="{{ asset($service->image) }}" alt="{{ $service->title }}">
+                            </div>
                             <div class="col-md-6 col-lg-5">
                                 {!! $service->description !!}
                             </div>

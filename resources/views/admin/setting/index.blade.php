@@ -145,202 +145,28 @@
 
     <div class="card card-custom">
         <div class="card-body">
-            {{--            <div class="form-group row"> --}}
-            {{--                <div class="input-group col-6"> --}}
-            {{--                    <label>{{__('words.facebook')}}</label> --}}
-            {{--                    <div class="input-group"> --}}
-            {{--                        <div class="input-group-prepend"> --}}
-            {{--                            <span class="input-group-text"><i class="fab fa-facebook-square"></i></span> --}}
-            {{--                        </div> --}}
-            {{--                        <input type="text" name="facebook" class="form-control link @error('facebook') is-invalid @enderror" --}}
-            {{--                               value="{{ old('facebook',$setting->facebook) }}" placeholder="{{__('words.facebook')}}"> --}}
 
-            {{--                        @error('facebook') --}}
-            {{--                        <span class="invalid-feedback" role="alert"> --}}
-            {{--                            <strong>{{ $message }}</strong> --}}
-            {{--                        </span> --}}
-            {{--                        @enderror --}}
-            {{--                    </div> --}}
-            {{--                </div> --}}
+            <div class="row mb-3">
 
-            {{--                <div class="input-group col-6"> --}}
-            {{--                    <label>{{__('words.instagram')}}</label> --}}
-            {{--                    <div class="input-group"> --}}
-            {{--                        <div class="input-group-prepend"> --}}
-            {{--                            <span class="input-group-text"><i class="fab fa-instagram"></i></span> --}}
-            {{--                        </div> --}}
-            {{--                        <input type="text" name="instagram" --}}
-            {{--                               class="form-control link @error('instagram') is-invalid @enderror" --}}
-            {{--                               value="{{ old('instagram',$setting->instagram) }}" --}}
-            {{--                               placeholder="{{__('words.instagram')}}"> --}}
+                <div class="col-4">
+                    <label>{{ __('words.whatsapp') }}</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fab fa-whatsapp"></i></span>
+                        </div>
+                        <input type="text" name="whatsapp" class="form-control @error('whatsapp') is-invalid @enderror"
+                            value="{{ old('whatsapp', $setting->whatsapp) }}" placeholder="{{ __('words.whatsapp') }}">
 
-            {{--                        @error('instagram') --}}
-            {{--                        <span class="invalid-feedback" role="alert"> --}}
-            {{--                        <strong>{{ $message }}</strong> --}}
-            {{--                    </span> --}}
-            {{--                        @enderror --}}
-            {{--                    </div> --}}
-            {{--                </div> --}}
-
-            {{--            </div> --}}
-            {{--            <div class="form-group row"> --}}
-            {{--                <div class="input-group col-6"> --}}
-            {{--                    <label>{{__('words.twitter')}}</label> --}}
-            {{--                    <div class="input-group"> --}}
-            {{--                        <div class="input-group-prepend"> --}}
-            {{--                            <span class="input-group-text"><i class="fab fa-twitter-square"></i></span> --}}
-            {{--                        </div> --}}
-            {{--                        <input type="text" name="twitter" class="form-control link @error('twitter') is-invalid @enderror" --}}
-            {{--                               value="{{ old('twitter',$setting->twitter) }}" placeholder="{{__('words.twitter')}}"> --}}
-
-            {{--                        @error('twitter') --}}
-            {{--                        <span class="invalid-feedback" role="alert"> --}}
-            {{--                        <strong>{{ $message }}</strong> --}}
-            {{--                    </span> --}}
-            {{--                        @enderror --}}
-            {{--                    </div> --}}
-            {{--                </div> --}}
-
-            {{--                <div class="input-group col-6"> --}}
-            {{--                    <label>{{__('words.linkedin')}}</label> --}}
-            {{--                    <div class="input-group"> --}}
-            {{--                        <div class="input-group-prepend"> --}}
-            {{--                            <span class="input-group-text"><i class="fab fa-linkedin"></i></span> --}}
-            {{--                        </div> --}}
-            {{--                        <input type="text" name="linkedin" class="form-control link @error('linkedin') is-invalid @enderror" --}}
-            {{--                               value="{{ old('linkedin',$setting->linkedin) }}" placeholder="{{__('words.linkedin')}}"> --}}
-
-            {{--                        @error('linkedin') --}}
-            {{--                        <span class="invalid-feedback" role="alert"> --}}
-            {{--                        <strong>{{ $message }}</strong> --}}
-            {{--                    </span> --}}
-            {{--                        @enderror --}}
-            {{--                    </div> --}}
-            {{--                </div> --}}
-            {{--            </div> --}}
-            {{--            <div class="form-group row"> --}}
-            {{--                <div class="input-group col-6"> --}}
-            {{--                    <label>{{__('words.youtube')}}</label> --}}
-            {{--                    <div class="input-group"> --}}
-            {{--                        <div class="input-group-prepend"> --}}
-            {{--                            <span class="input-group-text"><i class="fab fa-youtube"></i></span> --}}
-            {{--                        </div> --}}
-            {{--                        <input type="text" name="youtube" class="form-control link @error('youtube') is-invalid @enderror" --}}
-            {{--                               value="{{ old('youtube',$setting->youtube) }}" placeholder="{{__('words.youtube')}}"> --}}
-
-            {{--                        @error('youtube') --}}
-            {{--                        <span class="invalid-feedback" role="alert"> --}}
-            {{--                        <strong>{{ $message }}</strong> --}}
-            {{--                    </span> --}}
-            {{--                        @enderror --}}
-            {{--                    </div> --}}
-            {{--                </div> --}}
-            {{--            </div> --}}
+                        @error('whatsapp')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+            </div>
 
 
-            {{--            <div class="row mb-3"> --}}
-            {{--                <div class="col-4"> --}}
-            {{--                    <label>{{__('words.phone')}}</label> --}}
-            {{--                    <div class="input-group"> --}}
-            {{--                        <div class="input-group-prepend"> --}}
-            {{--                            <span class="input-group-text"><i class="fas fa-phone"></i></span> --}}
-            {{--                        </div> --}}
-            {{--                        <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror" --}}
-            {{--                               value="{{ old('phone',$setting->phone) }}" placeholder="{{__('words.phone')}}"> --}}
-
-            {{--                        @error('phone') --}}
-            {{--                        <span class="invalid-feedback" role="alert"> --}}
-            {{--                                <strong>{{ $message }}</strong> --}}
-            {{--                            </span> --}}
-            {{--                        @enderror --}}
-            {{--                    </div> --}}
-            {{--                </div> --}}
-
-            {{--                <div class="col-4"> --}}
-            {{--                    <label>{{__('words.phone')}}</label> --}}
-            {{--                    <div class="input-group"> --}}
-            {{--                        <div class="input-group-prepend"> --}}
-            {{--                            <span class="input-group-text"><i class="fas fa-phone"></i></span> --}}
-            {{--                        </div> --}}
-            {{--                        <input type="text" name="phone2" class="form-control @error('phone2') is-invalid @enderror" --}}
-            {{--                               value="{{ old('phone2',$setting->phone2) }}" placeholder="{{__('words.phone')}}"> --}}
-
-            {{--                        @error('phone2') --}}
-            {{--                        <span class="invalid-feedback" role="alert"> --}}
-            {{--                                <strong>{{ $message }}</strong> --}}
-            {{--                            </span> --}}
-            {{--                        @enderror --}}
-            {{--                    </div> --}}
-            {{--                </div> --}}
-
-            {{--                <div class="col-4"> --}}
-            {{--                    <label>{{__('words.phone')}}</label> --}}
-            {{--                    <div class="input-group"> --}}
-            {{--                        <div class="input-group-prepend"> --}}
-            {{--                            <span class="input-group-text"><i class="fas fa-phone"></i></span> --}}
-            {{--                        </div> --}}
-            {{--                        <input type="text" name="phone3" class="form-control @error('phone3') is-invalid @enderror" --}}
-            {{--                               value="{{ old('phone3',$setting->phone3) }}" placeholder="{{__('words.phone')}}"> --}}
-
-            {{--                        @error('phone3') --}}
-            {{--                        <span class="invalid-feedback" role="alert"> --}}
-            {{--                                <strong>{{ $message }}</strong> --}}
-            {{--                            </span> --}}
-            {{--                        @enderror --}}
-            {{--                    </div> --}}
-            {{--                </div> --}}
-            {{--            </div> --}}
-
-
-            {{--            <div class="row mb-3"> --}}
-            {{--                <div class="col-4"> --}}
-            {{--                    <label>{{__('words.email')}}</label> --}}
-            {{--                    <div class="input-group"> --}}
-            {{--                        <div class="input-group-prepend"> --}}
-            {{--                            <span class="input-group-text"><i class="fas fa-envelope"></i></span> --}}
-            {{--                        </div> --}}
-            {{--                        <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" --}}
-            {{--                               value="{{ old('email',$setting->email) }}" placeholder="{{__('words.email')}}"> --}}
-            {{--                        @error('email') --}}
-            {{--                        <span class="invalid-feedback" role="alert"> --}}
-            {{--                                <strong>{{ $message }}</strong> --}}
-            {{--                            </span> --}}
-            {{--                        @enderror --}}
-            {{--                    </div> --}}
-            {{--                </div> --}}
-
-            {{--                <div class="col-4"> --}}
-            {{--                    <label>{{__('words.email')}}</label> --}}
-            {{--                    <div class="input-group"> --}}
-            {{--                        <div class="input-group-prepend"> --}}
-            {{--                            <span class="input-group-text"><i class="fas fa-envelope"></i></span> --}}
-            {{--                        </div> --}}
-            {{--                        <input type="text" name="email2" class="form-control @error('email1') is-invalid @enderror" --}}
-            {{--                               value="{{ old('email2',$setting->email2) }}" placeholder="{{__('words.email')}}"> --}}
-            {{--                        @error('email2') --}}
-            {{--                        <span class="invalid-feedback" role="alert"> --}}
-            {{--                                <strong>{{ $message }}</strong> --}}
-            {{--                            </span> --}}
-            {{--                        @enderror --}}
-            {{--                    </div> --}}
-            {{--                </div> --}}
-
-            {{--                <div class="col-4"> --}}
-            {{--                    <label>{{__('words.email')}}</label> --}}
-            {{--                    <div class="input-group"> --}}
-            {{--                        <div class="input-group-prepend"> --}}
-            {{--                            <span class="input-group-text"><i class="fas fa-envelope"></i></span> --}}
-            {{--                        </div> --}}
-            {{--                        <input type="text" name="email3" class="form-control @error('email3') is-invalid @enderror" --}}
-            {{--                               value="{{ old('email3',$setting->email3) }}" placeholder="{{__('words.email')}}"> --}}
-            {{--                        @error('email3') --}}
-            {{--                        <span class="invalid-feedback" role="alert"> --}}
-            {{--                                <strong>{{ $message }}</strong> --}}
-            {{--                            </span> --}}
-            {{--                        @enderror --}}
-            {{--                    </div> --}}
-            {{--                </div> --}}
-            {{--            </div> --}}
 
             <hr>
 

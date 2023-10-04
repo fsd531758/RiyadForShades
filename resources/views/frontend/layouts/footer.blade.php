@@ -23,7 +23,8 @@
                 </div>
                 <div class="copyright-footer">
                     <p class="copyright color-text-a">{{ __('words.marwan_copyrights') }} <a
-                            href="https://marwan.tech/ar/service-request">{{ __('words.marwan_company') }}</a></p>
+                            href="https://marwan.tech/ar/service-request"
+                            target="_blank">{{ __('words.marwan_company') }}</a></p>
                 </div>
             </div>
         </div>

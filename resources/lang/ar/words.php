@@ -97,6 +97,7 @@ return [
 
     "contact_requests" => "طلبات تواصل معنا",
     'show_contact_requests' => 'رسائل طلبات التواصل',
+    'whatsapp' => 'واتس اب',
 
     'show_masters' => 'عرض كل البيانات الأساسية',
     'show_master' => 'عرض البيانات الأساسية',

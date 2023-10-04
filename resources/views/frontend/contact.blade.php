@@ -103,11 +103,17 @@
                                         <div class="icon-box-content">
                                             @foreach (contacts() as $contact)
                                                 @if ($contact->type == 'phone')
-                                                    <p class="mb-1">@lang('words.phone') : <span
-                                                            class="color-a">{{ $contact->contact }}</span></p>
+                                                    <p class="mb-1">@lang('words.phone') :
+                                                        <label style="direction:ltr;">
+                                                            <a
+                                                                href="tel:{{ $contact->contact }}">{{ $contact->contact }}</a>
+                                                        </label>
+                                                    </p>
                                                 @elseif ($contact->type == 'email')
-                                                    <p class="mb-1">@lang('words.email') : <span
-                                                            class="color-a">{{ $contact->contact }}</span></p>
+                                                    <p class="mb-1">@lang('words.email') :
+                                                        <a href="mailto:{{ $contact->contact }}"
+                                                            class="color-a">{{ $contact->contact }}</a>
+                                                    </p>
                                                 @endif
                                             @endforeach
                                         </div>
