@@ -34,6 +34,8 @@
 <body>
     @include('frontend.layouts.nav')
     @yield('content')
+
+    @include('frontend.components.whatsapp')
     @include('frontend.layouts.footer')
 
     <!-- PreLoader-->

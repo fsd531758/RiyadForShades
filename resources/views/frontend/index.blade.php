@@ -156,7 +156,7 @@
                                     <div class="col-md-6 mb-3">
                                         <div class="form-group">
                                             <input class="form-control form-control-lg form-control-a" type="text"
-                                                name="name" placeholder="@lang('words.name')" required>
+                                                name="name" placeholder="@lang('words.name')">
                                             @error('name')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -165,7 +165,7 @@
                                     <div class="col-md-6 mb-3">
                                         <div class="form-group">
                                             <input class="form-control form-control-lg form-control-a" name="email"
-                                                type="email" placeholder="@lang('words.email')" required>
+                                                type="email" placeholder="@lang('words.email')">
                                             @error('email')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -174,7 +174,7 @@
                                     <div class="col-md-12 mb-3">
                                         <div class="form-group">
                                             <input class="form-control form-control-lg form-control-a" type="text"
-                                                name="phone" placeholder="@lang('words.phone')" required>
+                                                name="phone" placeholder="@lang('words.phone')">
                                             @error('phone')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -182,8 +182,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea class="form-control" name="message" cols="45" rows="8" placeholder="@lang('words.message')"
-                                                required></textarea>
+                                            <textarea class="form-control" name="message" cols="45" rows="8" placeholder="@lang('words.message')"></textarea>
                                             @error('message')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror

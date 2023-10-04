@@ -17,7 +17,14 @@ class Setting extends Model
 
     protected $guarded = [];
 
-    public $translatedAttributes = ['website_title', 'address', 'copyrights', 'meta_title', 'meta_description', 'footer_description'];
+    public $translatedAttributes = [
+        'website_title',
+        'address',
+        'copyrights',
+        'meta_title',
+        'meta_description',
+        // 'footer_description'
+    ];
 
     public $timestamps = true;
 

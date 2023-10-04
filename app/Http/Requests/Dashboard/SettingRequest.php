@@ -17,14 +17,15 @@ class SettingRequest extends FormRequest
     {
         $rules = [
             'logo' => 'required_without:id|max:900|image',
-            'phone' => 'nullable|string',
-            'email' => 'nullable|email|unique:admins,email,'.$this->id,
+            // 'phone' => 'nullable|string',
+            'whatsapp' => 'nullable|string',
+            'email' => 'nullable|email|unique:admins,email,' . $this->id,
 
         ];
         foreach (config('translatable.locales') as $locale) {
-            $rules += [$locale . '.website_title' => ['required', 'string',Rule::unique('setting_translations','website_title')->ignore($this->id, 'setting_id')]];
-            $rules += [$locale . '.address' => ['nullable', 'string','max:300']];
-            $rules += [$locale . '.copyrights' => ['nullable', 'string','max:300']];
+            $rules += [$locale . '.website_title' => ['required', 'string', Rule::unique('setting_translations', 'website_title')->ignore($this->id, 'setting_id')]];
+            $rules += [$locale . '.address' => ['nullable', 'string', 'max:300']];
+            $rules += [$locale . '.copyrights' => ['nullable', 'string', 'max:300']];
         }
 
         return $rules;

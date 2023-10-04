@@ -124,7 +124,7 @@
                             @enderror
                         </div>
 
-                        <div class="col form-group">
+                        {{-- <div class="col form-group">
                             <label>{{ __('words.footer_description') }}({{ __('words.locale-' . $locale) }})<span
                                     class="text-danger">*</span></label>
                             <textarea class="form-control ckeditor @error($locale . '.footer_description') is-invalid @enderror " type="text"
@@ -134,7 +134,7 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                        </div>
+                        </div> --}}
 
 
                     </div>
@@ -155,7 +155,8 @@
                             <span class="input-group-text"><i class="fab fa-whatsapp"></i></span>
                         </div>
                         <input type="text" name="whatsapp" class="form-control @error('whatsapp') is-invalid @enderror"
-                            value="{{ old('whatsapp', $setting->whatsapp) }}" placeholder="{{ __('words.whatsapp') }}">
+                            style="direction: ltr" value="{{ old('whatsapp', $setting->whatsapp) }}"
+                            placeholder="{{ __('words.whatsapp') }}">
 
                         @error('whatsapp')
                             <span class="invalid-feedback" role="alert">

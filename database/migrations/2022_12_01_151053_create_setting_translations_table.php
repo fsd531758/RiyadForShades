@@ -22,7 +22,7 @@ class CreateSettingTranslationsTable extends Migration
             $table->text('copyrights')->nullable();
             $table->text('address')->nullable();
             $table->text('meta_description')->nullable();
-            $table->text('footer_description')->nullable();
+            // $table->text('footer_description')->nullable();
 
             $table->unique(['setting_id', 'locale']);
             $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');
