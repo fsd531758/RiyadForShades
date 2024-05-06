@@ -2411,3 +2411,10 @@ footer .credits {
   .about-content p {
     font-size: 18px;
   }
+  .about-img{
+    overflow: hidden;
+  }
+
+.footer-head{
+    color: #000000;
+}

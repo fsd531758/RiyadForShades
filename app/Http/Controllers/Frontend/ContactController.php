@@ -36,7 +36,6 @@ class ContactController extends Controller
             $message->to($user_email, $user_name)->subject($subject);
         });
         //end send email to admin
-
         return redirect()->back()->with(['success' => __('message.sent_successfully')]);
     }
 }
