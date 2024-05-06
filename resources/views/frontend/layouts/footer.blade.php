@@ -1,6 +1,5 @@
   <!-- Footer -->
-  <footer style="background-image: url({{ settings()->footer_img }})" dir="rtl"
-      class="text-center text-lg-start bg-body-tertiary text-muted">
+  <footer style="background-color: #f3f3f3" dir="rtl" class="text-center text-lg-start bg-body-tertiary text-muted">
       <!-- Section: Social media -->
       <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
           <!-- Left -->
@@ -96,7 +95,7 @@
       <!-- Section: Links  -->
 
       <!-- Copyright -->
-      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      <div class="copy-rights  text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
           <div class="row">
               <div class="col-12 text-center px-0">
                   <p class="marwan-copyrights w-100 d-flex justify-content-center align-items-center">

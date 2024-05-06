@@ -2418,3 +2418,8 @@ footer .credits {
 .footer-head{
     color: #000000;
 }
+
+.copy-rights {
+    bottom: -46px;
+    position: relative;
+}
