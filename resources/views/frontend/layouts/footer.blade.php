@@ -31,7 +31,8 @@
                   <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                       <!-- Content -->
                       <h6 class="text-uppercase fw-bold mb-4">
-                          <i class="fas fa-gem me-3"></i>{{ settings()->website_title }}
+                          <img class="w-50 pb-4 img_width" src="{{ asset(settings()->logo) }}" alt="">
+                          {{ settings()->website_title }}
                       </h6>
 
                       <p class="paragraph"> {!! settings()->meta_description !!}</p>

@@ -2423,3 +2423,7 @@ footer .credits {
     bottom: -46px;
     position: relative;
 }
+.img_width{
+    width : 30% !important;
+
+}
