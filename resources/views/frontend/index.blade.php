@@ -33,58 +33,26 @@
     <!-- About Section-->
     <section class="section-about">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 section-t8 position-relative">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-5"><img class="img-fluid" src="{{ asset($about->image) }}"
-                                alt="{{ $about->title }}"></div>
-                        <div class="col-md-6 col-lg-5 section-md-t3">
-                            <div class="title-box-d">
-                                <h3 class="title-d">{{ $about->title }}</h3>
-                            </div>
-                            {!! $about->description !!}
-                        </div>
+
+            <div class="row dot-box my-4 py-3 about-container" data-aos="fade-up">
+                <div
+                    class="col-12 col-lg-6 text-center text-lg-left d-flex justify-content-center align-items-center about-title">
+                    <div class="heading-area p-0">
+                        <h2 class="title">{{ $about->title }}</h2>
+                        <p class="paragraph">{!! $about->description !!}</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 about-img-area">
+                    <div class="about-img">
+                        <img src="{{ $about->image }}" alt="Image">
                     </div>
                 </div>
             </div>
-        </div>
+
     </section>
     <!-- About Section-->
     <!-- Main-->
     <main id="main">
-        <!-- Services Section-->
-        <section class="section-services section-t8">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <div class="title-box-d">
-                                <h2 class="title-d">@lang('words.features')</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    @foreach ($advantages as $advantage)
-                        <div class="col-md-4">
-                            <div class="card-box-c foo">
-                                <div class="card-header-c d-flex">
-                                    <div class="card-box-ico">
-                                        <i class="{{ $advantage->icon }}"></i>
-                                        <h6 class="title-c"> {{ $advantage->title }}
-                                        </h6>
-                                    </div>
-                                </div>
-                                {{-- <div class="card-body-c">
-                    <p class="content-c">{!! $advantage->description !!} </p>
-                  </div> --}}
-                            </div>
-                        </div>
-                    @endforeach
-
-                </div>
-            </div>
-        </section>
         <!-- End Services Section-->
         <!-- Services-->
         <section class="section-property section-t8">

@@ -261,6 +261,45 @@
                     </li>
                 @endpermission
                 {{-- gallery routes end --}}
+                @permission('read-services')
+                    <li class="menu-item menu-item-submenu {{ request()->routeIs('services.*') ? 'menu-item-open menu-item-here' : '' }}"
+                        aria-haspopup="true" data-menu-toggle="hover">
+                        <a href="javascript:;" class="menu-link menu-toggle">
+                            <i class="fab fa-servicestack svg-icon menu-icon"></i>
+                            <span class="menu-text">{{ __('words.services') }}</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="menu-submenu">
+                            <i class="menu-arrow"></i>
+                            <ul class="menu-subnav">
+
+                                @permission('read-services')
+                                    <li class="menu-item  {{ request()->routeIs('services.index') ? 'menu-item-active' : '' }}"
+                                        aria-haspopup="true">
+                                        <a href="{{ route('services.index') }}" class="menu-link">
+                                            <i class="menu-bullet menu-bullet-dot">
+                                                <span></span>
+                                            </i>
+                                            <span class="menu-text">{{ __('words.show_all') }}</span>
+                                        </a>
+                                    </li>
+                                @endpermission
+
+                                @permission('create-services')
+                                    <li class="menu-item  {{ request()->routeIs('services.create') ? 'menu-item-active' : '' }}"
+                                        aria-haspopup="true">
+                                        <a href="{{ route('services.create') }}" class="menu-link">
+                                            <i class="menu-bullet menu-bullet-dot">
+                                                <span></span>
+                                            </i>
+                                            <span class="menu-text">{{ __('words.create') }}</span>
+                                        </a>
+                                    </li>
+                                @endpermission
+                            </ul>
+                        </div>
+                    </li>
+                @endpermission
 
                 {{-- features routes start --}}
                 @permission('read-features')

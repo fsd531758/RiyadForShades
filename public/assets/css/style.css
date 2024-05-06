@@ -2385,3 +2385,29 @@ footer .credits {
 	z-index: 1000;
 	font-size: 32px;
 }
+
+
+.about-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+  }
+
+  .about-content {
+    text-align: center;
+    margin: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-content h1 {
+    font-size: 30px;
+  }
+
+  .about-content p {
+    font-size: 18px;
+  }
