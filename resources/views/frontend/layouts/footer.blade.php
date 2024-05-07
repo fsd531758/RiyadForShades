@@ -7,8 +7,6 @@
               <span>تواصل معنا من خلال مواقع التواصل الاجتماعي الاتية :</span>
           </div>
           <!-- Left -->
-
-          <!-- Right -->
           <div>
               @foreach (contacts() as $contact)
                   @if ($contact->type == 'social')
@@ -20,7 +18,6 @@
           </div>
           <!-- Right -->
       </section>
-      <!-- Section: Social media -->
 
       <!-- Section: Links  -->
       <section class="">
@@ -63,8 +60,6 @@
                       </li>
 
                   </div>
-                  <!-- Grid column -->
-
                   <!-- Grid column -->
                   <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                       <!-- Links -->
