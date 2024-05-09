@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Traits\Contacts\HasContact;
 use App\Traits\Files\HasFile;
-use App\Traits\Files\HasFiles;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -34,11 +33,11 @@ class Setting extends Model
         return $logo->path;
     }
 
-    /* public function getFooterImgAttribute()
+    public function getFooterImgAttribute()
     {
         $img = $this->file()->where('type', 'footer_img')->first();
-        return $img->path;
-    }*/
+        return $img ? $img->path : "";
+    }
 
     // public function getContactImgAttribute(){
     //     $img = $this->file()->where('type','contact_img')->first();
