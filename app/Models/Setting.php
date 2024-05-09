@@ -34,11 +34,11 @@ class Setting extends Model
         return $logo->path;
     }
 
-    public function getFooterImgAttribute()
+    /* public function getFooterImgAttribute()
     {
         $img = $this->file()->where('type', 'footer_img')->first();
         return $img->path;
-    }
+    }*/
 
     // public function getContactImgAttribute(){
     //     $img = $this->file()->where('type','contact_img')->first();

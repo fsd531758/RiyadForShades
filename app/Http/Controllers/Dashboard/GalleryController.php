@@ -39,10 +39,11 @@ class GalleryController extends Controller
     public function store(GalleryRequest $request)
     {
         try {
-            if (!$request->has('status'))
+            if (!$request->has('status')) {
                 $request->request->add(['status' => 0]);
-            else
+            } else {
                 $request->request->add(['status' => 1]);
+            }
 
             $requested_data = $request->except(['_token', 'profile_avatar_remove', 'image']);
 
@@ -68,10 +69,11 @@ class GalleryController extends Controller
     public function update(GalleryRequest $request, Gallery $gallery)
     {
         try {
-            if (!$request->has('status'))
+            if (!$request->has('status')) {
                 $request->request->add(['status' => 0]);
-            else
+            } else {
                 $request->request->add(['status' => 1]);
+            }
 
             $requested_data = $request->except(['_token', 'profile_avatar_remove', 'image']);
             $requested_data['updated_at'] = Carbon::now();
