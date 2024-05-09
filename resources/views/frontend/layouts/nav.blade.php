@@ -6,7 +6,7 @@
              aria-controls="navbarDefault" aria-expanded="false"
              aria-label="Toggle navigation"><span></span><span></span><span></span></button>
          <a href="{{ route('home') }}">
-             <img src="{{ asset(settings()->logo) }}" width="70px" height="70px" alt=""
+             <img src="{{ asset(settings()->logo) }}" width="130px" height="85px" alt=""
                  style="object-fit: contain;">
 
          </a>
