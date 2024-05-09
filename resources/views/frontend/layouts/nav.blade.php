@@ -10,7 +10,8 @@
                  style="object-fit: contain;">
 
          </a>
-         <a class="navbar-brand text-brand px-4" href="{{ route('home') }}">{{ settings()->website_title }}
+         <a style ="font-weight: 500;" class="navbar-brand text-brand px-4"
+             href="{{ route('home') }}">{{ settings()->website_title }}
              {{-- <span class="color-b">للزراعة
              </span> --}}
          </a>
